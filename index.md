@@ -1,17 +1,17 @@
 ﻿---
-layout: home2
+layout: home
 title: About
 description: "Francisco Richter's' website"
 tags: 
 image:
-feature: valpo.jpg
+   feature: valpo.jpg
 ---
 
 <br />
-I'm a PhD fifth year PhD...
+I'm a PhD candidate.
 
 <br />
-A big part of my dissertation is...
+A big part of my dissertation is.
 
 
 <br />
