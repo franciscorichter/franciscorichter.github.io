@@ -1,2 +1,4 @@
 name: Francisco Richter
 markdown: kramdown
+
+theme: jekyll-theme-slate
