@@ -8,6 +8,3 @@ plugins:
 
     
 
-	.img-circle {
-        border-radius: 50%;
-    }
