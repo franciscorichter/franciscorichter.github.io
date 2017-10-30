@@ -5,3 +5,9 @@ theme: jekyll-theme-slate
 
 plugins:
   - jekyll-sitemap
+
+    
+
+	.img-circle {
+        border-radius: 50%;
+    }
