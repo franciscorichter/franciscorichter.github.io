@@ -75,7 +75,7 @@ social:
 # Site Author
 author:
   name             : "Francisco Richter"
-  avatar           : # "profile.png" If you have a profile picture filename in the future, add here.
+  avatar           : "profile.png" #If you have a profile picture filename in the future, add here.
   bio              : "Postdoctoral researcher and Mathematical Engineer."
   location         : "Lugano, Switzerland"
   github           : "franciscorichter"
