@@ -78,11 +78,10 @@ author:
   avatar           : "profile.png" #If you have a profile picture filename in the future, add here.
   bio              : "Postdoctoral researcher and Mathematical Engineer."
   location         : "Lugano, Switzerland"
-  github           : "www.github.com/franciscorichter"
   linkedin         : "https://www.linkedin.com/in/franciscorichter/"
   googlescholar    : "https://scholar.google.cl/citations?user=dvAiLzsAAAAJ&hl=es&oi=ao"
   employer         :
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   email            :
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
@@ -92,20 +91,20 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "academicpages"
+  github           : "franciscorichter"
   google_plus      :
   keybase          :
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         :
-  orcid            : "http://orcid.org/yourorcidurl"
+  orcid            : "https://orcid.org/0000-0002-0924-4613"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "replacethistwitterhandle"
+  twitter          : 
   vine             :
   weibo            :
   xing             :
