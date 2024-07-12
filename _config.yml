@@ -11,7 +11,7 @@ locale                   : "en-US"
 title                    : "Francisco Richter"
 title_separator          : "-"
 name                     : &name "Francisco Richter"
-description              : &description "Postdoctoral researcher // Mathematical Engineers"
+description              : &description "Postdoctoral researcher"
 url                      : https://franciscorichter.github.io
 baseurl                  : "" # No subpath as mentioned
 repository               : "franciscorichter/franciscorichter.github.io"
