@@ -1,7 +1,7 @@
 ---
 title: 'Introduction to Social Networks Analysis'
-date: 2023-04-14
-permalink: /posts/2023/04/intro-social-networks-analysis/
+date: 2024-09-06
+permalink: /posts/2024/09/intro-social-networks-analysis/
 tags:
   - social networks
   - graph theory
