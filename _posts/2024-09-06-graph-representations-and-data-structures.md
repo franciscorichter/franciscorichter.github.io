@@ -139,7 +139,7 @@ I_{ij} =
 \end{cases}
 \]
 
-The memory complexity of the incidence matrix is \(O(n \times m)\). While this representation can be efficient for certain types of graph algorithms, it becomes less efficient as the number of edges increases in dense graphs.
+The memory complexity of the incidence matrix is \(O(n \times m)\).
 
 ## Graph Generation: Erdős–Rényi Model
 
