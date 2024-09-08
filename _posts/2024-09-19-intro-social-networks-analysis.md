@@ -67,6 +67,9 @@ $$
 
 <img src="/images/graph1.png" alt="Graph Representation of the Adjacency Matrix">
 
+![Graph Representation of the Adjacency Matrix]({{ '/images/graph1.png' | https://github.com/franciscorichter/franciscorichter.github.io/blob/master/_posts/images/graph1.png }})
+
+
 ## Key Equations
 
 ### Degree of a Node
