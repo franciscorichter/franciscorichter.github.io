@@ -1,15 +1,15 @@
 ---
-title: "Paper Title Number 1"
+title: "Introducing a General Class of Species Diversification Models for Phylogenetic Trees"
 collection: publications
-permalink: /publication/2009-10-01-paper-title-number-1
-excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
-date: 2009-10-01
-venue: 'Journal 1'
-paperurl: 'http://academicpages.github.io/files/paper1.pdf'
-citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
+permalink: /publication/2020-03-01-diversification-models
+excerpt: 'This paper introduces a general class of species diversification models for phylogenetic trees and provides an EM framework for maximum likelihood estimation.'
+date: 2020-03-01
+venue: 'Statistica Neerlandica'
+paperurl: 'https://onlinelibrary.wiley.com/doi/pdf/10.1111/stan.12205'
+citation: 'Richter, F., Haegeman, B., Etienne, R.S., & Wit, E.C. (2020). &quot;Introducing a General Class of Species Diversification Models for Phylogenetic Trees.&quot; <i>Statistica Neerlandica</i>. 74(3), 261-274.'
 ---
-This paper is about the number 1. The number 2 is left for future work.
+This paper introduces a general class of species diversification models for phylogenetic trees and provides an EM framework for maximum likelihood estimation.
 
-[Download paper here](http://academicpages.github.io/files/paper1.pdf)
+[Download paper here](https://onlinelibrary.wiley.com/doi/pdf/10.1111/stan.12205)
 
-Recommended citation: Your Name, You. (2009). "Paper Title Number 1." <i>Journal 1</i>. 1(1).
+Recommended citation: Richter, F., Haegeman, B., Etienne, R.S., & Wit, E.C. (2020). "Introducing a General Class of Species Diversification Models for Phylogenetic Trees." *Statistica Neerlandica*. 74(3), 261-274.
