@@ -97,6 +97,65 @@ plot(graph, vertex.label = c("v1", "v2", "v3", "v4", "v5", "v6"),
 </details>
 
 
+<details>
+  <summary>Click to show the R code</summary>
+
+  <pre><code>
+# Load necessary library
+library(igraph)
+
+# Define the adjacency matrix
+adj_matrix <- matrix(c(0, 1, 1, 0, 0, 0,
+                       1, 0, 1, 0, 0, 0,
+                       1, 1, 0, 1, 0, 0,
+                       0, 0, 1, 0, 1, 0,
+                       0, 0, 0, 1, 0, 1,
+                       0, 0, 0, 1, 1, 0),
+                     nrow = 6, ncol = 6, byrow = TRUE)
+
+# Create a graph object from the adjacency matrix
+graph <- graph_from_adjacency_matrix(adj_matrix, mode = "undirected")
+
+# Plot the graph
+plot(graph, vertex.label = c("v1", "v2", "v3", "v4", "v5", "v6"),
+     vertex.size = 30, 
+     vertex.color = "lightblue", 
+     edge.arrow.size = 0.5, 
+     main = "Graph Representation of the Adjacency Matrix")
+  </code></pre>
+
+</details>
+
+<details>
+  <summary>Click to show the Python code</summary>
+
+  <pre><code>
+# Import necessary libraries
+import networkx as nx
+import matplotlib.pyplot as plt
+
+# Define the adjacency matrix as a list of lists
+adj_matrix = [
+    [0, 1, 1, 0, 0, 0],
+    [1, 0, 1, 0, 0, 0],
+    [1, 1, 0, 1, 0, 0],
+    [0, 0, 1, 0, 1, 0],
+    [0, 0, 0, 1, 0, 1],
+    [0, 0, 0, 1, 1, 0]
+]
+
+# Create a graph object from the adjacency matrix
+G = nx.Graph(adj_matrix)
+
+# Plot the graph
+nx.draw(G, with_labels=True, node_color='lightblue', node_size=500, font_weight='bold')
+plt.title('Graph Representation of the Adjacency Matrix')
+plt.show()
+  </code></pre>
+
+</details>
+
+
 
 ## Key Equations
 
