@@ -70,7 +70,7 @@ $$
 <details>
   <summary>Click to show the R code</summary>
 
-  ```r
+  ```{r}
   # Load necessary library
   library(igraph)
 
@@ -94,7 +94,7 @@ $$
        main = "Graph Representation of the Adjacency Matrix")
 
 ```
-</details> ```
+</details>
 
 
 ## Key Equations
