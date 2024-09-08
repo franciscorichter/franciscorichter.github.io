@@ -1,7 +1,7 @@
 ---
 permalink: /
-title: "Francisco Richter"
-excerpt: "Welcome to the personal website of Francisco Richter"
+title: "Data Science and Predictive Modeling"
+excerpt: "Exploring complex systems with data science and predictive modeling"
 author_profile: true
 redirect_from: 
   - /about/
@@ -9,9 +9,10 @@ redirect_from:
 ---
 
 
-Welcome to my personal website. I am Francisco Richter, a postdoctoral researcher at the [Statistical Computing Laboratory](https://www.ci.inf.usi.ch/research/statslab/people/) at the Università della Svizzera italiana specializing in statistical network sciences, species diversification, phylogenetic inference, and data sciences. I hold a PhD from the University of Groningen in Statistical Network Sciences and Evolutionary Biology, and a degree in Mathematical Engineering from Universidad Técnica Federico Santa María.
+I’m Francisco Richter, a postdoctoral researcher at the [Statistical Computing Laboratory](https://www.ci.inf.usi.ch/research/statslab/people/) at Università della Svizzera italiana. This platform showcases my work and insights in data science, predictive modeling, and statistical network sciences. My research explores how these methodologies can be applied to understand complex systems, such as species diversification, phylogenetic inference, and microbiome-environment interactions.
 
-My research interests lie at the intersection of complex systems, biostatistics, and computational biology, with a particular focus on understanding how systems evolve and diversify over time.
+On this site, you'll find not only information about my background and expertise but also resources focused on data-driven research and predictive modeling tools. These tools are essential for making sense of the vast amount of data available today and for generating meaningful predictions about how biological and computational systems evolve over time.
 
-On this site, you will find more information about my publications, talks, teaching, and a dynamically generated CV.
+Through a combination of biostatistics, complex systems theory, and computational biology, my work delves into how we can predict system behaviors and unlock new insights across scientific domains. My aim is to bridge the gap between raw data and actionable knowledge, turning data science into a valuable tool for diverse applications.
 
+Feel free to explore my publications, talks, and teaching, as well as a dynamically generated CV, to learn more about how data science and predictive modeling are shaping modern research.
