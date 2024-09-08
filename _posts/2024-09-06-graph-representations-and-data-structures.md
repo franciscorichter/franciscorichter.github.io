@@ -183,7 +183,7 @@ As seen in the table, the memory usage grows rapidly for the adjacency matrix as
 
 The following plot illustrates how memory usage scales with the number of nodes for each graph representation:
 
-![Memory Usage Plot](./images/memory.png)
+![Memory Usage Plot](https://github.com/franciscorichter/franciscorichter.github.io/blob/master/_posts/images/memory.png)
 
 In this plot, we observe that:
 - The **Adjacency Matrix** exhibits quadratic growth, consistent with its \(O(n^2)\) complexity.
