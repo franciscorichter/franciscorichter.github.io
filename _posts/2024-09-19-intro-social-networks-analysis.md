@@ -67,6 +67,8 @@ $$
 
 <img src="/images/graph1.png" alt="Graph Representation of the Adjacency Matrix">
 
+<details>
+  <summary>Click to show the R code</summary>
 
   ```{r}
   # Load necessary library
@@ -92,7 +94,7 @@ $$
        main = "Graph Representation of the Adjacency Matrix")
 
 ```
-
+</details>
 
 
 ## Key Equations
