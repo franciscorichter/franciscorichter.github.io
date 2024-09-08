@@ -63,13 +63,11 @@ A =
 \end{bmatrix}
 $$
 
-![Graph Representation of the Adjacency Matrix](graph1.png)
+
 
 <img src="/images/graph1.png" alt="Graph Representation of the Adjacency Matrix">
 
-![Graph Representation of the Adjacency Matrix]({{ '/images/graph1.png' | https://github.com/franciscorichter/franciscorichter.github.io/blob/master/_posts/images/graph1.png }})
 
-![Graph Representation of the Adjacency Matrix](https://github.com/franciscorichter/franciscorichter.github.io/blob/master/_posts/images/graph1.png)
 
 
 
