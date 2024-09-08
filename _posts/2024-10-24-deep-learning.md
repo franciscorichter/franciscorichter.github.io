@@ -8,7 +8,7 @@ tags:
   - node embeddings
 ---
 
-## Introduction
+
 
 Deep learning has transformed many fields by enabling the automatic learning of data representations. In network analysis, deep learning has significantly impacted **representation learning**, allowing machines to learn useful features from graphs for tasks like classification, clustering, and link prediction.
 

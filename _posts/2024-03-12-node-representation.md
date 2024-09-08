@@ -8,7 +8,7 @@ tags:
   - GCN
 ---
 
-## Introduction
+
 
 **Node embeddings** are low-dimensional vector representations of nodes in a graph. These embeddings are essential for tasks like classification, clustering, and link prediction. Various methods are used to learn node embeddings, including random walk-based approaches, matrix factorization, and deep learning techniques.
 

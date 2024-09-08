@@ -1,6 +1,6 @@
 ---
 title: 'Introduction to Social Networks Analysis'
-date: 2024-09-06
+date: 2024-09-19
 permalink: /posts/2024/09/intro-social-networks-analysis/
 tags:
   - social networks
@@ -8,7 +8,7 @@ tags:
   - network analysis
 ---
 
-## What are Networks and Graphs?
+
 
 A **network** is a collection of objects, known as *nodes* (or *vertices*), connected by relationships called *edges* (or *links*). The study of networks, also referred to as *graph theory*, has applications in multiple disciplines, including sociology, biology, computer science, and economics.
 

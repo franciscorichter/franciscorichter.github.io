@@ -1,6 +1,6 @@
 ---
 title: 'Graph Representations and Data Structures'
-date: 2024-09-06
+date: 2024-09-24
 permalink: /posts/2024/09/graph-representations-and-data-structures/
 tags:
   - social networks
