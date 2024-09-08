@@ -65,6 +65,7 @@ $$
 
 ![Graph Representation of the Adjacency Matrix](images/graph1.png)
 
+<img src="/images/graph1.png" alt="Graph Representation of the Adjacency Matrix">
 
 ## Key Equations
 
