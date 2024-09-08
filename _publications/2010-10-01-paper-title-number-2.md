@@ -1,15 +1,15 @@
 ---
-title: "Paper Title Number 2"
+title: "Random Graphical Model of Microbiome Interactions in Related Environments"
 collection: publications
-permalink: /publication/2010-10-01-paper-title-number-2
-excerpt: 'This paper is about the number 2. The number 3 is left for future work.'
-date: 2010-10-01
-venue: 'Journal 1'
-paperurl: 'http://academicpages.github.io/files/paper2.pdf'
-citation: 'Your Name, You. (2010). &quot;Paper Title Number 2.&quot; <i>Journal 1</i>. 1(2).'
+permalink: /publication/2024-06-01-microbiome-graphical-model
+excerpt: 'This paper develops a random graphical model for inferring microbiome interactions across different body sites and introduces a Bayesian approach for joint inference of microbiota systems.'
+date: 2024-06-01
+venue: 'Journal of Agricultural, Biological, and Environmental Statistics'
+paperurl: 'https://link.springer.com/article/10.1007/s13253-024-00638-6'
+citation: 'Vinciotti, V., Wit, E.C., & Richter, F. (2024). &quot;Random Graphical Model of Microbiome Interactions in Related Environments.&quot; <i>Journal of Agricultural, Biological, and Environmental Statistics</i>.'
 ---
-This paper is about the number 2. The number 3 is left for future work.
+This paper develops a random graphical model for inferring microbiome interactions across different body sites and introduces a Bayesian approach for joint inference of microbiota systems.
 
-[Download paper here](http://academicpages.github.io/files/paper2.pdf)
+[Download paper here](https://link.springer.com/article/10.1007/s13253-024-00638-6)
 
-Recommended citation: Your Name, You. (2010). "Paper Title Number 2." <i>Journal 1</i>. 1(2).
+Recommended citation: Vinciotti, V., Wit, E.C., & Richter, F. (2024). "Random Graphical Model of Microbiome Interactions in Related Environments." *Journal of Agricultural, Biological, and Environmental Statistics*.
