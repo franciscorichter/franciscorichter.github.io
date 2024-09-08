@@ -63,7 +63,7 @@ A =
 \end{bmatrix}
 $$
 
-![Graph Representation of the Adjacency Matrix](images/graph1.png)
+![Graph Representation of the Adjacency Matrix](graph1.png)
 
 <img src="/images/graph1.png" alt="Graph Representation of the Adjacency Matrix">
 
