@@ -49,5 +49,5 @@ The course explores a wide array of stochastic models and techniques, including:
 
 ---
 
-For further reading and a detailed syllabus, please download the [lecture notes here](https://link-to-notes.com).
+For further reading, please download the [lecture notes here](https://github.com/franciscorichter/franciscorichter.github.io/blob/master/_teaching/Notes/Stochastic_Methods_24.pdf).
 
