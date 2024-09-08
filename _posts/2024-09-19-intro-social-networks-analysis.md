@@ -23,19 +23,6 @@ where:
 - $$\mathcal{V} = \{v_1, v_2, \dots, v_n\}$$ is the set of nodes (or vertices),
 - $$\mathcal{E} = \{e_1, e_2, \dots, e_m\}$$ is the set of edges (or links).
 
-Graphs can be used to represent various real-world systems:
-
-- In a **social network**, nodes could represent individuals, and edges could represent relationships (e.g., friendships).
-- In a **biological network**, nodes could represent proteins, and edges could represent interactions between them.
-
-## Explicit vs Implicit Networks
-
-Networks can be classified into two categories:
-
-- **Explicit networks**: Relationships between nodes are explicitly defined (e.g., friendships in social networks).
-- **Implicit networks**: Connections are inferred from data (e.g., co-purchase behavior in an e-commerce setting).
-
-## Applications of Network Analysis
 
 Networks are ubiquitous in various domains, and their analysis is crucial for detecting hidden patterns and dependencies. Some applications include:
 
@@ -48,18 +35,7 @@ Analyzing networks allows us to uncover:
 - **Latent content**: Hidden community structures or clusters of closely related nodes.
 - **Structural dependencies**: Understanding how entities in the system are interrelated (e.g., who influences whom in a social network).
 
-## Basic Notations and Definitions
 
-Let $$G = (\mathcal{V}, \mathcal{E})$$ be a graph:
-
-- A *node* (or *vertex*) $$v_i \in \mathcal{V}$$ represents an entity in the network.
-- An *edge* $$e_{ij} = (v_i, v_j) \in \mathcal{E}$$ represents a relationship between two nodes.
-
-A graph can be:
-
-- **Directed**: Each edge has a direction from $$v_i$$ to $$v_j$$.
-- **Undirected**: Edges do not have direction.
-- **Weighted**: Edges are associated with weights $$w_{ij}$$.
 
 ## Matrix Representation
 
@@ -86,6 +62,9 @@ A =
 0 & 0 & 0 & 1 & 1 & 0 \\
 \end{bmatrix}
 $$
+
+![Graph Representation of the Adjacency Matrix](../images/graph1.png)
+
 
 ## Key Equations
 
