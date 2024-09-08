@@ -70,7 +70,7 @@ $$
 <details>
   <summary>Click to show the R code</summary>
 
-```r
+```{r}
 # Load necessary library
 library(igraph)
 
