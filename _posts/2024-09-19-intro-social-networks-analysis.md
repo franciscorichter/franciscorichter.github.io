@@ -69,6 +69,30 @@ $$
 
 
 
+```{r}
+# Load necessary library
+library(igraph)
+
+# Define the adjacency matrix
+adj_matrix <- matrix(c(0, 1, 1, 0, 0, 0,
+                       1, 0, 1, 0, 0, 0,
+                       1, 1, 0, 1, 0, 0,
+                       0, 0, 1, 0, 1, 0,
+                       0, 0, 0, 1, 0, 1,
+                       0, 0, 0, 1, 1, 0),
+                     nrow = 6, ncol = 6, byrow = TRUE)
+
+# Create a graph object from the adjacency matrix
+graph <- graph_from_adjacency_matrix(adj_matrix, mode = "undirected")
+
+# Plot the graph
+plot(graph, vertex.label = c("v1", "v2", "v3", "v4", "v5", "v6"),
+     vertex.size = 30, 
+     vertex.color = "lightblue", 
+     edge.arrow.size = 0.5, 
+     main = "Graph Representation of the Adjacency Matrix")
+```
+
 
 
 ## Key Equations
