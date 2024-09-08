@@ -11,7 +11,7 @@ locale                   : "en-US"
 title                    : "Francisco Richter"
 title_separator          : "-"
 name                     : &name "Francisco Richter"
-description              : &description "Postdoctoral researcher"
+description              : &description "Mathematical Engineer"
 url                      : https://franciscorichter.github.io
 baseurl                  : "" # No subpath as mentioned
 repository               : "franciscorichter/franciscorichter.github.io"
@@ -76,13 +76,13 @@ social:
 author:
   name             : "Francisco Richter"
   avatar           : "profile.png" #If you have a profile picture filename in the future, add here.
-  bio              : "Postdoctoral researcher // Mathematical Engineer"
+  bio              : "Mathematical Engineer"
   location         : "Lugano, Switzerland"
   linkedin         : "https://www.linkedin.com/in/franciscorichter/"
   googlescholar    : "https://scholar.google.cl/citations?user=dvAiLzsAAAAJ&hl=es&oi=ao"
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  email            :
+  email            : "richtf@usi.ch"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -141,6 +141,7 @@ exclude:
   - package.json
   - tmp
   - vendor
+  - _talks
 keep_files:
   - .git
   - .svn
