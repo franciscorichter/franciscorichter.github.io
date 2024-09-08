@@ -173,10 +173,9 @@ The following table summarizes the memory usage for each graph representation as
 
 | Nodes | Adjacency Matrix (Bytes) | Adjacency List (Bytes) | Incidence Matrix (Bytes) |
 |-------|--------------------------|------------------------|--------------------------|
-| 10    | ...                      | ...                    | ...                      |
-| 50    | ...                      | ...                    | ...                      |
-| 100   | ...                      | ...                    | ...                      |
-| 500   | ...                      | ...                    | ...                      |
+| 10    | 928                      | 352                    | 2128                     |
+| 50    | 20128                    | 2264                   | 234128                   |
+| 100   | 80128                    | 4688                   | 2013728                  |
 
 As seen in the table, the memory usage grows rapidly for the adjacency matrix as the number of nodes increases, while the adjacency list and incidence matrix scale more efficiently.
 
