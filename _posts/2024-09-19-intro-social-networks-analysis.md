@@ -92,8 +92,8 @@ plot(graph, vertex.label = c("v1", "v2", "v3", "v4", "v5", "v6"),
      vertex.color = "lightblue", 
      edge.arrow.size = 0.5, 
      main = "Graph Representation of the Adjacency Matrix")
-</details> ```
-
+```
+</details>
 
 
 ## Key Equations
