@@ -1,10 +1,10 @@
 ---
 title: "EMPHASIS: Evolutionary Modeling on Phylogenetic Analysis with Simulations"
-excerpt: "A powerful tool for statistical inference on phylogenetic trees<br/><img src='https://github.com/franciscorichter/emphasis/blob/main/emphasis_logo_circ.png'>"
+excerpt: "A powerful tool for statistical inference on phylogenetic trees<br/><img src='https://raw.githubusercontent.com/franciscorichter/emphasis/main/emphasis_logo_circ.png'>"
 collection: portfolio
 ---
 
-**EMPHASIS** is an advanced R package designed to perform evolutionary modeling with importance sampling techniques. [Explore it here.](https://github.com/franciscorichter/emphasis)
+**EMPHASIS** is an advanced R package designed for evolutionary modeling using importance sampling. [Explore it here.](https://github.com/franciscorichter/emphasis)
 
 Features:
 - Phylogenetic tree simulations
