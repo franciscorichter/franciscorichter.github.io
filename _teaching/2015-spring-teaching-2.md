@@ -1,20 +1,74 @@
 ---
-title: "Teaching experience 2"
+title: "Probability & Statistics"
 collection: teaching
-type: "Workshop"
-permalink: /teaching/2015-spring-teaching-1
-venue: "University 1, Department"
-date: 2015-01-01
-location: "City, Country"
+type: "Undergraduate course"
+permalink: /teaching/2023-fall-probability-statistics
+venue: "Università della Svizzera italiana, Faculty of Informatics"
+date: 2023-09-01
+location: "Lugano, Switzerland"
 ---
 
-This is a description of a teaching experience. You can use markdown like any other post.
+This course provides a comprehensive foundation in probability and statistics, essential for understanding randomness and applying statistical models to real-world phenomena. Students will explore both theoretical concepts and practical applications, developing skills that are critical for data analysis, scientific research, and engineering.
 
-Heading 1
-======
+## Course Overview
 
-Heading 2
-======
+The course covers the following major topics:
 
-Heading 3
-======
+- **Lecture 1: Random Number Generation**
+  - Introduction to randomness, pseudo-random number generation, and the importance of random number generators (RNGs) in simulations and cryptography.
+  - [Download Lecture Notes](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/lecture_1.pdf)
+
+- **Lecture 2: Static Network Models**
+  - Exploration of network models, with focus on Erdos-Renyi graphs, small-world phenomena, and preferential attachment models.
+  - [Download Lecture Notes](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/lecture_2.pdf)
+
+- **Lecture 3: Bayes’ Theorem & Conditional Probability**
+  - Introduction to Bayes’ theorem, conditional probability, and their applications in decision-making and inferential statistics.
+  - [Download Lecture Notes](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/lecture_3.pdf)
+
+- **Lecture 4: Introduction to Markov Chains**
+  - Covering Markov chains, transition matrices, and stationary distributions. Modeling time-evolving systems using probabilistic transitions.
+  - [Download Lecture Notes](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/lecture_4.pdf)
+
+- **Lecture 5: Queuing Theory**
+  - Introduction to queuing models and their applications in analyzing systems handling tasks over time, with real-world applications in networks.
+  - [Download Lecture Notes](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/lecture_5.pdf)
+
+- **Lecture 6: Poisson Processes**
+  - Poisson processes and their applications in modeling random events occurring over time, such as traffic flow and customer arrivals.
+  - [Download Lecture Notes](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/lecture_6.pdf)
+
+- **Lecture 7: Quasi-Reaction Systems**
+  - Introduction to quasi-reaction systems, stochastic processes for modeling interactions in systems like gene expression and ecological dynamics.
+  - [Download Lecture Notes](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/lecture_7.pdf)
+
+- **Lecture 8: Combinatorics in Reaction Systems**
+  - Application of combinatorics in reaction systems and stoichiometry in chemical and ecological models, with examples of predator-prey dynamics.
+  - [Download Lecture Notes](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/lecture_8.pdf)
+
+- **Lecture 9: Predictive Modeling & Logistic Regression**
+  - Exploration of predictive models, error analysis, and logistic regression for binary classification, including estimation methods.
+  - [Download Lecture Notes](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/lecture_9.pdf)
+
+- **Lecture 10: Neural Networks**
+  - Introduction to neural networks, from logistic regression as a foundation to deeper networks, including forward and backward propagation.
+  - [Download Lecture Notes](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/lecture_10.pdf)
+
+- **Lecture 11: Hypothesis Testing**
+  - Hypothesis testing, including Type I and Type II errors, p-values, significance levels, and applications in real-world decision making.
+  - [Download Lecture Notes](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/lecture_11.pdf)
+
+- **Lecture 12: Permutation Tests**
+  - Permutation testing as a non-parametric method for hypothesis testing and how to apply this in various research contexts.
+  - [Download Lecture Notes](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/lecture_12.pdf)
+
+## Learning Objectives
+
+1. Understand and apply fundamental probability concepts and stochastic models.
+2. Analyze real-world problems using queuing theory, Poisson processes, and Markov chains.
+3. Develop predictive models using tools like logistic regression and neural networks.
+4. Perform hypothesis testing with a solid grasp of statistical inference principles.
+5. Apply advanced techniques like permutation tests in non-parametric hypothesis testing.
+
+
+

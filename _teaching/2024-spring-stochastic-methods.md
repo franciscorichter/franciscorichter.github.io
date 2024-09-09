@@ -8,7 +8,7 @@ date: 2024-01-01
 location: "Lugano, Switzerland"
 ---
 
-This course covers foundational and advanced topics in stochastic processes, with a focus on both theory and practical applications. Students will learn to model randomness in systems and analyze probabilistic phenomena through various methods. 
+This course covers foundational and advanced topics in stochastic processes, with a focus on both theory and practical applications. Students learn to model randomness in systems and analyze probabilistic phenomena through various methods. 
 
 ## Course Overview
 
@@ -49,6 +49,5 @@ The course explores a wide array of stochastic models and techniques, including:
 
 ---
 
-For further reading, please ([Download the Stochastic Methods lecture notes](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/Stochastic_Methods_24.pdf)
-).
+For further reading, please [Download the Stochastic Methods lecture notes](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/Stochastic_Methods_24.pdf).
 
