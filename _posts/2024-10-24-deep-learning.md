@@ -8,82 +8,121 @@ tags:
   - node embeddings
 ---
 
-
-
-Deep learning has transformed many fields by enabling the automatic learning of data representations. In network analysis, deep learning has significantly impacted **representation learning**, allowing machines to learn useful features from graphs for tasks like classification, clustering, and link prediction.
+Deep learning has transformed many fields by enabling machines to automatically learn data representations. In network analysis, deep learning plays a pivotal role in **representation learning**, facilitating the extraction of meaningful features from graphs for tasks such as classification, clustering, and link prediction.
 
 ## Neural Networks
 
 ### Perceptron
 
-The **perceptron** is one of the earliest models for binary classification. It classifies data by applying weights to input features. The model is represented as:
+A **perceptron** is a fundamental model used for binary classification. The model applies a linear combination of weights to input features and then classifies the result using a sign function. Mathematically, the perceptron can be written as:
 
 $$
-y = \text{sgn} \left( \sum_{i=1}^{n} w_i x_i + b \right)
+y = \text{sgn}\left( \sum_{i=1}^{n} w_i x_i + b \right)
 $$
 
 where:
-- \( w_i \) are the weights,
+- \( w_i \) represents the weights,
 - \( x_i \) are the input features,
-- \( b \) is the bias.
+- \( b \) is the bias term.
 
-### Multilayer Perceptron Networks
+While simple, the perceptron model struggles with non-linear patterns, leading to the development of more complex architectures such as the **Multilayer Perceptron (MLP)**.
 
-A **Multilayer Perceptron (MLP)** extends the basic perceptron by adding hidden layers and applying an activation function to introduce non-linearity. A common activation function is **ReLU**:
+### Multilayer Perceptron (MLP)
+
+An **MLP** consists of multiple layers of neurons, including hidden layers that introduce non-linearity through activation functions like **ReLU**:
 
 $$
 f(x) = \max(0, x)
 $$
 
-Training MLPs involves **backpropagation**, which updates weights based on the error gradients:
+Training MLPs involves the **backpropagation** algorithm, which adjusts the weights to minimize the error using gradient descent:
 
 $$
 w \leftarrow w - \eta \frac{\partial L}{\partial w}
 $$
 
-where \( \eta \) is the learning rate and \( L \) is the loss function.
+where \( \eta \) is the learning rate and \( L \) is the loss function. This iterative process updates the weights to improve the model's predictions.
 
-## Convolutional Neural Networks (CNNs)
+## Graph Neural Networks (GNNs)
 
-CNNs are designed for tasks like image recognition but can also be applied to graph data. The convolution operation for an image is defined as:
+While traditional neural networks are highly effective for Euclidean data such as images or text, graphs are non-Euclidean structures, requiring specialized architectures. **Graph Neural Networks (GNNs)** generalize neural networks to graph data by allowing nodes to aggregate information from their neighbors, effectively learning graph-structured representations.
+
+### Graph Convolutional Networks (GCNs)
+
+A **Graph Convolutional Network (GCN)** extends the convolutional operation from grids (like pixels in an image) to graphs. The key idea is that each node aggregates features from its neighbors to update its representation. The update rule for a GCN layer can be expressed as:
 
 $$
-O(i, j) = f \left( \sum_{m=1}^{M} \sum_{n=1}^{N} I(i + m - 1, j + n - 1)T(m, n) \right)
+H^{(l+1)} = \sigma \left( D^{-1/2} A D^{-1/2} H^{(l)} W^{(l)} \right)
 $$
 
 where:
-- \( T \) is the filter (kernel),
-- \( I \) is the input image (or graph),
-- \( f \) is the activation function.
+- \( H^{(l)} \) are the node embeddings at layer \( l \),
+- \( A \) is the adjacency matrix of the graph,
+- \( D \) is the degree matrix,
+- \( W^{(l)} \) is the layer's weight matrix,
+- \( \sigma \) is an activation function (e.g., ReLU).
 
-CNNs apply these filters across the data, capturing important patterns.
+This allows each node to combine information from its neighbors, progressively learning higher-level representations through multiple layers.
 
-## Recurrent Neural Networks (RNNs)
+### Graph Attention Networks (GATs)
 
-**RNNs** are designed for sequence data, allowing the model to retain information across time steps. The hidden state at time \( t \) is updated as:
-
-$$
-h_t = \sigma(W_h h_{t-1} + W_x x_t + b)
-$$
-
-### Long Short-Term Memory (LSTM)
-
-LSTMs improve RNNs by adding **gates** to control memory retention and updates. The **forget gate** is defined as:
+**Graph Attention Networks (GATs)** build upon GCNs by incorporating an attention mechanism, which enables the model to learn different importance weights for each neighbor. The attention coefficient \( \alpha_{ij} \) between nodes \( i \) and \( j \) is computed as:
 
 $$
-f_t = \sigma(W_f [h_{t-1}, x_t] + b_f)
+\alpha_{ij} = \frac{\exp\left(\text{LeakyReLU}\left(a^T [W h_i \parallel W h_j]\right)\right)}{\sum_{k \in \mathcal{N}(i)} \exp\left(\text{LeakyReLU}\left(a^T [W h_i \parallel W h_k]\right)\right)}
 $$
 
-## Autoencoders
+where:
+- \( h_i \) is the hidden state of node \( i \),
+- \( W \) is a learnable weight matrix,
+- \( a \) is the attention vector,
+- \( \parallel \) denotes concatenation.
 
-**Autoencoders** are used for unsupervised learning. They compress input data and then reconstruct it. The loss function for an autoencoder is:
+This mechanism allows the model to focus on the most important neighbors, improving performance on tasks where different neighbors contribute differently to node classification or link prediction.
+
+## Autoencoders for Graphs
+
+**Autoencoders** are used for unsupervised learning of graph embeddings. They consist of an encoder, which compresses the graph's structure into a low-dimensional latent space, and a decoder, which attempts to reconstruct the original graph from these embeddings. The reconstruction loss is typically formulated as:
 
 $$
-\text{Loss} = \frac{1}{2} \sum_{i=1}^{n} |x_i - \hat{z}_i|^2
+\text{Loss} = \frac{1}{2} \sum_{i,j} \left(A_{ij} - \hat{A}_{ij}\right)^2
 $$
 
-Variants include **denoising autoencoders** and **sparse autoencoders**.
+where \( A_{ij} \) represents the adjacency matrix of the graph, and \( \hat{A}_{ij} \) is the reconstructed matrix from the decoder. **Variational Graph Autoencoders (VGAEs)** extend this model by incorporating probabilistic latent variables, making them robust to noise.
+
+## DeepWalk and Node2Vec
+
+For network embedding, **DeepWalk** and **Node2Vec** are pivotal algorithms based on random walks. They generate sequences of nodes by simulating random walks over the graph, and treat these sequences as "sentences" in a corpus, applying the **word2vec** algorithm to obtain node embeddings.
+
+- **DeepWalk** performs uniform random walks to capture the local neighborhood of each node.
+- **Node2Vec** introduces parameters \( p \) and \( q \) to bias the random walks towards breadth-first or depth-first search, thus capturing both homophily and structural equivalence.
+
+The learned embeddings can be used for downstream tasks such as classification, link prediction, or clustering.
+
+## Application to Social Networks
+
+The embeddings learned through GNNs or random walk-based methods can be applied to various tasks in social network analysis:
+
+### Node Classification
+
+Given a graph with partially labeled nodes, **node classification** predicts the labels of the unlabeled nodes. The learned embeddings serve as features for classifiers like logistic regression:
+
+$$
+\hat{y}_v = \text{softmax}(W \mathbf{z}_v)
+$$
+
+where \( \mathbf{z}_v \) is the embedding of node \( v \) and \( W \) is a trainable weight matrix.
+
+### Link Prediction
+
+In **link prediction**, the task is to predict whether an edge exists between two nodes. This can be achieved by calculating the similarity between their embeddings, typically using the dot product or cosine similarity:
+
+$$
+\text{score}(u, v) = \mathbf{z}_u^T \mathbf{z}_v
+$$
+
+A higher score implies a higher likelihood of a future connection between nodes \( u \) and \( v \).
 
 ## Conclusion
 
-Deep learning provides powerful tools for network analysis, including models like MLPs, CNNs, RNNs, LSTMs, and autoencoders. These techniques enable representation learning and are essential for solving complex tasks in graph data.
+Deep learning, through models such as GNNs, autoencoders, and random-walk based methods, offers powerful tools for analyzing graph data. By leveraging these techniques, we can capture intricate relationships within networks, enabling tasks like classification, link prediction, and community detection.
