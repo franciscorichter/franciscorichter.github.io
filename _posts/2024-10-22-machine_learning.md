@@ -28,7 +28,7 @@ The process of network representation learning, also called **network embedding*
 
 ### Random Walk-Based Approaches
 
-One of the most popular methods for learning network embeddings is the **random walk** approach. Algorithms such as **DeepWalk** and **node2vec** generate a sequence of nodes by performing random walks on the graph. These walks can be thought of as "sentences" that are fed into word2vec-like models to produce embeddings for nodes.
+One of the most popular methods for learning network embeddings is the **random walk** approach. Algorithms such as **DeepWalk** and [node2vec](https://snap.stanford.edu/node2vec/) generate a sequence of nodes by performing random walks on the graph. These walks can be thought of as "sentences" that are fed into word2vec-like models to produce embeddings for nodes.
 
 - **DeepWalk**: It treats random walks as sequences of nodes and applies the skip-gram model from natural language processing to generate node embeddings. This approach captures the local neighborhood structure.
   
