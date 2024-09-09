@@ -1,7 +1,14 @@
 ---
-title: "Portfolio item number 1"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+title: "EMPHASIS: Evolutionary Modeling on Phylogenetic Analysis with Simulations"
+excerpt: "A powerful tool for statistical inference on phylogenetic trees<br/><img src='https://github.com/franciscorichter/emphasis/blob/main/emphasis_logo_circ.png'>"
 collection: portfolio
 ---
 
-This is an item in your portfolio. It can be have images or nice text. If you name the file .md, it will be parsed as markdown. If you name the file .html, it will be parsed as HTML. 
+**EMPHASIS** is an advanced R package designed to perform evolutionary modeling with importance sampling techniques. [Explore it here.](https://github.com/franciscorichter/emphasis)
+
+Features:
+- Phylogenetic tree simulations
+- Statistical inference
+- Importance sampling
+
+Check out the full code and documentation in the [GitHub repository](https://github.com/franciscorichter/emphasis).
