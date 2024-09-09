@@ -26,7 +26,7 @@ where:
 
 Networks are ubiquitous in various domains, and their analysis is crucial for detecting hidden patterns and dependencies. Some applications include:
 
-- **Social Networks**: Understanding human relationships and social structures (e.g., Facebook, LinkedIn).
+- **Social Networks**: Understanding people, relationships, and friendships.
 - **Biological Networks**: Studying protein-protein interactions or genetic networks.
 - **Technological Networks**: Examining the structure of the Internet or power grids.
 
@@ -35,6 +35,21 @@ Analyzing networks allows us to uncover:
 - **Latent content**: Hidden community structures or clusters of closely related nodes.
 - **Structural dependencies**: Understanding how entities in the system are interrelated (e.g., who influences whom in a social network).
 
+![Graph Representation of the Adjacency Matrix](/images/nets.png)
+
+The image above illustrates four distinct network types, each from a unique domain:
+
+- **Top Left: Caltech Facebook Network**  
+  This graph represents friendships between users in the Caltech Facebook network. Each node corresponds to an individual, and the edges depict social ties. By analyzing this network, we can identify patterns of social cohesion, community formation, and influential individuals within a university setting.
+
+- **Top Right: Historical Network of Russian Trade Routes (12th-13th Century)**  
+  This network visualizes trade routes connecting major cities in medieval Russia. Nodes represent cities or trading posts, while edges reflect the trade pathways. Studying this historical network helps us understand economic dependencies and the geopolitical landscape of the time.
+
+- **Bottom Left: Soccer Match Pass Network**  
+  This network shows passes between players in a soccer match, where nodes are the players and edges represent successful passes. Analyzing this network reveals team dynamics, key players, and overall passing strategy, offering insights into how teams organize and function during a game.
+
+- **Bottom Right: Protein-Protein Interaction Network**  
+  This biological network visualizes interactions between proteins within an organism. Each node is a protein, and edges signify interactions between them. By examining this network, researchers can identify essential proteins and functional modules involved in cellular processes.
 
 
 ## Matrix Representation
