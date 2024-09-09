@@ -1,7 +1,7 @@
 ---
 title: "EPIMOS: Environmental Prediction and Imputation System"
 excerpt: "A modular system for predicting and imputing environmental data<br /><img
-    src='https://raw.githubusercontent.com/franciscorichter/EPIMOS/main/logo.png' style='width: 300px; height: 300px;'>"
+    src='https://raw.githubusercontent.com/franciscorichter/EPIMOS/main/logo.png' style='width: 500px; height: 500px;'>"
 collection: portfolio
 ---
 
