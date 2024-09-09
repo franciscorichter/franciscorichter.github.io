@@ -34,11 +34,6 @@ Networks are everywhere, spanning across diverse fields, and their analysis is v
 - **Biological Networks**: Studying interactions between proteins, gene regulatory networks, and motifs that form the building blocks of life.
 - **Sociological Networks**: Analyzing social movements, development, education, and access within a population.
 
-Analyzing networks allows us to achieve the following objectives:
-
-- **Description**: Identifying and describing hidden community structures, clusters of closely related nodes, and general patterns in the network.
-- **Explanation**: Providing insights into the underlying mechanisms or structural dependencies within the system (e.g., who influences whom in a social network, or how entities are interrelated in a technological network).
-- **Prediction**: Forecasting future interactions or behaviors within the network, such as predicting the emergence of new relationships, or the likely behavior of system components based on current trends.
 
 
 ![Graph Representation of the Adjacency Matrix](/images/nets.png)
@@ -57,6 +52,11 @@ The image above illustrates four distinct network types, each from a unique doma
 - **Bottom Right: Protein-Protein Interaction Network**  
   This biological network visualizes interactions between proteins within an organism. Each node is a protein, and edges signify interactions between them. By examining this network, researchers can identify essential proteins and functional modules involved in cellular processes.
 
+Analyzing networks allows us to achieve the following objectives:
+
+- **Description**: Identifying and describing hidden community structures, clusters of closely related nodes, and general patterns in the network.
+- **Explanation**: Providing insights into the underlying mechanisms or structural dependencies within the system (e.g., who influences whom in a social network, or how entities are interrelated in a technological network).
+- **Prediction**: Forecasting future interactions or behaviors within the network, such as predicting the emergence of new relationships, or the likely behavior of system components based on current trends.
 
 
 The process of analyzing networks typically follows a structured pipeline, as illustrated in the diagram below:
@@ -68,6 +68,9 @@ It begins with a clear **problem statement**, where the primary research questio
 Once the hypotheses are set, a **research design** is created, outlining the methods and tools that will be used to gather and analyze the data. The next step is **data collection**, where relevant network data is gathered from various sources, whether social, biological, or technological.
 
 With the data in hand, the exploration and **analysis** phase begins. This step involves applying network analysis techniques to uncover hidden patterns, clusters, or dependencies within the network. Finally, the findings are brought together in the **interpretation and presentation** stage, where results are visualized and communicated to provide actionable insights or conclusions.
+
+
+
 
 ## Matrix Representation
 
@@ -159,6 +162,17 @@ plt.show()
 </details>
 
 
+## Challenges in Network Data
+
+Analyzing network data presents several challenges:
+
+- **High Dimensionality**: Networks can have millions of nodes and edges, making computational analysis difficult.
+- **Data Sparsity**: Despite their large size, most nodes in a real-world network may not be directly connected.
+- **Dynamic Networks**: Networks change over time, and algorithms need to account for these changes.
+- **Heterogeneous Networks**: Some networks include multiple types of nodes and edges, adding complexity to their analysis.
+
+
+
 ### Degree of a Node
 
 The degree of a node $$v_i$$ is defined as the number of edges connected to $$v_i$$. For an undirected graph:
@@ -192,11 +206,3 @@ $$
 
 where $$d(v_i, v_j)$$ is the shortest distance between nodes $$v_i$$ and $$v_j$$.
 
-## Challenges in Network Data
-
-Analyzing network data presents several challenges:
-
-- **High Dimensionality**: Networks can have millions of nodes and edges, making computational analysis difficult.
-- **Data Sparsity**: Despite their large size, most nodes in a real-world network may not be directly connected.
-- **Dynamic Networks**: Networks change over time, and algorithms need to account for these changes.
-- **Heterogeneous Networks**: Some networks include multiple types of nodes and edges, adding complexity to their analysis.
