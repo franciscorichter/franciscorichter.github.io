@@ -1,7 +1,7 @@
 ---
 title: 'Lecture notes 4: Deep Learning for Network Analysis'
 date: 2024-10-24
-permalink: /posts/2024/09/deep-learning/
+permalink: /posts/2024/10/deep-learning/
 tags:
   - deep learning
   - graph neural networks
