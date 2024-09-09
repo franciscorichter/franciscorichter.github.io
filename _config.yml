@@ -141,7 +141,7 @@ exclude:
   - package.json
   - tmp
   - vendor
-  - _talks
+  - talks
 keep_files:
   - .git
   - .svn
@@ -181,7 +181,7 @@ collections:
     output: true
     permalink: /:collection/:path/
   talks:
-    output: false
+    output: true
     permalink: /:collection/:path/
 
 
@@ -238,7 +238,7 @@ defaults:
       type: talks
     values:
       layout: talk
-      author_profile: false
+      author_profile: true
       share: false
 
 # Sass/SCSS
