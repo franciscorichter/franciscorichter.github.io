@@ -61,6 +61,7 @@ Analyzing networks allows us to achieve the following objectives:
 
 The process of analyzing networks typically follows a structured pipeline, as illustrated in the diagram below:
 
+![Graph Representation of the Adjacency Matrix](/images/diagram1.png)
 <img src="/images/diagram1.png" alt="Pipeline Diagram" width="400"/>
 
 It begins with a clear **problem statement**, where the primary research question or challenge is identified. This is followed by the development of a **theoretical framework**, which provides the necessary background and context for understanding the network's behavior. Based on this theory, **hypotheses** are formulated, offering testable predictions about the relationships and structures within the network.
@@ -69,6 +70,15 @@ Once the hypotheses are set, a **research design** is created, outlining the met
 
 With the data in hand, the exploration and **analysis** phase begins. This step involves applying network analysis techniques to uncover hidden patterns, clusters, or dependencies within the network. Finally, the findings are brought together in the **interpretation and presentation** stage, where results are visualized and communicated to provide actionable insights or conclusions.
 
+
+## Challenges in Network Data
+
+Analyzing network data presents several challenges:
+
+- **High Dimensionality**: Networks can have millions of nodes and edges, making computational analysis difficult.
+- **Data Sparsity**: Despite their large size, most nodes in a real-world network may not be directly connected.
+- **Dynamic Networks**: Networks change over time, and algorithms need to account for these changes.
+- **Heterogeneous Networks**: Some networks include multiple types of nodes and edges, adding complexity to their analysis.
 
 
 
@@ -161,15 +171,6 @@ plt.show()
 
 </details>
 
-
-## Challenges in Network Data
-
-Analyzing network data presents several challenges:
-
-- **High Dimensionality**: Networks can have millions of nodes and edges, making computational analysis difficult.
-- **Data Sparsity**: Despite their large size, most nodes in a real-world network may not be directly connected.
-- **Dynamic Networks**: Networks change over time, and algorithms need to account for these changes.
-- **Heterogeneous Networks**: Some networks include multiple types of nodes and edges, adding complexity to their analysis.
 
 
 
