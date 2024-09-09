@@ -1,6 +1,6 @@
 ---
-title: "EMPHASIS: Evolutionary Phylogenetic Modeling Tool"
-excerpt: "A versatile tool for statistical analysis on phylogenetic trees<br/><img src='https://raw.githubusercontent.com/franciscorichter/emphasis/main/emphasis_logo_circ.png' style='width: 500px; height: 500px;'>"
+title: "EMPHASIS"
+excerpt: "A versatile tool for statistical analysis on diversification processes  <br/><img src='https://raw.githubusercontent.com/franciscorichter/emphasis/main/emphasis_logo_circ.png' style='width: 500px; height: 500px;'>"
 collection: portfolio
 ---
 
