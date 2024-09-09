@@ -1,7 +1,7 @@
 ---
 title: 'Lecture notes 5: Node Representations in Network Analysis'
-date: 2024-09-07
-permalink: /posts/2024/09/node-representations/
+date: 2024-12-05
+permalink: /posts/2024/12/node-representations/
 tags:
   - node embeddings
   - graph representation learning
