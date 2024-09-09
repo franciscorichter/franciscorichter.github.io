@@ -62,7 +62,6 @@ Analyzing networks allows us to achieve the following objectives:
 The process of analyzing networks typically follows a structured pipeline, as illustrated in the diagram below:
 
 ![Graph Representation of the Adjacency Matrix](/images/diagram1.png)
-<img src="/images/diagram1.png" alt="Pipeline Diagram" width="400"/>
 
 It begins with a clear **problem statement**, where the primary research question or challenge is identified. This is followed by the development of a **theoretical framework**, which provides the necessary background and context for understanding the network's behavior. Based on this theory, **hypotheses** are formulated, offering testable predictions about the relationships and structures within the network.
 
