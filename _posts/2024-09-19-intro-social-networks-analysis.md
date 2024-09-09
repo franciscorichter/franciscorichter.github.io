@@ -1,5 +1,5 @@
 ---
-title: 'Introduction to Social Networks Analysis'
+title: 'Lecture notes 1: Introduction to Social Networks Analysis'
 date: 2024-09-19
 permalink: /posts/2024/09/intro-social-networks-analysis/
 tags:

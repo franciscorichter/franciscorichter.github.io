@@ -1,5 +1,5 @@
 ---
-title: 'Node Representations in Network Analysis'
+title: 'Lecture notes 5: Node Representations in Network Analysis'
 date: 2024-09-07
 permalink: /posts/2024/09/node-representations/
 tags:
