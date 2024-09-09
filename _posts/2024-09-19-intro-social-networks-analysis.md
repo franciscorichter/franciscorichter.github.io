@@ -24,16 +24,33 @@ where:
 - $$\mathcal{E} = \{e_1, e_2, \dots, e_m\}$$ is the set of edges (or links).
 
 
-Networks are ubiquitous in various domains, and their analysis is crucial for detecting hidden patterns and dependencies. Some applications include:
+Networks are everywhere, spanning across diverse fields, and their analysis is vital for uncovering hidden patterns and dependencies. These applications appear in many areas, including:
 
-- **Social Networks**: Understanding people, relationships, and friendships.
-- **Biological Networks**: Studying protein-protein interactions or genetic networks.
-- **Technological Networks**: Examining the structure of the Internet or power grids.
+- **Technical/Engineering Networks**: Focus on connectivity, reachability, and efficiency in systems like the Internet, power grids, or transportation systems.
+- **Mathematical Networks**: Studying the formal properties and theoretical underpinnings of networks to better understand their structure and behavior.
+- **Communication and Media Networks**: Understanding the spread of information in platforms like blogs, Twitter, and other forms of social media.
+- **Physics Networks**: Investigating phenomena such as community detection, "small world" effects, modularity, and multilayer networks.
+- **Economic Networks**: Mapping world trade connections and exploring the networks that drive economic development.
+- **Biological Networks**: Studying interactions between proteins, gene regulatory networks, and motifs that form the building blocks of life.
+- **Sociological Networks**: Analyzing social movements, development, education, and access within a population.
 
-Analyzing networks allows us to uncover:
+Analyzing networks allows us to achieve the following objectives:
 
-- **Latent content**: Hidden community structures or clusters of closely related nodes.
-- **Structural dependencies**: Understanding how entities in the system are interrelated (e.g., who influences whom in a social network).
+- **Description**: Identifying and describing hidden community structures, clusters of closely related nodes, and general patterns in the network.
+- **Explanation**: Providing insights into the underlying mechanisms or structural dependencies within the system (e.g., who influences whom in a social network, or how entities are interrelated in a technological network).
+- **Prediction**: Forecasting future interactions or behaviors within the network, such as predicting the emergence of new relationships, or the likely behavior of system components based on current trends.
+
+This process typically follows a pipeline that includes:
+
+1. **Problem statement**: Defining the network-related question or challenge to be addressed.
+2. **Theory**: Building or referencing theoretical frameworks that explain the behavior of networks.
+3. **Hypotheses**: Formulating testable predictions about network structures or dynamics.
+4. **Research design**: Planning how the network data will be collected and analyzed.
+5. **Data collection**: Gathering network data from various sources, depending on the domain.
+6. **Exploration and analysis**: Using network analysis techniques to explore patterns and dependencies.
+7. **Interpretation and presentation**: Summarizing and visualizing the results to provide insights and inform decision-making.
+
+
 
 ![Graph Representation of the Adjacency Matrix](/images/nets.png)
 
@@ -81,35 +98,6 @@ $$
 
 
 <img src="/images/graph1.png" alt="Graph Representation of the Adjacency Matrix">
-
-<details>
-  <summary>Click to show the R code</summary>
-
-  <pre><code>
-# Load necessary library
-library(igraph)
-
-# Define the adjacency matrix
-adj_matrix <- matrix(c(0, 1, 1, 0, 0, 0,
-                       1, 0, 1, 0, 0, 0,
-                       1, 1, 0, 1, 0, 0,
-                       0, 0, 1, 0, 1, 0,
-                       0, 0, 0, 1, 0, 1,
-                       0, 0, 0, 1, 1, 0),
-                     nrow = 6, ncol = 6, byrow = TRUE)
-
-# Create a graph object from the adjacency matrix
-graph <- graph_from_adjacency_matrix(adj_matrix, mode = "undirected")
-
-# Plot the graph
-plot(graph, vertex.label = c("v1", "v2", "v3", "v4", "v5", "v6"),
-     vertex.size = 30, 
-     vertex.color = "lightblue", 
-     edge.arrow.size = 0.5, 
-     main = "Graph Representation of the Adjacency Matrix")
-  </code></pre>
-
-</details>
 
 
 <details>
@@ -170,9 +158,6 @@ plt.show()
 
 </details>
 
-
-
-## Key Equations
 
 ### Degree of a Node
 
