@@ -40,15 +40,15 @@ Analyzing networks allows us to achieve the following objectives:
 - **Explanation**: Providing insights into the underlying mechanisms or structural dependencies within the system (e.g., who influences whom in a social network, or how entities are interrelated in a technological network).
 - **Prediction**: Forecasting future interactions or behaviors within the network, such as predicting the emergence of new relationships, or the likely behavior of system components based on current trends.
 
-This process typically follows a pipeline that includes:
+The process of analyzing networks typically follows a structured pipeline, as illustrated in the diagram below:
 
-1. **Problem statement**: Defining the network-related question or challenge to be addressed.
-2. **Theory**: Building or referencing theoretical frameworks that explain the behavior of networks.
-3. **Hypotheses**: Formulating testable predictions about network structures or dynamics.
-4. **Research design**: Planning how the network data will be collected and analyzed.
-5. **Data collection**: Gathering network data from various sources, depending on the domain.
-6. **Exploration and analysis**: Using network analysis techniques to explore patterns and dependencies.
-7. **Interpretation and presentation**: Summarizing and visualizing the results to provide insights and inform decision-making.
+![Pipeline Diagram](/images/diagram1.png)
+
+It begins with a clear **problem statement**, where the primary research question or challenge is identified. This is followed by the development of a **theoretical framework**, which provides the necessary background and context for understanding the network's behavior. Based on this theory, **hypotheses** are formulated, offering testable predictions about the relationships and structures within the network.
+
+Once the hypotheses are set, a **research design** is created, outlining the methods and tools that will be used to gather and analyze the data. The next step is **data collection**, where relevant network data is gathered from various sources, whether social, biological, or technological.
+
+With the data in hand, the exploration and **analysis** phase begins. This step involves applying network analysis techniques to uncover hidden patterns, clusters, or dependencies within the network. Finally, the findings are brought together in the **interpretation and presentation** stage, where results are visualized and communicated to provide actionable insights or conclusions.
 
 
 
