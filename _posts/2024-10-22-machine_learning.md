@@ -9,77 +9,110 @@ tags:
   - network analysis
 ---
 
-In this post, we will delve into how machine learning (ML) techniques are applied in social network analysis, with a specific focus on **network embeddings** and **downstream machine learning tasks** such as classification, link prediction, and clustering. These methods allow us to transform complex graph structures into a format that can be efficiently processed by machine learning algorithms.
+Machine learning (ML) techniques have become a cornerstone in the analysis of social networks, enabling us to leverage the structural complexity of networks to perform tasks such as node classification, link prediction, and community detection. By embedding graph structures into vector spaces, ML algorithms can process these representations to uncover insights that are otherwise hidden in high-dimensional, non-Euclidean data.
 
-## Introduction to Machine Learning in Social Networks
+## Machine Learning in Social Networks
 
-Networks, particularly social networks, provide rich relational data, which poses challenges for conventional machine learning techniques due to their high dimensionality and non-Euclidean nature. **Network representation learning** seeks to solve these challenges by converting the raw structure of networks into a **low-dimensional embedding**. These embeddings preserve key properties such as proximity, connectivity, and community structure while enabling efficient analysis.
+Social networks represent intricate relationships between entities, which are typically modeled as graphs \( G = (V, E) \), where \( V \) is the set of nodes (users, entities) and \( E \) is the set of edges (relationships). To apply machine learning algorithms, which expect data in a tabular or vectorized form, it is essential to transform this complex structure into a **low-dimensional embedding**. The goal of **network representation learning** is to generate these embeddings while preserving the inherent graph properties such as connectivity, proximity, and community structure.
 
-Machine learning for network analysis involves the following key tasks:
+### Network Representation Learning
 
-- **Node Classification**: Predicting the label of nodes based on their features and structural properties.
-- **Link Prediction**: Inferring potential new edges in the network.
-- **Clustering and Community Detection**: Grouping nodes into cohesive communities or clusters.
-- **Visualization**: Mapping high-dimensional networks into a 2D or 3D space for better understanding and exploration.
+The fundamental problem in network representation learning is to map each node \( v \in V \) to a point \( \mathbf{z}_v \in \mathbb{R}^d \), where \( d \) is much smaller than the number of nodes \( n \), typically \( d \ll n \). This embedding space enables the application of machine learning techniques for tasks such as classification and clustering.
 
-## Network Representation Learning
+#### Random Walk-Based Embeddings
 
-The process of network representation learning, also called **network embedding**, aims to represent nodes, edges, or even entire graphs in a low-dimensional space. This enables us to apply conventional machine learning algorithms that require vectorized data. Several popular techniques include:
+One of the most effective approaches for network representation learning is through **random walks**. A random walk on the graph generates sequences of nodes that encode the local neighborhood structure. Algorithms like **DeepWalk** and **node2vec** rely on this principle to produce embeddings.
 
-### Random Walk-Based Approaches
+Given a graph \( G \), a random walk starting at node \( v \) generates a sequence of nodes \( \{v_1, v_2, ..., v_t\} \), which can be treated as analogous to a sentence in a corpus. Using the skip-gram model, we learn embeddings that maximize the co-occurrence probability of nodes appearing in the same walk. For DeepWalk, this probability can be modeled as:
 
-One of the most popular methods for learning network embeddings is the **random walk** approach. Algorithms such as **DeepWalk** and [node2vec](https://snap.stanford.edu/node2vec/) generate a sequence of nodes by performing random walks on the graph. These walks can be thought of as "sentences" that are fed into word2vec-like models to produce embeddings for nodes.
+$$
+\max_{\mathbf{z}} \prod_{v \in V} \prod_{u \in \mathcal{N}_w(v)} \text{Pr}(u|v)
+$$
 
-- **DeepWalk**: It treats random walks as sequences of nodes and applies the skip-gram model from natural language processing to generate node embeddings. This approach captures the local neighborhood structure.
-  
-- **node2vec**: An extension of DeepWalk, this method allows more control over the bias of the random walks, enabling the model to capture both **homophily** (similar nodes having similar embeddings) and **structural equivalence** (nodes with similar roles, even if not directly connected).
+where \( \mathcal{N}_w(v) \) is the set of nodes that co-occur with node \( v \) in random walks, and \( \mathbf{z}_v \) is the embedding of node \( v \).
 
-### Matrix Factorization-Based Approaches
+**node2vec** extends DeepWalk by allowing flexible random walks. The walk can be biased using parameters \( p \) and \( q \), controlling whether the random walk behaves more like a **depth-first search (DFS)** or **breadth-first search (BFS)**. The objective is similar to DeepWalk but with the added bias towards homophily or structural equivalence:
 
-Matrix factorization techniques like **Singular Value Decomposition (SVD)** aim to reduce the dimensionality of the adjacency matrix. These methods are efficient and capture global structural properties of the graph.
+$$
+\max_{\mathbf{z}} \prod_{v \in V} \prod_{u \in \mathcal{N}_{w_{p,q}}(v)} \text{Pr}(u|v)
+$$
 
-- **SVD**: Decomposes the adjacency matrix into the product of three matrices, reducing its dimensions while preserving the most important information. This results in node embeddings that capture both local and global structures.
+where \( \mathcal{N}_{w_{p,q}}(v) \) represents the biased neighborhood generated by node2vec.
 
-### Deep Learning-Based Approaches
+#### Matrix Factorization-Based Approaches
 
-Deep learning models such as **Graph Neural Networks (GNNs)** have gained popularity in recent years. These methods use neural network architectures designed specifically for graph data.
+Matrix factorization methods such as **Singular Value Decomposition (SVD)** offer a more global perspective by factoring the graph's adjacency matrix \( A \) into a lower-dimensional approximation. This is formalized as:
 
-- **Graph Convolutional Networks (GCNs)**: These networks generalize the convolution operation from images to graphs, enabling the capture of both node features and structural information.
-  
-- **Graph Attention Networks (GATs)**: GATs extend GCNs by incorporating attention mechanisms that weigh the importance of neighboring nodes, allowing the model to learn which neighbors are most influential for each node.
+$$
+A \approx U \Sigma V^T
+$$
 
-### Graph Embedding Applications
+where:
+- \( A \in \mathbb{R}^{n \times n} \) is the adjacency matrix of the graph,
+- \( U \in \mathbb{R}^{n \times d} \) and \( V \in \mathbb{R}^{n \times d} \) are orthogonal matrices representing the embeddings of the nodes,
+- \( \Sigma \in \mathbb{R}^{d \times d} \) is a diagonal matrix of singular values capturing the most significant structural information.
 
-Once we have learned the embeddings for a graph, we can use them in several downstream tasks:
+SVD provides embeddings that preserve both local and global relationships in the graph, enabling efficient learning for downstream tasks.
 
-- **Node Classification**: By mapping nodes into a vector space, we can apply traditional classification algorithms (e.g., logistic regression) to predict node labels.
-- **Link Prediction**: Embeddings can help predict whether two nodes will be connected in the future. This is especially useful for tasks like recommending friends in social networks.
-- **Clustering and Community Detection**: Using embeddings, nodes that are closely related (based on proximity in the vector space) can be clustered into communities, providing insights into the network’s structure.
+#### Graph Neural Networks (GNNs)
 
-## Downstream Machine Learning Tasks for Networks
+The emergence of **Graph Neural Networks (GNNs)** has transformed how we handle graph-structured data. GNNs generalize traditional neural networks by allowing them to operate directly on the graph's structure. In GNNs, the embedding of a node \( v \) is updated based on the features of its neighbors through a message-passing mechanism.
 
-### 1. Node Classification
+The update rule for a **Graph Convolutional Network (GCN)**, for example, is typically written as:
 
-The goal of **node classification** is to predict the label of a node based on its features and structure within the network. By using learned embeddings as features, we can apply traditional machine learning classifiers, such as support vector machines (SVM) or logistic regression, to perform this task.
+$$
+H^{(l+1)} = \sigma\left( D^{-1/2} A D^{-1/2} H^{(l)} W^{(l)} \right)
+$$
 
-For example, in a social network, we may wish to classify users into categories such as "influencers" or "casual users" based on their connections and activity patterns.
+where:
+- \( H^{(l)} \) represents the node embeddings at layer \( l \),
+- \( A \) is the adjacency matrix,
+- \( D \) is the degree matrix,
+- \( W^{(l)} \) are trainable weight matrices, and
+- \( \sigma \) is a non-linear activation function.
 
-### 2. Link Prediction
+This iterative process allows nodes to aggregate information from their neighbors, producing embeddings that are highly informed by both node features and graph structure.
 
-**Link prediction** involves predicting whether two nodes will form a new connection in the future, or inferring missing links in a partially observed graph. This task is critical in applications such as recommendation systems, where we may suggest new friendships or collaborations based on shared interests or common connections.
+### Machine Learning Tasks on Networks
 
-Link prediction typically uses node embeddings to compute similarity between nodes, often with a metric like cosine similarity or dot product.
+Once node embeddings are learned, we can apply them to several machine learning tasks relevant to social network analysis:
 
-### 3. Clustering and Community Detection
+#### Node Classification
 
-**Clustering** or **community detection** aims to group nodes that are similar to each other into clusters. These clusters often correspond to tightly connected communities within the network. Embeddings make this task easier by transforming the problem of clustering in a high-dimensional space to clustering in a low-dimensional one.
+The goal of **node classification** is to predict the label of a node, such as categorizing users as "influencers" or "casual users." Given a set of embeddings \( \mathbf{z}_v \), a classifier such as **logistic regression** or **support vector machines (SVM)** can be trained to assign labels to nodes:
 
-In social networks, this can help identify groups of users with similar behaviors, interests, or roles, which is particularly useful for targeted advertising or recommendation systems.
+$$
+\hat{y}_v = \text{softmax}(W \mathbf{z}_v)
+$$
 
-### 4. Visualization
+where \( W \) is a weight matrix learned by the classifier, and \( \hat{y}_v \) is the predicted label for node \( v \).
 
-Finally, learned embeddings can be visualized by reducing them to 2D or 3D spaces using techniques like **t-SNE** or **PCA**. Visualization helps in analyzing the structure of the network by providing a graphical representation of clusters, communities, and outliers.
+#### Link Prediction
 
-## Conclusion
+**Link prediction** aims to infer the existence of edges between nodes, predicting whether two nodes will form a new connection in the future or whether there are missing edges in the current graph. A common approach is to compute the similarity between two node embeddings \( \mathbf{z}_u \) and \( \mathbf{z}_v \), often using metrics such as the **dot product**:
 
-Machine learning techniques, especially network embedding methods, have revolutionized the way we analyze and interpret complex social networks. By reducing high-dimensional graph data into compact embeddings, we can apply machine learning algorithms for tasks such as classification, link prediction, clustering, and visualization. As social networks continue to grow in complexity and scale, advanced embedding methods such as **Graph Neural Networks (GNNs)** will play an increasingly important role in understanding and leveraging the rich relational data they provide.
+$$
+\text{score}(u, v) = \mathbf{z}_u^T \mathbf{z}_v
+$$
+
+A higher score indicates a higher likelihood that an edge exists between nodes \( u \) and \( v \).
+
+#### Clustering and Community Detection
+
+In **community detection**, we aim to group nodes into clusters that exhibit high internal connectivity. Once embeddings are computed, nodes that are close in the embedding space can be clustered using traditional clustering algorithms such as **k-means**:
+
+$$
+\min_{C} \sum_{v \in V} \|\mathbf{z}_v - \mu_{C(v)}\|^2
+$$
+
+where \( C(v) \) is the cluster assignment of node \( v \), and \( \mu_{C(v)} \) is the centroid of the cluster.
+
+This allows for the discovery of cohesive groups in social networks, providing insights into social dynamics and influence patterns.
+
+#### Visualization of Embeddings
+
+Finally, embeddings can be visualized by reducing their dimensionality to 2D or 3D using techniques like **t-SNE** or **PCA**. Visualization helps in understanding the overall structure of the network, highlighting clusters, communities, and potential outliers.
+
+---
+
+By embedding graph data into vector spaces, machine learning models can harness the underlying structure of social networks for predictive tasks such as classification and link prediction. Techniques like random walks, matrix factorization, and graph neural networks provide a robust foundation for tackling increasingly complex social network data. As networks continue to grow, these machine learning approaches will remain central to unlocking insights hidden within their intricate webs of relationships.
