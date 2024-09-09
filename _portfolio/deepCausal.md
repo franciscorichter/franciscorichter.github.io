@@ -1,6 +1,6 @@
 ---
 title: "DeepCausal: Advanced Causal Inference with Deep Learning"
-excerpt: "A deep learning framework for discovering causal relationships in complex datasets<br/><img src='https://raw.githubusercontent.com/franciscorichter/deepCausal/main/logo.png' style='width: 500px; height: 500px;'>"
+excerpt: "A deep learning framework for discovering causal relationships in complex datasets<br/><img src='https://raw.githubusercontent.com/franciscorichter/deepCausal/main/logo.png' style='width: 500px; height: 500px;border-radius: 50%;'>"
 collection: portfolio
 ---
 
