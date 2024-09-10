@@ -12,4 +12,3 @@ This paper introduces a novel method for detecting phylodiversity-dependent dive
 
 [Download paper here](https://www.biorxiv.org/content/biorxiv/early/2021/07/04/2021.07.01.450729.full.pdf)
 
-Recommended citation: Richter, F., Janzen, T., Hildenbrandt, H., Wit, E.C., & Etienne, R.S. (2021). "Detecting Phylodiversity-Dependent Diversification with a General Phylogenetic Inference Framework." *bioRxiv*.

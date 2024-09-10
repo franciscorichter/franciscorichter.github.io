@@ -12,4 +12,3 @@ This paper introduces a general class of species diversification models for phyl
 
 [Download paper here](https://onlinelibrary.wiley.com/doi/pdf/10.1111/stan.12205)
 
-Recommended citation: Richter, F., Haegeman, B., Etienne, R.S., & Wit, E.C. (2020). "Introducing a General Class of Species Diversification Models for Phylogenetic Trees." *Statistica Neerlandica*. 74(3), 261-274.

@@ -12,4 +12,3 @@ This paper develops a random graphical model for inferring microbiome interactio
 
 [Download paper here](https://link.springer.com/article/10.1007/s13253-024-00638-6)
 
-Recommended citation: Vinciotti, V., Wit, E.C., & Richter, F. (2024). "Random Graphical Model of Microbiome Interactions in Related Environments." *Journal of Agricultural, Biological, and Environmental Statistics*.
