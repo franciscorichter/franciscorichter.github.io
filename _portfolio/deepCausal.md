@@ -1,6 +1,6 @@
 ---
 title: "DeepCausal"
-excerpt: "A deep learning framework for discovering causal relationships in complex datasets   <br/><img src='https://raw.githubusercontent.com/franciscorichter/deepCausal/main/man/figures/logo.png' style='width: 500px; height: 500px;border-radius: 50%;'>"
+excerpt: "A deep learning framework for discovering causal relationships in complex datasets   <br/><img src='https://raw.githubusercontent.com/franciscorichter/deepCausal/main/man/figures/logo3.png' style='width: 500px; height: 500px;border-radius: 50%;'>"
 collection: portfolio
 ---
 
