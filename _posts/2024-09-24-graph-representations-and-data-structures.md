@@ -1,5 +1,5 @@
 ---
-title: 'Lecture notes 2: Graph Representations and Data Structures'
+title: 'Lecture Notes 2: Graph Representations and Data Structures'
 date: 2024-09-24
 permalink: /posts/2024/09/graph-representations-and-data-structures/
 tags:
@@ -9,17 +9,15 @@ tags:
   - network analysis
 ---
 
-In this post, we will explore the various ways to represent graphs and the data structures frequently used in social network analysis. Selecting the appropriate graph representation is crucial, as it significantly impacts memory usage, computational efficiency, and the complexity of algorithm implementation.
+In this post, we explore the various ways to represent graphs and the data structures frequently used in social network analysis. Choosing the right representation is key, as it impacts memory efficiency, computational complexity, and algorithm performance.
 
 ## Introduction to Graph Representation
 
-When analyzing social networks, the way we represent the graph can change the efficiency of operations like traversal, edge lookup, and node degree calculation. Graph representations vary based on the structure of the network and the types of queries or analysis we aim to perform.
-
-In social networks, most graphs are **sparse**, meaning the number of edges is far smaller than the maximum possible number of edges \( n^2 \). Thus, efficient graph representation and traversal are critical.
+When working with social networks, we often deal with sparse graphs, where the number of edges is significantly smaller than \( n^2 \), the maximum possible number of edges for a graph with \( n \) nodes. Therefore, selecting an efficient graph representation becomes crucial. Different representations offer varying trade-offs in terms of memory usage and performance.
 
 ## Adjacency Matrix
 
-An **adjacency matrix** is a square matrix \( A \in \mathbb{R}^{n \times n} \), where \( n \) represents the number of nodes in the graph. The element \( A_{ij} \) indicates whether there is an edge between nodes \( v_i \) and \( v_j \):
+An **adjacency matrix** is a square matrix \( A \in \mathbb{R}^{n \times n} \), where \( n \) is the number of nodes in the graph. The element \( A_{ij} \) indicates whether there is an edge between nodes \( v_i \) and \( v_j \):
 
 $$
 A_{ij} = 
@@ -29,26 +27,44 @@ w_{ij}, & \text{if } (v_i, v_j) \in \mathcal{E}, \\
 \end{cases}
 $$
 
+Where \( w_{ij} \) represents the weight of the edge, or 1 for unweighted graphs.
+
+### Example: Facebook Friendships
+
+In a **Facebook-like network**, where each node represents a person, and an edge represents a friendship, the adjacency matrix would be used to check quickly if two people are friends. For a small group of friends, say 3 people (nodes), the adjacency matrix could look like:
+
+\[
+A = \begin{bmatrix} 
+0 & 1 & 0 \\
+1 & 0 & 1 \\
+0 & 1 & 0 
+\end{bmatrix}
+\]
+
+This matrix shows that person 1 is friends with person 2, and person 2 is friends with person 3.
+
 ### Space Complexity
 
-The adjacency matrix requires \( O(n^2) \) space. For **dense graphs**, where many connections exist between nodes, this representation works well. However, for **sparse graphs** with far fewer edges, it becomes inefficient.
+The adjacency matrix uses \( O(n^2) \) space, which can be inefficient for large, sparse networks.
 
 ### Advantages:
-- Efficient for **dense graphs**.
-- Constant-time \( O(1) \) lookup to check if an edge exists between two nodes.
+- Constant-time \( O(1) \) lookup for edges between nodes.
+- Useful for **dense graphs** where \( m \approx n^2 \).
 
 ### Disadvantages:
-- Memory usage grows quadratically \( O(n^2) \), which can be impractical for large, sparse graphs.
-- Traversing all edges requires \( O(n^2) \) time, inefficient for sparse graphs.
+- High memory usage for sparse graphs, where most entries are 0.
+- Inefficient for traversing the graph when there are few edges relative to nodes.
 
 ### Real-World Use Case:
-In social networks like **Facebook**, where connections are plentiful within certain sub-communities, but overall the graph remains sparse, an adjacency matrix could be computationally heavy.
+Dense graphs like **fully connected networks** (e.g., some types of computer networks) might benefit from adjacency matrices. However, for large social networks with many users but fewer connections, adjacency matrices can be wasteful.
 
 ## Adjacency List
 
-An **adjacency list** is a more memory-efficient way to store sparse graphs. Each node in the graph is associated with a list of its neighboring nodes, representing the edges.
+An **adjacency list** is a more efficient structure for sparse graphs. Each node stores a list of its neighbors, which represent the edges.
 
-For example, for a graph with three nodes and edges \( (1, 2) \) and \( (2, 3) \), the adjacency list looks like:
+### Example: Twitter Follows
+
+For a **Twitter-like network**, where users follow others, the adjacency list representation for 3 users, with user 1 following user 2 and user 2 following both user 1 and user 3, would be:
 
 \[
 \{ 1: [2], 2: [1, 3], 3: [2] \}
@@ -56,21 +72,21 @@ For example, for a graph with three nodes and edges \( (1, 2) \) and \( (2, 3) \
 
 ### Space Complexity
 
-The adjacency list uses \( O(n + m) \) space, where \( n \) is the number of nodes and \( m \) is the number of edges. This makes it highly suitable for **sparse graphs**.
+The adjacency list requires \( O(n + m) \) space, where \( n \) is the number of nodes and \( m \) is the number of edges. This makes it suitable for **sparse graphs**.
 
 ### Advantages:
-- Space-efficient for sparse graphs with \( m \ll n^2 \).
-- Traversing all edges is efficient, requiring \( O(m) \) time.
+- Space-efficient for sparse graphs.
+- Traversing all edges takes \( O(m) \) time.
 
 ### Disadvantages:
-- Checking for the existence of a specific edge can take up to \( O(\text{deg}(v)) \) time, where \( \text{deg}(v) \) is the degree of the node.
+- Checking if a specific edge exists requires \( O(\text{deg}(v)) \), where \( \text{deg}(v) \) is the degree of the node.
 
 ### Real-World Use Case:
-Social networks like **Twitter**, where most users follow only a small fraction of others, are highly sparse. Adjacency lists provide an efficient way to store and traverse such graphs.
+In social networks like **Twitter**, where users follow a relatively small fraction of others, adjacency lists provide a space-efficient way to store and query the network.
 
 ## Incidence Matrix
 
-An **incidence matrix** \( B \in \mathbb{R}^{n \times m} \) is a matrix that represents the relationships between nodes and edges. Each row corresponds to a node, and each column corresponds to an edge.
+An **incidence matrix** represents the relationships between nodes and edges. It is a matrix \( B \in \mathbb{R}^{n \times m} \), where \( n \) is the number of nodes, and \( m \) is the number of edges.
 
 $$
 B_{ij} = 
@@ -80,88 +96,102 @@ B_{ij} =
 \end{cases}
 $$
 
+### Example: Biological Networks
+
+In **protein-protein interaction networks**, where multiple proteins interact with each other (with multiple edges between nodes), incidence matrices help represent these multiple connections effectively.
+
 ### Space Complexity
 
-The incidence matrix requires \( O(n \times m) \) space, making it a middle-ground in terms of memory efficiency.
+The incidence matrix requires \( O(n \times m) \) space, a middle ground in memory efficiency.
 
 ### Advantages:
-- Effective for representing **multigraphs** (graphs with multiple edges between the same pair of nodes).
+- Effective for representing multigraphs.
+- Can handle multiple edges between node pairs.
 
 ### Disadvantages:
-- Inefficient for graphs with many edges.
-- More complex to extract node-specific information such as degree or neighbors.
+- Inefficient for extracting neighbor information.
+- More complex for analyzing individual nodes' properties.
 
 ### Real-World Use Case:
-In **biological networks** where interactions between proteins or genes can be represented as multiple edges between the same entities, incidence matrices offer a useful representation.
+In **biological networks**, where nodes represent proteins and edges represent interactions, the incidence matrix can capture complex relationships with multiple connections.
 
-## Matrix Factorization-Based Representations
+## Matrix Factorization for Graph Representations
 
-Matrix factorization techniques decompose the adjacency matrix into lower-dimensional representations that capture important structural relationships in the graph. These representations are essential for dimensionality reduction and the creation of graph embeddings, allowing for tasks like node classification and link prediction.
+Matrix factorization methods provide an alternative way to represent graphs by decomposing the adjacency matrix into lower-dimensional matrices. This is especially useful for embedding nodes into vector spaces for machine learning tasks like clustering or link prediction.
 
 ### Singular Value Decomposition (SVD)
 
-SVD decomposes the adjacency matrix \( A \) into the product of three matrices:
+SVD decomposes the adjacency matrix \( A \) as follows:
 
 $$
 A = U \Sigma V^T
 $$
 
-where:
-- \( U \) and \( V \) are orthogonal matrices containing node embeddings.
-- \( \Sigma \) is a diagonal matrix of singular values, representing the importance of each dimension.
+Where:
+- \( U \) and \( V \) are orthogonal matrices representing the nodes' embeddings.
+- \( \Sigma \) is a diagonal matrix of singular values that captures important structural information in the network.
+
+### Example: Netflix Recommendation System
+
+In **recommendation systems** like Netflix, SVD helps predict user preferences by decomposing the user-item interaction matrix into latent factors. Similarly, in social networks, SVD helps uncover hidden community structures and latent features.
 
 ### Advantages:
-- Captures latent structural properties in the network.
-- Useful for **node embeddings**, which allow complex graph analysis tasks such as clustering and classification.
+- Captures latent features that are not immediately visible from the graph structure.
+- Reduces dimensionality, making large graphs more manageable for algorithms.
 
 ### Real-World Use Case:
-In **recommendation systems** like those used by **Netflix** or **Spotify**, matrix factorization techniques can predict links (e.g., suggesting connections or songs) based on existing relationships.
+Graph factorization is widely used in **recommendation systems** to predict user behaviors and in social networks for tasks like community detection and link prediction.
 
-## Graph Embeddings and Applications
+## Graph Embeddings
 
-Graph embeddings transform nodes into vector spaces, making it easier to apply machine learning algorithms. Popular techniques include **node2vec**, **DeepWalk**, and **graph convolutional networks** (GCNs).
+**Graph embeddings** transform nodes into low-dimensional vectors, allowing the application of machine learning algorithms like classification, clustering, and link prediction. Techniques like **DeepWalk**, **node2vec**, and **Graph Convolutional Networks (GCNs)** are commonly used for this purpose.
 
-Embeddings are crucial for tasks such as:
-- **Node Classification**: Predicting attributes of nodes based on their structural properties.
-- **Link Prediction**: Inferring potential connections in a social network.
-- **Clustering**: Grouping similar nodes together.
-- **Community Detection**: Identifying clusters or communities within social networks.
+### DeepWalk
+
+DeepWalk uses random walks on the graph to capture neighborhood structures and embed nodes into a lower-dimensional space. The embedding objective is to maximize the probability of seeing a node’s neighborhood given its embedding:
+
+$$
+\max_Z \sum_{(i,j) \in V} \log P(v_j | v_i)
+$$
+
+Where the conditional probability is defined as:
+
+$$
+P(v_j | v_i) = \frac{\exp(\mathbf{z}_i^T \mathbf{z}_j)}{\sum_{v_k \in V} \exp(\mathbf{z}_i^T \mathbf{z}_k)}
+$$
+
+### Example: Community Detection in Social Networks
+
+For **community detection**, DeepWalk finds embeddings where nodes within the same community are close in the embedding space. The random walks ensure that nodes frequently traversed together will have similar embeddings.
+
+### node2vec
+
+node2vec extends DeepWalk by allowing flexible random walks that can transition between **breadth-first search (BFS)** and **depth-first search (DFS)** behaviors. This allows node2vec to capture both local and global structures.
+
+The probability of transitioning between nodes during a random walk is controlled by parameters \( p \) and \( q \), affecting the walk's exploration strategy.
+
+### Example: Node Classification in Citation Networks
+
+In **citation networks**, where papers cite other papers, node2vec can be used to classify papers based on their citation patterns. Papers cited by similar sources will have similar embeddings.
+
+### Real-World Use Case:
+Graph embeddings are widely used in **fraud detection** and **recommendation engines**, where understanding relationships between entities is critical.
 
 ## Graph Generation: Erdős–Rényi Model
 
-The **Erdős–Rényi model** is a probabilistic method used to generate random graphs. In this model, each pair of nodes has a fixed probability \( p \) of having an edge between them.
+The **Erdős–Rényi model** is used to generate random graphs, with each pair of nodes having a fixed probability \( p \) of having an edge between them.
 
-For example, for a graph \( G(n, p) \):
+In a graph \( G(n, p) \):
 - \( n \) is the number of nodes.
 - Each edge exists independently with probability \( p \).
 
-The Erdős–Rényi model is useful for testing graph algorithms and understanding how graph properties change as the number of nodes increases.
+This model helps us understand how graph properties evolve as the number of nodes or edges increases.
 
-## Experiment Setup
+### Example: Network Testing
 
-### Objective
-
-To explore how memory consumption of different graph representations scales as the number of nodes increases. The question we want to answer is: _How does the choice of graph representation impact memory efficiency as the graph grows?_
-
-### Methodology
-
-1. **Graph Sizes**: We generated graphs with 10, 50, 100, and 500 nodes using the Erdős–Rényi model, with edge probability \( p = 0.5 \).
-2. **Memory Measurement**: For each graph size, we computed the memory usage for the adjacency matrix, adjacency list, and incidence matrix representations.
-
-### Results
-
-| Nodes | Adjacency Matrix (Bytes) | Adjacency List (Bytes) | Incidence Matrix (Bytes) |
-|-------|--------------------------|------------------------|--------------------------|
-| 10    | 928                      | 352                    | 2128                     |
-| 50    | 20128                    | 2264                   | 234128                   |
-| 100   | 80128                    | 4688                   | 2013728                  |
-
-### Analysis
-
-- The **Adjacency Matrix** grows quadratically with \( n \), making it impractical for large graphs.
-- The **Adjacency List** scales linearly, demonstrating efficiency for sparse graphs.
-- The **Incidence Matrix** grows more slowly than the adjacency matrix but is still less efficient than the adjacency list.
+In experiments with social networks, Erdős–Rényi graphs are often used to test algorithms' behavior on random graph structures.
 
 ## Conclusion
 
-Choosing the right graph representation is crucial for optimizing memory usage and computational efficiency. The adjacency list is typically the most memory-efficient for sparse social networks, while the adjacency matrix is better suited for dense graphs. Matrix factorization and embeddings provide powerful tools for uncovering hidden patterns and making predictions in networks. Understanding these trade-offs is critical for efficiently analyzing large-scale social networks and complex systems.
+Choosing the right graph representation is critical for balancing memory usage, computational efficiency, and the complexity of graph algorithms. The adjacency list is typically the best choice for sparse social networks, while the adjacency matrix works better for dense graphs. Matrix factorization and graph embeddings allow us to uncover hidden patterns in large networks and apply machine learning algorithms effectively. Understanding these representations and their trade-offs enables efficient analysis of real-world social networks.
+
