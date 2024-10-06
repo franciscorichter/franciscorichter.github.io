@@ -141,7 +141,6 @@ exclude:
   - package.json
   - tmp
   - vendor
-  - _talks
 keep_files:
   - .git
   - .svn
