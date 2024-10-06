@@ -12,4 +12,3 @@ Key Features:
 - Flexible, scalable design
 
 Check out the full project on [GitHub](https://github.com/franciscorichter/deepCausal).
-https://franciscorichter.github.io/portfolio/
