@@ -79,7 +79,7 @@ author:
   bio              : "Mathematical Engineer"
   location         : "Lugano, Switzerland"
   linkedin         : "https://www.linkedin.com/in/franciscorichter/"
-  googlescholar    : "https://scholar.google.cl/citations?user=dvAiLzsAAAAJ&hl=es&oi=ao"
+  googlescholar    : #"https://scholar.google.cl/citations?user=dvAiLzsAAAAJ&hl=es&oi=ao"
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   email            : "richtf@usi.ch"
@@ -98,7 +98,7 @@ author:
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         :
-  orcid            : "https://orcid.org/0000-0002-0924-4613"
+  orcid            : #"https://orcid.org/0000-0002-0924-4613"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
