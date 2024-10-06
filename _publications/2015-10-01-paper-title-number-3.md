@@ -1,14 +1,13 @@
 ---
-title: "Detecting Phylodiversity-Dependent Diversification with a General Phylogenetic Inference Framework"
+title: "Microbiome and Environment Explain the Absence of Correlations Between Consumers and Their Diet in Bornean Microsnails"
 collection: publications
-permalink: /publication/2021-07-04-phylodiversity-diversification
-excerpt: 'This paper introduces a novel method for detecting phylodiversity-dependent diversification using a Monte Carlo Expectation-Maximization framework applied to phylogenetic trees.'
-date: 2021-07-04
-venue: 'bioRxiv'
-paperurl: 'https://www.biorxiv.org/content/biorxiv/early/2021/07/04/2021.07.01.450729.full.pdf'
-citation: 'Richter, F., Janzen, T., Hildenbrandt, H., Wit, E.C., & Etienne, R.S. (2021). &quot;Detecting Phylodiversity-Dependent Diversification with a General Phylogenetic Inference Framework.&quot; <i>bioRxiv</i>.'
+permalink: /publication/2021-02-01-microbiome-environment
+date: 2021-02-01
+excerpt: 'This paper explores the role of microbiome and environment in the absence of correlations between land snails and their diet in Bornean microsnail communities.'
+venue: 'Ecology'
+paperurl: 'https://esajournals.onlinelibrary.wiley.com/doi/pdf/10.1002/ecy.3237'
+citation: 'Hendriks, K.P., Bisschop, K., Kortenbosch, H.H., Kavanagh, J.C., Larue, A.E., Chee-Chean, P., & Etienne, R.S. (2021). &quot;Microbiome and Environment Explain the Absence of Correlations Between Consumers and Their Diet in Bornean Microsnails.&quot; <i>Ecology</i>, 102(2), e03237.'
 ---
-This paper introduces a novel method for detecting phylodiversity-dependent diversification using a Monte Carlo Expectation-Maximization framework applied to phylogenetic trees.
+This paper explores the role of microbiome and environment in the absence of correlations between land snails and their diet in Bornean microsnail communities.
 
-[Download paper here](https://www.biorxiv.org/content/biorxiv/early/2021/07/04/2021.07.01.450729.full.pdf)
-
+[Download paper here](https://esajournals.onlinelibrary.wiley.com/doi/pdf/10.1002/ecy.3237)
