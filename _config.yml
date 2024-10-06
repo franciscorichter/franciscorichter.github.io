@@ -141,7 +141,7 @@ exclude:
   - package.json
   - tmp
   - vendor
-  - talks
+  - _talks
 keep_files:
   - .git
   - .svn
@@ -180,9 +180,9 @@ collections:
   portfolio:
     output: true
     permalink: /:collection/:path/
-  talks:
-    output: true
-    permalink: /:collection/:path/
+  #talks:
+  #  output: true
+  #  permalink: /:collection/:path/
 
 
 # Defaults
