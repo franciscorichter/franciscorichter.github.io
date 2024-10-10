@@ -35,8 +35,7 @@ This ODE represents an exponentially decaying function, similar to how hidden st
 - Continuous depth models where the number of layers is replaced by solving an ODE across time.
 - Applications in time-series prediction and continuous latent space modeling.
 
-**References:**  
-- [Chen et al., 2018](https://arxiv.org/abs/1806.07366) - *Neural Ordinary Differential Equations*
+
 
 
 ## 2. Training Dynamics as Gradient Flow (First-Order ODE)
@@ -63,8 +62,7 @@ This shows how the parameters converge to the optimal solution over time.
 - Understanding how neural network parameters evolve during training.
 - Insights into convergence rates and stability of optimization algorithms.
 
-**References:**  
-- [Sjöström, 2018](https://arxiv.org/abs/1806.07366) - *Understanding the Dynamics of Gradient-Based Learning Algorithms*
+
 
 
 ## 3. Continuous-Time Recurrent Neural Networks (Second-Order ODE)
@@ -103,8 +101,7 @@ $$
 - Modeling continuous-time dynamics in neural networks, such as irregularly sampled sequences.
 - Physical system modeling, including damped oscillators and biological systems.
 
-**References:**  
-- [Graves, 2013](https://arxiv.org/abs/1303.5778) - *Continuous-time Models for Action Recognition*
+
 
 
 ## 4. Hamiltonian Neural Networks (Second-Order ODEs)
@@ -135,8 +132,7 @@ $$
 - Modeling mechanical systems that conserve energy.
 - Long-term forecasting of physical systems where energy conservation is crucial.
 
-**References:**  
-- [Greydanus et al., 2019](https://arxiv.org/abs/1806.07366) - *Hamiltonian Neural Networks*
+
 
 
 ## 5. Stability Analysis of Neural Networks Using ODEs
@@ -157,8 +153,7 @@ The stability is determined by the eigenvalues of \( A \). If all eigenvalues ha
 - Ensuring the stability of recurrent neural networks (RNNs).
 - Understanding how small perturbations in inputs or hidden states affect the overall system.
 
-**References:**  
-- [De Cao & Kipf, 2019](https://arxiv.org/abs/1906.03730) - *Stable Neural ODEs*
+
 
 
 ## 6. Generative Models with ODEs (Normalizing Flows)
@@ -185,8 +180,7 @@ This describes how the latent space evolves in a generative model.
 - High-quality image generation and density estimation.
 - Generative modeling of complex data distributions.
 
-**References:**  
-- [Chen et al., 2018](https://arxiv.org/abs/1707.01629) - *Neural Ordinary Differential Equations*
+
 
 
 ## 7. Differential Equation-based Regularization (First-Order ODE)
@@ -213,9 +207,17 @@ A simple regularization example could be to minimize deviations from a known ODE
 - Physics-informed neural networks (PINNs) that solve partial differential equations (PDEs).
 - Enforcing physically consistent behavior in machine learning models, such as ensuring the conservation of energy or smooth transitions.
 
-**References:**  
-- [Raissi et al., 2019](https://arxiv.org/abs/1711.10561) - *Physics-Informed Neural Networks*
+
 
 ---
 
 By integrating these examples, you can demonstrate how ODEs are critical in the development of advanced deep learning models, from Neural ODEs to generative modeling.
+
+
+**References:**  
+- [Chen et al., 2018](https://arxiv.org/abs/1806.07366) - *Neural Ordinary Differential Equations*  
+- [Raissi et al., 2017](https://arxiv.org/abs/1711.10561) - *Physics-Informed Neural Networks: A Deep Learning Framework for Solving Forward and Inverse Problems Involving Nonlinear Partial Differential Equations*  
+- [Greydanus et al., 2019](https://arxiv.org/abs/1906.01563) - *Hamiltonian Neural Networks*  
+- [Graves, 2013](https://arxiv.org/abs/1312.6120) - *Generating Sequences With Recurrent Neural Networks*  
+- [De Cao & Kipf, 2019](https://arxiv.org/abs/2002.04630) - *Block Neural ODEs*  
+- [Gholami et al., 2019](https://arxiv.org/abs/1902.02376) - *ANODE: Unconstrained Neural Ordinary Differential Equations for Learning*
