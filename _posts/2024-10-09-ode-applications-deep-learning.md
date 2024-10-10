@@ -1,4 +1,3 @@
-
 ---
 title: 'ODE Applications: Deep Learning'
 date: 2024-10-09
