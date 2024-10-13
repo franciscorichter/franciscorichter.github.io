@@ -30,8 +30,6 @@ We implement this simulation in Python and analyze how the proportions of heads 
 
 
 
-<details>
-  <summary>Click to show the Python code</summary>
 
   <pre><code>
 import numpy as np
@@ -80,9 +78,6 @@ plt.legend()
 plt.grid(True)
 plt.show()
   </code></pre>
-
-</details>
-
 
 ### Results
 
