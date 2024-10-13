@@ -1,4 +1,3 @@
-
 ---
 title: 'Probability and Frequency: Simulating Coin Tosses with LCG'
 date: 2024-10-13
