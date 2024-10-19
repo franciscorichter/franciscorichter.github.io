@@ -18,5 +18,5 @@ This site provides insights into my research, along with tools and resources for
 - **Predictive Modeling:** Applying advanced methods to forecast system behavior across various domains.
 
 ### Let's Collaborate
-I am always open to new collaborations, whether it's research projects, academic discussions, or practical applications of predictive modeling. Feel free to [reach out](mailto:your.email@example.com) if you're interested in working together or have any questions.
+I am always open to new collaborations, whether it's research projects, academic discussions, or practical applications of predictive modeling. Feel free to [reach out](mailto:richtf@usi.ch) if you're interested in working together or have any questions.
 
