@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Data Science and Predictive Modeling"
+title: "Solving Complex Problems with Data"
 excerpt: "Solving complex problems with data-driven approaches"
 author_profile: true
 redirect_from: 
@@ -12,7 +12,7 @@ I’m Francisco Richter-Mendoza, a postdoctoral researcher and mathematical engi
 
 I have contributed to the development of the Data Science program at USI, and I engage students in real-world projects that connect theory to practice. I also foster international collaborations, particularly between Chile and Switzerland, to promote interdisciplinary research.
 
-Currently, I’m working on statistical methods for diversification dynamics and environmental data imputation, while exploring technology transfer opportunities through collaborations with OASI and Laboratorio Textil. 
+Currently, I’m working on statistical methods for diversification dynamics and environmental data imputation, while exploring technology transfer opportunities through collaborations. 
 
 Feel free to explore my work, and if you’re interested in collaborating or learning more, [get in touch](mailto:richtf@usi.ch).
 
