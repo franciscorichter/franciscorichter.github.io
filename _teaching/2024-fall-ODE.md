@@ -1,10 +1,10 @@
 ---
 title: "Introduction to Ordinary Differential Equations"
 collection: teaching
-type: "Master's and PhD course"
+type: "Graduate course"
 permalink: /teaching/2024-fall-introduction-ordinary-differential-equations
 venue: "Università della Svizzera italiana, Faculty of Informatics"
-date: 2024-09-01
+date: 2024-01-01
 location: "Lugano, Switzerland"
 ---
 
