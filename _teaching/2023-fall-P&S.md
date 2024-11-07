@@ -4,7 +4,7 @@ collection: teaching
 type: "Undergraduate course"
 permalink: /teaching/2023-Autumn-probability-statistics
 venue: "Università della Svizzera italiana, Faculty of Informatics"
-date: "Autumn 2024"
+date: "Autumn 2023"
 location: "Lugano, Switzerland"
 ---
 
