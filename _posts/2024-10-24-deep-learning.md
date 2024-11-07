@@ -1,5 +1,5 @@
 ---
-title: 'Lecture notes 4: Deep Learning for Network Analysis'
+title: 'Deep Learning for Network Analysis'
 date: 2024-10-24
 permalink: /posts/2024/10/deep-learning/
 tags:
