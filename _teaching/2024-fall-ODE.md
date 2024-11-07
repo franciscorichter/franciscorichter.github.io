@@ -1,58 +1,33 @@
+---
+title: "Introduction to Ordinary Differential Equations"
+collection: teaching
+type: "Master's and PhD course"
+permalink: /teaching/2024-fall-introduction-ordinary-differential-equations
+venue: "Università della Svizzera italiana, Faculty of Informatics"
+date: 2024-09-01
+location: "Lugano, Switzerland"
+---
 
-Introduction to Ordinary Differential Equations
+The course on Ordinary Differential Equations (ODEs) provides a comprehensive foundation in solving differential equations, emphasizing their importance in modeling real-world systems. Students will learn various analytical and numerical techniques essential for understanding and solving both first-order and higher-order differential equations.
 
-    Profile
-    Schedules
+## Course Content
 
-People
+- **Introduction to Differential Equations**  
+  - Basic definitions, types of differential equations, and their role in modeling physical, biological, and engineering systems.
 
-Richter Mendoza F. J.
+- **First-Order Differential Equations**  
+  - Methods for solving first-order ODEs, including separation of variables and integrating factors.
 
-Course director
+- **Second-Order Differential Equations**  
+  - Techniques for solving second-order ODEs, with applications to systems such as mechanical vibrations and electrical circuits.
 
-Quizi J.
+- **Numerical Methods for Differential Equations**  
+  - Introduction to Euler's method and Runge-Kutta methods for approximating solutions of ODEs.
 
-Assistant
-Description
+- **Applications of Differential Equations**  
+  - Real-world applications in engineering, physics, and other fields, demonstrating the practical use of differential equations in modeling dynamic systems.
 
-The course on Ordinary Differential Equations (ODEs) covers a comprehensive range of topics essential for understanding and solving differential equations. It begins with an introduction to the basic definitions and importance of differential equations in modeling real-world systems. The course then delves into various methods for solving first-order and second-order differential equations, including separation of variables, integrating factors, and numerical methods such as Euler's method and Runge-Kutta methods. Additionally, the course explores applications of ODEs in mechanical vibrations, electrical circuits, and other systems. Advanced topics such as stability theory, Lyapunov’s direct method, and bifurcation theory are also discussed to provide students with a thorough understanding of the subject .
+- **Advanced Topics**  
+  - Exploration of stability theory, Lyapunov’s direct method, and bifurcation theory, providing deeper insights into the behavior of differential equations.
 
-Objectives
-
-The objectives of the course are to:
-
-    Understand the fundamental concepts of ordinary differential equations (ODEs).
-    Learn various methods to solve first-order and higher-order differential equations.
-    Apply differential equations to model and solve real-world problems in engineering, physics, and other fields.
-    Develop analytical and numerical skills to find solutions to differential equations.
-    Gain insights into advanced topics such as stability theory and bifurcation theory.
-
-Teaching mode
-
-In presence
-Learning methods
-
-The course utilizes a mix of instructional techniques to ensure a robust learning experience:
-
-    Lectures: Comprehensive presentations of key concepts and methods.
-    Lecture Notes: Detailed notes provided to supplement and reinforce lecture material.
-    Projects: Hands-on projects to explore real-world applications of differential equations.
-    Exams: Midterm and final exams to assess understanding and proficiency.
-
-Examination information
-
-The evaluation structure of the course includes midterm exams, a final exam, and projects. The midterm exams will assess the understanding of the initial course material, ensuring that students grasp the foundational concepts. The final exam will offer a comprehensive assessment of all topics covered throughout the course, testing the overall knowledge and analytical skills of the students. Projects will provide an opportunity for students to apply and present their solutions to real-world problems using differential equations, contributing to the final grade and demonstrating their ability to integrate theory with practice.
-
-Bibliography
-Compulsory
-
-    Logan, J. David John David. A first course in differential equations. 3rd ed. 2015. Cham: Springer International Publishing, 2015.
-
-Education
-
-    Master of Science in Artificial Intelligence, Lecture, Elective, 1st year
-    Master of Science in Artificial Intelligence, Lecture, Elective, 2nd year
-    Master of Science in Computational Science, Lecture, Elective, 1st year
-    Master of Science in Computational Science, Lecture, Elective, 2nd year
-    PhD programme of the Faculty of Informatics, Lecture, Elective, 1st year (2.0 ECTS)
-
+This course combines theoretical instruction with practical projects, equipping students with analytical and computational skills to solve complex differential equations and apply them to real-world challenges.
