@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Solving Complex Problems with Data"
+title: "Solving Complex Problems with Mathematical Engineering"
 excerpt: "Solving complex problems with data-driven approaches"
 author_profile: true
 redirect_from: 
@@ -8,21 +8,21 @@ redirect_from:
   - /about.html
 ---
 
-I’m Francisco Richter-Mendoza, a postdoctoral researcher and mathematical engineer at the [Statistical Computing Laboratory](https://www.ci.inf.usi.ch/research/statslab/people/) at Università della Svizzera italiana. My work focuses on solving complex problems using data science, predictive modeling, and statistical network sciences, applied to fields like species diversification, phylogenetics, and environmental data.
+I’m Francisco Richter-Mendoza, a postdoctoral researcher and mathematical engineer at the [Statistical Computing Laboratory](https://www.ci.inf.usi.ch/research/statslab/people/) at Università della Svizzera italiana. My work centers on data science, predictive modeling, and statistical network sciences, applied to areas such as species diversification, phylogenetics, and environmental data.
 
-I have contributed to the development of the Data Science program at USI, and I engage students in real-world projects that connect theory to practice. I also foster international collaborations, particularly between Chile and Switzerland, to promote interdisciplinary research.
+My approach combines three main pillars:
 
-Currently, I’m working on statistical methods for diversification dynamics and environmental data imputation, while exploring technology transfer opportunities through collaborations.
+- **Teaching**: I am dedicated to empowering students with practical skills in data science, network analysis, and statistical methods. My courses integrate theory with real-world applications, preparing students for challenges in academia and industry.
 
-This website provides an overview of my academic work and interests, organized into the following sections:
+- **Research**: I focus on developing statistical methodologies for complex systems, with recent work on diversification dynamics and environmental data imputation. My research aims to uncover patterns and insights across diverse fields through interdisciplinary collaboration, especially between Chile and Switzerland.
 
-- **Teaching**: A collection of the courses I teach, focusing on data science, network analysis, and statistical methods. Each course page provides an outline of topics covered, learning objectives, and resources for students.
-  
-- **Publications**: A list of my research publications, showcasing my contributions to fields like network science, predictive modeling, and statistical applications in biology and environmental science.
+- **Applied Mathematics**: I apply statistical techniques to solve practical problems, translating mathematical concepts into tools for technology transfer and real-world impact.
 
-- **Portfolio**: Selected projects that highlight my expertise in applying statistical methods to complex datasets, with real-world applications in science and engineering.
+This website provides an overview of my academic journey, organized into the following sections:
 
-- **Blog Posts**: Articles where I share insights, tutorials, and updates on my ongoing research and teaching projects.
+- **Teaching**: Courses and resources for students.
+- **Publications**: Research contributions across various fields.
+- **Portfolio**: Applied projects demonstrating practical problem-solving.
+- **Blog Posts**: Insights, tutorials, and updates on research and teaching.
 
-Feel free to explore my work, and if you’re interested in collaborating or learning more, [get in touch](mailto:richtf@usi.ch).
-
+For collaborations or further information, feel free to [reach out](mailto:richtf@usi.ch).
