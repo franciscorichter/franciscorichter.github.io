@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Solving Complex Problems with Data"
+title: "Solving Complex Problems with Mathematical Engineering"
 excerpt: "Solving complex problems with data-driven approaches"
 author_profile: true
 redirect_from: 
