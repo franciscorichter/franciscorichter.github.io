@@ -10,19 +10,41 @@ redirect_from:
 
 I’m Francisco Richter-Mendoza, a postdoctoral researcher and mathematical engineer at the [Statistical Computing Laboratory](https://www.ci.inf.usi.ch/research/statslab/people/) at Università della Svizzera italiana. My work centers on data science, predictive modeling, and statistical network sciences, applied to areas such as species diversification, phylogenetics, and environmental data.
 
-My approach combines three main pillars:
+My approach integrates three main pillars:
 
-- **Teaching**: I teach courses at both undergraduate and graduate levels in data science, network analysis, and statistical methods, and I supervise master’s theses in the Master in Computational Science and the Master in Artificial Intelligence programs. My goal is to bridge theory and practice, preparing students to tackle real-world challenges in academia and industry.
+- **Teaching**: Engaging students at undergraduate and graduate levels through courses in data science, network analysis, and statistical methods. I also supervise master’s theses for the Master in Computational Science and the Master in Artificial Intelligence programs, bridging theory and real-world applications.
 
-- **Research**: My research focuses on developing statistical methodologies for complex systems, with recent work on diversification dynamics and environmental data imputation. I am committed to interdisciplinary collaboration, particularly between Chile and Switzerland, to advance knowledge across diverse fields.
+- **Research**: Developing statistical methodologies for complex systems, with a focus on diversification dynamics and environmental data imputation. I pursue interdisciplinary collaboration, particularly between Chile and Switzerland, to advance knowledge across diverse fields.
 
-- **Applied Mathematics**: I apply statistical techniques to solve practical problems, transforming mathematical concepts into impactful tools for technology transfer and real-world applications.
+- **Applied Mathematics**: Applying statistical techniques to solve practical problems, turning mathematical concepts into impactful tools for technology transfer and real-world solutions.
 
-This website provides an overview of my academic journey, organized into the following sections:
+---
 
-- **Teaching**: Courses and resources for students, as well as information on master’s thesis supervision for the Master in Computational Science and Master in Artificial Intelligence programs.
-- **Publications**: Research contributions across various fields.
-- **Portfolio**: Applied projects that highlight practical problem-solving.
-- **Blog Posts**: Insights, tutorials, and updates on research and teaching.
+Explore the different sections of my work:
+
+<div style="display: flex; justify-content: space-around; margin-top: 20px;">
+    <a href="/teaching" style="text-decoration: none; color: inherit;">
+        <div style="border-radius: 50%; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; border: 2px solid #4CAF50;">
+            <strong>Teaching</strong>
+        </div>
+    </a>
+    <a href="/publications" style="text-decoration: none; color: inherit;">
+        <div style="border-radius: 50%; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; border: 2px solid #2196F3;">
+            <strong>Publications</strong>
+        </div>
+    </a>
+    <a href="/portfolio" style="text-decoration: none; color: inherit;">
+        <div style="border-radius: 50%; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; border: 2px solid #FF5722;">
+            <strong>Portfolio</strong>
+        </div>
+    </a>
+    <a href="/blog" style="text-decoration: none; color: inherit;">
+        <div style="border-radius: 50%; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; border: 2px solid #9C27B0;">
+            <strong>Blog</strong>
+        </div>
+    </a>
+</div>
+
+---
 
 For collaborations or further information, feel free to [reach out](mailto:richtf@usi.ch).
