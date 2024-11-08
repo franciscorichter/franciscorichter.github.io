@@ -30,7 +30,7 @@ Explore the different sections of my work:
     </a>
     <a href="/publications" style="text-decoration: none; color: inherit;">
         <div style="border-radius: 50%; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; border: 2px solid #2196F3;">
-            <strong>Publications</strong>
+            <strong>Research</strong>
         </div>
     </a>
     <a href="/portfolio" style="text-decoration: none; color: inherit;">
