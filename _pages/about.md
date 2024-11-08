@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Solving Complex Problems with Mathematical Engineering"
+title: "Solving Complex Problems with Data"
 excerpt: "Solving complex problems with data-driven approaches"
 author_profile: true
 redirect_from: 
@@ -12,17 +12,17 @@ I’m Francisco Richter-Mendoza, a postdoctoral researcher and mathematical engi
 
 My approach combines three main pillars:
 
-- **Teaching**: I am dedicated to empowering students with practical skills in data science, network analysis, and statistical methods. My courses integrate theory with real-world applications, preparing students for challenges in academia and industry.
+- **Teaching**: I teach courses at both undergraduate and graduate levels in data science, network analysis, and statistical methods, and I supervise master’s theses in the Master in Computational Science and the Master in Artificial Intelligence programs. My goal is to bridge theory and practice, preparing students to tackle real-world challenges in academia and industry.
 
-- **Research**: I focus on developing statistical methodologies for complex systems, with recent work on diversification dynamics and environmental data imputation. My research aims to uncover patterns and insights across diverse fields through interdisciplinary collaboration, especially between Chile and Switzerland.
+- **Research**: My research focuses on developing statistical methodologies for complex systems, with recent work on diversification dynamics and environmental data imputation. I am committed to interdisciplinary collaboration, particularly between Chile and Switzerland, to advance knowledge across diverse fields.
 
-- **Applied Mathematics**: I apply statistical techniques to solve practical problems, translating mathematical concepts into tools for technology transfer and real-world impact.
+- **Applied Mathematics**: I apply statistical techniques to solve practical problems, transforming mathematical concepts into impactful tools for technology transfer and real-world applications.
 
 This website provides an overview of my academic journey, organized into the following sections:
 
-- **Teaching**: Courses and resources for students.
+- **Teaching**: Courses and resources for students, as well as information on master’s thesis supervision for the Master in Computational Science and Master in Artificial Intelligence programs.
 - **Publications**: Research contributions across various fields.
-- **Portfolio**: Applied projects demonstrating practical problem-solving.
+- **Portfolio**: Applied projects that highlight practical problem-solving.
 - **Blog Posts**: Insights, tutorials, and updates on research and teaching.
 
 For collaborations or further information, feel free to [reach out](mailto:richtf@usi.ch).
