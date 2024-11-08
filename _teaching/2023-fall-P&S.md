@@ -2,7 +2,7 @@
 title: "Probability & Statistics"
 collection: teaching
 type: "Undergraduate course"
-permalink: /teaching/2023-Autumn-probability-statistics
+permalink: /teaching/2023-fall-probability-statistics
 venue: "Università della Svizzera italiana, Faculty of Informatics"
 date: 2023-09-01
 location: "Lugano, Switzerland"
