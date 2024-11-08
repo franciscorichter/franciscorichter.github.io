@@ -4,7 +4,7 @@ collection: teaching
 type: "Graduate Course"
 permalink: /teaching/2024-fall-probability-statistics
 venue: "Università della Svizzera italiana, Faculty of Informatics"
-date: "Autumn 2024"
+date: 2024-09-01
 location: "Lugano, Switzerland"
 ---
 

@@ -4,7 +4,7 @@ collection: teaching
 type: "Graduate course"
 permalink: /teaching/2024-fall-introduction-ordinary-differential-equations
 venue: "Università della Svizzera italiana, Faculty of Informatics"
-date: "Autumn 2024"
+date: 2024-01-01
 location: "Lugano, Switzerland"
 ---
 

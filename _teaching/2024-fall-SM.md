@@ -4,7 +4,7 @@ collection: teaching
 type: "Graduate course"
 permalink: /teaching/2024-spring-stochastic-methods
 venue: "Università della Svizzera italiana, Faculty of Informatics"
-date: "Spring 2024"
+date: 2024-01-01
 location: "Lugano, Switzerland"
 ---
 

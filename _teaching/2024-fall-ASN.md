@@ -4,7 +4,7 @@ collection: teaching
 type: "Master's course"
 permalink: /teaching/2024-fall-analysis-social-networks
 venue: "Università della Svizzera italiana, Faculty of Informatics"
-date: "Autumn 2024"
+date: 2024-09-01
 location: "Lugano, Switzerland"
 ---
 
