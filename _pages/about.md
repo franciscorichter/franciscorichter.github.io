@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I’m Francisco Richter-Mendoza, a postdoctoral researcher and mathematical engineer at the [Statistical Computing Laboratory](https://www.ci.inf.usi.ch/research/statslab/people/) at Università della Svizzera italiana. My work centers on data science, predictive modeling, and statistical network sciences, applied to areas such as species diversification, phylogenetics, and environmental data.
+I’m Francisco Richter-Mendoza, a postdoctoral researcher and mathematical engineer at the [Statistical Computing Laboratory](https://www.ci.inf.usi.ch/research/statslab/people/) at Università della Svizzera italiana. My work centers on data science, predictive stochastic modeling, and statistical network sciences, applied to diverse areas.
 
 My approach integrates three main pillars:
 
@@ -19,6 +19,8 @@ My approach integrates three main pillars:
 - **Applied Mathematics**: Applying statistical techniques to solve practical problems, turning mathematical concepts into impactful tools for technology transfer and real-world solutions.
 
 ---
+
+I’m fortunate to have worked with inspiring mentors from diverse fields, whose guidance continues to shape my work. I also engage with students and colleagues from various experience levels, valuing the blend of perspectives that enriches our multidisciplinary, international, and collaborative projects.
 
 Explore the different sections of my work:
 
