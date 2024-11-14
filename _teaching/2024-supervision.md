@@ -9,7 +9,6 @@ location: "Lugano, Switzerland"
 ---
 
 
-
 I am dedicated to mentoring graduate students in advanced research areas, focusing on topics that integrate statistical methods, machine learning, and environmental data science. Below is a list of ongoing and completed theses that I have supervised, highlighting innovative research in species diversification, environmental data imputation, and more.
 
 ## Ongoing Theses
