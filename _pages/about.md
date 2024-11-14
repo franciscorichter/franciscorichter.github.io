@@ -12,7 +12,7 @@ I’m Francisco Richter-Mendoza, a postdoctoral researcher and mathematical engi
 
 My approach integrates three main pillars:
 
-- **Teaching**: Engaging students at undergraduate and graduate levels through courses in data science, network analysis, and statistical methods. I also supervise master’s theses for the Master in Computational Science and the Master in Artificial Intelligence programs, bridging theory and real-world applications.
+- **Teaching**: Engaging students at undergraduate and graduate levels through courses in data science, network analysis, and statistical methods. I also supervise master’s theses for the Master in Computational Science and the Master in Artificial Intelligence programs, which I consider in the intersection of teaching and research. 
 
 - **Research**: Developing statistical methodologies for complex systems, with a focus on diversification dynamics and environmental data imputation. I pursue interdisciplinary collaboration, particularly between Chile and Switzerland, to advance knowledge across diverse fields.
 
