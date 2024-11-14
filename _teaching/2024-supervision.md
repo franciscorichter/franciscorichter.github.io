@@ -8,7 +8,6 @@ date: 2024-11-14
 location: "Lugano, Switzerland"
 ---
 
-# Master Thesis Supervision
 
 ## 1. Stochastic Learning for Species Diversification Dynamics
 - **Student**: Lodovico Mazzei
