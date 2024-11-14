@@ -3,12 +3,8 @@ title: "Master Thesis Supervision"
 collection: teaching
 type: "Supervision"
 permalink: /teaching/master-thesis-supervision
-venue: "Università della Svizzera italiana, Faculty of Informatics"
-date: 2024-11-14
-location: "Lugano, Switzerland"
 ---
 
-# Master Thesis Supervision
 
 ## Ongoing Theses
 
