@@ -42,7 +42,6 @@ The 2024 lectures cover the following major topics:
 
 ## Probability & Statistics (2023)
 
-This course provides a comprehensive foundation in probability and statistics, essential for understanding randomness and applying statistical models to real-world phenomena. Students will explore both theoretical concepts and practical applications, developing skills that are critical for data analysis, scientific research, and engineering.
 
 ### **Course Overview**
 
