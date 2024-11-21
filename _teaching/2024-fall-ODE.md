@@ -19,7 +19,7 @@ location: "Lugano, Switzerland"
 
 ---
 
-This course provides a comprehensive foundation in **ordinary differential equations (ODEs)**, emphasizing their importance in modeling real-world systems. Students will explore a blend of **analytical techniques**, **numerical methods**, and **applications**, gaining skills to solve ODEs and apply them to dynamic systems in physics, engineering, and beyond.
+This course provides a comprehensive foundation in **ordinary differential equations (ODEs)**, emphasizing their importance in modeling real-world systems. 
 
 ### **Course Content**
 
@@ -51,17 +51,3 @@ This course provides a comprehensive foundation in **ordinary differential equat
    - Introduction to bifurcation theory and its implications in dynamic systems.  
    - Exploring phase planes and qualitative behavior of solutions.
 
----
-
-### **Course Objectives**  
-
-By the end of the course, students will be able to:  
-- Solve first- and second-order ODEs analytically.  
-- Implement numerical methods to approximate solutions for complex systems.  
-- Interpret the behavior of differential equations in real-world applications.  
-- Analyze system stability and explore advanced dynamics.
-
----
-
-### **Additional Resources**  
-Visit the official course page at USI for further details: [Introduction to Ordinary Differential Equations](https://search.usi.ch/courses/35270720/introduction-to-ordinary-differential-equations).
