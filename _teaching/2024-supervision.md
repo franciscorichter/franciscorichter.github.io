@@ -9,7 +9,7 @@ location: "Lugano, Switzerland"
 ---
 
 
-I am dedicated to mentoring graduate students in advanced research areas, focusing on topics that integrate statistical methods, machine learning, and environmental data science. Below is a list of ongoing and completed theses that I have supervised, highlighting innovative research in species diversification, environmental data imputation, and more.
+I am dedicated to mentoring graduate students in advanced research areas, focusing on topics that integrate statistical methods, machine learning, and environmental data science. Below is a list of ongoing and completed theses that I have supervised, highlighting innovative research in species diversification, environmental data imputation, and deep learning. 
 
 ## Ongoing Theses
 
@@ -38,10 +38,9 @@ I am dedicated to mentoring graduate students in advanced research areas, focusi
 
 ### Machine Learning Methods for Phylogenetic Parameter Estimation
 **Student**: Oscar Arturo Silva Castellanos  
-**Year**: 2010  
+**Year**: 2023  
 **Description**: This thesis explores neural network architectures, such as CNNs, LSTMs, and GCNs, to improve parameter estimation for diversification models in phylogenetics. The study highlights the potential of machine learning to enhance accuracy in evolutionary data analysis.  
 **[View GitHub Repository](https://github.com/SilvaCastArt/ML_phylogeny_learning)**
 
 ---
 
-Each of these projects reflects the diversity of methods and applications within computational science, underscoring the power of machine learning and statistical approaches to solve complex scientific questions.
