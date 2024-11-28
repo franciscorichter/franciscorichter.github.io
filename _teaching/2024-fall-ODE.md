@@ -8,16 +8,6 @@ date: 2024-01-01
 location: "Lugano, Switzerland"
 ---
 
-## Introduction to Ordinary Differential Equations
-
-**Course Title**: Introduction to Ordinary Differential Equations  
-**Type**: Graduate Course  
-**Venue**: Università della Svizzera italiana, Faculty of Informatics  
-**Term**: Fall 2024  
-**Location**: Lugano, Switzerland  
-**Official Course Page**: [Introduction to Ordinary Differential Equations - USI](https://search.usi.ch/courses/35270720/introduction-to-ordinary-differential-equations)
-
----
 
 This course provides a comprehensive foundation in **ordinary differential equations (ODEs)**, emphasizing their importance in modeling real-world systems. 
 
@@ -50,4 +40,8 @@ This course provides a comprehensive foundation in **ordinary differential equat
    - Stability analysis and Lyapunov’s methods.  
    - Introduction to bifurcation theory and its implications in dynamic systems.  
    - Exploring phase planes and qualitative behavior of solutions.
+
+
+
+**Official Course Page**: [Introduction to Ordinary Differential Equations - USI](https://search.usi.ch/courses/35270720/introduction-to-ordinary-differential-equations)
 

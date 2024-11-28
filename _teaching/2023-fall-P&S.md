@@ -1,3 +1,13 @@
+---
+title: "Probability & Statistics"
+collection: teaching
+type: "Bachelor of Science in Informatics, Lecture, 2nd year "
+permalink: /teaching/2024-fall-probability-statistics
+venue: "Università della Svizzera italiana, Faculty of Informatics"
+date: 2024-09-01
+location: "Lugano, Switzerland"
+---
+
 
 ## Probability & Statistics (2023)
 
