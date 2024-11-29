@@ -6,16 +6,8 @@ main:
   #- title: "Talks"
   #  url: /talks/    
 
- - title: "Teaching"
-  url: "/teaching/"
-  children:
-    - title: "Current Courses"
-      url: "/teaching/"
-    - title: "Previous Courses"
-      url: "/teaching/previous-courses/"
-    - title: "Supervision"
-      url: "/teaching/supervision/"
- 
+  - title: "Teaching"
+    url: /teaching/    
     
   - title: "Portfolio"
     url: /portfolio/
