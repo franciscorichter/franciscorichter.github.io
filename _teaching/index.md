@@ -4,8 +4,7 @@ title: "Previous Courses"
 permalink: /teaching/previous-courses/
 ---
 {% for course in site.teaching %}
-  {% if course.year and course.year < 2024 %}
-    - [{{ course.title | default: "Untitled Course" }}]({{ course.url | default: "#" }}) ({{ course.year }})
+  {% if course.path contains "previous-courses" %}
+    - [{{ course.title }}]({{ course.url }}) ({{ course.year }})
   {% endif %}
 {% endfor %}
-
