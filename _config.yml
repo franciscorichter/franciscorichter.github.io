@@ -97,7 +97,7 @@ author:
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         :
+  linkedin         : "https://www.linkedin.com/in/franciscorichter/"
   orcid            : "https://orcid.org/0000-0002-0924-4613"
   pinterest        :
   soundcloud       :
@@ -197,6 +197,9 @@ defaults:
       comments: true
       share: true
       related: true
+      paginate: 5
+      paginate_path: /page:num/
+
   # _pages
   - scope:
       path: ""
