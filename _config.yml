@@ -78,9 +78,9 @@ author:
   avatar           : "profile.png" #If you have a profile picture filename in the future, add here.
   bio              : "Mathematical Engineer"
   location         : "Lugano, Switzerland"
-  linkedin         : "https://www.linkedin.com/in/franciscorichter/"
+  linkedin         : "franciscorichter/"
   googlescholar    : #"https://scholar.google.cl/citations?user=dvAiLzsAAAAJ&hl=es&oi=ao"
-  employer         :
+  employer         : "Università della Svizzera Italiana"
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   email            : "richtf@usi.ch"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
@@ -97,7 +97,7 @@ author:
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : "https://www.linkedin.com/in/franciscorichter/"
+  linkedin         : "franciscorichter/"
   orcid            : "https://orcid.org/0000-0002-0924-4613"
   pinterest        :
   soundcloud       :
