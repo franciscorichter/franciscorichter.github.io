@@ -52,6 +52,20 @@ The 2023 course covered the following major topics:
   - Exploration of predictive models, error analysis, and logistic regression for binary classification, including estimation methods.
   - [Download Lecture Notes](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/P&S/2023/lecture_9.pdf)
 
+- **Lecture 10: Neural Networks**
+  - Introduction to neural networks, from logistic regression as a foundation to deeper networks, including forward and backward propagation.
+  - [Download Lecture Notes](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/P&S/2023/lecture_10.pdf)
+
+- **Lecture 11: Hypothesis Testing**
+  - Hypothesis testing, including Type I and Type II errors, p-values, significance levels, and applications in real-world decision making.
+  - [Download Lecture Notes](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/P&S/2023/lecture_11.pdf)
+
+- **Lecture 12: Permutation Tests**
+  - Permutation testing as a non-parametric method for hypothesis testing and how to apply this in various research contexts.
+  - [Download Lecture Notes](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/P&S/2023/lecture_12.pdf)
+
+---
+
 ### **Learning Objectives (2023)**
 
 1. Understand and apply fundamental probability concepts and stochastic models.
