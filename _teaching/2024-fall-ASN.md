@@ -1,7 +1,7 @@
 ---
 title: "Analysis of Social Networks"
 collection: teaching
-type: "Master's course"
+type: "Current Courses"
 permalink: /teaching/2024-fall-analysis-social-networks
 venue: "Università della Svizzera italiana, Faculty of Informatics"
 date: 2024-09-01
