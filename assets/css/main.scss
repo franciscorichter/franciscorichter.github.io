@@ -1,15 +1,10 @@
----
----
-
 /*
- *    Minimal Mistakes Jekyll Theme
- *
- *  - Michael Rose
- *  - mademistakes.com
- *  - https://twitter.com/mmistakes
- *
-*/
+ *    Minimal Mistakes Jekyll Theme - Customized for Teaching Page
+ *    - Michael Rose
+ *    - mademistakes.com
+ */
 
+/* Import default theme dependencies */
 @import "vendor/breakpoint/breakpoint"; // media query mixins
 @import "variables";
 @import "mixins";
@@ -40,17 +35,24 @@
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
 
-
-/* Styles specific to the Teaching page */
+/* Teaching Page Specific Styles */
 .teaching-page {
     background-color: #f9f9f9;
     /* Light grey background */
-    padding: 20px;
-    /* Add padding around the content */
+    padding: 30px 20px;
+    /* Add padding for better spacing */
     font-family: 'Roboto', sans-serif;
-    /* Use a custom font */
-    line-height: 1.6;
-    /* Improve readability */
+    /* Use a clean, custom font */
+    line-height: 1.8;
+    /* Improve text readability */
+}
+
+.teaching-page h1,
+.teaching-page h2 {
+    color: #333;
+    /* Darker heading color for contrast */
+    margin-bottom: 15px;
+    /* Add spacing below headings */
 }
 
 .teaching-page a {
@@ -62,7 +64,7 @@
 
 .teaching-page a:hover {
     color: #005f99;
-    /* Hover color for links */
+    /* Hover effect for links */
     text-decoration: none;
     /* Remove underline on hover */
 }
