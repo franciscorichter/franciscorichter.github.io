@@ -8,7 +8,7 @@ date: 2024-01-01
 location: "Lugano, Switzerland"
 ---
 
-Social network analysis reveals how connections between individuals and groups influence their actions. This course covers fundamental principles, statistical methodologies, and practical applications in the field. Students will also explore the use of machine-learning algorithms to derive insights from network data, developing research projects with potential for publication in peer-reviewed journals.
+Social network analysis reveals how connections between individuals and groups influence their actions. This course covers fundamental principles, statistical methodologies, and practical applications in the field. 
 
 ## Course Content
 
