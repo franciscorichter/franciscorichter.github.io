@@ -1,6 +1,4 @@
----
----
-
+--- ---
 /*
  *    Minimal Mistakes Jekyll Theme
  *
@@ -8,7 +6,7 @@
  *  - mademistakes.com
  *  - https://twitter.com/mmistakes
  *
-*/
+ */
 
 @import "vendor/breakpoint/breakpoint"; // media query mixins
 @import "variables";
@@ -39,3 +37,51 @@
 @import "vendor/font-awesome/brands";
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
+
+/* Step 1: Slight modifications for Teaching page styles */
+
+/* Add some padding to the body for better readability */
+body {
+    padding: 20px;
+    line-height: 1.7;
+}
+
+/* Style links to have a smoother hover effect */
+a {
+    color: #007acc;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #005f99;
+    text-decoration: none;
+}
+
+/* Slightly adjust the heading sizes for better visual hierarchy */
+h1,
+h2,
+h3 {
+    font-family: "Roboto", sans-serif;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #555;
+}
+
+h3 {
+    font-size: 1.75rem;
+    color: #666;
+}
+
+/* Add a light background color to the page container for a subtle effect */
+.page-container {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+}
