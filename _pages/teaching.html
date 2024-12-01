@@ -3,38 +3,23 @@ layout: archive
 title: "Teaching"
 permalink: /teaching/
 author_profile: true
-class: teaching-page
 ---
 
-<div class="teaching-page">
-  <h1>{{ page.title }}</h1>
+{% include base_path %}
 
-  {% include base_path %}
+{% for post in site.teaching reversed %}
+  {% include archive-single.html %}
+{% endfor %}
 
-  <section class="current-courses">
-    <h2>Current Courses</h2>
-    {% for post in site.teaching %}
-    {% if post.category == "current" %}
-    {% include archive-single.html %}
-    {% endif %}
-    {% endfor %}
-  </section>
 
-  <section class="previous-courses">
-    <h2>Previous Courses</h2>
-    {% for post in site.teaching %}
-    {% if post.category == "previous" %}
-    {% include archive-single.html %}
-    {% endif %}
-    {% endfor %}
-  </section>
+/* Links specific to the Teaching page */
+.teaching-page a {
+color: #007acc; /* Custom link color */
+text-decoration: underline; /* Optional: underline links */
+}
 
-  <section class="supervision">
-    <h2>Supervision</h2>
-    {% for post in site.teaching %}
-    {% if post.category == "supervision" %}
-    {% include archive-single.html %}
-    {% endif %}
-    {% endfor %}
-  </section>
-</div>
+.teaching-page a:hover {
+color: #005f99; /* Hover color */
+text-decoration: none; /* Remove underline on hover */
+}
+
