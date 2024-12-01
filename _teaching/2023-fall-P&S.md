@@ -1,8 +1,8 @@
 ---
 title: "Probability & Statistics"
 collection: teaching
-type: "Completed Courses"
-permalink: /teaching/previous-courses/2023-fall-probability-statistics
+type: "Ongoing Courses"
+permalink: /teaching/2023-fall-probability-statistics
 venue: "Bachelor of Science in Informatics, Lecture, 2nd year"
 date: 2023-09-01
 location: "Lugano, Switzerland"
