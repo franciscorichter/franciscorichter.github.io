@@ -8,7 +8,7 @@ date: 2024-09-01
 location: "Lugano, Switzerland"
 ---
 
-This course provides a comprehensive foundation in probability and statistics, essential for understanding randomness and applying statistical models to real-world phenomena. Students will explore both theoretical concepts and practical applications, with a focus on simulation and sampling. Key areas include discrete and continuous probability, data analysis through statistical inference, and predictive modeling, all designed to equip students with critical skills for data-driven fields.
+This course provides a comprehensive foundation in probability and statistics, essential for understanding randomness and applying statistical models to real-world phenomena. 
 
 
 The 2024 lectures cover the following major topics:
