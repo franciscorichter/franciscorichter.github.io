@@ -10,3 +10,16 @@ author_profile: true
 {% for post in site.teaching reversed %}
   {% include archive-single.html %}
 {% endfor %}
+
+
+/* Links specific to the Teaching page */
+.teaching-page a {
+color: #007acc; /* Custom link color */
+text-decoration: underline; /* Optional: underline links */
+}
+
+.teaching-page a:hover {
+color: #005f99; /* Hover color */
+text-decoration: none; /* Remove underline on hover */
+}
+
