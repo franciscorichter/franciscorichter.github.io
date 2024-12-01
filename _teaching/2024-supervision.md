@@ -1,10 +1,14 @@
 ---
 title: "Supervision"
 collection: teaching
-type: "Supervision"
+type: "Supervision Overview"
 permalink: /supervision/
+venue: "Università della Svizzera italiana and Politecnico di Milano"
+date: 2023-09-01
+location: "Lugano, Switzerland"
 layout: single
 ---
+
 
 Supervision of master's theses at Università della Svizzera italiana (USI) and Politecnico di Milano. Below are the students, their thesis topics, and links to their work.
 
