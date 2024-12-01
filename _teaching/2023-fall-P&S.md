@@ -3,14 +3,14 @@ title: "Probability & Statistics"
 collection: teaching
 type: "Completed Courses"
 permalink: /teaching/2023-fall-probability-statistics
-venue: "Bachelor of Science in Informatics, Lecture, 2nd year"
+venue: "Bachelor of Science in Informatics, Lecture, 2nd year. Università della Svizzera italiana, Faculty of Informatics"
 date: 2023-09-01
 location: "Lugano, Switzerland"
 ---
 
 
 
-This course provides a comprehensive foundation in probability and statistics, essential for understanding randomness and applying statistical models to real-world phenomena. Students will explore both theoretical concepts and practical applications, developing skills that are critical for data analysis, scientific research, and engineering.
+This course provides a comprehensive foundation in probability and statistics, essential for understanding randomness and applying statistical models to real-world phenomena. 
 
 ### **Course Overview**
 
