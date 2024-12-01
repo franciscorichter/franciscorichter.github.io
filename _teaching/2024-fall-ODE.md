@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Ordinary Differential Equations"
 collection: teaching
-type: "Graduate course"
+type: "Ongoing Courses"
 permalink: /teaching/2024-fall-introduction-ordinary-differential-equations
 venue: "Università della Svizzera italiana, Faculty of Informatics"
 date: 2024-01-01
