@@ -1,7 +1,5 @@
 ---
 title: "Analysis of Social Networks"
-category: "current"
-layout: single
 collection: teaching
 type: "Master's course"
 permalink: /teaching/2024-fall-analysis-social-networks

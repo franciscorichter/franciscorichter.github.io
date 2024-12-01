@@ -1,7 +1,5 @@
 ---
 title: "Probability & Statistics"
-category: "current"
-layout: single
 collection: teaching
 type: "Bachelor of Science in Informatics, Lecture, 2nd year "
 permalink: /teaching/2024-fall-probability-statistics
