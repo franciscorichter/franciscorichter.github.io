@@ -1,12 +1,54 @@
 ---
-layout: archive
+layout: single
 title: "Teaching"
 permalink: /teaching/
 author_profile: true
 ---
 
-{% include base_path %}
+<h1>Teaching</h1>
 
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+<!-- Current Courses -->
+<h2>Current Courses</h2>
+<ul>
+  {% for post in site.teaching %}
+  {% if post.type contains "Current" %}
+  <li>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br>
+    <small>{{ post.venue }}, {{ post.date | date: "%Y" }}</small>
+    <p>{{ post.excerpt }}</p>
+  </li>
+  {% endif %}
+  {% endfor %}
+</ul>
+
+<!-- Supervision -->
+<h2>Supervision</h2>
+<p>
+  Supervision of master's theses at Università della Svizzera italiana (USI) and Politecnico di Milano. Below are the
+  students, their thesis topics, and links to their work.
+</p>
+<ul>
+  {% for post in site.teaching %}
+  {% if post.type contains "Supervision" %}
+  <li>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br>
+    <small>{{ post.venue }}, {{ post.date | date: "%Y" }}</small>
+    <p>{{ post.excerpt }}</p>
+  </li>
+  {% endif %}
+  {% endfor %}
+</ul>
+
+<!-- Previous Courses -->
+<h2>Previous Courses</h2>
+<ul>
+  {% for post in site.teaching %}
+  {% if post.type contains "Previous" %}
+  <li>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br>
+    <small>{{ post.venue }}, {{ post.date | date: "%Y" }}</small>
+    <p>{{ post.excerpt }}</p>
+  </li>
+  {% endif %}
+  {% endfor %}
+</ul>
