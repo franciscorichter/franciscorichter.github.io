@@ -39,3 +39,30 @@
 @import "vendor/font-awesome/brands";
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
+
+
+/* Styles specific to the Teaching page */
+.teaching-page {
+    background-color: #f9f9f9;
+    /* Light grey background */
+    padding: 20px;
+    /* Add padding around the content */
+    font-family: 'Roboto', sans-serif;
+    /* Use a custom font */
+    line-height: 1.6;
+    /* Improve readability */
+}
+
+.teaching-page a {
+    color: #007acc;
+    /* Link color */
+    text-decoration: underline;
+    /* Underline links */
+}
+
+.teaching-page a:hover {
+    color: #005f99;
+    /* Hover color for links */
+    text-decoration: none;
+    /* Remove underline on hover */
+}
