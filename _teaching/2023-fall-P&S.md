@@ -1,9 +1,9 @@
 ---
 title: "Probability & Statistics"
 collection: teaching
-type: "Bachelor of Science in Informatics, Lecture, 2nd year "
+type: "Completed Courses"
 permalink: /teaching/previous-courses/2023-fall-probability-statistics
-venue: "Università della Svizzera italiana, Faculty of Informatics"
+venue: "Bachelor of Science in Informatics, Lecture, 2nd year"
 date: 2023-09-01
 location: "Lugano, Switzerland"
 ---
