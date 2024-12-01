@@ -9,7 +9,6 @@ location: "Lugano, Switzerland"
 layout: single
 ---
 
-### Supervised Thesis: Lodovico Mazzei
 
 - **Title:** Stochastic Learning for Species Diversification Dynamics  
 - **Institution:** Università della Svizzera italiana, Faculty of Informatics  

@@ -9,7 +9,6 @@ location: "Milan, Italy"
 layout: single
 ---
 
-### Supervised Thesis: Mattia Colbertaldo
 
 - **Title:** Machine Learning for Species Diversification Dynamics  
 - **Institution:** Politecnico di Milano  

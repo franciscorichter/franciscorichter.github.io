@@ -9,7 +9,6 @@ location: "Lugano, Switzerland"
 layout: single
 ---
 
-### Supervised Thesis: Oscar Arturo Silva Castellanos
 
 - **Title:** Inferring Phylogenetic Diversification Parameters using Deep Learning  
 - **Institution:** Università della Svizzera italiana, Faculty of Informatics  
