@@ -7,10 +7,10 @@ author_profile: true
 
 
 <!-- Current Courses -->
-<h2>Current Courses</h2>
+<h2>Ongoing Courses</h2>
 <ul>
   {% for post in site.teaching %}
-  {% if post.type contains "Current" %}
+  {% if post.type contains "Ongoing" %}
   <li>
     <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br>
     <small>{{ post.venue }}, {{ post.date | date: "%Y" }}</small>
@@ -39,10 +39,10 @@ author_profile: true
 </ul>
 
 <!-- Previous Courses -->
-<h2>Previous Courses</h2>
+<h2>Completed Courses</h2>
 <ul>
   {% for post in site.teaching %}
-  {% if post.type contains "Previous" %}
+  {% if post.type contains "Completed" %}
   <li>
     <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br>
     <small>{{ post.venue }}, {{ post.date | date: "%Y" }}</small>
