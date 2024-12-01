@@ -1,10 +1,10 @@
 ---
 title: "Analysis of Social Networks"
 collection: teaching
-type: "Current Courses"
-permalink: /teaching/2024-fall-analysis-social-networks
+type: "Ongoing Courses"
+permalink: /teaching/fall-ASN
 venue: "Università della Svizzera italiana, Faculty of Informatics"
-date: 2024-09-01
+date: 2024-01-01
 location: "Lugano, Switzerland"
 ---
 
