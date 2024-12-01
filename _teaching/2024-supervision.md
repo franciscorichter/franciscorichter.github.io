@@ -6,7 +6,7 @@ permalink: /supervision/
 layout: single
 ---
 
-
+Supervision of master's theses at Università della Svizzera italiana (USI) and Politecnico di Milano. Below are the students, their thesis topics, and links to their work.
 
 ### Master Theses
 
@@ -24,7 +24,7 @@ layout: single
 - **Institution:** Università della Svizzera italiana, Faculty of Informatics  
 - **Program:** Master of Artificial Intelligence  
 - **Date:** [Date of Completion]  
-- **Thesis Link:** [Thesis Link] (Add the link here)
+- **Thesis Link:** [Add the link here]
 
 ---
 
@@ -35,4 +35,3 @@ layout: single
 - **Date:** [Date of Completion]  
 - **Thesis Link:** [Classical Format Thesis (PDF)](https://www.politesi.polimi.it/bitstream/10589/222507/5/Classical_Format_Thesis___Scuola_di_Ingegneria_Industriale_e_dell_Informazione___Politecnico_di_Milano%20%282%29.pdf)
 
----
