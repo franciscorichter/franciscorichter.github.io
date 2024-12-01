@@ -22,31 +22,5 @@ My approach integrates three main pillars:
 
 I’m fortunate to have worked with inspiring mentors from diverse fields, whose guidance continues to shape my work. I also engage with students and colleagues from various experience levels, valuing the blend of perspectives that enriches our multidisciplinary, international, and collaborative projects.
 
-Explore the different sections of my work:
-
-<div style="display: flex; justify-content: space-around; margin-top: 20px;">
-    <a href="/teaching" style="text-decoration: none; color: inherit;">
-        <div style="border-radius: 50%; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; border: 2px solid #4CAF50;">
-            <strong>Teaching</strong>
-        </div>
-    </a>
-    <a href="/publications" style="text-decoration: none; color: inherit;">
-        <div style="border-radius: 50%; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; border: 2px solid #2196F3;">
-            <strong>Research</strong>
-        </div>
-    </a>
-    <a href="/portfolio" style="text-decoration: none; color: inherit;">
-        <div style="border-radius: 50%; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; border: 2px solid #FF5722;">
-            <strong>Portfolio</strong>
-        </div>
-    </a>
-    <a href="/blog" style="text-decoration: none; color: inherit;">
-        <div style="border-radius: 50%; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; border: 2px solid #9C27B0;">
-            <strong>Blog</strong>
-        </div>
-    </a>
-</div>
-
----
 
 For collaborations or further information, feel free to [reach out](mailto:richtf@usi.ch).
