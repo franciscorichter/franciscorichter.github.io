@@ -1,7 +1,7 @@
 ---
 title: "Probability & Statistics"
 collection: teaching
-type: "Ongoing Courses"
+type: "Completed Courses"
 permalink: /teaching/2023-fall-probability-statistics
 venue: "Bachelor of Science in Informatics, Lecture, 2nd year"
 date: 2023-09-01
