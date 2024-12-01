@@ -3,20 +3,13 @@ title: "Probability & Statistics"
 collection: teaching
 type: "Ongoing Courses"
 permalink: /teaching/2024-fall-probability-statistics
-venue: "Università della Svizzera italiana, Faculty of Informatics"
+venue: "Bachelor of Science in Informatics, Lecture, 2nd year. Università della Svizzera italiana, Faculty of Informatics"
 date: 2024-09-01
 location: "Lugano, Switzerland"
 ---
 
-
-**Program:** Bachelor of Science in Informatics, Lecture, 2nd year  
-**Semester:** Fall 2024  
-
 This course provides a comprehensive foundation in probability and statistics, essential for understanding randomness and applying statistical models to real-world phenomena. Students will explore both theoretical concepts and practical applications, with a focus on simulation and sampling. Key areas include discrete and continuous probability, data analysis through statistical inference, and predictive modeling, all designed to equip students with critical skills for data-driven fields.
 
-## Course Overview
-
-This course explores probability as the language of society, describing events subject to uncertainty. The first part introduces probability theory and connects it to practical applications, such as static network models and Markov chains. The second part delves into statistics and data analysis, with an emphasis on bootstrapping and simulation to understand data uncertainty.
 
 The 2024 lectures cover the following major topics:
 
