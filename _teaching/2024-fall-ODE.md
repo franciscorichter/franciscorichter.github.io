@@ -8,10 +8,9 @@ date: 2024-01-01
 location: "Lugano, Switzerland"
 ---
 
-This course provides a comprehensive foundation in **ordinary differential equations (ODEs)**, emphasizing their importance in modeling real-world systems. 
+This course provides a comprehensive foundation in **ordinary differential equations (ODEs)**, emphasizing their importance in modeling real-world systems. Students will gain both theoretical insights and practical skills through analytical methods, numerical techniques, and real-world applications.
 
-### **Resources**
-
+### **Course Resources**
 - **Lecture Notes:** [Download Lecture Notes (PDF)](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/ODE/lecture_notes.pdf)
 - **Interactive Course App:** [Explore ODE Concepts & Solutions](https://franciscorichter.shinyapps.io/introODE/)
 - **Official Course Page:** [Introduction to Ordinary Differential Equations - USI](https://search.usi.ch/courses/35270720/introduction-to-ordinary-differential-equations)
@@ -19,29 +18,36 @@ This course provides a comprehensive foundation in **ordinary differential equat
 ### **Course Content**
 
 1. **Introduction to Differential Equations**  
-   - Definitions, classifications, and examples  
-   - The role of ODEs in modeling physical, biological, and engineering systems
+   - Definitions and classifications of differential equations  
+   - Real-world applications in science, engineering, and biology  
+   - Fundamental theorem of calculus
 
 2. **First-Order Differential Equations**  
-   - Analytical solutions using separation of variables and integrating factors  
-   - Practical examples from biology and mechanics
+   - Separable and linear equations  
+   - Growth and decay models  
+   - Slope fields and geometric solutions
 
 3. **Second-Order Differential Equations**  
-   - Methods for solving second-order ODEs  
-   - Applications to mechanical vibrations, electrical circuits, and population dynamics
+   - Homogeneous equations and the characteristic equation  
+   - Nonhomogeneous equations: methods of undetermined coefficients and variation of parameters  
+   - Applications in mechanical vibrations and electrical circuits  
 
-4. **Numerical Methods for Differential Equations**  
-   - Introduction to numerical approximation techniques:
-     - Euler’s Method  
-     - Improved Euler’s and Modified Euler’s Methods  
-     - Runge-Kutta Methods (up to fourth order)  
-   - Practical exercises and computational labs
+4. **Linear Systems of Differential Equations**  
+   - Eigenvalue and eigenvector methods  
+   - Phase plane analysis  
+   - Compartmental models and practical systems
 
-5. **Applications of Differential Equations**  
-   - Case studies in engineering, physics, and ecology  
-   - Linking ODE solutions to practical systems and data
+5. **Numerical Methods for Differential Equations**  
+   - Picard iteration and Euler's method  
+   - Improved Euler’s and Runge-Kutta methods  
+   - Numerical applications to practical problems
 
-6. **Advanced Topics**  
-   - Stability analysis and Lyapunov’s methods  
-   - Introduction to bifurcation theory and its implications for dynamic systems  
-   - Phase planes and qualitative behavior of solutions
+6. **Introduction to Nonlinear Systems**  
+   - Equilibrium points, stability, and bifurcations  
+   - Linearization techniques  
+   - Nonlinear applications: Lotka-Volterra and SIR epidemic models
+
+7. **Advanced Topics in ODEs**  
+   - Higher-order differential equations  
+   - Neural ordinary differential equations  
+   - Interdisciplinary applications in game theory and ecology
