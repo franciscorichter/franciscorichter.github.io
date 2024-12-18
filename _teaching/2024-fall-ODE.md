@@ -8,12 +8,12 @@ date: 2024-01-01
 location: "Lugano, Switzerland"
 ---
 
-This course provides a comprehensive foundation in **ordinary differential equations (ODEs)**, emphasizing their importance in modeling real-world systems. Students will gain both theoretical insights and practical skills through analytical methods, numerical techniques, and real-world applications.
+This course provides a comprehensive foundation in **ordinary differential equations (ODEs)**, emphasizing their importance in modeling real-world systems. 
 
-### **Online Resources**
+### **Resources**
 
-- **Interactive Course App:** [Explore ODE Concepts & Solutions](https://franciscorichter.shinyapps.io/introODE/)
 - **Lecture Notes:** [Download Lecture Notes (PDF)](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/ODE/lecture_notes.pdf)
+- **Interactive Course App:** [Explore ODE Concepts & Solutions](https://franciscorichter.shinyapps.io/introODE/)
 - **Official Course Page:** [Introduction to Ordinary Differential Equations - USI](https://search.usi.ch/courses/35270720/introduction-to-ordinary-differential-equations)
 
 ### **Course Content**
