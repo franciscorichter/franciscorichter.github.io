@@ -8,37 +8,59 @@ date: 2024-09-01
 location: "Lugano, Switzerland"
 ---
 
-This course provides a comprehensive foundation in probability and statistics, essential for understanding randomness and applying statistical models to real-world phenomena. 
+This course provides a comprehensive foundation in probability and statistics, essential for understanding randomness and applying statistical models to real-world phenomena. The course integrates theoretical concepts, practical applications, and computational techniques.
 
+### **Course Resources**
+- **Lecture Notes**  
+  - [Lecture 1: Introduction to Probability and Random Number Generation](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/P&S/2024/Lecture_1.pdf)  
+  - [Lecture 2: Foundations of Randomness (Part 2)](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/P&S/2024/Lecture_2.pdf)  
+  - [Lecture 3: Static Network Models](https://raw.githubusercontent.com/franciscorichter.github.io/master/_teaching/Notes/P&S/2024/Lecture_3.pdf)  
+  - [Lecture 4-6: Probability Relationships and Markov Chains](https://raw.githubusercontent.com/franciscorichter.github.io/master/_teaching/Notes/P&S/2024/Lecture_4_5_6.pdf)  
+  - [Lecture 7: Continuous Random Variables](https://raw.githubusercontent.com/franciscorichter.github.io/master/_teaching/Notes/P&S/2024/Lecture_7.pdf)  
+  - [Lecture 8: Fundamentals of Statistics](https://raw.githubusercontent.com/franciscorichter.github.io/master/_teaching/Notes/P&S/2024/Lecture_8.pdf)  
+  - [Lecture 9: Estimation](https://raw.githubusercontent.com/franciscorichter.github.io/master/_teaching/Notes/P&S/2024/Lecture_9.pdf)  
+  - [Lecture 10: Prediction](https://raw.githubusercontent.com/franciscorichter.github.io/master/_teaching/Notes/P&S/2024/Lecture_10.pdf)  
+  - [Lecture 11: Non-Linear Prediction](https://raw.githubusercontent.com/franciscorichter.github.io/master/_teaching/Notes/P&S/2024/Lecture_11.pdf)  
+  - [Lecture 12: Hypothesis Testing](https://raw.githubusercontent.com/franciscorichter.github.io/master/_teaching/Notes/P&S/2024/Lecture_12.pdf)  
 
-The 2024 lectures cover the following major topics:
+### **Course Content**
 
-- **Lecture 1: Introduction to Probability and Random Number Generation**
-  - Overview of discrete probability, introducing the random number generator as a fundamental tool in simulations and cryptography.
-  - [Download Lecture Notes](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/P&S/2024/Lecture_1.pdf)
+1. **Introduction to Probability**
+   - Overview of discrete probability, random variables, and their applications in cryptography and simulations.
 
-- **Lecture 2: Foundations of Randomness (Part 2)**
-  - Detailed exploration of independence, expectation, and the Law of Large Numbers as cornerstones of probability theory.
-  - [Download Lecture Notes](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/P&S/2024/Lecture_2.pdf)
+2. **Foundations of Randomness**
+   - Independence, expectation, the Law of Large Numbers, and their implications in probability theory.
 
-- **Lecture 3: Static Network Models**
-  - Study of network structures, focusing on Erdos-Renyi and preferential attachment models, highlighting their application in real-world network phenomena.
-  - [Download Lecture Notes](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/P&S/2024/Lecture_3.pdf)
+3. **Random Network Models**
+   - Exploration of Erdos-Renyi and preferential attachment models to understand network phenomena.
 
-- **Lectures 4-6: Probability Relationships and Markov Chains**
-  - Examination of conditional probability, Bayes’ theorem, and the introduction of Markov chains for modeling time-evolving systems.
-  - [Download Lecture Notes](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/P&S/2024/Lecture_4_5_6.pdf)
+4. **Markov Chains and Probability Relationships**
+   - Conditional probability, Bayes’ theorem, and modeling time-evolving systems with Markov Chains.
 
-- **Lecture 7: Continuous Random Variables**
-  - Transition from discrete to continuous probability, covering probability density functions, the Exponential distribution, and applications in real-world modeling.
-  - [Download Lecture Notes](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/P&S/2024/Lecture_7.pdf)
+5. **Continuous Random Variables**
+   - Transitioning from discrete to continuous variables, focusing on distributions like Exponential and Normal.
 
-## Learning Objectives
+6. **Statistics Fundamentals**
+   - Exploring datasets, descriptive statistics (mean, median, variance), and basic visualization techniques.
 
-1. Understand and apply fundamental probability concepts and stochastic models to real-world systems.
-2. Analyze data through statistical inference techniques, including bootstrap methods for uncertainty estimation.
-3. Develop predictive models using tools like logistic regression and neural networks.
-4. Perform hypothesis testing with a solid grasp of statistical inference principles.
-5. Apply advanced simulation techniques to evaluate and model data under uncertainty.
+7. **Estimation**
+   - Statistical modeling, parameter estimation, and bootstrap methods for uncertainty estimation.
 
-The entire course is structured around the principles of simulation and sampling, reinforcing each theoretical concept with practical experimentation.
+8. **Prediction**
+   - Developing predictive models, from linear regression to logistic regression, focusing on minimizing prediction error.
+
+9. **Non-Linear Prediction**
+   - Neural networks, Generalized Linear Models (GLMs), and Generalized Additive Models (GAMs) for complex data relationships.
+
+10. **Hypothesis Testing**
+    - Principles of statistical inference, p-values, significance levels, and examples like the Clairvoyance Test.
+
+### **Learning Objectives**
+
+1. Master fundamental concepts in probability and statistics.
+2. Analyze data through statistical inference techniques, including bootstrap methods.
+3. Build predictive models using linear and non-linear techniques.
+4. Apply statistical methods to diverse fields like network science, epidemiology, and machine learning.
+5. Develop proficiency in hypothesis testing to validate data-driven conclusions.
+
+The course emphasizes an experimental approach, integrating theoretical knowledge with practical exercises to solve real-world problems effectively.
