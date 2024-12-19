@@ -1,7 +1,7 @@
 ---
 title: "Analysis of Social Networks"
 collection: teaching
-type: "Ongoing Courses"
+type: "2024-fall"
 permalink: /teaching/fall-ASN
 venue: "Master of Science in Computational Science, Lecture, Elective, 2nd year. Università della Svizzera italiana, Faculty of Informatics"
 date: 2024-01-01

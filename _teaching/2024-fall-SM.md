@@ -1,7 +1,7 @@
 ---
 title: "Stochastic Methods"
 collection: teaching
-type: "Completed Courses"
+type: "2024-spring"
 permalink: /teaching/2024-spring-stochastic-methods
 venue: "Università della Svizzera italiana, Faculty of Informatics"
 date: 2024-01-01

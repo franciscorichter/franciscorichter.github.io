@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Ordinary Differential Equations"
 collection: teaching
-type: "Ongoing Courses"
+type: "2024-fall"
 permalink: /teaching/2024-fall-introduction-ordinary-differential-equations
 venue: "Master of Science in Artificial Intelligence and Computational Science, Lecture, Elective, 1st and 2nd year. Università della Svizzera italiana, Faculty of Informatics"
 date: 2024-01-01
