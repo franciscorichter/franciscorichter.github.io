@@ -49,20 +49,6 @@ author_profile: true
   {% endfor %}
 </ul>
 
-<!-- Completed Courses -->
-<h3>Completed Courses</h3>
-<ul>
-  {% for post in site.teaching %}
-  {% if post.type contains "completed" %}
-  <li>
-    <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br>
-    <small>{{ post.venue }}, {{ post.date | date: "%Y" }}</small>
-    <p>{{ post.excerpt }}</p>
-  </li>
-  {% endif %}
-  {% endfor %}
-</ul>
-
 <!-- Supervision Section -->
 <h2>Supervision</h2>
 <p>
@@ -72,7 +58,21 @@ author_profile: true
 </p>
 <ul>
   {% for post in site.teaching %}
-  {% if post.type == "supervision" %}
+  {% if post.type contains "Supervision" %}
+  <li>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br>
+    <small>{{ post.venue }}, {{ post.date | date: "%Y" }}</small>
+    <p>{{ post.excerpt }}</p>
+  </li>
+  {% endif %}
+  {% endfor %}
+</ul>
+
+<!-- Completed Courses -->
+<h2>Completed Courses</h2>
+<ul>
+  {% for post in site.teaching %}
+  {% if post.type contains "completed" %}
   <li>
     <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br>
     <small>{{ post.venue }}, {{ post.date | date: "%Y" }}</small>
