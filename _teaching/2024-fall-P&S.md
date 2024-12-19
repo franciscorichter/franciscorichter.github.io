@@ -55,12 +55,3 @@ This course provides a comprehensive foundation in probability and statistics, e
 10. **Hypothesis Testing**
     - Principles of statistical inference, p-values, significance levels, and examples like the Clairvoyance Test.
 
-### **Learning Objectives**
-
-1. Master fundamental concepts in probability and statistics.
-2. Analyze data through statistical inference techniques, including bootstrap methods.
-3. Build predictive models using linear and non-linear techniques.
-4. Apply statistical methods to diverse fields like network science, epidemiology, and machine learning.
-5. Develop proficiency in hypothesis testing to validate data-driven conclusions.
-
-The course emphasizes an experimental approach, integrating theoretical knowledge with practical exercises to solve real-world problems effectively.
