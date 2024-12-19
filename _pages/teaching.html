@@ -49,16 +49,11 @@ author_profile: true
   {% endfor %}
 </ul>
 
-<!-- Supervision Section -->
-<h2>Supervision</h2>
-<p>
-  Supervision bridges teaching and research, fostering student growth while advancing academic inquiry. Through
-  mentoring
-  theses, I aim to cultivate critical thinking and contribute to cutting-edge research.
-</p>
+<!-- Completed Courses -->
+<h3>Completed Courses</h3>
 <ul>
   {% for post in site.teaching %}
-  {% if post.type contains "Supervision" %}
+  {% if post.type contains "completed" %}
   <li>
     <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br>
     <small>{{ post.venue }}, {{ post.date | date: "%Y" }}</small>
@@ -68,11 +63,16 @@ author_profile: true
   {% endfor %}
 </ul>
 
-<!-- Completed Courses -->
-<h2>Completed Courses</h2>
+<!-- Supervision Section -->
+<h2>Supervision</h2>
+<p>
+  Supervision bridges teaching and research, fostering student growth while advancing academic inquiry. Through
+  mentoring
+  theses, I aim to cultivate critical thinking and contribute to cutting-edge research.
+</p>
 <ul>
   {% for post in site.teaching %}
-  {% if post.type contains "completed" %}
+  {% if post.type == "supervision" %}
   <li>
     <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br>
     <small>{{ post.venue }}, {{ post.date | date: "%Y" }}</small>
