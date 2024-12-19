@@ -25,7 +25,7 @@ author_profile: true
 <h3>Spring, 2024</h3>
 <ul>
   {% for post in site.teaching %}
-  {% if post.type contains "2024-fall" %} <li>
+  {% if post.type contains "2024-spring" %} <li>
     <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br>
     <small>{{ post.venue }}, {{ post.date | date: "%Y" }}</small>
     <p>{{ post.excerpt }}</p>
