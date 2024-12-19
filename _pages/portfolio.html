@@ -4,15 +4,11 @@ permalink: /portfolio/
 author_profile: true
 ---
 
-<!-- Ongoing Projects -->
-<h2>Ongoing Projects</h2>
-
 <div class="applications-grid">
   {% for post in site.portfolio %}
   <div class="application-item">
     <a href="{{ post.url | relative_url }}">
-      <!-- Display the excerpt content which includes the image and title -->
-      {{ post.excerpt }}
+      <img src="{{ post.image }}" alt="{{ post.title }} logo" class="application-icon">
     </a>
   </div>
   {% endfor %}
