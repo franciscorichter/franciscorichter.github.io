@@ -1,7 +1,6 @@
 ---
 title: "EPIMOS"
-excerpt: "A modular system for predicting and imputing environmental data  <br /><img
-    src='https://raw.githubusercontent.com/franciscorichter/EPIMOS/main/logo.png' style='width: 500px; height: 500px;border-radius: 50%;'>"
+excerpt: "<img src='https://raw.githubusercontent.com/franciscorichter/EPIMOS/main/logo.png' alt='EPIMOS logo'><h3>EPIMOS</h3><p>A modular system for predicting and imputing environmental data.</p>"
 collection: applications
 ---
 
@@ -11,4 +10,3 @@ Features include:
 - Modular design for flexibility
 - Data preprocessing and imputation
 - Daily predictions and yearly updates
-
