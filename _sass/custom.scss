@@ -1,19 +1,9 @@
-.applications-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 40px;
-    justify-items: center;
-    margin: 40px 0;
-}
-
-.application-item {
-    text-align: center;
-}
-
 .application-icon {
     width: 150px;
     height: 150px;
     border-radius: 50%;
+    object-fit: cover;
+    /* Ensures proper scaling if the image isn't square */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
