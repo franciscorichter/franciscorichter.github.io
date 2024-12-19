@@ -1,7 +1,6 @@
 ---
 title: "DeepCausal"
 image: "https://raw.githubusercontent.com/franciscorichter/deepCausal/main/man/figures/logo3.png"
-collection: applications
 permalink: /applications/deepcausal/
 ---
 
