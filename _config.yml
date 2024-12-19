@@ -234,6 +234,15 @@ defaults:
       author_profile: true
       share: true
       comment: true
+    # _portfolio
+  - scope:
+      path: ""
+      type: applications
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comment: true
   # _talks
   #- scope:
   #    path: ""
@@ -253,7 +262,7 @@ sass:
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
-timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Europe/Zurich # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins
