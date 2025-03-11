@@ -20,7 +20,6 @@ The course covers a **broad range of stochastic techniques**, structured into **
 - Pseudorandom number generation: Linear Congruential Generators (LCG), PCG64
 - Probability distributions: uniform, discrete, continuous
 - Inverse transform sampling
-- Exercises on probability concepts
 
 ### **2. Random Variables**  
 📄 [Lecture 2: Random Variables](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/Stochastic_Methods_25_02.pdf)  
@@ -28,7 +27,6 @@ The course covers a **broad range of stochastic techniques**, structured into **
 - Probability mass functions (PMF) and probability density functions (PDF)
 - Cumulative distribution functions (CDF) and their properties
 - Binomial, Poisson, and normal distributions
-- Exercises on probability distributions
 
 ### **3. Expectation & Limit Theorems**  
 📄 [Lecture 3: Expectation](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/Stochastic_Methods_25_03.pdf)  
