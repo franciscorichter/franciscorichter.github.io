@@ -7,6 +7,22 @@ author_profile: true
 <!-- Teaching Section -->
 <h2>Teaching</h2>
 
+<!-- Spring 2025 -->
+<h3>Spring, 2025</h3>
+<ul>
+  {% for post in site.teaching %}
+  {% if post.type contains "2025-spring" %}
+  <li>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br>
+    <small>{{ post.venue }}, {{ post.date | date: "%Y" }}</small>
+    <p>{{ post.excerpt }}</p>
+  </li>
+  {% endif %}
+  {% endfor %}
+</ul>
+
+
+
 <!-- Fall 2024 -->
 <h3>Autumn, 2024</h3>
 <ul>
