@@ -10,7 +10,9 @@ layout: single
 ---
 
 
-Supervision of master's theses at Università della Svizzera italiana (USI) and Politecnico di Milano. Below are the students, their thesis topics, and links to their work.
+  Supervision bridges teaching and research, fostering student growth while advancing academic inquiry. Through
+  mentoring theses, I aim to cultivate critical thinking and contribute to cutting-edge research.
+
 
 ### Master Theses
 
