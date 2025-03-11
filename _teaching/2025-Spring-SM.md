@@ -99,3 +99,13 @@ The course covers a **broad range of stochastic techniques**, structured into **
 3. **Simulate & Optimize Stochastic Systems**: Apply Monte Carlo methods, agent-based models, and stochastic gradient descent for practical applications.
 4. **Explore Stochastic Optimization**: Learn techniques like **evolutionary algorithms, SGD, and MCMC** for solving complex problems.
 5. **Work with Multi-Agent Stochastic Models**: Understand stochastic decision-making, AI-generated randomness, and process optimization.
+
+
+## **References**
+<ul>
+    <li><i>Introduction to Probability Models</i> by Sheldon M. Ross</li>
+    <li><i>Stochastic Processes</i> by Sheldon M. Ross</li>
+    <li><i>Probability Models for Computer Science</i> by Sheldon M. Ross</li>
+    <li><i>First-order and Stochastic Optimization Methods for Machine Learning</i> by Guanghui Lan</li>
+    <li><i>Basic Stochastic Processes</i> by Zdzisław Brzeźniak and Tomasz Zastawniak</li>
+</ul>
