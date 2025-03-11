@@ -70,14 +70,10 @@ author_profile: true
   Supervision bridges teaching and research, fostering student growth while advancing academic inquiry. Through
   mentoring theses, I aim to cultivate critical thinking and contribute to cutting-edge research.
 </p>
-<ul>
-  {% for post in site.teaching %}
-  {% if post.type contains "Supervision" %}
-  <li>
-    <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br>
-    <small>{{ post.venue }}, {{ post.date | date: "%Y" }}</small>
-    <p>{{ post.excerpt }}</p>
-  </li>
-  {% endif %}
-  {% endfor %}
-</ul>
+
+{% assign supervision_page = site.teaching | where: "type", "Supervision" | first %}
+{% if supervision_page %}
+<h3>{{ supervision_page.title }}</h3>
+<p>{{ supervision_page.excerpt }}</p>
+<a href="{{ supervision_page.url | relative_url }}">Read more</a>
+{% endif %}
