@@ -1,4 +1,5 @@
 ---
+layout: cool
 permalink: /
 title: "Solving Complex Problems with Mathematical Engineering"
 excerpt: "Solving complex problems with data-driven approaches"
@@ -7,6 +8,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
+
 
 I’m Francisco Richter-Mendoza, a [postdoctoral researcher and mathematical engineer](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/files/CV.pdf) at the [Statistical Computing Laboratory](https://www.ci.inf.usi.ch/research/statslab/people/) at Università della Svizzera italiana. My work centers on data science, predictive stochastic modeling, and statistical network sciences, applied to diverse areas.
 

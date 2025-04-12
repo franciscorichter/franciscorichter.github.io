@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Link to your site's CSS -->
+  <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+  <!-- p5.js and your custom sketch -->
+  <script src="{{ '/js/p5.js' | relative_url }}"></script>
+  <script src="{{ '/js/sketch.js' | relative_url }}"></script>
+  <style>
+    /* Basic reset */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: sans-serif;
+      overflow-x: hidden;
+    }
+    /* The container where p5.js will attach the canvas */
+    #p5-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1; /* Send it behind everything */
+    }
+    /* Overlay for your content */
+    .content-overlay {
+      position: relative;
+      z-index: 10;
+      padding: 2rem;
+      margin: 3rem auto;
+      max-width: 800px;
+      background: rgba(0, 0, 0, 0.6); /* semi-transparent dark background */
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      color: #fff;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .content-overlay {
+        margin: 1.5rem;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- The canvas will be attached to this container -->
+  <div id="p5-canvas"></div>
+
+  <!-- Your page content goes here -->
+  <div class="content-overlay">
+    {{ content }}
+  </div>
+</body>
+</html>
+
