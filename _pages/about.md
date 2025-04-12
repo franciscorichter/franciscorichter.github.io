@@ -1,5 +1,4 @@
 ---
-layout: cool
 permalink: /
 title: "Solving Complex Problems with Mathematical Engineering"
 excerpt: "A Journey in Data Science, Predictive Stochastic Modeling, and Statistical Network Sciences"
