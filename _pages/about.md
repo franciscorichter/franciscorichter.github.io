@@ -1,5 +1,4 @@
 ---
-layout: cool
 permalink: /
 title: "Solving Complex Problems with Mathematical Engineering"
 excerpt: "Solving complex problems with data-driven approaches"
