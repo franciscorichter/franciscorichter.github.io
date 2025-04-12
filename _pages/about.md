@@ -1,27 +1,59 @@
 ---
+layout: cool
 permalink: /
 title: "Solving Complex Problems with Mathematical Engineering"
-excerpt: "Solving complex problems with data-driven approaches"
+excerpt: "A Journey in Data Science, Predictive Stochastic Modeling, and Statistical Network Sciences"
 author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
 
+<div class="hero">
+  <h1>Solving Complex Problems with Mathematical Engineering</h1>
+  <p class="lead">Empowering innovation through data-driven approaches, predictive modeling, and advanced statistical network analysis.</p>
+</div>
 
-I’m Francisco Richter-Mendoza, a [postdoctoral researcher and mathematical engineer](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/files/CV.pdf) at the [Statistical Computing Laboratory](https://www.ci.inf.usi.ch/research/statslab/people/) at Università della Svizzera italiana. My work centers on data science, predictive stochastic modeling, and statistical network sciences, applied to diverse areas.
+<div class="introduction">
+  <p>
+    I’m <strong>Francisco Richter-Mendoza</strong>, a 
+    <a href="https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/files/CV.pdf" target="_blank">
+      postdoctoral researcher and mathematical engineer
+    </a> 
+    at the 
+    <a href="https://www.ci.inf.usi.ch/research/statslab/people/" target="_blank">
+      Statistical Computing Laboratory
+    </a> 
+    at Università della Svizzera italiana. My work centers on developing innovative methods in data science, predictive stochastic modeling, and statistical network sciences to address complex real-world problems.
+  </p>
+</div>
 
-My approach integrates three main pillars:
+<div class="pillars">
+  <h2>My Approach</h2>
+  <p>My work is built upon three core pillars:</p>
+  <ul>
+    <li>
+      <strong>Teaching</strong>: Engaging undergraduate and graduate students with courses in data science, network analysis, and statistical methods. I also supervise master’s theses for the Master in Computational Science and the Master in Artificial Intelligence programs—blending pedagogy with cutting-edge research.
+    </li>
+    <li>
+      <strong>Research</strong>: Developing advanced statistical methodologies to tackle complex systems, with a focus on diversification dynamics and environmental data imputation. I actively foster interdisciplinary collaborations, particularly between Chile and Switzerland.
+    </li>
+    <li>
+      <strong>Applied Mathematics</strong>: Applying robust statistical techniques to solve practical challenges, effectively transforming theoretical mathematical concepts into innovative, real-world solutions.
+    </li>
+  </ul>
+</div>
 
-- **Teaching**: Engaging students at undergraduate and graduate levels through courses in data science, network analysis, and statistical methods. I also supervise master’s theses for the Master in Computational Science and the Master in Artificial Intelligence programs, which I consider in the intersection of teaching and research. 
+<div class="experience">
+  <h2>Inspirations & Collaborations</h2>
+  <p>
+    I am fortunate to have worked with inspiring mentors across various fields whose guidance has significantly shaped my work. Collaborating with students and colleagues from diverse backgrounds enriches our multidisciplinary, international projects.
+  </p>
+</div>
 
-- **Research**: Developing statistical methodologies for complex systems, with a focus on diversification dynamics and environmental data imputation. I pursue interdisciplinary collaboration, particularly between Chile and Switzerland, to advance knowledge across diverse fields.
-
-- **Applied Mathematics**: Applying statistical techniques to solve practical problems, turning mathematical concepts into impactful tools for technology transfer and real-world solutions.
-
----
-
-I’m fortunate to have worked with inspiring mentors from diverse fields, whose guidance continues to shape my work. I also engage with students and colleagues from various experience levels, valuing the blend of perspectives that enriches our multidisciplinary, international, and collaborative projects.
-
-
-For collaborations or further information, feel free to [reach out](mailto:richtf@usi.ch).
+<div class="contact">
+  <p>
+    For collaborations or further information, feel free to 
+    <a href="mailto:richtf@usi.ch">reach out via email</a>.
+  </p>
+</div>
