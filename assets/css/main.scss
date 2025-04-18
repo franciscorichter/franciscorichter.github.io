@@ -1,14 +1,5 @@
----
----
-
-/*
- *    Minimal Mistakes Jekyll Theme
- *
- *  - Michael Rose
- *  - mademistakes.com
- *  - https://twitter.com/mmistakes
- *
-*/
+--- 
+--- 
 
 @import "vendor/breakpoint/breakpoint"; // media query mixins
 @import "variables";
@@ -39,3 +30,45 @@
 @import "vendor/font-awesome/brands";
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
+
+// ————————————————————————————
+// Custom Design Overrides
+// ————————————————————————————
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333333;
+    background: #fafafa;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Lora', serif;
+    color: #1A73E8;
+    margin: 2rem 0 1rem;
+}
+
+a {
+    color: #1A73E8;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #E37400;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #1A73E8;
+    color: #ffffff;
+    border-radius: 0.25rem;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #E37400;
+}
