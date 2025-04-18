@@ -4,10 +4,12 @@ layout: default
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FRANCISCO RICHTER M.</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
     <style>
         /* General styles */
         * {
@@ -15,7 +17,7 @@ layout: default
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             background-color: #f5f5f5;
@@ -25,7 +27,7 @@ layout: default
             flex-direction: column;
             min-height: 100vh;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -34,7 +36,7 @@ layout: default
             flex-direction: column;
             flex: 1;
         }
-        
+
         /* Header styles */
         .header {
             display: flex;
@@ -43,11 +45,11 @@ layout: default
             padding-top: 120px;
             padding-bottom: 30px;
         }
-        
+
         .header-content {
             max-width: 500px;
         }
-        
+
         .name {
             font-size: 4rem;
             font-weight: 700;
@@ -56,37 +58,21 @@ layout: default
             line-height: 1.1;
             text-transform: uppercase;
         }
-        
+
         .tagline {
             font-size: 1.5rem;
             font-weight: 400;
             color: #333;
             margin-bottom: 40px;
         }
-        
+
         /* Network visualization styles */
         .network-visualization {
             width: 300px;
             height: 300px;
             position: relative;
         }
-        
-        .node {
-            position: absolute;
-            background-color: #aaa;
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            transition: all 0.5s ease;
-        }
-        
-        .edge {
-            position: absolute;
-            height: 1px;
-            background-color: #ccc;
-            transform-origin: left center;
-            transition: all 0.5s ease;
-        }
-        
+
         /* Navigation links styles */
         .nav-links-container {
             display: flex;
@@ -94,12 +80,12 @@ layout: default
             margin-top: 0;
             padding-bottom: 80px;
         }
-        
+
         .nav-links {
             display: flex;
             gap: 20px;
         }
-        
+
         .nav-link {
             display: flex;
             align-items: center;
@@ -111,17 +97,17 @@ layout: default
             font-weight: 500;
             transition: all 0.3s ease;
         }
-        
+
         .nav-link:hover {
             background-color: #333;
             color: #fff;
         }
-        
+
         .nav-link i {
             margin-right: 10px;
             font-size: 1.2rem;
         }
-        
+
         /* Responsive styles */
         @media (max-width: 768px) {
             .header {
@@ -129,32 +115,33 @@ layout: default
                 text-align: center;
                 padding-top: 60px;
             }
-            
+
             .header-content {
                 order: 2;
                 margin-top: 40px;
             }
-            
+
             .network-visualization {
                 order: 1;
                 margin: 0 auto;
             }
-            
+
             .nav-links {
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .name {
                 font-size: 3rem;
             }
-            
+
             .tagline {
                 font-size: 1.2rem;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <header class="header">
@@ -162,12 +149,12 @@ layout: default
                 <h1 class="name">Francisco Richter M.</h1>
                 <p class="tagline">Mathematics, Statistics, and Intelligences</p>
             </div>
-            
+
             <div class="network-visualization" id="network">
-                <!-- Nodes and edges will be created by JavaScript -->
+                <!-- p5.js canvas will be inserted here -->
             </div>
         </header>
-        
+
         <div class="nav-links-container">
             <div class="nav-links">
                 <a href="/teaching/" class="nav-link">
@@ -184,167 +171,92 @@ layout: default
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const network = document.getElementById('network');
-            
-            // Create a more sophisticated network
-            const nodeCount = 12;
-            const nodes = [];
-            
-            // Create nodes
-            for (let i = 0; i < nodeCount; i++) {
-                const node = document.createElement('div');
-                node.className = 'node';
-                
-                // Vary node sizes for more visual interest
-                const size = Math.random() * 6 + 8; // Between 8px and 14px
-                node.style.width = `${size}px`;
-                node.style.height = `${size}px`;
-                
-                // Position nodes in a more natural network pattern
-                const angle = (i / nodeCount) * Math.PI * 2;
-                const radius = Math.random() * 100 + 50;
-                const x = Math.cos(angle) * radius + 150;
-                const y = Math.sin(angle) * radius + 150;
-                
-                node.style.left = `${x}px`;
-                node.style.top = `${y}px`;
-                
-                // Add subtle opacity variation
-                node.style.opacity = Math.random() * 0.5 + 0.5;
-                
-                network.appendChild(node);
-                nodes.push({
-                    element: node,
-                    x: x,
-                    y: y,
-                    vx: 0,
-                    vy: 0
-                });
-            }
-            
-            // Create edges (connections between nodes)
-            for (let i = 0; i < nodeCount; i++) {
-                // Connect each node to 2-3 other nodes
-                const connections = Math.floor(Math.random() * 2) + 2;
-                
-                for (let j = 0; j < connections; j++) {
-                    // Connect to a random node
-                    const targetIndex = Math.floor(Math.random() * nodeCount);
-                    if (targetIndex !== i) {
-                        const edge = document.createElement('div');
-                        edge.className = 'edge';
-                        
-                        const sourceX = parseFloat(nodes[i].element.style.left);
-                        const sourceY = parseFloat(nodes[i].element.style.top);
-                        const targetX = parseFloat(nodes[targetIndex].element.style.left);
-                        const targetY = parseFloat(nodes[targetIndex].element.style.top);
-                        
-                        // Calculate distance and angle
-                        const dx = targetX - sourceX;
-                        const dy = targetY - sourceY;
-                        const distance = Math.sqrt(dx * dx + dy * dy);
-                        const angle = Math.atan2(dy, dx) * 180 / Math.PI;
-                        
-                        // Position and rotate the edge
-                        edge.style.width = `${distance}px`;
-                        edge.style.left = `${sourceX + 5}px`; // Adjust for node center
-                        edge.style.top = `${sourceY + 5}px`; // Adjust for node center
-                        edge.style.transform = `rotate(${angle}deg)`;
-                        
-                        // Add subtle opacity variation
-                        edge.style.opacity = Math.random() * 0.3 + 0.2;
-                        
-                        network.appendChild(edge);
+        // Sketch para la red de nodos usando p5.js
+        let nodes = [];
+        let edges = [];
+
+        // Esta función se ejecuta en un contexto específico para no interferir con el resto de la página
+        function sketch(p) {
+            // Configuración inicial
+            p.setup = function () {
+                // Crear un canvas del tamaño del contenedor
+                let container = document.getElementById('network');
+                let canvas = p.createCanvas(300, 300);
+                canvas.parent(container);
+
+                // Crear nodos
+                for (let i = 0; i < 12; i++) {
+                    let angle = (i / 12) * p.TWO_PI;
+                    let radius = p.random(50, 120);
+                    let x = p.cos(angle) * radius + 150;
+                    let y = p.sin(angle) * radius + 150;
+
+                    nodes.push({
+                        x: x,
+                        y: y,
+                        size: p.random(6, 12),
+                        vx: 0,
+                        vy: 0
+                    });
+                }
+
+                // Crear conexiones entre nodos
+                for (let i = 0; i < nodes.length; i++) {
+                    let connections = p.floor(p.random(2, 4));
+                    for (let j = 0; j < connections; j++) {
+                        let target = p.floor(p.random(nodes.length));
+                        if (target !== i) {
+                            edges.push({
+                                from: i,
+                                to: target,
+                                opacity: p.random(0.2, 0.5)
+                            });
+                        }
                     }
                 }
-            }
-            
-            // Add subtle animation to nodes
-            setInterval(() => {
-                nodes.forEach(node => {
-                    // Add small random movement
-                    const currentX = parseFloat(node.element.style.left);
-                    const currentY = parseFloat(node.element.style.top);
-                    
-                    // Calculate new position with subtle movement
-                    node.vx = node.vx * 0.9 + (Math.random() - 0.5) * 0.5;
-                    node.vy = node.vy * 0.9 + (Math.random() - 0.5) * 0.5;
-                    
-                    // Keep nodes within bounds
-                    if (currentX + node.vx < 0 || currentX + node.vx > 300) node.vx *= -1;
-                    if (currentY + node.vy < 0 || currentY + node.vy > 300) node.vy *= -1;
-                    
-                    // Apply movement
-                    node.element.style.left = (currentX + node.vx) + 'px';
-                    node.element.style.top = (currentY + node.vy) + 'px';
-                });
-                
-                // Update edges
-                const edges = document.querySelectorAll('.edge');
-                edges.forEach(edge => {
-                    // Find connected nodes (this is simplified)
-                    const edgeLeft = parseFloat(edge.style.left) - 5; // Adjust for earlier offset
-                    const edgeTop = parseFloat(edge.style.top) - 5; // Adjust for earlier offset
-                    
-                    // Find closest node as source
-                    let sourceNode = null;
-                    let minDistance = Infinity;
-                    
-                    nodes.forEach(node => {
-                        const nodeX = parseFloat(node.element.style.left);
-                        const nodeY = parseFloat(node.element.style.top);
-                        const distance = Math.sqrt((nodeX - edgeLeft) ** 2 + (nodeY - edgeTop) ** 2);
-                        
-                        if (distance < minDistance) {
-                            minDistance = distance;
-                            sourceNode = node;
-                        }
-                    });
-                    
-                    if (sourceNode) {
-                        // Find target node based on angle
-                        const angle = parseFloat(edge.style.transform.replace('rotate(', '').replace('deg)', '')) * Math.PI / 180;
-                        const length = parseFloat(edge.style.width);
-                        const targetX = edgeLeft + Math.cos(angle) * length;
-                        const targetY = edgeTop + Math.sin(angle) * length;
-                        
-                        // Find closest node to target position
-                        let targetNode = null;
-                        minDistance = Infinity;
-                        
-                        nodes.forEach(node => {
-                            const nodeX = parseFloat(node.element.style.left);
-                            const nodeY = parseFloat(node.element.style.top);
-                            const distance = Math.sqrt((nodeX - targetX) ** 2 + (nodeY - targetY) ** 2);
-                            
-                            if (distance < minDistance && node !== sourceNode) {
-                                minDistance = distance;
-                                targetNode = node;
-                            }
-                        });
-                        
-                        if (targetNode) {
-                            // Update edge position and rotation
-                            const sourceX = parseFloat(sourceNode.element.style.left);
-                            const sourceY = parseFloat(sourceNode.element.style.top);
-                            const targetX = parseFloat(targetNode.element.style.left);
-                            const targetY = parseFloat(targetNode.element.style.top);
-                            
-                            const dx = targetX - sourceX;
-                            const dy = targetY - sourceY;
-                            const distance = Math.sqrt(dx * dx + dy * dy);
-                            const angle = Math.atan2(dy, dx) * 180 / Math.PI;
-                            
-                            edge.style.width = `${distance}px`;
-                            edge.style.left = `${sourceX + 5}px`; // Center of node
-                            edge.style.top = `${sourceY + 5}px`; // Center of node
-                            edge.style.transform = `rotate(${angle}deg)`;
-                        }
-                    }
-                });
-            }, 50);
+            };
+
+            // Función de dibujo que se ejecuta continuamente
+            p.draw = function () {
+                p.clear();
+
+                // Actualizar posiciones de nodos con movimiento suave
+                for (let i = 0; i < nodes.length; i++) {
+                    nodes[i].vx = nodes[i].vx * 0.9 + p.random(-0.5, 0.5) * 0.2;
+                    nodes[i].vy = nodes[i].vy * 0.9 + p.random(-0.5, 0.5) * 0.2;
+
+                    // Mantener nodos dentro de los límites
+                    if (nodes[i].x + nodes[i].vx < 0 || nodes[i].x + nodes[i].vx > 300) nodes[i].vx *= -1;
+                    if (nodes[i].y + nodes[i].vy < 0 || nodes[i].y + nodes[i].vy > 300) nodes[i].vy *= -1;
+
+                    nodes[i].x += nodes[i].vx;
+                    nodes[i].y += nodes[i].vy;
+                }
+
+                // Dibujar conexiones
+                for (let i = 0; i < edges.length; i++) {
+                    let from = nodes[edges[i].from];
+                    let to = nodes[edges[i].to];
+
+                    p.stroke(200, 200, 200, edges[i].opacity * 255);
+                    p.strokeWeight(1);
+                    p.line(from.x, from.y, to.x, to.y);
+                }
+
+                // Dibujar nodos
+                for (let i = 0; i < nodes.length; i++) {
+                    p.noStroke();
+                    p.fill(170, 170, 170, 200);
+                    p.ellipse(nodes[i].x, nodes[i].y, nodes[i].size, nodes[i].size);
+                }
+            };
+        }
+
+        // Iniciar el sketch cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', function () {
+            new p5(sketch);
         });
     </script>
 </body>
+
 </html>
