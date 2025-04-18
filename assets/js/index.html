@@ -1,0 +1,188 @@
+---
+layout: default
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRANCISCO RICHTER M.</title>
+    <style>
+        /* General styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        
+        /* Header styles */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 120px;
+            padding-bottom: 30px;
+        }
+        
+        .header-content {
+            max-width: 500px;
+        }
+        
+        .name {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        
+        /* Network visualization styles */
+        .network-visualization {
+            width: 300px;
+            height: 300px;
+            position: relative;
+        }
+        
+        .node {
+            position: absolute;
+            background-color: #aaa;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: all 0.5s ease;
+        }
+        
+        .edge {
+            position: absolute;
+            height: 1px;
+            background-color: #ccc;
+            transform-origin: left center;
+            transition: all 0.5s ease;
+        }
+        
+        /* Navigation links styles */
+        .nav-links-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 0;
+            padding-bottom: 80px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 12px 24px;
+            border: 1px solid #333;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            background-color: #333;
+            color: #fff;
+        }
+        
+        .nav-link i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 60px;
+            }
+            
+            .header-content {
+                order: 2;
+                margin-top: 40px;
+            }
+            
+            .network-visualization {
+                order: 1;
+                margin: 0 auto;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .name {
+                font-size: 3rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="name">Francisco Richter M.</h1>
+                <p class="tagline">Mathematics, Statistics, and Intelligences</p>
+            </div>
+            
+            <div class="network-visualization" id="network">
+                <!-- Nodes and edges will be created by JavaScript -->
+            </div>
+        </header>
+        
+        <div class="nav-links-container">
+            <div class="nav-links">
+                <a href="/teaching/" class="nav-link">
+                    <i>🎓</i> Teaching
+                </a>
+                <a href="/publications/" class="nav-link">
+                    <i>📚</i> Publications
+                </a>
+                <a href="/applications/" class="nav-link">
+                    <i>🧩</i> Applications
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/js/network.js"></script>
+</body>
+</html>
