@@ -8,24 +8,11 @@ layout: default
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         padding: 80px 20px;
         max-width: 1200px;
         margin: 0 auto;
-    }
-
-    /* Estilos para la sección principal */
-    .hero-section {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        margin-bottom: 60px;
-    }
-
-    /* Estilos para el contenido de texto */
-    .text-content {
-        flex: 1;
-        padding-right: 40px;
+        text-align: center;
     }
 
     /* Estilos para el nombre */
@@ -56,14 +43,7 @@ layout: default
         font-size: 1.5rem;
         color: #333;
         margin-top: 20px;
-    }
-
-    /* Estilos para la red */
-    .network-container {
-        width: 150px;
-        height: 150px;
-        position: relative;
-        margin-left: 40px;
+        margin-bottom: 60px;
     }
 
     /* Estilos para los botones de navegación */
@@ -71,7 +51,6 @@ layout: default
         display: flex;
         gap: 20px;
         justify-content: center;
-        margin-top: 20px;
     }
 
     .nav-button {
@@ -97,15 +76,6 @@ layout: default
 
     /* Estilos responsivos */
     @media (max-width: 768px) {
-        .hero-section {
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .text-content {
-            padding-right: 0;
-            margin-bottom: 40px;
-        }
 
         .first-name,
         .last-name {
@@ -116,11 +86,6 @@ layout: default
             font-size: 1.2rem;
         }
 
-        .network-container {
-            margin-left: 0;
-            margin-top: 20px;
-        }
-
         .nav-buttons {
             flex-direction: column;
             align-items: center;
@@ -129,19 +94,12 @@ layout: default
 </style>
 
 <div class="main-container">
-    <div class="hero-section">
-        <div class="text-content">
-            <div class="name-container">
-                <h1 class="first-name">Francisco</h1>
-                <h1 class="last-name">Richter M.</h1>
-            </div>
-            <p class="tagline">Mathematics, Statistics, and Intelligences</p>
-        </div>
-
-        <div class="network-container" id="network-container">
-            <!-- p5.js canvas will be inserted here -->
-        </div>
+    <div class="name-container">
+        <h1 class="first-name">Francisco</h1>
+        <h1 class="last-name">Richter M.</h1>
     </div>
+
+    <p class="tagline">Mathematics, Statistics, and Intelligences</p>
 
     <div class="nav-buttons">
         <a href="/teaching/" class="nav-button">
@@ -155,123 +113,3 @@ layout: default
         </a>
     </div>
 </div>
-
-<!-- Inline p5.js script to avoid Jekyll processing issues -->
-<script>
-    // Cargar p5.js desde CDN
-    document.addEventListener('DOMContentLoaded', function () {
-        var script = document.createElement('script');
-        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js';
-        script.onload = function () {
-            // Iniciar sketch cuando p5.js esté cargado
-            new p5(networkSketch);
-        };
-        document.head.appendChild(script);
-    });
-
-    // Sketch de p5.js para la red hexagonal
-    function networkSketch(p) {
-        // Configuración de la red
-        const nodes = [];
-        const edges = [];
-        const nodeCount = 7; // 6 nodos externos + 1 central
-
-        p.setup = function () {
-            // Crear canvas y añadirlo al contenedor
-            const container = document.getElementById('network-container');
-            const canvas = p.createCanvas(150, 150);
-            canvas.parent(container);
-
-            // Crear nodos en patrón hexagonal
-            // Nodo central
-            nodes.push({
-                x: 75,
-                y: 75,
-                size: 8,
-                vx: 0,
-                vy: 0
-            });
-
-            // Nodos externos en hexágono
-            for (let i = 0; i < 6; i++) {
-                const angle = i * p.TWO_PI / 6;
-                const x = 75 + p.cos(angle) * 60;
-                const y = 75 + p.sin(angle) * 60;
-
-                nodes.push({
-                    x: x,
-                    y: y,
-                    size: 8,
-                    vx: 0,
-                    vy: 0
-                });
-            }
-
-            // Crear conexiones
-            // Conectar nodos externos entre sí (hexágono)
-            for (let i = 1; i < 7; i++) {
-                edges.push({
-                    from: i,
-                    to: i < 6 ? i + 1 : 1
-                });
-            }
-
-            // Conectar nodos externos al central
-            for (let i = 1; i < 7; i++) {
-                edges.push({
-                    from: 0,
-                    to: i
-                });
-            }
-        };
-
-        p.draw = function () {
-            p.clear();
-
-            // Añadir pequeño movimiento a los nodos
-            for (let i = 0; i < nodes.length; i++) {
-                // Movimiento más sutil para el nodo central
-                const moveFactor = i === 0 ? 0.1 : 0.3;
-
-                nodes[i].vx = nodes[i].vx * 0.9 + p.random(-0.5, 0.5) * moveFactor;
-                nodes[i].vy = nodes[i].vy * 0.9 + p.random(-0.5, 0.5) * moveFactor;
-
-                // Limitar el movimiento para mantener la forma hexagonal
-                const maxMove = i === 0 ? 5 : 10;
-                const originalX = i === 0 ? 75 : 75 + p.cos((i - 1) * p.TWO_PI / 6) * 60;
-                const originalY = i === 0 ? 75 : 75 + p.sin((i - 1) * p.TWO_PI / 6) * 60;
-
-                const dx = nodes[i].x + nodes[i].vx - originalX;
-                const dy = nodes[i].y + nodes[i].vy - originalY;
-                const distance = p.sqrt(dx * dx + dy * dy);
-
-                if (distance > maxMove) {
-                    // Aplicar fuerza de restauración
-                    nodes[i].vx += (originalX - nodes[i].x) * 0.05;
-                    nodes[i].vy += (originalY - nodes[i].y) * 0.05;
-                }
-
-                nodes[i].x += nodes[i].vx;
-                nodes[i].y += nodes[i].vy;
-            }
-
-            // Dibujar conexiones
-            p.stroke(68, 68, 68);
-            p.strokeWeight(1.5);
-
-            for (let i = 0; i < edges.length; i++) {
-                const from = nodes[edges[i].from];
-                const to = nodes[edges[i].to];
-                p.line(from.x, from.y, to.x, to.y);
-            }
-
-            // Dibujar nodos
-            p.noStroke();
-            p.fill(68, 68, 68);
-
-            for (let i = 0; i < nodes.length; i++) {
-                p.ellipse(nodes[i].x, nodes[i].y, nodes[i].size, nodes[i].size);
-            }
-        };
-    }
-</script>
