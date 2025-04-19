@@ -10,7 +10,8 @@
 .teaching-nav ul { list-style:none; margin:0; padding:0; }
 .teaching-nav a  { text-decoration:none; color:$link-color; }
 .teaching-nav a:hover { text-decoration:underline; }
-
+/* highlight active anchor when that section is in viewport */
+.teaching-nav a.active {font-weight: 700; }
 /* mobile: stack nav above content */
 @media (max-width: 850px) {
   .teaching-flex      { flex-direction:column; }
