@@ -17,6 +17,7 @@ applications in mathematics, statistics, and AI.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 The site began as a fork of  
 [**academicpages/academicpages.github.io**](https://github.com/academicpages/academicpages.github.io)  
 by Stuart Geiger, itself based on Michael Rose’s  
@@ -29,6 +30,8 @@ repository as well. See `LICENSE` for details.
 The code and content here are released under the MIT Licence unless stated
 otherwise. Please attribute appropriately if you reuse any part of the site.
 =======
+=======
+>>>>>>> parent of 1675626 (timeline)
 =======
 >>>>>>> parent of 1675626 (timeline)
 ## To run locally (not on GitHub Pages, to serve on your own computer)
@@ -45,6 +48,9 @@ There is one logistical issue with a ready-to-fork template theme like academic 
 
 To support this, all changes to the underlying code appear as a closed issue with the tag 'code change' -- get the list [here](https://github.com/academicpages/academicpages.github.io/issues?q=is%3Aclosed%20is%3Aissue%20label%3A%22code%20change%22%20). Each issue thread includes a comment linking to the single commit or a diff across multiple commits, so those with forked repositories can easily identify what they need to patch.
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 1675626 (timeline)
+=======
 >>>>>>> parent of 1675626 (timeline)
 =======
 >>>>>>> parent of 1675626 (timeline)
