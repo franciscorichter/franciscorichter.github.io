@@ -1,0 +1,18 @@
+/* 1. Make the whole card clickable (no dead zones) */
+.application-link-wrap {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 2. Dark‑mode friendly hover */
+.application-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.12);
+}
+
+/* 3. Replace the grey background when no image is supplied */
+.application-image {
+  background: #fafafa url("/assets/images/placeholder.svg") center/64px 64px no-repeat;
+}
+
