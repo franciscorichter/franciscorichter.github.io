@@ -18,3 +18,20 @@
   .teaching-nav       { position:static; padding-bottom:1rem; }
 }
 
+/* bigger course titles */
+.course-title a {
+  font-size: 1.35rem;
+  /* try 1.35–1.5rem until it feels right */
+  font-weight: 600;
+  /* semi‑bold; use 700 for full bold */
+  line-height: 1.3;
+  /* tighter vertical rhythm */
+}
+
+/* keep mobile readable */
+@media (max-width: 600px) {
+  .course-title a {
+    font-size: 1.15rem;
+  }
+}
+
