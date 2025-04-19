@@ -171,8 +171,11 @@ kramdown:
 # Collections
 collections:
   teaching:
-    output: true
+    output: false
     permalink: /:collection/:path/
+  courses:
+    output: true                  # generate a page for every course file
+    permalink: /teaching/:path/   # nice, share‑able URLs
   publications:
     output: true
     permalink: /:collection/:path/
