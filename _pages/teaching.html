@@ -4,6 +4,20 @@ permalink: /teaching/
 author_profile: false
 ---
 
+
+<!-- Supervision Section -->
+<!--  <h2>Supervision</h2> -->
+
+<h2>Supervision</h2>
+{% assign supervision_page = site.teaching | where: "type", "Supervision" | first %}
+{% if supervision_page %}
+<h3>{{ supervision_page.title }}</h3>
+<p>{{ supervision_page.excerpt }}</p>
+<a href="{{ supervision_page.url | relative_url }}">Read more</a>
+{% endif %}
+
+
+
 <!-- Teaching Section -->
 <h2>Teaching</h2>
 
@@ -63,17 +77,6 @@ author_profile: false
   {% endif %}
   {% endfor %}
 </ul>
-
-<!-- Supervision Section -->
-<!--  <h2>Supervision</h2> -->
-
-
-{% assign supervision_page = site.teaching | where: "type", "Supervision" | first %}
-{% if supervision_page %}
-<h3>{{ supervision_page.title }}</h3>
-<p>{{ supervision_page.excerpt }}</p>
-<a href="{{ supervision_page.url | relative_url }}">Read more</a>
-{% endif %}
 
 
 
