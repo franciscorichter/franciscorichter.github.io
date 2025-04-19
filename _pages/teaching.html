@@ -1,50 +1,52 @@
----
-layout: single
-permalink: /teaching/
-author_profile: false
----
+{% comment %} teaching page with left nav {% endcomment %}
 
-{% comment %}
-teaching.md — pretty, grouped teaching list
-{% endcomment %}
+<div class="teaching-flex">
 
-<div class="teaching-wrapper">
+  <!-- ► sticky side nav -->
+  <nav class="teaching-nav" aria-label="Teaching sub‑menu">
+    <ul>
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#supervision">Supervision</a></li>
+    </ul>
+  </nav>
 
-  {% assign terms = "2025-spring|2024-fall|2024-spring|2023-fall" | split:"|" %}
+  <!-- ► main content -->
+  <main class="teaching-wrapper">
 
-  {% for label in terms %}
-  {% assign bits = label | split:"-" %}
-  {% assign year = bits[0] %}
-  {% assign season = bits[1] %}
-  {% capture heading %}
-  {% if season == "spring" %}Spring{% elsif season == "fall" or season == "autumn" %}Autumn{% endif %}, {{ year }}
-  {% endcapture %}
+    <h2 id="courses">Courses</h2>
 
-  {% assign courses = site.teaching | where_exp: "c","c.type contains label" %}
-  {% if courses.size > 0 %}
-  <h3 class="term-heading">{{ heading | strip }}</h3>
-  <ul class="course-list">
-    {% for post in courses %}
-    <li class="course-entry">
-      <span class="course-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></span>
-      <span class="course-venue">{{ post.venue }}</span>
-      {% if post.excerpt %}
-      <p class="course-excerpt">{{ post.excerpt }}</p>
-      {% endif %}
-    </li>
+    {% assign terms = "2025-spring|2024-fall|2024-spring|2023-fall" | split:"|" %}
+    {% for label in terms %}
+    {% assign bits = label | split:"-" %}
+    {% assign year = bits[0] %}
+    {% assign season = bits[1] %}
+    {% capture heading %}
+    {% if season == "spring" %}Spring{% elsif season == "fall" or season == "autumn" %}Autumn{% endif %}, {{ year }}
+    {% endcapture %}
+
+    {% assign courses = site.teaching | where_exp: "c","c.type contains label" %}
+    {% if courses.size > 0 %}
+    <h3 class="term-heading">{{ heading | strip }}</h3>
+    <ul class="course-list">
+      {% for post in courses %}
+      <li class="course-entry">
+        <span class="course-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></span>
+        <span class="course-venue">{{ post.venue }}</span>
+        {% if post.excerpt %}<p class="course-excerpt">{{ post.excerpt }}</p>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
     {% endfor %}
-  </ul>
-  {% endif %}
-  {% endfor %}
 
-  <!-- supervision pulled dynamically -->
-  {% assign supervision_page = site.teaching | where: "type", "Supervision" | first %}
-  {% if supervision_page %}
-  <h3 class="term-heading">Supervision</h3>
-  <p>{{ supervision_page.excerpt }}</p>
-  <a href="{{ supervision_page.url | relative_url }}" class="btn--sm">Read more</a>
-  {% endif %}
+    {% assign supervision_page = site.teaching | where: "type", "Supervision" | first %}
+    {% if supervision_page %}
+    <h2 id="supervision">Supervision</h2>
+    <p>{{ supervision_page.excerpt }}</p>
+    <a href="{{ supervision_page.url | relative_url }}" class="btn--primary btn--sm">Read more</a>
+    {% endif %}
+
+    <p style="margin-top:3rem"><a href="/" class="back-button">← Back to Home</a></p>
+  </main>
 
 </div>
-
-<a href="/" class="back-button">← Back to Home</a>
