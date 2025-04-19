@@ -2,8 +2,13 @@
 layout: collection
 title: "Teaching"
 permalink: /teaching/
-collection: courses # ← tell the page which collection to show
+collection: teaching
 
-entries_layout: timeline # vertical timeline view built into the theme :contentReference[oaicite:1]{index=1}
-classes: wide # wider text column like in the mock‑up
+entries_layout: timeline
+classes: wide
+author_profile: true
+
+header:
+  overlay_image: /images/teaching-banner.jpg   # optional, add if you want the hero
+  overlay_filter: 0.35
 ---
