@@ -13,3 +13,5 @@ author_profile: true
 {% for post in site.publications reversed %}
   {% include archive-single.html %}
 {% endfor %}
+
+<a href="/" class="back-button">← Back to Home</a>
