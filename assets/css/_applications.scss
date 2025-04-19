@@ -13,6 +13,17 @@
 
 /* 3. Replace the grey background when no image is supplied */
 .application-image {
-  background: #fafafa url("/assets/images/placeholder.svg") center/64px 64px no-repeat;
+  background: #fafafa url("/images/placeholder.svg") center/64px 64px no-repeat;
 }
 
+
+/* Stop small logos from looking blurry */
+.application-image img {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Dark‑mode friendly grey */
+.application-image {
+  background-color: var(--mm-grey-lt);
+  /* Minimal‑Mistakes CSS variable */
+}
