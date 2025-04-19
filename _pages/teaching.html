@@ -4,80 +4,45 @@ permalink: /teaching/
 author_profile: false
 ---
 
+{% comment %}
+teaching.md — pretty, grouped teaching list
+{% endcomment %}
 
-<!-- Supervision Section -->
-<!--  <h2>Supervision</h2> -->
+<div class="teaching-wrapper">
 
-<h2>Supervision</h2>
-{% assign supervision_page = site.teaching | where: "type", "Supervision" | first %}
-{% if supervision_page %}
-<h3>{{ supervision_page.title }}</h3>
-<p>{{ supervision_page.excerpt }}</p>
-<a href="{{ supervision_page.url | relative_url }}">Read more</a>
-{% endif %}
+  {% assign terms = "2025-spring|2024-fall|2024-spring|2023-fall" | split:"|" %}
 
+  {% for label in terms %}
+  {% assign bits = label | split:"-" %}
+  {% assign year = bits[0] %}
+  {% assign season = bits[1] %}
+  {% capture heading %}
+  {% if season == "spring" %}Spring{% elsif season == "fall" or season == "autumn" %}Autumn{% endif %}, {{ year }}
+  {% endcapture %}
 
-
-<!-- Teaching Section -->
-<h2>Teaching</h2>
-
-<!-- Spring 2025 -->
-<h3>Spring, 2025</h3>
-<ul>
-  {% for post in site.teaching %}
-  {% if post.type contains "2025-spring" %}
-  <li>
-    <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br>
-    <small>{{ post.venue }}, {{ post.date | date: "%Y" }}</small>
-    <p>{{ post.excerpt }}</p>
-  </li>
-  {% endif %}
-  {% endfor %}
-</ul>
-
-
-
-<!-- Fall 2024 -->
-<h3>Autumn, 2024</h3>
-<ul>
-  {% for post in site.teaching %}
-  {% if post.type contains "2024-fall" %}
-  <li>
-    <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br>
-    <small>{{ post.venue }}, {{ post.date | date: "%Y" }}</small>
-    <p>{{ post.excerpt }}</p>
-  </li>
-  {% endif %}
-  {% endfor %}
-</ul>
-
-<!-- Spring 2024 -->
-<h3>Spring, 2024</h3>
-<ul>
-  {% for post in site.teaching %}
-  {% if post.type contains "2024-spring" %} <li>
-    <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br>
-    <small>{{ post.venue }}, {{ post.date | date: "%Y" }}</small>
-    <p>{{ post.excerpt }}</p>
+  {% assign courses = site.teaching | where_exp: "c","c.type contains label" %}
+  {% if courses.size > 0 %}
+  <h3 class="term-heading">{{ heading | strip }}</h3>
+  <ul class="course-list">
+    {% for post in courses %}
+    <li class="course-entry">
+      <span class="course-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></span>
+      <span class="course-venue">{{ post.venue }}</span>
+      {% if post.excerpt %}
+      <p class="course-excerpt">{{ post.excerpt }}</p>
+      {% endif %}
     </li>
-    {% endif %}
     {% endfor %}
-</ul>
-
-<!-- Fall 2024 -->
-<h3>Autumn, 2023</h3>
-<ul>
-  {% for post in site.teaching %}
-  {% if post.type contains "2023-fall" %}
-  <li>
-    <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br>
-    <small>{{ post.venue }}, {{ post.date | date: "%Y" }}</small>
-    <p>{{ post.excerpt }}</p>
-  </li>
+  </ul>
   {% endif %}
   {% endfor %}
-</ul>
 
+  <!-- supervision pulled dynamically -->
+  {% assign supervision_page = site.teaching | where: "type", "Supervision" | first %}
+  {% if supervision_page %}
+  <h3 class="term-heading">Supervision</h3>
+  <p>{{ supervision_page.excerpt }}</p>
+  <a href="{{ supervision_page.url | relative_url }}" class="btn--sm">Read more</a>
+  {% endif %}
 
-
-<a href="/" class="back-button">← Back to Home</a>
+</div>
