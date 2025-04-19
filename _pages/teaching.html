@@ -1,13 +1,76 @@
 ---
-layout: collection
-title: "Teaching"
+layout: single
 permalink: /teaching/
-collection: courses # ← tell the page which collection to show
-
-entries_layout: timeline # vertical timeline view built into the theme :contentReference[oaicite:1]{index=1}
-classes: wide # wider text column like in the mock‑up
-author_profile: true # keep the sidebar card
-header:
-overlay_image: /images/teaching-banner.jpg # use the banner you just made
-overlay_filter: 0.35
+author_profile: false
 ---
+
+<!-- Teaching Section -->
+<h2>Teaching</h2>
+
+<!-- Spring 2025 -->
+<h3>Spring, 2025</h3>
+<ul>
+  {% for post in site.teaching %}
+  {% if post.type contains "2025-spring" %}
+  <li>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br>
+    <small>{{ post.venue }}, {{ post.date | date: "%Y" }}</small>
+    <p>{{ post.excerpt }}</p>
+  </li>
+  {% endif %}
+  {% endfor %}
+</ul>
+
+
+
+<!-- Fall 2024 -->
+<h3>Autumn, 2024</h3>
+<ul>
+  {% for post in site.teaching %}
+  {% if post.type contains "2024-fall" %}
+  <li>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br>
+    <small>{{ post.venue }}, {{ post.date | date: "%Y" }}</small>
+    <p>{{ post.excerpt }}</p>
+  </li>
+  {% endif %}
+  {% endfor %}
+</ul>
+
+<!-- Spring 2024 -->
+<h3>Spring, 2024</h3>
+<ul>
+  {% for post in site.teaching %}
+  {% if post.type contains "2024-spring" %} <li>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br>
+    <small>{{ post.venue }}, {{ post.date | date: "%Y" }}</small>
+    <p>{{ post.excerpt }}</p>
+    </li>
+    {% endif %}
+    {% endfor %}
+</ul>
+
+<!-- Fall 2024 -->
+<h3>Autumn, 2023</h3>
+<ul>
+  {% for post in site.teaching %}
+  {% if post.type contains "2023-fall" %}
+  <li>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br>
+    <small>{{ post.venue }}, {{ post.date | date: "%Y" }}</small>
+    <p>{{ post.excerpt }}</p>
+  </li>
+  {% endif %}
+  {% endfor %}
+</ul>
+
+<!-- Supervision Section -->
+<!--  <h2>Supervision</h2> -->
+
+
+{% assign supervision_page = site.teaching | where: "type", "Supervision" | first %}
+{% if supervision_page %}
+<h3>{{ supervision_page.title }}</h3>
+<p>{{ supervision_page.excerpt }}</p>
+<a href="{{ supervision_page.url | relative_url }}">Read more</a>
+{% endif %}
