@@ -10,9 +10,6 @@ layout: single
 ---
 
 
-  Supervision bridges teaching and research, fostering student growth while advancing academic inquiry. Through
-  mentoring theses, I aim to cultivate critical thinking and contribute to cutting-edge research.
-
 
 ### Master Theses
 
@@ -40,4 +37,19 @@ layout: single
 - **Program:** Master in High Performance Computing Engineering (Ingegneria del Calcolo ad Alte Prestazioni)  
 - **Date:** 2023-24 
 - **Thesis Link:** [Machine Learning for Species Diversification Dynamics](https://www.politesi.polimi.it/bitstream/10589/222507/5/Classical_Format_Thesis___Scuola_di_Ingegneria_Industriale_e_dell_Informazione___Politecnico_di_Milano%20%282%29.pdf)
+
+
+### Currently Supervising (2025)
+
+
+#### Lovnesh Bhardwaj
+- **Title:** Stochastic Water Value Estimation for Hydroelectric Power Plants using Machine Learning Forecasts of Reservoir In- flows 
+- **Institution:** Università della Svizzera italiana, Faculty of Informatics  
+- **Program:** Master in Artificial Inteligence  
+
+
+#### Federica Marini
+- **Title:** Prediction in Environmental OASI Time Series
+- **Institution:** Università di Bologna, Faculty of Mathematics
+- **Program:** Master in Statistical Sciences and Data Sciences  
 
