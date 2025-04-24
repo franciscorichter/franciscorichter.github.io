@@ -68,6 +68,18 @@ permalink: /applications/
         font-size: 1.5rem;
     }
 
+    /* put this after the other .application-image rules */
+    .application-image img {
+        /* make the picture fill the whole wrapper */
+          width: 100%;
+         height: 100%;
+
+         /* keep the correct aspect ratio and crop the over-flowing parts */
+         object-fit: cover;   /* or “contain” if you’d rather letter-box instead of crop */
+          display: block;      /* removes the tiny gap under inline images */
+    }
+
+
     .application-content {
         padding: 20px;
     }
