@@ -6,7 +6,6 @@ permalink: /supervision/
 venue: "Università della Svizzera italiana and Politecnico di Milano"
 date: 2023-09-01
 location: "Lugano, Switzerland"
-layout: single
 ---
 
 
@@ -23,7 +22,7 @@ layout: single
 ---
 
 #### Oscar Arturo Silva Castellanos  
-- **Title:** Inferring Phylogenetic Diversification Parameters using Deep Learning  
+- **Title:** Deep Learning for Parameter Estimation and Model Classification in Species Diversification Models  
 - **Institution:** Università della Svizzera italiana, Faculty of Informatics  
 - **Program:** Master of Artificial Intelligence  
 - **Date:** November 27, 2023
