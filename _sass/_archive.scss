@@ -17,6 +17,9 @@
   a {
     text-decoration: underline;
 
+    /* Darken publication links specifically on the archive page */
+    color: #00008B;
+
     &:hover {
       text-decoration: underline;
 
