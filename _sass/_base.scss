@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .subtitle, .subheading, .page__subtitle, .page__meta {
-  color: $subheading-color;
+  color: var(--subheading-color, #{$subheading-color});
 }
 
 h1 {
