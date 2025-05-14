@@ -28,13 +28,13 @@
   }
 
   function enableDarkMode() {
-    document.body.classList.add(darkModeClass);
+    document.documentElement.classList.add(darkModeClass);
     setCSSVars(darkModeVars);
     localStorage.setItem('darkMode', 'enabled');
   }
 
   function disableDarkMode() {
-    document.body.classList.remove(darkModeClass);
+    document.documentElement.classList.remove(darkModeClass);
     setCSSVars(lightModeVars);
     localStorage.setItem('darkMode', 'disabled');
   }
@@ -54,7 +54,7 @@
       btn.id = buttonId;
       btn.innerText = '🌙 Dark Mode';
       btn.style.position = 'fixed';
-      btn.style.bottom = '24px';
+      btn.style.top = '24px';
       btn.style.right = '24px';
       btn.style.zIndex = 1000;
       btn.style.padding = '0.5em 1.2em';
