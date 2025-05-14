@@ -40,7 +40,7 @@
   }
 
   function toggleDarkMode() {
-    if (document.body.classList.contains(darkModeClass)) {
+    if (document.documentElement.classList.contains(darkModeClass)) {
       disableDarkMode();
     } else {
       enableDarkMode();
