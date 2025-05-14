@@ -75,9 +75,24 @@
     if (!document.getElementById('dark-mode-overrides')) {
       var styleEl = document.createElement('style');
       styleEl.id = 'dark-mode-overrides';
-      styleEl.innerHTML =
-        'html.dark-mode, html.dark-mode body { color: var(--text-color) !important; } ' +
-        'html.dark-mode a { color: var(--link-color) !important; }';
+      styleEl.textContent = `
+        html.dark-mode, html.dark-mode body, html.dark-mode * {
+          color: var(--text-color) !important;
+        }
+        html.dark-mode a {
+          color: var(--link-color) !important;
+        }
+        html.dark-mode h1, html.dark-mode h2, html.dark-mode h3, html.dark-mode h4, html.dark-mode h5, html.dark-mode h6 {
+          color: var(--heading-color) !important;
+        }
+        html.dark-mode .subtitle, html.dark-mode .subheading, html.dark-mode .page__subtitle, html.dark-mode .page__meta {
+          color: var(--subheading-color) !important;
+        }
+        html.dark-mode code, html.dark-mode pre, html.dark-mode tt, html.dark-mode kbd, html.dark-mode samp {
+          background-color: var(--code-background-color) !important;
+          color: var(--text-color) !important;
+        }
+      `;
       document.head.appendChild(styleEl);
     }
     addButton();
