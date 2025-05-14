@@ -11,7 +11,8 @@ body {
   margin: 0;
   padding: 0;
   padding-bottom: 9em;
-  color: $text-color;
+  color: var(--text-color, #23272e);
+  background: var(--background-color, #f6f7fa);
   font-family: $global-font-family;
   line-height: 1.5;
 
@@ -21,12 +22,17 @@ body {
   }
 }
 
+html {
+  background: var(--body-color, #f6f7fa);
+}
+
+
 h1, h2, h3, h4, h5, h6 {
   margin: 2em 0 0.5em;
   line-height: 1.2;
   font-family: $header-font-family;
   font-weight: bold;
-  color: $heading-color;
+  color: var(--heading-color, #23272e);
 }
 
 .subtitle, .subheading, .page__subtitle, .page__meta {
