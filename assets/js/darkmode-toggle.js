@@ -71,6 +71,15 @@
 
   // On load, set mode
   window.addEventListener('DOMContentLoaded', function() {
+    // Insert overrides to ensure text and link colors follow dark-mode variables
+    if (!document.getElementById('dark-mode-overrides')) {
+      var styleEl = document.createElement('style');
+      styleEl.id = 'dark-mode-overrides';
+      styleEl.innerHTML =
+        'html.dark-mode, html.dark-mode body { color: var(--text-color) !important; } ' +
+        'html.dark-mode a { color: var(--link-color) !important; }';
+      document.head.appendChild(styleEl);
+    }
     addButton();
     if (localStorage.getItem('darkMode') === 'enabled') {
       enableDarkMode();
