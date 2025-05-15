@@ -53,7 +53,7 @@ The course covers a **broad range of stochastic techniques**, structured into **
 - Applications in epidemiology and network analysis
 
 ### **6. Markov Processes**  
-📄 [Lecture 6: Markov Processes](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/Stochastic_Methods_25_06.pdf)  
+📄 [Lecture 6: Markov Processes](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/Stochastic_Methods_2025-6.pdf)  
 - **Markov chains**: transition matrices, Chapman-Kolmogorov equation
 - Random walks and applications in financial models
 - Stationary distributions and **ergodicity**
@@ -61,21 +61,21 @@ The course covers a **broad range of stochastic techniques**, structured into **
 - Applications in **epidemiology and finance**
 
 ### **7. Stochastic Simulation**  
-📄 [Lecture 7: Stochastic Simulation](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/Stochastic_Methods_25_07.pdf)  
+📄 [Lecture 7: Stochastic Simulation](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/Stochastic_Methods_2025-7.pdf)  
 - Stochastic Cellular Automata and probabilistic grid-based models
 - Agent-Based Modeling (ABM) and emergent behavior
 - Example: **Forest fire model** (spread of wildfire simulation)
 - Example: **Ant foraging simulation** (pheromone-based search strategies)
 
 ### **8. Stochastic Inference**  
-📄 [Lecture 8: Stochastic Inference](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/Stochastic_Methods_25_08.pdf)  
+📄 [Lecture 8: Stochastic Inference](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/Stochastic_Methods_2025-8.pdf)  
 - **Linear Regression** and least squares estimation
 - **Logistic Regression** and Maximum Likelihood Estimation (MLE)
 - **Support Vector Machines (SVMs)** for classification
 - **Neural networks** and stochastic optimization methods
 
 ### **9. Stochastic Optimization**  
-📄 [Lecture 9: Stochastic Optimization](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/Stochastic_Methods_25_09.pdf)  
+📄 [Lecture 9: Stochastic Optimization](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/Stochastic_Methods_2025-9.pdf)  
 - **Evolutionary algorithms**: Genetic algorithms (GA) & Differential Evolution (DE)
 - **Stochastic Gradient Descent (SGD)** and its variants
 - **ADAM optimizer**: adaptive learning rates for optimization
@@ -83,7 +83,7 @@ The course covers a **broad range of stochastic techniques**, structured into **
 - **Markov Chain Monte Carlo (MCMC)** methods
 
 ### **10. Stochastic Systems & Multi-Agent Models**  
-📄 [Lecture 10: Stochastic Systems](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/Stochastic_Methods_25_10.pdf)  
+📄 [Lecture 10: Stochastic Systems](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/Stochastic_Methods_2025-10.pdf)  
 - **Multi-agent stochastic systems**: Defining agents, tasks, tools, and processes
 - **Markov Decision Processes (MDP)**
 - Process optimization: sequential, parallel, hierarchical, and event-driven systems
