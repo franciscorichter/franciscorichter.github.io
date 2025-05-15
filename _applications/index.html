@@ -55,6 +55,17 @@ permalink: /applications/
     html.dark-mode .application-card, html.dark-mode .application-card * {
         color: #23272e !important;
     }
+    .application-card, .application-card * {
+        user-select: text;
+        -webkit-user-select: text;
+        text-decoration: none !important;
+    }
+    .application-card ::selection, .application-card *::selection {
+        background: transparent;
+    }
+    .application-card ::-moz-selection, .application-card *::-moz-selection {
+        background: transparent;
+    }
 
     .application-card:hover {
         transform: translateY(-5px);
@@ -111,6 +122,9 @@ permalink: /applications/
         border-radius: 4px;
         font-weight: 500;
         transition: all 0.3s ease;
+    }
+    .application-link:hover {
+        text-decoration: underline;
     }
 
     .application-link:hover {
