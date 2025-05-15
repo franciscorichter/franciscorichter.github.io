@@ -72,18 +72,17 @@ author_profile: false
     {% endif %}
 
     <!-- ▸──────── OUTREACH ────────▸ -->
-    {% assign outreach = site.teaching | where: "type", "Outreach" %}
-    {% if outreach.size > 0 %}
     <h2 id="outreach">Outreach</h2>
-    <ul class="course-list">
-      {% for post in outreach %}
-      <li class="course-entry">
-        <span class="course-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></span>
-        {% if post.excerpt %}<p class="course-excerpt">{{ post.excerpt }}</p>{% endif %}
-      </li>
-      {% endfor %}
-    </ul>
-    {% endif %}
+<div class="outreach-section">
+  <h3>LiLu2 Tech Day: Data Science Workshops for High School Students</h3>
+  <p>
+    Each year, I participate in the LiLu2 Tech Day at Liceo cantonale di Lugano 2, where we organize and deliver hands-on workshops on data science for high school students. These workshops introduce students to the basics of data analysis, programming, and the broader impact of technology on society. Our goal is to inspire students to explore science and technology fields by providing practical experience in a collaborative and stimulating environment. This initiative is part of the <a href="https://ingch.ch/en/project/technology-and-it-weeks/" target="_blank">Technology and IT Weeks</a> program.
+  </p>
+  <h3>LaM: Support for High School Thesis Projects (Lavori di Maturità)</h3>
+  <p>
+    Since 2012, I have participated in the annual support of Lavori di Maturità (LaM), which are one-year thesis projects for high school students in collaboration with the Faculty of Informatics at USI and the Liceo cantonale di Lugano 2 (LiLu2). Each year, researchers and PhD students mentor students on informatics-related projects, helping them develop skills in areas such as artificial intelligence, web development, and simulation modeling. This initiative encourages young talents to pursue studies in technical and scientific fields and provides them with valuable guidance and feedback throughout the year-long project. <a href="https://www.usi.ch/it/feeds/26865" target="_blank">Read more</a>.
+  </p>
+</div>
 
     <p style="margin-top:3rem"><a href="/" class="back-button">← Back to Home</a></p>
   </main>

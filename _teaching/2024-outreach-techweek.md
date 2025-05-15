@@ -1,5 +1,5 @@
 ---
-title: "Technology and IT Weeks: Data Science Workshop for High School Students"
+title: "LiLu2 Tech Day: Data Science Workshops for High School Students"
 date: 2024-05-15
 category: teaching
 layout: teaching
@@ -7,8 +7,8 @@ permalink: /teaching/outreach/techweek/
 type: Outreach
 ---
 
-## Technology and IT Weeks
+## LiLu2 Tech Day: Data Science Workshops
 
-I regularly participate in the [Technology and IT Weeks](https://ingch.ch/en/project/technology-and-it-weeks/) initiative, where we organize and deliver workshops on Data Science for high school students. These workshops introduce students to the fundamentals of data analysis, programming, and the impact of data-driven technologies on society. Our aim is to inspire the next generation of students to pursue careers in science and technology, providing them with hands-on experience and practical skills in a collaborative environment.
+Each year, I participate in the LiLu2 Tech Day at Liceo cantonale di Lugano 2, where we organize and deliver hands-on workshops on data science for high school students. These workshops introduce students to the basics of data analysis, programming, and the broader impact of technology on society. Our goal is to inspire students to explore science and technology fields by providing practical experience in a collaborative and stimulating environment.
 
-If you are interested in learning more or getting involved, please visit the official [Technology and IT Weeks website](https://ingch.ch/en/project/technology-and-it-weeks/).
+This initiative is part of the [Technology and IT Weeks](https://ingch.ch/en/project/technology-and-it-weeks/) program. If you are interested in learning more or getting involved, please visit the official [Technology and IT Weeks website](https://ingch.ch/en/project/technology-and-it-weeks/).
