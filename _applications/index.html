@@ -93,11 +93,20 @@ permalink: /applications/
 
     /* put this after the other .application-image rules */
     .application-image img {
-        width: 90%;
-        height: 90%;
-        object-fit: contain; /* ensures the whole logo fits without cropping */
+        /* make the picture fill the whole wrapper */
+        width: 100%;
+        height: 100%;
+        object-fit: cover;   /* or “contain” if you’d rather letter-box instead of crop */
+        display: block;      /* removes the tiny gap under inline images */
+    }
+
+    /* Only for the Aitruistic logo */
+    .aitruistic-logo {
+        width: 80%;
+        height: 80%;
+        object-fit: contain;
+        margin: auto;
         display: block;
-        padding: 5%; /* optional: add some space around the image */
         background: transparent;
     }
 
@@ -263,7 +272,7 @@ permalink: /applications/
     <div class="application-card">
         <a href="https://franciscorichter.github.io/aitruistic/" class="application-link-wrap">
             <div class="application-image">
-                <img src="{{ '/images/aitruistic_logo.png' | relative_url }}" alt="Aitruistic AI for Good logo">
+                <img src="{{ '/images/aitruistic_logo.png' | relative_url }}" alt="Aitruistic AI for Good logo" class="aitruistic-logo">
             </div>
             <div class="application-content">
                 <h2 class="application-title">Aitruistic: AI for Good</h2>
