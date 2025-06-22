@@ -6,10 +6,17 @@
 }
 
 .teaching-wrapper {
-  max-width: 1300px;
-  width: 100%;
+  max-width: 1800px;
+  width: 95vw;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 2vw;
+}
+
+@media (min-width: 1800px) {
+  .teaching-wrapper {
+    max-width: 95vw;
+    padding: 0 3vw;
+  }
 }
 
 
