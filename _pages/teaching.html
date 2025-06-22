@@ -39,31 +39,47 @@ author_profile: false
     <!-- ▸──────── COURSES ────────▸ -->
     <h2 id="courses">Courses</h2>
 
-    {% assign terms = "2025-spring|2024-fall|2024-spring|2023-fall" | split:"|" %}
-    {% for label in terms %}
-    {% assign bits = label | split:"-" %}
-    {% assign year = bits[0] %}
-    {% assign season = bits[1] %}
-    {% capture heading %}
-    {% if season == "spring" %}Spring{% elsif season == "fall" or season == "autumn" %}Autumn{% endif %}, {{ year }}
-    {% endcapture %}
-
-    {% assign courses = site.teaching | where_exp: "c","c.type contains label" %}
-    {% if courses.size > 0 %}
-    <h3 class="term-heading">{{ heading | strip }}</h3>
-    <div class="course-cards">
-      {% for post in courses %}
-      <div class="course-card">
-        <div class="course-card-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></div>
-        {% if post.venue %}<div class="course-card-venue">{{ post.venue }}</div>{% endif %}
-        {% if post.degree_program %}<div class="course-card-degree">{{ post.degree_program }}</div>{% endif %}
-        {% if post.instructor or post.instructors %}<div class="course-card-instructor">{{ post.instructor | default: post.instructors }}</div>{% endif %}
-        {% if post.excerpt %}<div class="course-card-excerpt">{{ post.excerpt }}</div>{% endif %}
-      </div>
-      {% endfor %}
-    </div>
-    {% endif %}
-    {% endfor %}
+    {%- assign semesters = "" -%}
+    {%- for c in site.teaching -%}
+      {%- if c.type != 'Supervision' and c.type != 'Outreach' -%}
+        {%- unless semesters contains c.type -%}
+          {%- assign semesters = semesters | append: c.type | append: "," -%}
+        {%- endunless -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- assign semesters_array = semesters | split: "," | sort | reverse -%}
+    {%- for label in semesters_array -%}
+      {%- if label != "" -%}
+        {%- assign bits = label | split: "-" -%}
+        {%- assign year = bits[0] -%}
+        {%- assign season = bits[1] -%}
+        {%- capture heading -%}
+          {%- if season == "spring" -%}Spring{%- elsif season == "fall" or season == "autumn" -%}Autumn{%- else -%}{{ season | capitalize }}{%- endif -%}, {{ year }}
+        {%- endcapture -%}
+        {%- assign courses = "" -%}
+        {%- for c in site.teaching -%}
+          {%- if c.type == label -%}
+            {%- assign courses = courses | append: c.title | append: "|||" -%}
+          {%- endif -%}
+        {%- endfor -%}
+        {%- if courses != "" -%}
+          <h3 class="term-heading">{{ heading | strip }}</h3>
+          <div class="course-cards horizontal-scroll">
+            {%- for post in site.teaching -%}
+              {%- if post.type == label -%}
+              <div class="course-card">
+                <div class="course-card-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></div>
+                {%- if post.venue -%}<div class="course-card-venue">{{ post.venue }}</div>{%- endif -%}
+                {%- if post.degree_program -%}<div class="course-card-degree">{{ post.degree_program }}</div>{%- endif -%}
+                {%- if post.instructor or post.instructors -%}<div class="course-card-instructor">{{ post.instructor | default: post.instructors }}</div>{%- endif -%}
+                {%- if post.excerpt -%}<div class="course-card-excerpt">{{ post.excerpt }}</div>{%- endif -%}
+              </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
 
     <!-- ▸──────── SUPERVISION ────────▸ -->
     {% assign supervision_page = site.teaching | where: "type", "Supervision" | first %}
