@@ -44,12 +44,25 @@
 
 .archive__item-title {
   margin-bottom: 0.25em;
-  font-family: $sans-serif-narrow;
+  font-family: $font-heading, $serif;
+  font-weight: 700;
+  font-size: 1.2em;
+  letter-spacing: 0.01em;
 
+  a {
+    text-decoration: none;
+    color: #2196f3;
+    transition: color 0.2s, text-decoration 0.2s;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: #1565c0;
+  }
   a + a {
     opacity: 0.5;
   }
 }
+
 
 /* remove border*/
 .page__content {
