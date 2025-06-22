@@ -51,22 +51,24 @@ author_profile: false
     {% assign courses = site.teaching | where_exp: "c","c.type contains label" %}
     {% if courses.size > 0 %}
     <h3 class="term-heading">{{ heading | strip }}</h3>
-    <ul class="course-list">
+    <div class="course-cards">
       {% for post in courses %}
-      <li class="course-entry">
-        <span class="course-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></span>
-        {% if post.venue %}<span class="course-venue">{{ post.venue }}</span>{% endif %}
-        {% if post.excerpt %}<p class="course-excerpt">{{ post.excerpt }}</p>{% endif %}
-      </li>
+      <div class="course-card">
+        <div class="course-card-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></div>
+        {% if post.venue %}<div class="course-card-venue">{{ post.venue }}</div>{% endif %}
+        {% if post.degree_program %}<div class="course-card-degree">{{ post.degree_program }}</div>{% endif %}
+        {% if post.instructor or post.instructors %}<div class="course-card-instructor">{{ post.instructor | default: post.instructors }}</div>{% endif %}
+        {% if post.excerpt %}<div class="course-card-excerpt">{{ post.excerpt }}</div>{% endif %}
+      </div>
       {% endfor %}
-    </ul>
+    </div>
     {% endif %}
     {% endfor %}
 
     <!-- ▸──────── SUPERVISION ────────▸ -->
     {% assign supervision_page = site.teaching | where: "type", "Supervision" | first %}
     {% if supervision_page %}
-    <h2 id="supervision">Supervision</h1>
+    <h2 id="supervision">Supervision</h2>
     {{ supervision_page.content | markdownify }}
     <p><a href="{{ supervision_page.url | relative_url }}" class="btn--primary btn--sm">Read more</a></p>
     {% endif %}
