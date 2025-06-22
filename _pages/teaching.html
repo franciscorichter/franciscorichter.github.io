@@ -47,8 +47,42 @@ author_profile: false
         {%- endunless -%}
       {%- endif -%}
     {%- endfor -%}
-    {%- assign semesters_array = semesters | split: "," | sort | reverse -%}
-    {%- for label in semesters_array -%}
+    {%- assign semesters_array = semesters | split: "," | uniq -%}
+    {%- assign years = "" -%}
+    {%- for s in semesters_array -%}
+      {%- if s != "" -%}
+        {%- assign y = s | split: "-" | first -%}
+        {%- unless years contains y -%}
+          {%- assign years = years | append: y | append: "," -%}
+        {%- endunless -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- assign years_array = years | split: "," | sort | reverse -%}
+    {%- assign sorted_semesters = "" -%}
+    {%- for y in years_array -%}
+      {%- if y != "" -%}
+        {%- assign fall_key = y | append: "-fall" -%}
+        {%- assign autumn_key = y | append: "-autumn" -%}
+        {%- assign spring_key = y | append: "-spring" -%}
+        {%- for s in semesters_array -%}
+          {%- if s == fall_key -%}
+            {%- assign sorted_semesters = sorted_semesters | append: s | append: "," -%}
+          {%- endif -%}
+        {%- endfor -%}
+        {%- for s in semesters_array -%}
+          {%- if s == autumn_key -%}
+            {%- assign sorted_semesters = sorted_semesters | append: s | append: "," -%}
+          {%- endif -%}
+        {%- endfor -%}
+        {%- for s in semesters_array -%}
+          {%- if s == spring_key -%}
+            {%- assign sorted_semesters = sorted_semesters | append: s | append: "," -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- assign sorted_semesters_array = sorted_semesters | split: "," -%}
+    {%- for label in sorted_semesters_array -%}
       {%- if label != "" -%}
         {%- assign bits = label | split: "-" -%}
         {%- assign year = bits[0] -%}
@@ -72,7 +106,14 @@ author_profile: false
                 {%- if post.venue -%}<div class="course-card-venue">{{ post.venue }}</div>{%- endif -%}
                 {%- if post.degree_program -%}<div class="course-card-degree">{{ post.degree_program }}</div>{%- endif -%}
                 {%- if post.instructor or post.instructors -%}<div class="course-card-instructor">{{ post.instructor | default: post.instructors }}</div>{%- endif -%}
-                {%- if post.excerpt -%}<div class="course-card-excerpt">{{ post.excerpt }}</div>{%- endif -%}
+                {%- if post.excerpt -%}
+                  <div class="course-card-excerpt">{{ post.excerpt }}</div>
+                {%- else -%}
+                  {%- if post.content -%}
+                    <div class="course-card-excerpt">{{ post.content | strip_html | truncate: 120 }}</div>
+                  {%- endif -%}
+                {%- endif -%}
+                <div><a href="{{ post.url | relative_url }}" class="course-card-link">Read more</a></div>
               </div>
               {%- endif -%}
             {%- endfor -%}
