@@ -64,7 +64,7 @@ author_profile: false
         {%- endfor -%}
         {%- if courses != "" -%}
           <h3 class="term-heading">{{ heading | strip }}</h3>
-          <div class="course-cards horizontal-scroll">
+          <div class="course-cards">
             {%- for post in site.teaching -%}
               {%- if post.type == label -%}
               <div class="course-card">

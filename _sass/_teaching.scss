@@ -1,20 +1,17 @@
 .course-cards {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   margin: 2rem 0;
 }
 
-.horizontal-scroll {
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  overflow-y: visible;
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: 1rem;
+.teaching-wrapper {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-.horizontal-scroll .course-card {
-  flex: 0 0 auto;
-}
 
 .course-card {
   background: #181a1b;
