@@ -108,13 +108,6 @@ author_profile: false
                     {%- if post.venue -%}<div class="course-card-venue">{{ post.venue }}</div>{%- endif -%}
                     {%- if post.degree_program -%}<div class="course-card-degree">{{ post.degree_program }}</div>{%- endif -%}
                     {%- if post.instructor or post.instructors -%}<div class="course-card-instructor">{{ post.instructor | default: post.instructors }}</div>{%- endif -%}
-                    {%- if post.excerpt -%}
-                      <div class="course-card-excerpt">{{ post.excerpt }}</div>
-                    {%- else -%}
-                      {%- if post.content -%}
-                        <div class="course-card-excerpt">{{ post.content | strip_html | truncate: 120 }}</div>
-                      {%- endif -%}
-                    {%- endif -%}
                     <div><a href="{{ post.url | relative_url }}" class="course-card-link">Read more</a></div>
                   </div>
                   {%- assign seen_titles = seen_titles | append: post.title | append: "," -%}
