@@ -10,10 +10,9 @@ instructor: "Francisco Richter"
 degree_program: "Bachelor of Science in Informatics, 3rd year"
 ---
 
-Numerical Computing is a course offered at the Università della Svizzera italiana (USI), Faculty of Informatics, as part of the Bachelor of Science in Informatics (3rd year).
+This course provides a comprehensive introduction to numerical methods and their implementation in computational environments, focusing on both theory and practical applications. Students will learn to solve mathematical problems using numerical techniques and apply these methods to real-world scenarios in science and engineering.
 
-The course covers foundational and practical aspects of numerical methods and their implementation in computing environments. Topics typically include:
-
+**Key topics include:**
 - Numerical solutions to equations
 - Interpolation and approximation
 - Numerical integration and differentiation
@@ -21,5 +20,22 @@ The course covers foundational and practical aspects of numerical methods and th
 - Error analysis and stability
 - Applications in science and engineering
 
-For more information, visit the [official USI course page](https://search.usi.ch/it/corsi/35275101/numerical-computing).
+## Weekly Lecture Notes
+Below you will find the lecture notes for each week of the course. Click on each link to download the corresponding PDF:
 
+- [Week 1: Lecture Notes](../Notes/NC/Lecture%20Notes/week01_lecture_notes.pdf)
+- [Week 2: Lecture Notes](../Notes/NC/Lecture%20Notes/week02_lecture_notes.pdf)
+- [Week 3: Lecture Notes](../Notes/NC/Lecture%20Notes/week03_lecture_notes.pdf)
+- [Week 4: Lecture Notes](../Notes/NC/Lecture%20Notes/week04_lecture_notes.pdf)
+- [Week 5: Lecture Notes](../Notes/NC/Lecture%20Notes/week05_lecture_notes.pdf)
+- [Week 6: Lecture Notes](../Notes/NC/Lecture%20Notes/week06_lecture_notes.pdf)
+- [Week 7: Lecture Notes](../Notes/NC/Lecture%20Notes/week07_lecture_notes.pdf)
+- [Week 8: Lecture Notes](../Notes/NC/Lecture%20Notes/week08_lecture_notes.pdf)
+- [Week 9: Lecture Notes](../Notes/NC/Lecture%20Notes/week09_lecture_notes.pdf)
+- [Week 10: Lecture Notes](../Notes/NC/Lecture%20Notes/week10_lecture_notes.pdf)
+- [Week 11: Lecture Notes](../Notes/NC/Lecture%20Notes/week11_lecture_notes.pdf)
+- [Week 12: Lecture Notes](../Notes/NC/Lecture%20Notes/week12_lecture_notes.pdf)
+- [Week 13: Lecture Notes](../Notes/NC/Lecture%20Notes/week13_lecture_notes.pdf)
+- [Week 14: Lecture Notes](../Notes/NC/Lecture%20Notes/week14_lecture_notes.pdf)
+
+For more information, visit the [official USI course page](https://search.usi.ch/it/corsi/35275101/numerical-computing).
