@@ -104,7 +104,7 @@ The course covers a **broad range of stochastic techniques**, structured into **
 - Real-world applications and case studies
 
 ### **13. Decision-Making and Collaboration**  
-📄 [Lecture 13: Multi-Agent Decision-Making](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/blob/master/files/Notes/week13.pdf)  
+📄 [Lecture 13: Multi-Agent Decision-Making](https://github.com/franciscorichter/franciscorichter.github.io/blob/master/files/Notes/week13.pdf)  
 - Multi-agent systems and autonomous agents
 - Collaborative decision-making under uncertainty
 - Game theory in stochastic environments
