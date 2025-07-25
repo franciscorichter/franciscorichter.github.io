@@ -15,21 +15,21 @@ This course covers foundational and advanced topics in **stochastic processes**,
 The course covers a **broad range of stochastic techniques**, structured into **thirteen main topics**, each with corresponding **lecture notes**:
 
 ### **1. Randomness**  
-📄 [Lecture 1: Randomness]({{ site.url }}{{ site.baseurl }}/files/Notes/week1.pdf)  
+📄 [Lecture 1: Randomness]({{ site.url }}{{ site.baseurl }}/files/Notes/SM25/week1.pdf)  
 - Random number generators (RNGs) and their properties
 - Pseudorandom number generation: Linear Congruential Generators (LCG), PCG64
 - Probability distributions: uniform, discrete, continuous
 - Inverse transform sampling
 
 ### **2. Random Variables**  
-📄 [Lecture 2: Random Variables]({{ site.url }}{{ site.baseurl }}/files/Notes/week2.pdf)  
+📄 [Lecture 2: Random Variables]({{ site.url }}{{ site.baseurl }}/files/Notes/SM25/week2.pdf)  
 - Discrete vs. continuous random variables
 - Probability mass functions (PMF) and probability density functions (PDF)
 - Cumulative distribution functions (CDF) and their properties
 - Binomial, Poisson, and normal distributions
 
 ### **3. Expectation & Limit Theorems**  
-📄 [Lecture 3: Expectation]({{ site.url }}{{ site.baseurl }}/files/Notes/week3.pdf)  
+📄 [Lecture 3: Expectation]({{ site.url }}{{ site.baseurl }}/files/Notes/SM25/week3.pdf)  
 - Definition of expectation and its properties
 - Linearity of expectation
 - The **Law of Large Numbers (LLN)**
@@ -37,7 +37,7 @@ The course covers a **broad range of stochastic techniques**, structured into **
 - Monte Carlo simulation for numerical approximations
 
 ### **4. Variance & Monte Carlo Methods**  
-📄 [Lecture 4: Variance]({{ site.url }}{{ site.baseurl }}/files/Notes/week4.pdf)  
+📄 [Lecture 4: Variance]({{ site.url }}{{ site.baseurl }}/files/Notes/SM25/week4.pdf)  
 - Monte Carlo integration and importance sampling
 - Variance reduction techniques (stratified sampling, control variates, antithetic variates)
 - Rejection sampling and proof of correctness
@@ -45,7 +45,7 @@ The course covers a **broad range of stochastic techniques**, structured into **
 - Bayesian inference and Bayes' theorem
 
 ### **5. Networks & Random Graphs**  
-📄 [Lecture 5: Networks]({{ site.url }}{{ site.baseurl }}/files/Notes/week5.pdf)  
+📄 [Lecture 5: Networks]({{ site.url }}{{ site.baseurl }}/files/Notes/SM25/week5.pdf)  
 - Introduction to **random networks**
 - Graph theory: adjacency matrices and connectivity
 - Erdős–Rényi random graphs
@@ -53,7 +53,7 @@ The course covers a **broad range of stochastic techniques**, structured into **
 - Applications in epidemiology and network analysis
 
 ### **6. Markov Processes**  
-📄 [Lecture 6: Markov Processes]({{ site.url }}{{ site.baseurl }}/files/Notes/week6.pdf)  
+📄 [Lecture 6: Markov Processes]({{ site.url }}{{ site.baseurl }}/files/Notes/SM25/week6.pdf)  
 - **Markov chains**: transition matrices, Chapman-Kolmogorov equation
 - Random walks and applications in financial models
 - Stationary distributions and **ergodicity**
@@ -61,21 +61,21 @@ The course covers a **broad range of stochastic techniques**, structured into **
 - Applications in **epidemiology and finance**
 
 ### **7. Stochastic Simulation**  
-📄 [Lecture 7: Stochastic Simulation]({{ site.url }}{{ site.baseurl }}/files/Notes/week7.pdf)  
+📄 [Lecture 7: Stochastic Simulation]({{ site.url }}{{ site.baseurl }}/files/Notes/SM25/week7.pdf)  
 - Stochastic Cellular Automata and probabilistic grid-based models
 - Agent-Based Modeling (ABM) and emergent behavior
 - Example: **Forest fire model** (spread of wildfire simulation)
 - Example: **Ant foraging simulation** (pheromone-based search strategies)
 
 ### **8. Stochastic Inference**  
-📄 [Lecture 8: Stochastic Inference]({{ site.url }}{{ site.baseurl }}/files/Notes/week8.pdf)  
+📄 [Lecture 8: Stochastic Inference]({{ site.url }}{{ site.baseurl }}/files/Notes/SM25/week8.pdf)  
 - **Linear Regression** and least squares estimation
 - **Logistic Regression** and Maximum Likelihood Estimation (MLE)
 - **Support Vector Machines (SVMs)** for classification
 - **Neural networks** and stochastic optimization methods
 
 ### **9. Stochastic Optimization**  
-📄 [Lecture 9: Stochastic Optimization]({{ site.url }}{{ site.baseurl }}/files/Notes/week9.pdf)  
+📄 [Lecture 9: Stochastic Optimization]({{ site.url }}{{ site.baseurl }}/files/Notes/SM25/week9.pdf)  
 - **Evolutionary algorithms**: Genetic algorithms (GA) & Differential Evolution (DE)
 - **Stochastic Gradient Descent (SGD)** and its variants
 - **ADAM optimizer**: adaptive learning rates for optimization
@@ -83,28 +83,28 @@ The course covers a **broad range of stochastic techniques**, structured into **
 - **Markov Chain Monte Carlo (MCMC)** methods
 
 ### **10. Stochastic Systems & Multi-Agent Models**  
-📄 [Lecture 10: Stochastic Systems]({{ site.url }}{{ site.baseurl }}/files/Notes/week10.pdf)  
+📄 [Lecture 10: Stochastic Systems]({{ site.url }}{{ site.baseurl }}/files/Notes/SM25/week10.pdf)  
 - **Multi-agent stochastic systems**: Defining agents, tasks, tools, and processes
 - **Markov Decision Processes (MDP)**
 - Process optimization: sequential, parallel, hierarchical, and event-driven systems
 - Randomness in AI-generated outputs and bias in language models
 
 ### **11. Advanced Stochastic Optimization**  
-📄 [Lecture 11: Advanced Optimization]({{ site.url }}{{ site.baseurl }}/files/Notes/week11.pdf)  
+📄 [Lecture 11: Advanced Optimization]({{ site.url }}{{ site.baseurl }}/files/Notes/SM25/week11.pdf)  
 - Advanced optimization techniques for stochastic systems
 - Reinforcement learning algorithms and applications
 - Multi-objective optimization under uncertainty
 - Bayesian optimization methods
 
 ### **12. Stochastic Optimization Methods**  
-📄 [Lecture 12: Optimization Methods]({{ site.url }}{{ site.baseurl }}/files/Notes/week12.pdf)  
+📄 [Lecture 12: Optimization Methods]({{ site.url }}{{ site.baseurl }}/files/Notes/SM25/week12.pdf)  
 - Building upon foundational concepts of stochastic optimization
 - Advanced gradient-based methods
 - Constraint handling in stochastic optimization
 - Real-world applications and case studies
 
 ### **13. Decision-Making and Collaboration**  
-📄 [Lecture 13: Multi-Agent Decision-Making]({{ site.url }}{{ site.baseurl }}/files/Notes/week13.pdf)  
+📄 [Lecture 13: Multi-Agent Decision-Making]({{ site.url }}{{ site.baseurl }}/files/Notes/SM25/week13.pdf)  
 - Multi-agent systems and autonomous agents
 - Collaborative decision-making under uncertainty
 - Game theory in stochastic environments
