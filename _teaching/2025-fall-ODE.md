@@ -1,8 +1,3 @@
-Of course. Here is the corrected information formatted as a complete Markdown file. You can copy and paste this directly into a `.md` file.
-
-Of course. Here is the corrected information formatted as a complete Markdown file. You can copy and paste this directly into a `.md` file.
-
-```markdown
 ---
 title: "Introduction to Ordinary Differential Equations"
 collection: teaching
@@ -53,4 +48,3 @@ _Slight adjustments may occur; any changes will be announced here and in class._
 7.  **Lecture 7 — Numerical Methods for Differential Equations:** Euler's method, Runge-Kutta methods, multi-step methods, local vs. global error, stability regions, stiffness, adaptive step-size control, and geometric integration.
 8.  **Lecture 8 — Applications in Science and Engineering:** Broad survey of ODE modeling in mechanics, population dynamics (logistic growth, SIR models), biochemical networks, and coupled oscillator systems.
 9.  **Lecture 9 — Advanced Topics and Current Research:** Modern developments including Neural ODEs with adjoint sensitivity, sparse discovery of dynamics (SINDy), consensus on graphs, multiscale methods, and continuous normalizing flows.
-```
