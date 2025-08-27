@@ -12,12 +12,12 @@ degree_program: "Master of Science in Artificial Intelligence / Computational Sc
 
 This course introduces the fundamental concepts and techniques of ordinary differential equations (ODEs), with a focus on applications in artificial intelligence and computational science. We connect modeling and analysis (existence, stability, qualitative behavior) with computation (numerical initial-value solvers, stiffness) and modern ODE-based learning (Neural ODEs, sparse discovery, and multiscale/network dynamics).
 
-For more information, visit the [official USI course page](https://search.usi.ch/it/corsi/35275460/introduction-to-ordinary-differential-equations).
+For up-to-date information on schedule and lecture room, visit the [official USI course page](https://search.usi.ch/it/corsi/35275460/introduction-to-ordinary-differential-equations).
 
 ## Schedule (14 weeks)
 
 - **Format:** 1 lecture per week on Fridays. After every two lectures there is an _Exercises + Quiz_ session (first half TA Q&A, second half quiz). After Quiz 4 there is one last lecture and a final Exercises session before the exam.  
-- **Materials:** [Syllabus (PDF)](/files/ode-2025/syllabus.pdf) · [Full Notes Book (PDF)](/files/ode-2025/book.pdf)
+
 
 | Week | Date       | Topic                                                                 | Materials                                   | Notes            |
 |------|------------|------------------------------------------------------------------------|---------------------------------------------|------------------|
@@ -50,33 +50,5 @@ _Slight adjustments may occur; any changes will be announced here and in class._
 8. **Lecture 8 — Parameter estimation & inference for ODEs:** least squares and collocation; identifiability; residual penalties; regularization; validation on withheld trajectories.  
 9. **Lecture 9 — Modern ODE modeling & learning:** Neural ODEs and adjoint sensitivity; sparse discovery (SINDy, weak forms); ODEs on graphs (consensus/synchronization); fast–slow reduction; continuous normalizing flows; computational/stability considerations.
 
-## Prerequisites
 
-- Multivariable calculus; linear algebra.  
-- Basic programming (Python or MATLAB). Prior exposure to numerical methods helpful but not required.
-
-## Learning Outcomes
-
-- Model real systems as ODEs; analyze equilibria, stability, and qualitative behavior.  
-- Solve linear systems and approximate nonlinear ones; select appropriate numerical IVP solvers.  
-- Estimate parameters; assess identifiability and validate with withheld trajectories.  
-- Use adjoint sensitivity and sparse discovery within an ODE framework; reason about networked and multiscale ODEs.  
-- Document assumptions and uncertainty clearly.
-
-## Resources
-
-- **Notes & handouts:** provided each week (see table above).  
-- **Recommended texts:** Boyce–DiPrima (ODEs); Hirsch–Smale–Devaney (dynamical systems); Trefethen (computational viewpoint).
-
-## Policies
-
-- **Academic integrity:** follow university guidelines. Any external resources must be cited.  
-- **Accessibility:** accommodations available through the disability office; contact the instructor early.  
-- **Communication:** announcements and materials via this page and the university platform.
-
-## Contact & Logistics
-
-- **Instructor office hours:** TBA (posted on course page).  
-- **Teaching assistants:** TBA.  
-- **Venue/time:** posted on the official USI course page.
 
