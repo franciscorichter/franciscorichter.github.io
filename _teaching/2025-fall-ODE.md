@@ -1,3 +1,8 @@
+Of course. Here is the corrected information formatted as a complete Markdown file. You can copy and paste this directly into a `.md` file.
+
+Of course. Here is the corrected information formatted as a complete Markdown file. You can copy and paste this directly into a `.md` file.
+
+```markdown
 ---
 title: "Introduction to Ordinary Differential Equations"
 collection: teaching
@@ -16,39 +21,36 @@ For up-to-date information on schedule and lecture room, visit the [official USI
 
 ## Schedule (14 weeks)
 
-- **Format:** 1 lecture per week on Fridays. After every two lectures there is an _Exercises + Quiz_ session (first half TA Q&A, second half quiz). After Quiz 4 there is one last lecture and a final Exercises session before the exam.  
+- **Format:** 1 lecture per week on Fridays. After every two lectures there is an _Exercises + Quiz_ session (first half TA Q&A, second half quiz). After Quiz 4 there is one last lecture and a final Exercises session before the exam.
 
-
-| Week | Date       | Topic                                                                 | Materials                                   | Notes            |
-|------|------------|------------------------------------------------------------------------|---------------------------------------------|------------------|
-| 1    | 2025-09-19 | Lecture 1: Introduction, modeling, IVPs                                | [Notes](/files/ode-2025/lecture01.pdf)      |                  |
-| 2    | 2025-09-26 | Lecture 2: First-order ODEs                                            | [Notes](/files/ode-2025/lecture02.pdf)      |                  |
-| 3    | 2025-10-03 | Exercises + Quiz 1                                                     |                                             | TA Q&A + Quiz    |
-| 4    | 2025-10-10 | Lecture 3: Linear ODEs (higher order)                                  | [Notes](/files/ode-2025/lecture03.pdf)      |                  |
-| 5    | 2025-10-17 | Lecture 4: Systems of ODEs                                             | [Notes](/files/ode-2025/lecture04.pdf)      |                  |
-| 6    | 2025-10-24 | Exercises + Quiz 2                                                     |                                             | TA Q&A + Quiz    |
-| 7    | 2025-10-31 | Lecture 5: Qualitative analysis, phase plane                           | [Notes](/files/ode-2025/lecture05.pdf)      |                  |
-| 8    | 2025-11-07 | Lecture 6: Numerical methods for IVPs                                  | [Notes](/files/ode-2025/lecture06.pdf)      |                  |
-| 9    | 2025-11-14 | Exercises + Quiz 3                                                     |                                             | TA Q&A + Quiz    |
-| 10   | 2025-11-21 | Lecture 7: Laplace transforms                                          | [Notes](/files/ode-2025/lecture07.pdf)      |                  |
-| 11   | 2025-11-28 | Lecture 8: Parameter estimation & inference for ODEs                   | [Notes](/files/ode-2025/lecture08.pdf)      |                  |
-| 12   | 2025-12-05 | Exercises + Quiz 4                                                     |                                             | TA Q&A + Quiz    |
-| 13   | 2025-12-12 | Lecture 9: Modern ODE modeling & learning (Neural ODEs, SINDy, networks, multiscale, CNFs) | [Notes](/files/ode-2025/lecture09.pdf) |                  |
-| 14   | 2025-12-19 | Final Exercises & Q&A (exam preparation)                               |                                             | No quiz          |
+| Week | Date       | Topic                                                  | Materials                                   | Notes            |
+|:-----|:-----------|:-------------------------------------------------------|:--------------------------------------------|:-----------------|
+| 1    | 2025-09-19 | Lecture 1: Introduction and First-Order Equations      | [Notes](/files/ode-2025/lecture01.pdf)      |                  |
+| 2    | 2025-09-26 | Lecture 2: Systems of First-Order Equations            | [Notes](/files/ode-2025/lecture02.pdf)      |                  |
+| 3    | 2025-10-03 | Exercises + Quiz 1                                     |                                             | TA Q&A + Quiz    |
+| 4    | 2025-10-10 | Lecture 3: Linear Systems and Matrix Methods           | [Notes](/files/ode-2025/lecture03.pdf)      |                  |
+| 5    | 2025-10-17 | Lecture 4: Eigenvalue Methods and Diagonalization      | [Notes](/files/ode-2025/lecture04.pdf)      |                  |
+| 6    | 2025-10-24 | Exercises + Quiz 2                                     |                                             | TA Q&A + Quiz    |
+| 7    | 2025-10-31 | Lecture 5: Nonlinear Dynamics and Phase Plane Analysis | [Notes](/files/ode-2025/lecture05.pdf)      |                  |
+| 8    | 2025-11-07 | Lecture 6: Stability Theory and Lyapunov Methods       | [Notes](/files/ode-2025/lecture06.pdf)      |                  |
+| 9    | 2025-11-14 | Exercises + Quiz 3                                     |                                             | TA Q&A + Quiz    |
+| 10   | 2025-11-21 | Lecture 7: Numerical Methods for Differential Equations| [Notes](/files/ode-2025/lecture07.pdf)      |                  |
+| 11   | 2025-11-28 | Lecture 8: Applications in Science and Engineering     | [Notes](/files/ode-2025/lecture08.pdf)      |                  |
+| 12   | 2025-12-05 | Exercises + Quiz 4                                     |                                             | TA Q&A + Quiz    |
+| 13   | 2025-12-12 | Lecture 9: Advanced Topics and Current Research        | [Notes](/files/ode-2025/lecture09.pdf)      |                  |
+| 14   | 2025-12-19 | Final Exercises & Q&A (exam preparation)               |                                             | No quiz          |
 
 _Slight adjustments may occur; any changes will be announced here and in class._
 
 ## Course Outline (Lectures 1–9)
 
-1. **Lecture 1 — First steps:** modeling from balances; initial value problems; direction fields; separable equations; autonomous dynamics and phase lines.  
-2. **Lecture 2 — Existence and tools:** Lipschitz conditions; Picard iterations; Grönwall inequality; comparison principles; maximal interval of existence and blow-up tests.  
-3. **Lecture 3 — Linear higher-order ODEs:** reduction to first-order systems; fundamental solutions; constant-coefficient cases; resonance and forcing.  
-4. **Lecture 4 — Linear systems:** eigenstructure; Jordan cases; decoupling; planar phase portraits; stability classification; response to inputs.  
-5. **Lecture 5 — Nonlinear systems:** linearization; Lyapunov functions; invariant sets; local bifurcations (saddle-node, transcritical, pitchfork); examples.  
-6. **Lecture 6 — Numerical IVP solvers:** Euler and Runge–Kutta families; local/global error; stability regions; stiffness; implicit methods; step-size control.  
-7. **Lecture 7 — Laplace transforms:** transforms and inversion; step/impulse responses; transfer functions; convolution; solving linear ODEs with discontinuous/impulsive inputs.  
-8. **Lecture 8 — Parameter estimation & inference for ODEs:** least squares and collocation; identifiability; residual penalties; regularization; validation on withheld trajectories.  
-9. **Lecture 9 — Modern ODE modeling & learning:** Neural ODEs and adjoint sensitivity; sparse discovery (SINDy, weak forms); ODEs on graphs (consensus/synchronization); fast–slow reduction; continuous normalizing flows; computational/stability considerations.
-
-
-
+1.  **Lecture 1 — Introduction and First-Order Equations:** Basic concepts, classification of ODEs, direction fields, isoclines, separable equations, and linear first-order equations with integrating factors.
+2.  **Lecture 2 — Systems of First-Order Equations:** Reduction of higher-order equations, phase space, trajectories, nullclines, and linearization for analyzing equilibria in systems like predator-prey models.
+3.  **Lecture 3 — Linear Systems and Matrix Methods:** The matrix exponential, eigenvalue analysis for classifying 2D systems (nodes, saddles, spirals), fundamental matrices, and nonhomogeneous systems.
+4.  **Lecture 4 — Eigenvalue Methods and Diagonalization:** Solving systems via diagonalization and modal coordinates, handling complex and repeated eigenvalues, and applications to mechanical systems.
+5.  **Lecture 5 — Nonlinear Dynamics and Phase Plane Analysis:** In-depth analysis of nonlinear systems, limit cycles, Poincaré-Bendixson theorem, and local bifurcations (saddle-node, transcritical, pitchfork, Hopf).
+6.  **Lecture 6 — Stability Theory and Lyapunov Methods:** Rigorous definitions of stability, Lyapunov's direct method, LaSalle's invariance principle, estimating basins of attraction, and stability of periodic orbits.
+7.  **Lecture 7 — Numerical Methods for Differential Equations:** Euler's method, Runge-Kutta methods, multi-step methods, local vs. global error, stability regions, stiffness, adaptive step-size control, and geometric integration.
+8.  **Lecture 8 — Applications in Science and Engineering:** Broad survey of ODE modeling in mechanics, population dynamics (logistic growth, SIR models), biochemical networks, and coupled oscillator systems.
+9.  **Lecture 9 — Advanced Topics and Current Research:** Modern developments including Neural ODEs with adjoint sensitivity, sparse discovery of dynamics (SINDy), consensus on graphs, multiscale methods, and continuous normalizing flows.
+```
