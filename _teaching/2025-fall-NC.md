@@ -20,22 +20,39 @@ This course provides a comprehensive introduction to numerical methods and their
 - Error analysis and stability
 - Applications in science and engineering
 
-## Weekly Lecture Notes
-Below you will find the lecture notes for each week of the course. Click on each link to download the corresponding PDF:
+## Schedule (14 weeks)
 
-- [Week 1: Lecture Notes](../Notes/NC/Lecture%20Notes/week01_lecture_notes.pdf)
-- [Week 2: Lecture Notes](../Notes/NC/Lecture%20Notes/week02_lecture_notes.pdf)
-- [Week 3: Lecture Notes](../Notes/NC/Lecture%20Notes/week03_lecture_notes.pdf)
-- [Week 4: Lecture Notes](../Notes/NC/Lecture%20Notes/week04_lecture_notes.pdf)
-- [Week 5: Lecture Notes](../Notes/NC/Lecture%20Notes/week05_lecture_notes.pdf)
-- [Week 6: Lecture Notes](../Notes/NC/Lecture%20Notes/week06_lecture_notes.pdf)
-- [Week 7: Lecture Notes](../Notes/NC/Lecture%20Notes/week07_lecture_notes.pdf)
-- [Week 8: Lecture Notes](../Notes/NC/Lecture%20Notes/week08_lecture_notes.pdf)
-- [Week 9: Lecture Notes](../Notes/NC/Lecture%20Notes/week09_lecture_notes.pdf)
-- [Week 10: Lecture Notes](../Notes/NC/Lecture%20Notes/week10_lecture_notes.pdf)
-- [Week 11: Lecture Notes](../Notes/NC/Lecture%20Notes/week11_lecture_notes.pdf)
-- [Week 12: Lecture Notes](../Notes/NC/Lecture%20Notes/week12_lecture_notes.pdf)
-- [Week 13: Lecture Notes](../Notes/NC/Lecture%20Notes/week13_lecture_notes.pdf)
-- [Week 14: Lecture Notes](../Notes/NC/Lecture%20Notes/week14_lecture_notes.pdf)
+| Week | Date       | Topic                                                 | Materials                                                                 | Code/Assets                         |
+|:-----|:-----------|:------------------------------------------------------|:--------------------------------------------------------------------------|:------------------------------------|
+| 1    | 2025-09-01 | Intro, Well-posedness, Error sources, FP basics       | [Notes](/files/nc-2025/lecture01/lecture1_notes.pdf) · [Slides](/files/nc-2025/lecture01/lecture1_slides.pdf) | [Code folder](/files/nc-2025/lecture01/) |
+| 2    | 2025-09-08 | Computer arithmetic, Roundoff, Stability              | [Notes](/files/nc-2025/lecture02/lecture2_notes.pdf) · [Slides](/files/nc-2025/lecture02/lecture2_slides.pdf) | [Code folder](/files/nc-2025/lecture02/) |
+| 3    | 2025-09-15 | Nonlinear equations: Bisection, Newton, Secant        | [Notes](/files/nc-2025/lecture03/lecture3_notes.pdf) · [Slides](/files/nc-2025/lecture03/lecture3_slides.pdf) | [Code folder](/files/nc-2025/lecture03/) |
+| 4    | 2025-09-22 | Interpolation and Approximation                       | [Notes](/files/nc-2025/lecture04/lecture4_notes.pdf) · [Slides](/files/nc-2025/lecture04/lecture4_slides.pdf) | [Code folder](/files/nc-2025/lecture04/) |
+| 5    | 2025-09-29 | Polynomial/ spline approximation                      | [Notes](/files/nc-2025/lecture05/lecture5_notes.pdf) · [Slides](/files/nc-2025/lecture05/lecture5_slides.pdf) | [Code folder](/files/nc-2025/lecture05/) |
+| 6    | 2025-10-06 | Numerical differentiation and integration              | [Notes](/files/nc-2025/lecture06/lecture6_notes.pdf) · [Slides](/files/nc-2025/lecture06/lecture6_slides.pdf) | [Code folder](/files/nc-2025/lecture06/) |
+| 7    | 2025-10-13 | Linear systems and Conditioning                        | [Notes](/files/nc-2025/lecture07/lecture7_notes.pdf) · [Slides](/files/nc-2025/lecture07/lecture7_slides.pdf) | [Code folder](/files/nc-2025/lecture07/) |
+| 8    | 2025-10-20 | Least squares and QR                                   | [Notes](/files/nc-2025/lecture08/lecture8_notes.pdf) · [Slides](/files/nc-2025/lecture08/lecture8_slides.pdf) | [Code folder](/files/nc-2025/lecture08/) |
+| 9    | 2025-10-27 | Eigenvalues and Iterative methods                      | [Notes](/files/nc-2025/lecture09/lecture9_notes.pdf) · [Slides](/files/nc-2025/lecture09/lecture9_slides.pdf) | [Code folder](/files/nc-2025/lecture09/) |
+| 10   | 2025-11-03 | Optimization basics                                     | [Notes](/files/nc-2025/lecture10/lecture10_notes.pdf) · [Slides](/files/nc-2025/lecture10/lecture10_slides.pdf) | [Code folder](/files/nc-2025/lecture10/) |
+| 11   | 2025-11-10 | Nonlinear least squares, Gauss-Newton                  | [Notes](/files/nc-2025/lecture11/lecture11_notes.pdf) · [Slides](/files/nc-2025/lecture11/lecture11_slides.pdf) | [Code folder](/files/nc-2025/lecture11/) |
+| 12   | 2025-11-17 | Constrained optimization                                | [Notes](/files/nc-2025/lecture12/lecture12_notes.pdf) · [Slides](/files/nc-2025/lecture12/lecture12_slides.pdf) | [Code folder](/files/nc-2025/lecture12/) |
+| 13   | 2025-11-24 | Advanced topics                                         | Notes: {{ '/_teaching/Notes/NC/Lecture Notes/week13_lecture_notes.pdf' | relative_url }} | /files/nc-2025/lecture13/       |
+| 14   | 2025-12-01 | Review and applications                                 | Notes: {{ '/_teaching/Notes/NC/Lecture Notes/week14_lecture_notes.pdf' | relative_url }} | /files/nc-2025/lecture14/       |
 
-For more information, visit the [official USI course page](https://search.usi.ch/it/corsi/35275101/numerical-computing).
+_Slight adjustments may occur; any changes will be announced here and in class._
+
+## Course Outline
+
+1.  Mathematical foundations; error sources and propagation; well‑posedness vs ill‑posedness.
+2.  Floating‑point arithmetic (IEEE 754), machine epsilon, roundoff, cancellation; numerical stability.
+3.  Nonlinear equations and root finding: bisection, Newton, secant; convergence theory and basins.
+4.  Interpolation and approximation: Lagrange, Newton forms, splines; Runge phenomenon and remedies.
+5.  Numerical differentiation and quadrature: error analysis, composite rules, Romberg, Gauss.
+6.  Numerical linear algebra: conditioning, Gaussian elimination, LU/QR; least squares and SVD.
+7.  Eigenvalue problems: power method, QR iteration; applications.
+8.  Optimization: gradient methods, line search, constraints, Gauss‑Newton and Levenberg‑Marquardt.
+
+### Code
+Python examples and assets will be available under `/files/nc-2025/lectureX/` for each week. If a link is missing, it will appear as materials are uploaded.
+
+For up-to-date information on schedule and lecture room, visit the [official USI course page](https://search.usi.ch/it/corsi/35275101/numerical-computing).
