@@ -21,21 +21,21 @@ This course provides a comprehensive introduction to numerical methods and their
 - Applications in science and engineering
 
 ## Schedule (14 weeks)
-
+  
 | Week | Date       | Topic                                                 | Materials                                                                 | Code/Assets                         |
 |:-----|:-----------|:------------------------------------------------------|:--------------------------------------------------------------------------|:------------------------------------|
-| 1    | 2025-09-22 | Introduction to Numerical Computing                    | [Notes](/files/nc-2025/lecture01/lecture1_notes.pdf) · [Slides](/files/nc-2025/lecture01/lecture1_slides.pdf) | [Code folder](/files/nc-2025/lecture01/) |
-| 2    | 2025-09-29 | Computer Arithmetic and Error Analysis                 | [Notes](/files/nc-2025/lecture02/lecture2_notes.pdf) · [Slides](/files/nc-2025/lecture02/lecture2_slides.pdf) | [Code folder](/files/nc-2025/lecture02/) |
-| 3    | 2025-10-06 | Root-Finding Methods                                    | [Notes](/files/nc-2025/lecture03/lecture3_notes.pdf) · [Slides](/files/nc-2025/lecture03/lecture3_slides.pdf) | [Code folder](/files/nc-2025/lecture03/) |
-| 4    | 2025-10-13 | Linear Algebra Foundations                              | [Notes](/files/nc-2025/lecture04/lecture4_notes.pdf) · [Slides](/files/nc-2025/lecture04/lecture4_slides.pdf) | [Code folder](/files/nc-2025/lecture04/) |
-| 5    | 2025-10-20 | Direct Methods for Linear Systems                       | [Notes](/files/nc-2025/lecture05/lecture5_notes.pdf) · [Slides](/files/nc-2025/lecture05/lecture5_slides.pdf) | [Code folder](/files/nc-2025/lecture05/) |
-| 6    | 2025-10-27 | Least Squares and QR Decomposition                      | [Notes](/files/nc-2025/lecture06/lecture6_notes.pdf) · [Slides](/files/nc-2025/lecture06/lecture6_slides.pdf) | [Code folder](/files/nc-2025/lecture06/) |
-| 7    | 2025-11-03 | Iterative Methods for Linear Systems                    | [Notes](/files/nc-2025/lecture07/lecture7_notes.pdf) · [Slides](/files/nc-2025/lecture07/lecture7_slides.pdf) | [Code folder](/files/nc-2025/lecture07/) |
-| 8    | 2025-11-10 | Eigenvalue Problems                                     | [Notes](/files/nc-2025/lecture08/lecture8_notes.pdf) · [Slides](/files/nc-2025/lecture08/lecture8_slides.pdf) | [Code folder](/files/nc-2025/lecture08/) |
-| 9    | 2025-11-17 | Interpolation and Approximation                         | [Notes](/files/nc-2025/lecture09/lecture9_notes.pdf) · [Slides](/files/nc-2025/lecture09/lecture9_slides.pdf) | [Code folder](/files/nc-2025/lecture09/) |
-| 10   | 2025-11-24 | Numerical Integration (Quadrature)                      | [Notes](/files/nc-2025/lecture10/lecture10_notes.pdf) · [Slides](/files/nc-2025/lecture10/lecture10_slides.pdf) | [Code folder](/files/nc-2025/lecture10/) |
-| 11   | 2025-12-01 | Nonlinear Least Squares and Gauss-Newton                | [Notes](/files/nc-2025/lecture11/lecture11_notes.pdf) · [Slides](/files/nc-2025/lecture11/lecture11_slides.pdf) | [Code folder](/files/nc-2025/lecture11/) |
-| 12   | 2025-12-08 | Constrained Optimization                                | [Notes](/files/nc-2025/lecture12/lecture12_notes.pdf) · [Slides](/files/nc-2025/lecture12/lecture12_slides.pdf) | [Code folder](/files/nc-2025/lecture12/) |
+| 1    | 2025-09-22 | Introduction to Numerical Computing                    | [Notes](/files/nc-2025/lecture01/lecture1_notes.pdf) · [Slides](/files/nc-2025/lecture01/lecture1_slides.pdf) | [Code](/files/nc-2025/lecture01/lecture1_code.py) |
+| 2    | 2025-09-29 | Computer Arithmetic and Error Analysis                 | [Notes](/files/nc-2025/lecture02/lecture2_notes.pdf) · [Slides](/files/nc-2025/lecture02/lecture2_slides.pdf) | [Code](/files/nc-2025/lecture02/lecture2_code.py) |
+| 3    | 2025-10-06 | Root-Finding Methods                                    | [Notes](/files/nc-2025/lecture03/lecture3_notes.pdf) · [Slides](/files/nc-2025/lecture03/lecture3_slides.pdf) | [Code](/files/nc-2025/lecture03/lecture3_code.py) |
+| 4    | 2025-10-13 | Linear Algebra Foundations                              | [Notes](/files/nc-2025/lecture04/lecture4_notes.pdf) · [Slides](/files/nc-2025/lecture04/lecture4_slides.pdf) | [Code](/files/nc-2025/lecture04/lecture4_code.py) |
+| 5    | 2025-10-20 | Direct Methods for Linear Systems                       | [Notes](/files/nc-2025/lecture05/lecture5_notes.pdf) · [Slides](/files/nc-2025/lecture05/lecture5_slides.pdf) | [Code](/files/nc-2025/lecture05/lecture5_code.py) |
+| 6    | 2025-10-27 | Least Squares and QR Decomposition                      | [Notes](/files/nc-2025/lecture06/lecture6_notes.pdf) · [Slides](/files/nc-2025/lecture06/lecture6_slides.pdf) | [Code](/files/nc-2025/lecture06/lecture6_code.py) |
+| 7    | 2025-11-03 | Iterative Methods for Linear Systems                    | [Notes](/files/nc-2025/lecture07/lecture7_notes.pdf) · [Slides](/files/nc-2025/lecture07/lecture7_slides.pdf) | [Code](/files/nc-2025/lecture07/lecture7_code.py) |
+| 8    | 2025-11-10 | Eigenvalue Problems                                     | [Notes](/files/nc-2025/lecture08/lecture8_notes.pdf) · [Slides](/files/nc-2025/lecture08/lecture8_slides.pdf) | [Code](/files/nc-2025/lecture08/lecture8_code.py) |
+| 9    | 2025-11-17 | Interpolation and Approximation                         | [Notes](/files/nc-2025/lecture09/lecture9_notes.pdf) · [Slides](/files/nc-2025/lecture09/lecture9_slides.pdf) | [Code](/files/nc-2025/lecture09/lecture9_code.py) |
+| 10   | 2025-11-24 | Numerical Integration (Quadrature)                      | [Notes](/files/nc-2025/lecture10/lecture10_notes.pdf) · [Slides](/files/nc-2025/lecture10/lecture10_slides.pdf) | [Code](/files/nc-2025/lecture10/lecture10_code.py) |
+| 11   | 2025-12-01 | Nonlinear Least Squares and Gauss-Newton                | [Notes](/files/nc-2025/lecture11/lecture11_notes.pdf) · [Slides](/files/nc-2025/lecture11/lecture11_slides.pdf) | [Code](/files/nc-2025/lecture11/lecture11_code.py) |
+| 12   | 2025-12-08 | Constrained Optimization                                | [Notes](/files/nc-2025/lecture12/lecture12_notes.pdf) · [Slides](/files/nc-2025/lecture12/lecture12_slides.pdf) | [Code](/files/nc-2025/lecture12/lecture12_code.py) |
 
 _Slight adjustments may occur; any changes will be announced here and in class._
 
