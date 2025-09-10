@@ -20,7 +20,7 @@ This course provides a comprehensive introduction to numerical methods and their
 - Error analysis and stability
 - Applications in science and engineering
 
-## Schedule (14 weeks)
+## Schedule 
   
 | Week | Date       | Topic                                                 | Materials                                                                 | Code/Assets                         |
 |:-----|:-----------|:------------------------------------------------------|:--------------------------------------------------------------------------|:------------------------------------|
@@ -37,7 +37,7 @@ This course provides a comprehensive introduction to numerical methods and their
 | 11   | 2025-12-01 | Nonlinear Least Squares and Gauss-Newton                | [Notes](/files/nc-2025/lecture11/lecture11_notes.pdf) · [Slides](/files/nc-2025/lecture11/lecture11_slides.pdf) | [Code](/files/nc-2025/lecture11/lecture11_code.py) |
 | 12   | 2025-12-08 | Constrained Optimization                                | [Notes](/files/nc-2025/lecture12/lecture12_notes.pdf) · [Slides](/files/nc-2025/lecture12/lecture12_slides.pdf) | [Code](/files/nc-2025/lecture12/lecture12_code.py) |
 
-_Slight adjustments may occur; any changes will be announced here and in class._
+_Slight adjustments may occur; official meterial will be ultimatelly uploaded to icorsi._
 
 ## Course Outline
 
