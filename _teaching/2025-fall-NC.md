@@ -50,7 +50,4 @@ _Slight adjustments may occur; any changes will be announced here and in class._
 7.  Eigenvalue problems: power method, QR iteration; applications.
 8.  Optimization: gradient methods, line search, constraints, Gauss‑Newton and Levenberg‑Marquardt.
 
-### Code
-Python examples and assets will be available under `/files/nc-2025/lectureX/` for each week. If a link is missing, it will appear as materials are uploaded.
-
 For up-to-date information on schedule and lecture room, visit the [official USI course page](https://search.usi.ch/it/corsi/35275101/numerical-computing).
