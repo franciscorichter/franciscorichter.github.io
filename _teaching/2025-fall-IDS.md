@@ -10,7 +10,7 @@ instructors: "Francisco Richter, Ernst Wit"
 degree_program: "Master of Science in Artificial Intelligence / Computational Science / Informatics, 1st year; PhD in Informatics"
 ---
 
-This course revisits the fundamentals of data sciences, namely probability theory and statistical inference.
+This course revisits the core foundations of data science—probability theory and statistical inference.
 
 For schedule, room and any official updates, please refer to the
 [USI course page](https://search.usi.ch/it/corsi/35275499/introduction-to-data-science-msc).
