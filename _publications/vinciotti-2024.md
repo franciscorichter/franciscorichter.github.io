@@ -1,5 +1,6 @@
 ---
 title: "Random Graphical Model of Microbiome Interactions in Related Environments"
+authors: "V. Vinciotti, E. C. Wit, F. Richter"
 collection: publications
 pubtype: journals
 permalink: /publication/2024-06-01-microbiome-graphical-model
