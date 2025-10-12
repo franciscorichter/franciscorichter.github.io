@@ -1,6 +1,7 @@
 ---
 title: "Stereo 3D Cloud Motion from Tandem Satellites"
 collection: publications
+pubtype: journals
 permalink: /publication/2024-06-21-stereo-3d-cloud-motion
 date: 2024-06-21
 excerpt: 'This paper introduces a method for estimating cloud motion using stereo images from tandem satellites, providing insights into atmospheric dynamics.'

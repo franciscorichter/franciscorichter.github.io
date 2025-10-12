@@ -1,6 +1,7 @@
 ---
 title: "Plant Diets of Land Snail Community Members are Similar in Composition but Differ in Richness"
 collection: publications
+pubtype: journals
 permalink: /publication/2021-07-01-plant-diets-snail-community
 date: 2021-07-01
 excerpt: 'This study investigates the plant diets of land snail communities, showing similar compositions but differences in species richness.'
