@@ -13,10 +13,8 @@ author_profile: true
 <h2>Journals</h2>
 <ul class="pub__list">
 {% for post in site.publications reversed %}
-  {% assign venue = post.venue | default: post.booktitle %}
   {% assign pt = post.pubtype | downcase %}
-  {% assign is_preprint = venue contains 'arXiv' or venue contains 'bioRxiv' %}
-  {% if pt == 'journals' or (pt == '' and venue and is_preprint == false) %}
+  {% if pt == 'journals' %}
     {% include publication-line.html %}
   {% endif %}
 {% endfor %}
@@ -25,10 +23,8 @@ author_profile: true
 <h2>Preprints</h2>
 <ul class="pub__list">
 {% for post in site.publications reversed %}
-  {% assign venue = post.venue | default: post.booktitle %}
   {% assign pt = post.pubtype | downcase %}
-  {% assign is_preprint = venue contains 'arXiv' or venue contains 'bioRxiv' %}
-  {% if pt == 'preprints' or (pt == '' and is_preprint) %}
+  {% if pt == 'preprints' %}
     {% include publication-line.html %}
   {% endif %}
 {% endfor %}
@@ -37,10 +33,8 @@ author_profile: true
 <h2>Working papers</h2>
 <ul class="pub__list">
 {% for post in site.publications reversed %}
-  {% assign venue = post.venue | default: post.booktitle %}
   {% assign pt = post.pubtype | downcase %}
-  {% assign is_preprint = venue contains 'arXiv' or venue contains 'bioRxiv' %}
-  {% if pt == 'working' or (pt == '' and venue == nil and is_preprint == false) %}
+  {% if pt == 'working' %}
     {% include publication-line.html %}
   {% endif %}
 {% endfor %}
