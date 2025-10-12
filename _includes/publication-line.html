@@ -1,0 +1,38 @@
+{% comment %}
+Renders a compact one-line publication entry similar to the provided screenshot.
+Assumes fields may include:
+- title (string)
+- author or authors (string)
+- venue or booktitle (string)
+- date (date) or year (int)
+- paperurl (external link)
+- permalink (auto from collection)
+- note (optional string, e.g., "Accepted for publication at JMLR")
+This include expects a `post` variable in scope.
+{% endcomment %}
+{% include base_path %}
+{% assign authors = post.authors | default: post.author %}
+{% assign venue = post.venue | default: post.booktitle %}
+{% assign year = post.date | default: post.year %}
+{% assign year_str = year | date: "%Y" %}
+
+<li class="pub__item">
+  <span class="pub__title">
+    {% if post.paperurl %}
+      <a href="{{ post.paperurl }}">{{ post.title }}</a>
+    {% else %}
+      <a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a>
+    {% endif %}
+  </span>
+  {% if authors %}
+    <span class="pub__authors">. {{ authors }}.</span>
+  {% endif %}
+  {% if venue %}
+    <span class="pub__venue"> <em>{{ venue }}</em>{% if year_str %}, {{ year_str }}{% endif %}.</span>
+  {% elsif year_str %}
+    <span class="pub__venue"> <em>{{ year_str }}</em>.</span>
+  {% endif %}
+  {% if post.note %}
+    <span class="pub__note"> {{ post.note }}</span>
+  {% endif %}
+</li>
