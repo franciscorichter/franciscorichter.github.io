@@ -12,6 +12,10 @@ This include expects a `post` variable in scope.
 {% endcomment %}
 {% include base_path %}
 {% assign authors = post.authors | default: post.author %}
+{% if authors == nil and post.citation %}
+  {%- assign cit_before_paren = post.citation | split: '(' | first -%}
+  {%- assign authors = cit_before_paren | strip -%}
+{% endif %}
 {% assign venue = post.venue | default: post.booktitle %}
 {% assign year = post.date | default: post.year %}
 {% assign year_str = year | date: "%Y" %}
