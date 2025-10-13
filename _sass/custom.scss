@@ -60,3 +60,15 @@
         transform: translateY(0);
     }
 }
+
+/* Publications page link styling: remove underline/box-shadow from links */
+.pub__list a {
+  text-decoration: none;
+  box-shadow: none; /* overrides Minimal Mistakes underline */
+}
+
+.pub__list a:hover,
+.pub__list a:focus {
+  text-decoration: none;
+  box-shadow: none;
+}
