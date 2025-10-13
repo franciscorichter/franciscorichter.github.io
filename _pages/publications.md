@@ -12,7 +12,7 @@ author_profile: true
 
 <h2>Journals</h2>
 <ul class="pub__list">
-{% assign journal_items = site.publications | where_exp: "p", "p.pubtype and p.pubtype downcase == 'journals'" | sort: "date" | reverse %}
+{% assign journal_items = site.publications | where: "pubtype", "journals" | sort: "date" | reverse %}
 {% for post in journal_items %}
   {% include publication-line.html %}
 {% endfor %}
@@ -20,21 +20,17 @@ author_profile: true
 
 <h2>Preprints</h2>
 <ul class="pub__list">
-{% for post in site.publications reversed %}
-  {% assign pt = post.pubtype | downcase %}
-  {% if pt == 'preprints' %}
-    {% include publication-line.html %}
-  {% endif %}
+{% assign preprint_items = site.publications | where: "pubtype", "preprints" | sort: "date" | reverse %}
+{% for post in preprint_items %}
+  {% include publication-line.html %}
 {% endfor %}
 </ul>
 
 <h2>Working papers</h2>
 <ul class="pub__list">
-{% for post in site.publications reversed %}
-  {% assign pt = post.pubtype | downcase %}
-  {% if pt == 'working' %}
-    {% include publication-line.html %}
-  {% endif %}
+{% assign working_items = site.publications | where: "pubtype", "working" | sort: "date" | reverse %}
+{% for post in working_items %}
+  {% include publication-line.html %}
 {% endfor %}
 </ul>
 
