@@ -19,13 +19,18 @@ This include expects a `post` variable in scope.
 {% assign venue = post.venue | default: post.booktitle %}
 {% assign year = post.date | default: post.year %}
 {% assign year_str = year | date: "%Y" %}
+{% assign pt = post.pubtype | downcase %}
 
 <li class="pub__item">
   <span class="pub__title">
-    {% if post.paperurl %}
-      <a href="{{ post.paperurl }}">{{ post.title }}</a>
+    {% if pt == 'working' %}
+      {{ post.title }}
     {% else %}
-      <a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a>
+      {% if post.paperurl %}
+        <a href="{{ post.paperurl }}">{{ post.title }}</a>
+      {% else %}
+        <a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a>
+      {% endif %}
     {% endif %}
   </span>
   {% if authors %}
@@ -36,7 +41,7 @@ This include expects a `post` variable in scope.
   {% elsif year_str %}
     <span class="pub__venue"> <em>{{ year_str }}</em>.</span>
   {% endif %}
-  {% if post.note %}
+  {% if post.note and pt != 'working' %}
     <span class="pub__note"> {{ post.note }}</span>
   {% endif %}
 </li>
