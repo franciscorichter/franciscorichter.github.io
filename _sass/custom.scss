@@ -62,13 +62,35 @@
 }
 
 /* Publications page link styling: remove underline/box-shadow from links */
-.pub__list a {
-  text-decoration: none;
-  box-shadow: none; /* overrides Minimal Mistakes underline */
+/* Stronger override for publication links to remove underline/box-shadow */
+.pub__list .pub__title a {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important; /* Minimal Mistakes underline */
 }
 
-.pub__list a:hover,
-.pub__list a:focus {
-  text-decoration: none;
-  box-shadow: none;
+.pub__list .pub__title a:hover,
+.pub__list .pub__title a:focus,
+.pub__list .pub__title a:active,
+.pub__list .pub__title a:visited {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+/* Override archive-level anchor styles from _archive.scss */
+.archive .pub__list a,
+.archive .pub__title a {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+.archive .pub__list a:hover,
+.archive .pub__title a:hover,
+.archive .pub__list a:focus,
+.archive .pub__title a:focus {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
 }
