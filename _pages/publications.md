@@ -12,11 +12,9 @@ author_profile: true
 
 <h2>Journals</h2>
 <ul class="pub__list">
-{% for post in site.publications reversed %}
-  {% assign pt = post.pubtype | downcase %}
-  {% if pt == 'journals' %}
-    {% include publication-line.html %}
-  {% endif %}
+{% assign journal_items = site.publications | where_exp: "p", "p.pubtype and p.pubtype downcase == 'journals'" | sort: "date" | reverse %}
+{% for post in journal_items %}
+  {% include publication-line.html %}
 {% endfor %}
 </ul>
 
