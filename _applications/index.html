@@ -60,6 +60,10 @@ permalink: /applications/
 .application-card:nth-child(5) { background: #f3e3ff; }
 .application-card:nth-child(6) { background: #f8fafc; }
 
+    .application-card:nth-child(n+4) {
+        display: none;
+    }
+
     html.dark-mode .application-card, html.dark-mode .application-card * {
         color: #23272e !important;
     }
