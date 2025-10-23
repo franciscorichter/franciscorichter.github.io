@@ -8,19 +8,13 @@ author_profile: false
 
 <div class="teaching-wrapper">
   <div class="teaching-tabs" role="tablist" aria-label="Teaching navigation">
-    <input class="teaching-tab-input" type="radio" name="teaching-tabs" id="tab-courses" checked>
-    <label class="teaching-tab" for="tab-courses" role="tab" aria-controls="panel-courses" aria-selected="true">Courses</label>
-
-    <input class="teaching-tab-input" type="radio" name="teaching-tabs" id="tab-supervision">
-    <label class="teaching-tab" for="tab-supervision" role="tab" aria-controls="panel-supervision" aria-selected="false">Supervision</label>
-
-    <input class="teaching-tab-input" type="radio" name="teaching-tabs" id="tab-outreach">
-    <label class="teaching-tab" for="tab-outreach" role="tab" aria-controls="panel-outreach" aria-selected="false">Outreach</label>
+    <button class="teaching-tab is-active" type="button" data-target="courses" role="tab" aria-controls="courses" aria-selected="true">Courses</button>
+    <button class="teaching-tab" type="button" data-target="supervision" role="tab" aria-controls="supervision" aria-selected="false">Supervision</button>
+    <button class="teaching-tab" type="button" data-target="outreach" role="tab" aria-controls="outreach" aria-selected="false">Outreach</button>
   </div>
 
-  <div class="teaching-panels">
-    <section id="panel-courses" class="teaching-panel" role="tabpanel" aria-labelledby="tab-courses">
-      <h2>Courses</h2>
+  <section id="courses" class="teaching-section is-active" role="tabpanel">
+    <h2>Courses</h2>
 
     {%- assign semesters = "" -%}
     {%- for c in site.teaching -%}
@@ -101,37 +95,81 @@ author_profile: false
         {%- endif -%}
       {%- endif -%}
     {%- endfor -%}
-    </section>
+  </section>
 
-    <section id="panel-supervision" class="teaching-panel" role="tabpanel" aria-labelledby="tab-supervision">
-      {% assign supervision_page = site.teaching | where: "type", "Supervision" | first %}
-      {% if supervision_page %}
-      <h2>Supervision</h2>
-      {{ supervision_page.content | markdownify }}
-      <p><a href="{{ supervision_page.url | relative_url }}" class="btn--primary btn--sm">Read more</a></p>
-      {% else %}
-      <p>No supervision items available at the moment.</p>
-      {% endif %}
-    </section>
+  <section id="supervision" class="teaching-section" role="tabpanel" hidden>
+    {% assign supervision_page = site.teaching | where: "type", "Supervision" | first %}
+    {% if supervision_page %}
+    <h2>Supervision</h2>
+    {{ supervision_page.content | markdownify }}
+    <p><a href="{{ supervision_page.url | relative_url }}" class="btn--primary btn--sm">Read more</a></p>
+    {% else %}
+    <p>No supervision items available at the moment.</p>
+    {% endif %}
+  </section>
 
-    <section id="panel-outreach" class="teaching-panel" role="tabpanel" aria-labelledby="tab-outreach">
-      <h2>Outreach</h2>
-      <div class="outreach-section">
-        <h3>LiLu2 Tech Day: Data Science Workshops for High School Students (2025)</h3>
-        <p>
-          In 2025, I participated in the LiLu2 Tech Day at Liceo cantonale di Lugano 2, organizing and delivering hands-on workshops on data science for high school students. This activity is part of the <a href="https://ingch.ch/en/project/technology-and-it-weeks/" target="_blank">Technology and IT Weeks</a> program.
-        </p>
-        <h3>LaM: Support for High School Thesis Projects (Lavori di Maturità) (2025)</h3>
-        <p>
-          In 2025, I supported high school students with their Lavori di Maturità (LaM) one-year thesis projects in collaboration with the Faculty of Informatics at USI and the Liceo cantonale di Lugano 2 (LiLu2). The project currently under development can be viewed <a href="https://franciscorichter.github.io/ascia/" target="_blank">here</a>. <a href="https://www.usi.ch/it/feeds/26865" target="_blank">Read more</a>.
-        </p>
-        <h3>Giornate Autogestite (2025)</h3>
-        <p>
-          In 2025, I participated in the "Giornate Autogestite" (self-managed days) at several high schools in Ticino. These events are organized by students and involve various local organizations and universities, including USI. I contributed by offering workshops and activities designed to engage students in topics related to data science, technology, and academic life. The initiative promotes active student involvement and provides a platform for dialogue between high school students and the academic community. <a href="https://www.usi.ch/en/feeds/28354" target="_blank">More info</a>.
-        </p>
-      </div>
-    </section>
-  </div>
+  <section id="outreach" class="teaching-section" role="tabpanel" hidden>
+    <h2>Outreach</h2>
+    <div class="outreach-section">
+      <h3>LiLu2 Tech Day: Data Science Workshops for High School Students (2025)</h3>
+      <p>
+        In 2025, I participated in the LiLu2 Tech Day at Liceo cantonale di Lugano 2, organizing and delivering hands-on workshops on data science for high school students. This activity is part of the <a href="https://ingch.ch/en/project/technology-and-it-weeks/" target="_blank">Technology and IT Weeks</a> program.
+      </p>
+      <h3>LaM: Support for High School Thesis Projects (Lavori di Maturità) (2025)</h3>
+      <p>
+        In 2025, I supported high school students with their Lavori di Maturità (LaM) one-year thesis projects in collaboration with the Faculty of Informatics at USI and the Liceo cantonale di Lugano 2 (LiLu2). The project currently under development can be viewed <a href="https://franciscorichter.github.io/ascia/" target="_blank">here</a>. <a href="https://www.usi.ch/it/feeds/26865" target="_blank">Read more</a>.
+      </p>
+      <h3>Giornate Autogestite (2025)</h3>
+      <p>
+        In 2025, I participated in the "Giornate Autogestite" (self-managed days) at several high schools in Ticino. These events are organized by students and involve various local organizations and universities, including USI. I contributed by offering workshops and activities designed to engage students in topics related to data science, technology, and academic life. The initiative promotes active student involvement and provides a platform for dialogue between high school students and the academic community. <a href="https://www.usi.ch/en/feeds/28354" target="_blank">More info</a>.
+      </p>
+    </div>
+  </section>
 
   <p class="teaching-back"><a href="/" class="back-button">← Back to Home</a></p>
 </div>
+
+<script>
+  (function () {
+    function initTeachingTabs() {
+      const container = document.querySelector('.teaching-tabs');
+      if (!container) return;
+
+      const tabs = container.querySelectorAll('.teaching-tab');
+      const panels = document.querySelectorAll('.teaching-section');
+
+      function activateTab(targetId) {
+        tabs.forEach((tab) => {
+          const isActive = tab.dataset.target === targetId;
+          tab.classList.toggle('is-active', isActive);
+          tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          tab.setAttribute('tabindex', isActive ? '0' : '-1');
+        });
+
+        panels.forEach((panel) => {
+          const isActive = panel.id === targetId;
+          panel.classList.toggle('is-active', isActive);
+          panel.hidden = !isActive;
+        });
+      }
+
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => activateTab(tab.dataset.target));
+        tab.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            activateTab(tab.dataset.target);
+          }
+        });
+      });
+
+      const active = container.querySelector('.teaching-tab.is-active');
+      if (active) {
+        activateTab(active.dataset.target);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', initTeachingTabs);
+    document.addEventListener('turbolinks:load', initTeachingTabs);
+  })();
+</script>
