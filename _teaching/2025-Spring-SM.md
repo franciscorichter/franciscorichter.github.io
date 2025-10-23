@@ -15,7 +15,7 @@ This course covers foundational and advanced topics in **stochastic processes**,
 The course covers a **broad range of stochastic techniques**, structured into **thirteen main topics**, each with corresponding **lecture notes**:
 
 ### **1. Randomness**  
-📄 [Lecture 1: Randomness]({{ '/files/Notes/SM25/Stochastic_Methods_2025.pdf' | relative_url }})  
+📄 [Lecture 1: Randomness]({{ '/files/Notes/SM25/Stochastic_Methods_2025-1.pdf' | relative_url }})  
 - Random number generators (RNGs) and their properties
 - Pseudorandom number generation: Linear Congruential Generators (LCG), PCG64
 - Probability distributions: uniform, discrete, continuous
