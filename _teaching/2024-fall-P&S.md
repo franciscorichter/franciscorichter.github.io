@@ -12,16 +12,16 @@ This course provides a comprehensive foundation in probability and statistics, e
 
 ### **Course Resources**
 - **Lecture Notes**  
-  - [Lecture 1: Introduction to Probability and Random Number Generation](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/P&S/2024/Lecture_1.pdf)  
-  - [Lecture 2: Foundations of Randomness (Part 2)](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/P&S/2024/Lecture_2.pdf)  
-  - [Lecture 3: Static Network Models](https://raw.githubusercontent.com/franciscorichter.github.io/master/_teaching/Notes/P&S/2024/Lecture_3.pdf)  
-  - [Lecture 4-6: Probability Relationships and Markov Chains](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/P&S/2024/Lecture_4_5_6.pdf)  
-  - [Lecture 7: Continuous Random Variables](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/P&S/2024/Lecture_7.pdf)  
-  - [Lecture 8: Fundamentals of Statistics](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/P&S/2024/Lecture_8.pdf)  
-  - [Lecture 9: Estimation](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/P&S/2024/Lecture_9.pdf)  
-  - [Lecture 10: Prediction](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/P&S/2024/Lecture_10.pdf)  
-  - [Lecture 11: Non-Linear Prediction](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/P&S/2024/Lecture_11.pdf)  
-  - [Lecture 12: Hypothesis Testing](https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/_teaching/Notes/P&S/2024/Lecture_12.pdf)  
+  - [Lecture 1: Introduction to Probability and Random Number Generation](/Notes/P&S/2024/Lecture_1.pdf)  
+  - [Lecture 2: Foundations of Randomness (Part 2)](/Notes/P&S/2024/Lecture_2.pdf)  
+  - [Lecture 3: Static Network Models](/Notes/P&S/2024/Lecture_3.pdf)  
+  - [Lecture 4-6: Probability Relationships and Markov Chains](/Notes/P&S/2024/Lecture_4_5_6.pdf)  
+  - [Lecture 7: Continuous Random Variables](/Notes/P&S/2024/Lecture_7.pdf)  
+  - [Lecture 8: Fundamentals of Statistics](/Notes/P&S/2024/Lecture_8.pdf)  
+  - [Lecture 9: Estimation](/Notes/P&S/2024/Lecture_9.pdf)  
+  - [Lecture 10: Prediction](/Notes/P&S/2024/Lecture_10.pdf)  
+  - [Lecture 11: Non-Linear Prediction](/Notes/P&S/2024/Lecture_11.pdf)  
+  - [Lecture 12: Hypothesis Testing](/Notes/P&S/2024/Lecture_12.pdf)  
 
 ### **Course Content**
 
