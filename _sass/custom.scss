@@ -99,6 +99,12 @@
   margin-top: 2rem;
 }
 
+.teaching-tab-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .teaching-tabs {
   display: inline-flex;
   flex-wrap: wrap;
@@ -119,7 +125,19 @@
   color: #1f2933;
   background: #ffffff;
   box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.teaching-tab::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: transparent;
+  transition: background 0.2s ease;
 }
 
 .teaching-tab:hover {
@@ -127,18 +145,37 @@
   box-shadow: 0 8px 24px rgba(13, 110, 253, 0.18);
 }
 
-.teaching-tab.is-active {
+.teaching-tab:focus-visible {
+  outline: 3px solid rgba(13, 110, 253, 0.45);
+  outline-offset: 2px;
+}
+
+#tab-courses:checked ~ .teaching-tabs label[for="tab-courses"],
+#tab-supervision:checked ~ .teaching-tabs label[for="tab-supervision"],
+#tab-outreach:checked ~ .teaching-tabs label[for="tab-outreach"] {
   background: linear-gradient(120deg, rgba(13, 110, 253, 0.92), rgba(59, 130, 246, 0.92));
   color: #ffffff;
   box-shadow: 0 10px 26px rgba(13, 110, 253, 0.24);
 }
 
-.teaching-section {
+#tab-courses:checked ~ .teaching-tabs label[for="tab-courses"]::after,
+#tab-supervision:checked ~ .teaching-tabs label[for="tab-supervision"]::after,
+#tab-outreach:checked ~ .teaching-tabs label[for="tab-outreach"]::after {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.teaching-panels {
+  position: relative;
+}
+
+.teaching-panel {
   display: none;
   animation: fadeIn 0.25s ease;
 }
 
-.teaching-section.is-active {
+#tab-courses:checked ~ .teaching-panels #panel-courses,
+#tab-supervision:checked ~ .teaching-panels #panel-supervision,
+#tab-outreach:checked ~ .teaching-panels #panel-outreach {
   display: block;
 }
 
