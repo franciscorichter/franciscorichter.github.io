@@ -6,38 +6,15 @@ author_profile: false
 
 {% comment %} teaching page with left nav (Courses / Supervision / Outreach) {% endcomment %}
 
-<div class="teaching-flex">
+<div class="teaching-wrapper">
+  <div class="teaching-tabs" role="tablist" aria-label="Teaching navigation">
+    <button class="teaching-tab is-active" type="button" data-target="courses" role="tab" aria-controls="courses" aria-selected="true">Courses</button>
+    <button class="teaching-tab" type="button" data-target="supervision" role="tab" aria-controls="supervision" aria-selected="false">Supervision</button>
+    <button class="teaching-tab" type="button" data-target="outreach" role="tab" aria-controls="outreach" aria-selected="false">Outreach</button>
+  </div>
 
-  <!-- sticky nav -->
-  <nav class="teaching-nav" aria-label="Teaching sub‑menu">
-    <ul>
-      <li><a href="#courses">Courses</a></li>
-      <li><a href="#supervision">Supervision</a></li>
-      <li><a href="#outreach">Outreach</a></li>
-    </ul>
-  </nav>
-
-  <script>
-    // naive IntersectionObserver to toggle .active
-    const links = document.querySelectorAll(".teaching-nav a");
-    const sections = Array.from(links).map(l => document.querySelector(l.getAttribute("href")));
-    const opts = { rootMargin: "-40% 0px -55% 0px" };   // triggers around middle
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          links.forEach(l => l.classList.toggle("active", l.hash === "#" + e.target.id));
-        }
-      });
-    }, opts);
-    sections.forEach(s => io.observe(s));
-  </script>
-
-
-  <!-- main content -->
-  <main class="teaching-wrapper">
-
-    <!-- ▸──────── COURSES ────────▸ -->
-    <h2 id="courses">Courses</h2>
+  <section id="courses" class="teaching-section is-active" role="tabpanel">
+    <h2>Courses</h2>
 
     {%- assign semesters = "" -%}
     {%- for c in site.teaching -%}
@@ -108,7 +85,7 @@ author_profile: false
                     {%- if post.venue -%}<div class="course-card-venue">{{ post.venue }}</div>{%- endif -%}
                     {%- if post.degree_program -%}<div class="course-card-degree">{{ post.degree_program }}</div>{%- endif -%}
                     {%- if post.instructor or post.instructors -%}<div class="course-card-instructor">{{ post.instructor | default: post.instructors }}</div>{%- endif -%}
-                    <div><a href="{{ post.url | relative_url }}" class="course-card-link">Read more</a></div>
+                    <a href="{{ post.url | relative_url }}" class="course-card-link">Read more</a>
                   </div>
                   {%- assign seen_titles = seen_titles | append: post.title | append: "," -%}
                 {%- endunless -%}
@@ -118,33 +95,65 @@ author_profile: false
         {%- endif -%}
       {%- endif -%}
     {%- endfor -%}
+  </section>
 
-    <!-- ▸──────── SUPERVISION ────────▸ -->
+  <section id="supervision" class="teaching-section" role="tabpanel" hidden>
     {% assign supervision_page = site.teaching | where: "type", "Supervision" | first %}
     {% if supervision_page %}
-    <h2 id="supervision">Supervision</h2>
+    <h2>Supervision</h2>
     {{ supervision_page.content | markdownify }}
     <p><a href="{{ supervision_page.url | relative_url }}" class="btn--primary btn--sm">Read more</a></p>
+    {% else %}
+    <p>No supervision items available at the moment.</p>
     {% endif %}
+  </section>
 
-    <!-- ▸──────── OUTREACH ────────▸ -->
-    <h2 id="outreach">Outreach</h2>
-<div class="outreach-section">
-  <h3>LiLu2 Tech Day: Data Science Workshops for High School Students (2025)</h3>
-  <p>
-    In 2025, I participated in the LiLu2 Tech Day at Liceo cantonale di Lugano 2, organizing and delivering hands-on workshops on data science for high school students. This activity is part of the <a href="https://ingch.ch/en/project/technology-and-it-weeks/" target="_blank">Technology and IT Weeks</a> program.
-  </p>
-  <h3>LaM: Support for High School Thesis Projects (Lavori di Maturità) (2025)</h3>
-  <p>
-    In 2025, I supported high school students with their Lavori di Maturità (LaM) one-year thesis projects in collaboration with the Faculty of Informatics at USI and the Liceo cantonale di Lugano 2 (LiLu2). The project currently under development can be viewed <a href="https://franciscorichter.github.io/ascia/" target="_blank">here</a>. <a href="https://www.usi.ch/it/feeds/26865" target="_blank">Read more</a>.
-  </p>
-  <h3>Giornate Autogestite (2025)</h3>
-  <p>
-    In 2025, I participated in the "Giornate Autogestite" (self-managed days) at several high schools in Ticino. These events are organized by students and involve various local organizations and universities, including USI. I contributed by offering workshops and activities designed to engage students in topics related to data science, technology, and academic life. The initiative promotes active student involvement and provides a platform for dialogue between high school students and the academic community. <a href="https://www.usi.ch/en/feeds/28354" target="_blank">More info</a>.
-  </p>
+  <section id="outreach" class="teaching-section" role="tabpanel" hidden>
+    <h2>Outreach</h2>
+    <div class="outreach-section">
+      <h3>LiLu2 Tech Day: Data Science Workshops for High School Students (2025)</h3>
+      <p>
+        In 2025, I participated in the LiLu2 Tech Day at Liceo cantonale di Lugano 2, organizing and delivering hands-on workshops on data science for high school students. This activity is part of the <a href="https://ingch.ch/en/project/technology-and-it-weeks/" target="_blank">Technology and IT Weeks</a> program.
+      </p>
+      <h3>LaM: Support for High School Thesis Projects (Lavori di Maturità) (2025)</h3>
+      <p>
+        In 2025, I supported high school students with their Lavori di Maturità (LaM) one-year thesis projects in collaboration with the Faculty of Informatics at USI and the Liceo cantonale di Lugano 2 (LiLu2). The project currently under development can be viewed <a href="https://franciscorichter.github.io/ascia/" target="_blank">here</a>. <a href="https://www.usi.ch/it/feeds/26865" target="_blank">Read more</a>.
+      </p>
+      <h3>Giornate Autogestite (2025)</h3>
+      <p>
+        In 2025, I participated in the "Giornate Autogestite" (self-managed days) at several high schools in Ticino. These events are organized by students and involve various local organizations and universities, including USI. I contributed by offering workshops and activities designed to engage students in topics related to data science, technology, and academic life. The initiative promotes active student involvement and provides a platform for dialogue between high school students and the academic community. <a href="https://www.usi.ch/en/feeds/28354" target="_blank">More info</a>.
+      </p>
+    </div>
+  </section>
+
+  <p class="teaching-back"><a href="/" class="back-button">← Back to Home</a></p>
 </div>
 
-    <p style="margin-top:3rem"><a href="/" class="back-button">← Back to Home</a></p>
-  </main>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const tabs = document.querySelectorAll('.teaching-tab');
+    const panels = document.querySelectorAll('.teaching-section');
 
-</div>
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const targetId = tab.dataset.target;
+
+        tabs.forEach((btn) => {
+          const isActive = btn === tab;
+          btn.classList.toggle('is-active', isActive);
+          btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+
+        panels.forEach((panel) => {
+          const isActive = panel.id === targetId;
+          panel.classList.toggle('is-active', isActive);
+          if (isActive) {
+            panel.removeAttribute('hidden');
+          } else {
+            panel.setAttribute('hidden', 'hidden');
+          }
+        });
+      });
+    });
+  });
+</script>
