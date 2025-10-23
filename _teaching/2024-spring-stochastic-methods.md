@@ -26,5 +26,5 @@ The course explores a wide array of stochastic models and techniques, including:
 
 - **Stochastic Optimization**: Covering topics such as evolutionary algorithms, stochastic gradient descent, and the expectation-maximization (EM) algorithm.
 
-For further reading, please ([Download the Stochastic Methods lecture notes]({{ '/Notes/SM/Stochastic_Methods_24.pdf' | relative_url }})
+For further reading, please ([Download the Stochastic Methods lecture notes](/files/sm-2024/Stochastic_Methods_24.pdf)
 ).
