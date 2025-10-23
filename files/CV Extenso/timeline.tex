@@ -1,0 +1,98 @@
+\tikzstyle{descript} = [text = black,align=center, minimum height=1.8cm, align=center, outer sep=0pt,font = \footnotesize]
+\tikzstyle{activity} =[align=center,outer sep=1pt]
+
+\begin{tikzpicture}[very thick, black]
+\small
+
+%% Coordinates
+\coordinate (lef) at (-3,0); % Origin
+\coordinate (O) at (-1,0); % Origin
+\coordinate (p13) at (0,0);
+\coordinate (p135) at (0.5,0);
+\coordinate (p14) at (1,0);
+\coordinate (phdinit) at (3,0);
+\coordinate (P1) at (4.5,0);
+\coordinate (P112) at (5,0);
+\coordinate (P12) at (6,0);
+\coordinate (P2) at (8,0);
+\coordinate (phd) at (10,0);
+\coordinate (P3) at (12,0);
+\coordinate (P4) at (16,0);
+\coordinate (F) at (16,0); %End
+\coordinate (E1) at (5,0); %Event
+\coordinate (E2) at (0.5,0); %Event
+
+%% Filled regions
+\shade[left color=white, right color=ColorOne] rectangle (lef) -- (p135) -- ($(p135)+(0,1)$) -- ($(lef)+(0,1)$); % Studies
+
+
+\fill[color=ColorTwo!20] rectangle (p135) -- (P2) -- ($(P2)+(0,1)$) -- ($(p135)+(0,1)$); % Evalueserve
+
+%\path [pattern color=ColorOne, pattern=north east lines, line width = 1pt, very thick] rectangle ($(p14)+(0.5,0)$) -- ($(p14)+(2,0)$) -- ($(p14)+(2,1)$) -- ($(p14)+(0.5,1)$); % Something else
+
+
+\fill[color=ColorTwo!20] rectangle (P1) -- (P2) -- ($(P2)+(0,1)$) -- ($(P1)+(0,1)$); % Work
+\fill[color=ColorThree!20] rectangle (phdinit) -- (phd) -- ($(phd)+(0,1)$) -- ($(phdinit)+(0,1)$); % PhD
+\shade[left color=ColorSix, right color=white] rectangle (phd) -- (P4) -- ($(P4)+(0,1)$) -- ($(phd)+(0,1)$); % Current work
+
+%% Text inside filled regions
+\draw ($(P1)+(-5.5,0.5)$) node[activity,ColorOne] {Researcher};
+\draw ($(P1)+(-2.8,0.5)$) node[activity,ColorTwo] {Data Scientist};
+\draw ($(P2)+(-2,0.5)$) node[activity,ColorThree] {PhD};
+%\draw ($(P3)+(-2,0.5)$)  node[activity, ColorThree] {PhD};
+\draw ($(P4)+(-3,0.5)$)  node[activity, ColorSix] {Postdoctoral Researcher};
+
+%% Description
+
+\node[descript,fill=ColorOne!15,text=ColorOne](D0) at ($(P1)+(-5,-2.5)$) {%
+\textbf{\href{www.eso.org}{ESO}}\\
+Research Assistant\\
+\\
+\href{https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/files/tesis.pdf}{\textcolor{ColorFour}{Thesis}}};
+
+\node[descript,fill=ColorTwo!15,text=ColorTwo](D1) at ($(P112)+(-2.3,-2.5)$) {%
+	\textbf{\href{www.evalueserve.com}{Evalueserve}}\\
+	Operational Risk\\
+	Extreme value theory};
+    
+\node[descript,fill=ColorThree!15,text=ColorThree](D2) at ($(P2)+(-1.45,-2.5)$) {%
+	\textbf{University of Groningen}\\
+	Evolutionary Biology\\
+	Stochastic Modeling\\
+    \href{https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/files/dissertation.pdf}{\textcolor{ColorFour}{PhD Thesis}}};
+
+\node[descript,fill=ColorSix!15,text=ColorThree](D3) at ($(P3)+(-0.5,-2.5)$) {%
+	\textbf{Università della Svizzera italiana}\\
+    Statistical Network Sciences\\
+	\href{https://www.biorxiv.org/content/10.1101/2021.07.01.450729v2.abstract}{\textcolor{ColorFour}{Diversification Processes}}\\
+	\href{https://link.springer.com/article/10.1007/s13253-024-00638-6}{\textcolor{ColorFour}{Graphical Models}}};
+
+\node[descript,fill=ColorTwo!15,text=ColorTwo](D4) at ($(P4)+(-0.9,-2.5)$) {%
+	\textbf{USI}\\
+	Lecturer\\
+	\href{https://franciscorichter.github.io/teaching/}{\textcolor{ColorFour}{Courses}}};
+	
+%% Events
+\draw [decorate,decoration={brace,amplitude=6pt}] ($(P3)+(1,1.2)$) -- ($(P3)+(3,1.2)$) node [black,midway,above=6pt]  {Lecturer - USI};
+
+\draw [decorate,decoration={brace,amplitude=6pt}]($(E2)+(1.5,1.2)$) -- ($(E2)+(2.5,1.2)$) node [black,midway,above=6pt] {Lecturer - UTFSM };
+
+%% Arrows
+\path[->,color=ColorOne] ($(P1)+(-4,-0.1)$) edge [out=-90, in=130]  ($(D0)+(0,1)$);
+\path[->,color=ColorTwo] ($(p14)+(0,-0.1)$) edge [out=-90, in=130]  ($(D1)+(0,1)$);
+\path[->,color=ColorThree] ($(P2)+(-1,-0.1)$) edge [out=-90, in=130]  ($(D2)+(0,1)$);
+\path[->,color=ColorSix]($(P3)+(1,-0.1)$)  edge [out=-70, in=90]  ($(D3)+(0,1)$);
+\path[->,color=ColorSix]($(P3)+(1,-0.1)$)  edge [out=-70, in=90]  ($(D4)+(0,1)$);
+
+%% Arrow
+\coordinate (F) at (15.5,0); % Extend the endpoint further
+\draw[->] (lef) -- (F);
+%% Ticks
+\foreach \x in {-1,0,1,...,15}
+\draw(\x cm,3pt) -- (\x cm,-3pt);
+%% Labels
+\foreach \i \j in {0/2013,3/2016,10/2021,15/2024}{
+	\draw (\i,0) node[below=3pt] {\j} ;
+}
+
+\end{tikzpicture}

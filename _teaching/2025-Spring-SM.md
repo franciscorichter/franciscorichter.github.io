@@ -15,21 +15,21 @@ This course covers foundational and advanced topics in **stochastic processes**,
 The course covers a **broad range of stochastic techniques**, structured into **thirteen main topics**, each with corresponding **lecture notes**:
 
 ### **1. Randomness**  
-📄 [Lecture 1: Randomness]({{ '/files/Notes/SM25/week1.pdf' | relative_url }})  
+📄 [Lecture 1: Randomness]({{ '/files/Notes/SM25/Stochastic_Methods_2025.pdf' | relative_url }})  
 - Random number generators (RNGs) and their properties
 - Pseudorandom number generation: Linear Congruential Generators (LCG), PCG64
 - Probability distributions: uniform, discrete, continuous
 - Inverse transform sampling
 
 ### **2. Random Variables**  
-📄 [Lecture 2: Random Variables]({{ '/files/Notes/SM25/week2.pdf' | relative_url }})  
+📄 [Lecture 2: Random Variables]({{ '/files/Notes/SM25/Stochastic_Methods_2025-2.pdf' | relative_url }})  
 - Discrete vs. continuous random variables
 - Probability mass functions (PMF) and probability density functions (PDF)
 - Cumulative distribution functions (CDF) and their properties
 - Binomial, Poisson, and normal distributions
 
 ### **3. Expectation & Limit Theorems**  
-📄 [Lecture 3: Expectation]({{ '/files/Notes/SM25/week3.pdf' | relative_url }})  
+📄 [Lecture 3: Expectation]({{ '/files/Notes/SM25/Stochastic_Methods_2025-3.pdf' | relative_url }})  
 - Definition of expectation and its properties
 - Linearity of expectation
 - The **Law of Large Numbers (LLN)**
@@ -37,7 +37,7 @@ The course covers a **broad range of stochastic techniques**, structured into **
 - Monte Carlo simulation for numerical approximations
 
 ### **4. Variance & Monte Carlo Methods**  
-📄 [Lecture 4: Variance]({{ '/files/Notes/SM25/week4.pdf' | relative_url }})  
+📄 [Lecture 4: Variance]({{ '/files/Notes/SM25/Stochastic_Methods_2025-4.pdf' | relative_url }})  
 - Monte Carlo integration and importance sampling
 - Variance reduction techniques (stratified sampling, control variates, antithetic variates)
 - Rejection sampling and proof of correctness
@@ -45,7 +45,7 @@ The course covers a **broad range of stochastic techniques**, structured into **
 - Bayesian inference and Bayes' theorem
 
 ### **5. Networks & Random Graphs**  
-📄 [Lecture 5: Networks]({{ '/files/Notes/SM25/week5.pdf' | relative_url }})  
+📄 [Lecture 5: Networks]({{ '/files/Notes/SM25/Stochastic_Methods_2025-5.pdf' | relative_url }})  
 - Introduction to **random networks**
 - Graph theory: adjacency matrices and connectivity
 - Erdős–Rényi random graphs
@@ -53,7 +53,7 @@ The course covers a **broad range of stochastic techniques**, structured into **
 - Applications in epidemiology and network analysis
 
 ### **6. Markov Processes**  
-📄 [Lecture 6: Markov Processes]({{ '/files/Notes/SM25/week6.pdf' | relative_url }})  
+📄 [Lecture 6: Markov Processes]({{ '/files/Notes/SM25/Stochastic_Methods_2025-6.pdf' | relative_url }})  
 - **Markov chains**: transition matrices, Chapman-Kolmogorov equation
 - Random walks and applications in financial models
 - Stationary distributions and **ergodicity**
@@ -61,21 +61,21 @@ The course covers a **broad range of stochastic techniques**, structured into **
 - Applications in **epidemiology and finance**
 
 ### **7. Stochastic Simulation**  
-📄 [Lecture 7: Stochastic Simulation]({{ '/files/Notes/SM25/week7.pdf' | relative_url }})  
+📄 [Lecture 7: Stochastic Simulation]({{ '/files/Notes/SM25/Stochastic_Methods_2025-7.pdf' | relative_url }})  
 - Stochastic Cellular Automata and probabilistic grid-based models
 - Agent-Based Modeling (ABM) and emergent behavior
 - Example: **Forest fire model** (spread of wildfire simulation)
 - Example: **Ant foraging simulation** (pheromone-based search strategies)
 
 ### **8. Stochastic Inference**  
-📄 [Lecture 8: Stochastic Inference]({{ '/files/Notes/SM25/week8.pdf' | relative_url }})  
+📄 [Lecture 8: Stochastic Inference]({{ '/files/Notes/SM25/Stochastic_Methods_2025-8.pdf' | relative_url }})  
 - **Linear Regression** and least squares estimation
 - **Logistic Regression** and Maximum Likelihood Estimation (MLE)
 - **Support Vector Machines (SVMs)** for classification
 - **Neural networks** and stochastic optimization methods
 
 ### **9. Stochastic Optimization**  
-📄 [Lecture 9: Stochastic Optimization]({{ '/files/Notes/SM25/week9.pdf' | relative_url }})  
+📄 [Lecture 9: Stochastic Optimization]({{ '/files/Notes/SM25/Stochastic_Methods_2025-9.pdf' | relative_url }})  
 - **Evolutionary algorithms**: Genetic algorithms (GA) & Differential Evolution (DE)
 - **Stochastic Gradient Descent (SGD)** and its variants
 - **ADAM optimizer**: adaptive learning rates for optimization
@@ -83,28 +83,28 @@ The course covers a **broad range of stochastic techniques**, structured into **
 - **Markov Chain Monte Carlo (MCMC)** methods
 
 ### **10. Stochastic Systems & Multi-Agent Models**  
-📄 [Lecture 10: Stochastic Systems]({{ '/files/Notes/SM25/week10.pdf' | relative_url }})  
+📄 [Lecture 10: Stochastic Systems]({{ '/files/Notes/SM25/Stochastic_Methods_2025-10.pdf' | relative_url }})  
 - **Multi-agent stochastic systems**: Defining agents, tasks, tools, and processes
 - **Markov Decision Processes (MDP)**
 - Process optimization: sequential, parallel, hierarchical, and event-driven systems
 - Randomness in AI-generated outputs and bias in language models
 
 ### **11. Advanced Stochastic Optimization**  
-📄 [Lecture 11: Advanced Optimization]({{ '/files/Notes/SM25/week11.pdf' | relative_url }})  
+📄 [Lecture 11: Advanced Optimization]({{ '/files/Notes/SM25/Stochastic_Methods_2025-11.pdf' | relative_url }})  
 - Advanced optimization techniques for stochastic systems
 - Reinforcement learning algorithms and applications
 - Multi-objective optimization under uncertainty
 - Bayesian optimization methods
 
 ### **12. Stochastic Optimization Methods**  
-📄 [Lecture 12: Optimization Methods]({{ '/files/Notes/SM25/week12.pdf' | relative_url }})  
+📄 [Lecture 12: Optimization Methods]({{ '/files/Notes/SM25/Stochastic_Methods_2025-12.pdf' | relative_url }})  
 - Building upon foundational concepts of stochastic optimization
 - Advanced gradient-based methods
 - Constraint handling in stochastic optimization
 - Real-world applications and case studies
 
 ### **13. Decision-Making and Collaboration**  
-📄 [Lecture 13: Multi-Agent Decision-Making]({{ '/files/Notes/SM25/week13.pdf' | relative_url }})  
+📄 [Lecture 13: Multi-Agent Decision-Making]({{ '/files/Notes/SM25/Stochastic_Methods_2025-13.pdf' | relative_url }})  
 - Multi-agent systems and autonomous agents
 - Collaborative decision-making under uncertainty
 - Game theory in stochastic environments
