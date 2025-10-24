@@ -10,6 +10,24 @@ location: "Lugano, Switzerland"
 
 
 
+### Currently Supervising (2025)
+
+<div class="supervision-entry in-progress">
+  <span class="supervision-name">Lovnesh Bhardwaj</span>
+  <span class="supervision-meta">Master in Artificial Intelligence · Università della Svizzera italiana</span>
+  <span class="supervision-title">Stochastic Water Value Estimation for Hydroelectric Power Plants using Machine Learning Forecasts of Reservoir Inflows</span>
+  <span class="supervision-date">In progress</span>
+</div>
+
+---
+
+<div class="supervision-entry in-progress">
+  <span class="supervision-name">Metehan Dündar</span>
+  <span class="supervision-meta">Master of Science in Computational Science · Università della Svizzera italiana</span>
+  <span class="supervision-title">Causality and Deep Learning</span>
+  <span class="supervision-date">In progress</span>
+</div>
+
 ### Completed Theses (2023–2024)
 
 <div class="supervision-entry">
@@ -47,23 +65,3 @@ location: "Lugano, Switzerland"
   <span class="supervision-title">Prediction in Environmental OASI Time Series</span>
   <span class="supervision-date">Completed · July 2025</span>
 </div>
-
-
-### Currently Supervising (2025)
-
-<div class="supervision-entry in-progress">
-  <span class="supervision-name">Lovnesh Bhardwaj</span>
-  <span class="supervision-meta">Master in Artificial Intelligence · Università della Svizzera italiana</span>
-  <span class="supervision-title">Stochastic Water Value Estimation for Hydroelectric Power Plants using Machine Learning Forecasts of Reservoir Inflows</span>
-  <span class="supervision-date">In progress</span>
-</div>
-
----
-
-<div class="supervision-entry in-progress">
-  <span class="supervision-name">Metehan Dündar</span>
-  <span class="supervision-meta">Master of Science in Computational Science · Università della Svizzera italiana</span>
-  <span class="supervision-title">Causality and Deep Learning</span>
-  <span class="supervision-date">In progress</span>
-</div>
-
