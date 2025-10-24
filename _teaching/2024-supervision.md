@@ -39,6 +39,15 @@ location: "Lugano, Switzerland"
   <a class="supervision-link" href="https://www.politesi.polimi.it/bitstream/10589/222507/5/Classical_Format_Thesis___Scuola_di_Ingegneria_Industriale_e_dell_Informazione___Politecnico_di_Milano%20%282%29.pdf" target="_blank" rel="noopener">Thesis PDF</a>
 </div>
 
+---
+
+<div class="supervision-entry">
+  <span class="supervision-name">Federica Marini</span>
+  <span class="supervision-meta">Master in Statistical Sciences and Data Science · Università di Bologna</span>
+  <span class="supervision-title">Prediction in Environmental OASI Time Series</span>
+  <span class="supervision-date">Completed · July 2025</span>
+</div>
+
 
 ### Currently Supervising (2025)
 
@@ -52,9 +61,9 @@ location: "Lugano, Switzerland"
 ---
 
 <div class="supervision-entry in-progress">
-  <span class="supervision-name">Federica Marini</span>
-  <span class="supervision-meta">Master in Statistical Sciences and Data Science · Università di Bologna</span>
-  <span class="supervision-title">Prediction in Environmental OASI Time Series</span>
+  <span class="supervision-name">Metehan Dündar</span>
+  <span class="supervision-meta">Master of Science in Computational Science · Università della Svizzera italiana</span>
+  <span class="supervision-title">Causality and Deep Learning</span>
   <span class="supervision-date">In progress</span>
 </div>
 
