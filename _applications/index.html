@@ -97,6 +97,11 @@ permalink: /applications/
         box-sizing: border-box;
     }
 
+    .application-card--laboratorio .application-image {
+        height: 210px;
+        padding: 12px;
+    }
+
     /* put this after the other .application-image rules */
     .application-image img {
         /* make the picture fit without cropping */
@@ -212,7 +217,7 @@ permalink: /applications/
 
 
     <!-- Laboratorio Textil -->
-    <div class="application-card">
+    <div class="application-card application-card--laboratorio">
         <a href="https://www.laboratoriotextil.com" class="application-link-wrap">
             <div class="application-image">
                 <img src="{{ '/images/lt3.png' | relative_url }}" alt="FRM Analytics logo">
