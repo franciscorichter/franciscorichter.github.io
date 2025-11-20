@@ -93,15 +93,20 @@ permalink: /applications/
         justify-content: center;
         color: #999;
         font-size: 1.5rem;
+        padding: 18px;
+        box-sizing: border-box;
     }
 
     /* put this after the other .application-image rules */
     .application-image img {
-        /* make the picture fill the whole wrapper */
-        width: 100%;
-        height: 100%;
-        object-fit: cover;   /* or “contain” if you’d rather letter-box instead of crop */
+        /* make the picture fit without cropping */
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
         display: block;      /* removes the tiny gap under inline images */
+        margin: 0 auto;
     }
 
     /* Only for the Aitruistic logo */
@@ -222,7 +227,7 @@ permalink: /applications/
         </a>
     </div>
 
-    <!-- Movimiento Integrador
+    {% comment %}
     <div class="application-card">
         <a href="https://fundacionmovimientointegrador.com/quienes-somos/" class="application-link-wrap">
             <div class="application-image">
@@ -238,9 +243,8 @@ permalink: /applications/
             </div>
         </a>
     </div>
-    -->
-
-<!-- Emphasis Project -->
+    {% endcomment %}
+    {% comment %}
     <div class="application-card">
         <a href="https://github.com/franciscorichter/emphasis" class="application-link-wrap">
             <div class="application-image">
@@ -256,6 +260,7 @@ permalink: /applications/
             </div>
         </a>
     </div>
+    {% endcomment %}
 
 
     <!-- Diversity Praxis -->
