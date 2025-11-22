@@ -10,34 +10,22 @@ author_profile: true
 
 {% include base_path %}
 
-<h2>Journals</h2>
+<h2>Published</h2>
 <ul class="pub__list">
-{% assign journal_items = site.publications | where: "pubtype", "journals" | sort: "date" | reverse %}
-{% for post in journal_items %}
+{% assign journal_items = site.publications | where: "pubtype", "journals" %}
+{% assign proceeding_items = site.publications | where: "pubtype", "proceedings" %}
+{% assign published_items = journal_items | concat: proceeding_items | sort: "date" | reverse %}
+{% for post in published_items %}
   {% include publication-line.html %}
 {% endfor %}
 </ul>
 
-<h2>Proceedings</h2>
+<h2>Working Papers & Preprints</h2>
 <ul class="pub__list">
-{% assign proceeding_items = site.publications | where: "pubtype", "proceedings" | sort: "date" | reverse %}
-{% for post in proceeding_items %}
-  {% include publication-line.html %}
-{% endfor %}
-</ul>
-
-<h2>Preprints</h2>
-<ul class="pub__list">
-{% assign preprint_items = site.publications | where: "pubtype", "preprints" | sort: "date" | reverse %}
-{% for post in preprint_items %}
-  {% include publication-line.html %}
-{% endfor %}
-</ul>
-
-<h2>Working papers</h2>
-<ul class="pub__list">
-{% assign working_items = site.publications | where: "pubtype", "working" | sort: "date" | reverse %}
-{% for post in working_items %}
+{% assign preprint_items = site.publications | where: "pubtype", "preprints" %}
+{% assign working_items = site.publications | where: "pubtype", "working" %}
+{% assign unpublished_items = preprint_items | concat: working_items | sort: "date" | reverse %}
+{% for post in unpublished_items %}
   {% include publication-line.html %}
 {% endfor %}
 </ul>
