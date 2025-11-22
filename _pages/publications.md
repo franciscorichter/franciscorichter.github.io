@@ -20,7 +20,7 @@ author_profile: true
 {% endfor %}
 </ul>
 
-<h2>Working Papers & Preprints</h2>
+<h2>Working Papers</h2>
 <ul class="pub__list">
 {% assign preprint_items = site.publications | where: "pubtype", "preprints" %}
 {% assign working_items = site.publications | where: "pubtype", "working" %}
