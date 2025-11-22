@@ -57,7 +57,8 @@ This include expects a `post` variable in scope.
     {% assign author_list = authors | replace: "Francisco Richter", "<strong>Francisco Richter</strong>" | replace: "F.
     Richter", "<strong>F. Richter</strong>" | replace: "Richter, F.", "<strong>Richter, F.</strong>" | replace: "Richter
     Mendoza, F.J.", "<strong>Richter Mendoza, F.J.</strong>" | replace: "Francisco J. Richter Mendoza",
-    "<strong>Francisco J. Richter Mendoza</strong>" %}
+    "<strong>Francisco J. Richter Mendoza</strong>" | replace: "Mendoza, F.", "<strong>Mendoza, F.</strong>" | replace:
+    "Francisco Mendoza", "<strong>Francisco Mendoza</strong>" %}
     <span class="pub__authors">. {{ author_list }}.</span>
     {% endif %}
     {% if venue %}
