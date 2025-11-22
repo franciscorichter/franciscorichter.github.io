@@ -20,28 +20,49 @@ This include expects a `post` variable in scope.
 {% assign year = post.date | default: post.year %}
 {% assign year_str = year | date: "%Y" %}
 {% assign pt = post.pubtype | downcase %}
+{% assign label_text = "Article" %}
+{% assign label_class = "label-article" %}
+
+{% if pt == 'journals' %}
+  {% assign label_text = "Article" %}
+  {% assign label_class = "label-article" %}
+{% elsif pt == 'preprints' %}
+  {% assign label_text = "Preprint" %}
+  {% assign label_class = "label-preprint" %}
+{% elsif pt == 'working' %}
+  {% assign label_text = "Working" %}
+  {% assign label_class = "label-working" %}
+{% elsif pt == 'conference' or pt == 'proceedings' %}
+   {% assign label_text = "Proceedings" %}
+   {% assign label_class = "label-proceedings" %}
+{% endif %}
 
 <li class="pub__item">
-  <span class="pub__title">
-    {% if pt == 'working' %}
-      {{ post.title }}
-    {% else %}
-      {% if post.paperurl %}
-        <a href="{{ post.paperurl }}">{{ post.title }}</a>
+  <div class="pub__label-wrapper">
+    <span class="pub__label {{ label_class }}">{{ label_text }}</span>
+  </div>
+  <div class="pub__content">
+    <span class="pub__title">
+      {% if pt == 'working' %}
+        {{ post.title }}
       {% else %}
-        <a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a>
+        {% if post.paperurl %}
+          <a href="{{ post.paperurl }}">{{ post.title }}</a>
+        {% else %}
+          <a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a>
+        {% endif %}
       {% endif %}
+    </span>
+    {% if authors %}
+      <span class="pub__authors">. {{ authors }}.</span>
     {% endif %}
-  </span>
-  {% if authors %}
-    <span class="pub__authors">. {{ authors }}.</span>
-  {% endif %}
-  {% if venue %}
-    <span class="pub__venue"> <em>{{ venue }}</em>{% if year_str %}, {{ year_str }}{% endif %}.</span>
-  {% elsif year_str %}
-    <span class="pub__venue"> <em>{{ year_str }}</em>.</span>
-  {% endif %}
-  {% if post.note and pt != 'working' %}
-    <span class="pub__note"> {{ post.note }}</span>
-  {% endif %}
+    {% if venue %}
+      <span class="pub__venue"> <em>{{ venue }}</em>{% if year_str %}, {{ year_str }}{% endif %}.</span>
+    {% elsif year_str %}
+      <span class="pub__venue"> <em>{{ year_str }}</em>.</span>
+    {% endif %}
+    {% if post.note and pt != 'working' %}
+      <span class="pub__note"> {{ post.note }}</span>
+    {% endif %}
+  </div>
 </li>

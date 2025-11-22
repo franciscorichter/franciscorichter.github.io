@@ -272,3 +272,70 @@
     transform: translateY(0);
   }
 }
+
+/* Publication Item Styling */
+.pub__item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.pub__label-wrapper {
+  flex-shrink: 0;
+  min-width: 85px; /* Adjust based on widest label */
+}
+
+.pub__label {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1;
+  text-align: center;
+  width: 100%; /* Make labels same width if wrapper is fixed */
+  box-sizing: border-box;
+}
+
+.label-article {
+  background-color: #206095; /* Dark blue */
+}
+
+.label-proceedings {
+  background-color: #5bc0de; /* Light blue */
+}
+
+.label-preprint {
+  background-color: #777777; /* Grey */
+}
+
+.label-working {
+  background-color: #f0ad4e; /* Orange */
+}
+
+.label-default {
+  background-color: #999;
+}
+
+.pub__content {
+  flex-grow: 1;
+}
+
+/* Ensure title is bold as per image */
+.pub__title {
+  font-weight: normal; /* Reset if needed, but usually title is bold or distinct */
+}
+
+.pub__title a {
+    font-weight: normal;
+}
+
+/* Adjust existing styles if necessary */
+.pub__list {
+    list-style: none;
+    padding-left: 0;
+}
