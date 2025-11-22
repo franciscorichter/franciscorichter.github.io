@@ -128,3 +128,57 @@
 .course-card-link:hover::after {
   transform: translateX(4px);
 }
+
+/* Outreach Card Styling */
+.outreach-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.outreach-card {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-top: 4px solid #0f766e;
+  /* Teal accent for outreach */
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+  padding: 2rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.outreach-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+}
+
+.outreach-card h3 {
+  font-family: $font-heading, $serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2933;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.outreach-card p {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.outreach-card a {
+  color: #0f766e;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.outreach-card a:hover {
+  color: #0d9488;
+  text-decoration: underline;
+}
