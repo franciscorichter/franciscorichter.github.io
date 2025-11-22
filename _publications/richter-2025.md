@@ -3,7 +3,7 @@ title: "Neural Causal Regularization: Extending Causal Invariance to Deep Models
 author: "Francisco Richter, Katerina Rigana, Ernst Wit"
 year: 2025
 collection: publications
-pubtype: journals
+pubtype: proceedings
 booktitle: "Statistics for Innovation I"
 editor: "Enrico di Bella, Vincenzo Gioia, Corrado Lagazio, Susanna Zaccarin"
 publisher: "Springer Nature Switzerland"

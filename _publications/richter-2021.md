@@ -1,7 +1,7 @@
 ---
 title: "Detecting Phylodiversity-Dependent Diversification with a General Phylogenetic Inference Framework"
 collection: publications
-pubtype: preprints
+pubtype: journals
 permalink: /publication/2021-07-04-phylodiversity-diversification
 excerpt: 'This paper introduces a novel method for detecting phylodiversity-dependent diversification using a Monte Carlo Expectation-Maximization framework applied to phylogenetic trees.'
 date: 2021-07-04
