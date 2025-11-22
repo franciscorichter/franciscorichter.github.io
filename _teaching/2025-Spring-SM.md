@@ -4,6 +4,7 @@ collection: teaching
 type: "2025-spring"
 permalink: /teaching/2025-spring-stochastic-methods
 venue: "Università della Svizzera italiana, Faculty of Informatics"
+degree_program: "Bachelor of Science in Informatics, 3rd year"
 date: 2025-02-03
 location: "Lugano, Switzerland"
 ---

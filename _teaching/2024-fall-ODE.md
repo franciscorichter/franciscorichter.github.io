@@ -3,7 +3,8 @@ title: "Introduction to Ordinary Differential Equations"
 collection: teaching
 type: "2024-fall"
 permalink: /teaching/2024-fall-introduction-ordinary-differential-equations
-venue: "Master of Science in Artificial Intelligence and Computational Science, Lecture, Elective, 1st and 2nd year. Università della Svizzera italiana, Faculty of Informatics"
+venue: "Università della Svizzera italiana, Faculty of Informatics"
+degree_program: "Master of Science in Artificial Intelligence and Computational Science, Lecture, Elective, 1st and 2nd year"
 date: 2024-01-01
 location: "Lugano, Switzerland"
 ---
