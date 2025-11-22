@@ -18,6 +18,14 @@ author_profile: true
 {% endfor %}
 </ul>
 
+<h2>Proceedings</h2>
+<ul class="pub__list">
+{% assign proceeding_items = site.publications | where: "pubtype", "proceedings" | sort: "date" | reverse %}
+{% for post in proceeding_items %}
+  {% include publication-line.html %}
+{% endfor %}
+</ul>
+
 <h2>Preprints</h2>
 <ul class="pub__list">
 {% assign preprint_items = site.publications | where: "pubtype", "preprints" | sort: "date" | reverse %}
