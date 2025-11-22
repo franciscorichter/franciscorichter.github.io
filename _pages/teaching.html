@@ -21,85 +21,85 @@ author_profile: false
     <section id="panel-courses" class="teaching-panel" role="tabpanel" aria-labelledby="tab-courses">
       <h2>Courses</h2>
 
-    {%- assign semesters = "" -%}
-    {%- for c in site.teaching -%}
+      {%- assign semesters = "" -%}
+      {%- for c in site.teaching -%}
       {%- if c.type != 'Supervision' and c.type != 'Outreach' -%}
-        {%- unless semesters contains c.type -%}
-          {%- assign semesters = semesters | append: c.type | append: "," -%}
-        {%- endunless -%}
+      {%- unless semesters contains c.type -%}
+      {%- assign semesters = semesters | append: c.type | append: "," -%}
+      {%- endunless -%}
       {%- endif -%}
-    {%- endfor -%}
-    {%- assign semesters_array = semesters | split: "," | uniq -%}
-    {%- assign years = "" -%}
-    {%- for s in semesters_array -%}
+      {%- endfor -%}
+      {%- assign semesters_array = semesters | split: "," | uniq -%}
+      {%- assign years = "" -%}
+      {%- for s in semesters_array -%}
       {%- if s != "" -%}
-        {%- assign y = s | split: "-" | first -%}
-        {%- unless years contains y -%}
-          {%- assign years = years | append: y | append: "," -%}
-        {%- endunless -%}
+      {%- assign y = s | split: "-" | first -%}
+      {%- unless years contains y -%}
+      {%- assign years = years | append: y | append: "," -%}
+      {%- endunless -%}
       {%- endif -%}
-    {%- endfor -%}
-    {%- assign years_array = years | split: "," | sort | reverse -%}
-    {%- assign sorted_semesters = "" -%}
-    {%- for y in years_array -%}
+      {%- endfor -%}
+      {%- assign years_array = years | split: "," | sort | reverse -%}
+      {%- assign sorted_semesters = "" -%}
+      {%- for y in years_array -%}
       {%- if y != "" -%}
-        {%- assign fall_key = y | append: "-fall" -%}
-        {%- assign autumn_key = y | append: "-autumn" -%}
-        {%- assign spring_key = y | append: "-spring" -%}
-        {%- for s in semesters_array -%}
-          {%- if s == fall_key -%}
-            {%- assign sorted_semesters = sorted_semesters | append: s | append: "," -%}
-          {%- endif -%}
-        {%- endfor -%}
-        {%- for s in semesters_array -%}
-          {%- if s == autumn_key -%}
-            {%- assign sorted_semesters = sorted_semesters | append: s | append: "," -%}
-          {%- endif -%}
-        {%- endfor -%}
-        {%- for s in semesters_array -%}
-          {%- if s == spring_key -%}
-            {%- assign sorted_semesters = sorted_semesters | append: s | append: "," -%}
-          {%- endif -%}
-        {%- endfor -%}
+      {%- assign fall_key = y | append: "-fall" -%}
+      {%- assign autumn_key = y | append: "-autumn" -%}
+      {%- assign spring_key = y | append: "-spring" -%}
+      {%- for s in semesters_array -%}
+      {%- if s == fall_key -%}
+      {%- assign sorted_semesters = sorted_semesters | append: s | append: "," -%}
       {%- endif -%}
-    {%- endfor -%}
-    {%- assign sorted_semesters_array = sorted_semesters | split: "," -%}
-    {%- for label in sorted_semesters_array -%}
+      {%- endfor -%}
+      {%- for s in semesters_array -%}
+      {%- if s == autumn_key -%}
+      {%- assign sorted_semesters = sorted_semesters | append: s | append: "," -%}
+      {%- endif -%}
+      {%- endfor -%}
+      {%- for s in semesters_array -%}
+      {%- if s == spring_key -%}
+      {%- assign sorted_semesters = sorted_semesters | append: s | append: "," -%}
+      {%- endif -%}
+      {%- endfor -%}
+      {%- endif -%}
+      {%- endfor -%}
+      {%- assign sorted_semesters_array = sorted_semesters | split: "," -%}
+      {%- for label in sorted_semesters_array -%}
       {%- if label != "" -%}
-        {%- assign bits = label | split: "-" -%}
-        {%- assign year = bits[0] -%}
-        {%- assign season = bits[1] -%}
-        {%- capture heading -%}
-          {%- if season == "spring" -%}Spring{%- elsif season == "fall" or season == "autumn" -%}Autumn{%- else -%}{{ season | capitalize }}{%- endif -%}, {{ year }}
-        {%- endcapture -%}
-        {%- assign courses = "" -%}
-        {%- for c in site.teaching -%}
-          {%- if c.type == label -%}
-            {%- assign courses = courses | append: c.title | append: "|||" -%}
-          {%- endif -%}
-        {%- endfor -%}
-        {%- if courses != "" -%}
-          <h3 class="term-heading">{{ heading | strip }}</h3>
-          <div class="course-cards">
-            {%- assign seen_titles = "" -%}
-            {%- for post in site.teaching -%}
-              {%- if post.type == label -%}
-                {%- unless seen_titles contains post.title -%}
-                  <div class="course-card">
-                    <div class="course-card-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></div>
-                    {%- if post.venue -%}<div class="course-card-venue">{{ post.venue }}</div>{%- endif -%}
-                    {%- if post.degree_program -%}<div class="course-card-degree">{{ post.degree_program }}</div>{%- endif -%}
-                    {%- if post.instructor or post.instructors -%}<div class="course-card-instructor">{{ post.instructor | default: post.instructors }}</div>{%- endif -%}
-                    <a href="{{ post.url | relative_url }}" class="course-card-link">Read more</a>
-                  </div>
-                  {%- assign seen_titles = seen_titles | append: post.title | append: "," -%}
-                {%- endunless -%}
-              {%- endif -%}
-            {%- endfor -%}
-          </div>
-        {%- endif -%}
+      {%- assign bits = label | split: "-" -%}
+      {%- assign year = bits[0] -%}
+      {%- assign season = bits[1] -%}
+      {%- capture heading -%}
+      {%- if season == "spring" -%}Spring{%- elsif season == "fall" or season == "autumn" -%}Autumn{%- else -%}{{ season
+      | capitalize }}{%- endif -%}, {{ year }}
+      {%- endcapture -%}
+      {%- assign courses = "" -%}
+      {%- for c in site.teaching -%}
+      {%- if c.type == label -%}
+      {%- assign courses = courses | append: c.title | append: "|||" -%}
       {%- endif -%}
-    {%- endfor -%}
+      {%- endfor -%}
+      {%- if courses != "" -%}
+      <h3 class="term-heading">{{ heading | strip }}</h3>
+      <div class="course-cards">
+        {%- assign seen_titles = "" -%}
+        {%- for post in site.teaching -%}
+        {%- if post.type == label -%}
+        {%- unless seen_titles contains post.title -%}
+        <div class="course-card">
+          <div class="course-card-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></div>
+          {%- if post.venue -%}<div class="course-card-venue">{{ post.venue }}</div>{%- endif -%}
+          {%- if post.degree_program -%}<div class="course-card-degree">{{ post.degree_program }}</div>{%- endif -%}
+          <a href="{{ post.url | relative_url }}" class="course-card-link">Read more</a>
+        </div>
+        {%- assign seen_titles = seen_titles | append: post.title | append: "," -%}
+        {%- endunless -%}
+        {%- endif -%}
+        {%- endfor -%}
+      </div>
+      {%- endif -%}
+      {%- endif -%}
+      {%- endfor -%}
     </section>
 
     <section id="panel-supervision" class="teaching-panel" role="tabpanel" aria-labelledby="tab-supervision">
@@ -118,15 +118,26 @@ author_profile: false
       <div class="outreach-section">
         <h3>LiLu2 Tech Day: Data Science Workshops for High School Students (2025)</h3>
         <p>
-          In 2025, I participated in the LiLu2 Tech Day at Liceo cantonale di Lugano 2, organizing and delivering hands-on workshops on data science for high school students. This activity is part of the <a href="https://ingch.ch/en/project/technology-and-it-weeks/" target="_blank">Technology and IT Weeks</a> program.
+          In 2025, I participated in the LiLu2 Tech Day at Liceo cantonale di Lugano 2, organizing and delivering
+          hands-on workshops on data science for high school students. This activity is part of the <a
+            href="https://ingch.ch/en/project/technology-and-it-weeks/" target="_blank">Technology and IT Weeks</a>
+          program.
         </p>
         <h3>LaM: Support for High School Thesis Projects (Lavori di Maturità) (2025)</h3>
         <p>
-          In 2025, I supported high school students with their Lavori di Maturità (LaM) one-year thesis projects in collaboration with the Faculty of Informatics at USI and the Liceo cantonale di Lugano 2 (LiLu2). The project currently under development can be viewed <a href="https://franciscorichter.github.io/ascia/" target="_blank">here</a>. <a href="https://www.usi.ch/it/feeds/26865" target="_blank">Read more</a>.
+          In 2025, I supported high school students with their Lavori di Maturità (LaM) one-year thesis projects in
+          collaboration with the Faculty of Informatics at USI and the Liceo cantonale di Lugano 2 (LiLu2). The project
+          currently under development can be viewed <a href="https://franciscorichter.github.io/ascia/"
+            target="_blank">here</a>. <a href="https://www.usi.ch/it/feeds/26865" target="_blank">Read more</a>.
         </p>
         <h3>Giornate Autogestite (2025)</h3>
         <p>
-          In 2025, I participated in the "Giornate Autogestite" (self-managed days) at several high schools in Ticino. These events are organized by students and involve various local organizations and universities, including USI. I contributed by offering workshops and activities designed to engage students in topics related to data science, technology, and academic life. The initiative promotes active student involvement and provides a platform for dialogue between high school students and the academic community. <a href="https://www.usi.ch/en/feeds/28354" target="_blank">More info</a>.
+          In 2025, I participated in the "Giornate Autogestite" (self-managed days) at several high schools in Ticino.
+          These events are organized by students and involve various local organizations and universities, including
+          USI. I contributed by offering workshops and activities designed to engage students in topics related to data
+          science, technology, and academic life. The initiative promotes active student involvement and provides a
+          platform for dialogue between high school students and the academic community. <a
+            href="https://www.usi.ch/en/feeds/28354" target="_blank">More info</a>.
         </p>
       </div>
     </section>
