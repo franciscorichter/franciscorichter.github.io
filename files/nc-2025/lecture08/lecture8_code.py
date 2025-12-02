@@ -1,186 +1,154 @@
-"""
-LECTURE 8: EIGENVALUE PROBLEMS
-Educational Python code to generate figures for the Numerical Computing course.
-
-Figures generated (saved to ../images/ at 300 DPI):
-- power_method_convergence.png
-- qr_algorithm_convergence.png
-- eigenvalue_perturbation.png
-- lanczos_ritz_convergence.png
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
+import time
+import os
 
-np.random.seed(42)
+def load_image(path):
+    """Loads an image and converts it to grayscale."""
+    if not os.path.exists(path):
+        print(f"Error: Image not found at {path}")
+        # Create a synthetic image if file missing
+        x = np.linspace(-3, 3, 400)
+        y = np.linspace(-3, 3, 400)
+        X, Y = np.meshgrid(x, y)
+        img = np.exp(-(X**2 + Y**2)) * np.cos(X*5 + Y*5)
+        img = (img - img.min()) / (img.max() - img.min()) * 255
+        return img.astype(np.uint8)
 
+    img = plt.imread(path)
+    if img.ndim == 3:
+        # RGB to Grayscale
+        img = np.dot(img[...,:3], [0.299, 0.587, 0.114])
+    
+    # Normalize to 0-255
+    if img.max() <= 1.0:
+        img = (img * 255).astype(np.uint8)
+        
+    return img
 
-def power_method_convergence():
-    """Simulate power method convergence rate for matrices with varying |lambda2/lambda1|."""
-    ratios = [0.9, 0.7, 0.5, 0.3]
-    colors = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728"]
-
-    fig, ax = plt.subplots(figsize=(10, 6))
-    k = np.arange(0, 30)
-    for r, c in zip(ratios, colors):
-        err = r ** k
-        ax.semilogy(k, err, label=f"|λ2/λ1|={r}", color=c, linewidth=2)
-
-    ax.set_xlabel("Iteration k", fontsize=12)
-    ax.set_ylabel("Error ~ |λ2/λ1|^k", fontsize=12)
-    ax.set_title("Power Method Convergence vs. Spectral Gap", fontsize=14, fontweight="bold")
-    ax.grid(True, alpha=0.3)
-    ax.legend(fontsize=11)
-
+def analyze_svd(img):
+    """Performs SVD analysis on the image."""
+    print("Computing SVD...")
+    U, S, Vt = np.linalg.svd(img, full_matrices=False)
+    
+    # 1. Plot Singular Values
+    plt.figure(figsize=(8, 5))
+    plt.semilogy(S, '.-', markersize=2)
+    plt.title("Singular Values (Log Scale)")
+    plt.xlabel("Index")
+    plt.ylabel("Singular Value")
+    plt.grid(True)
+    plt.savefig("singular_values.png")
+    print("Saved singular_values.png")
+    
+    # 2. Compression Levels
+    ranks = [5, 20, 50, 100]
+    fig, axes = plt.subplots(1, len(ranks) + 1, figsize=(15, 4))
+    
+    # Original
+    axes[0].imshow(img, cmap='gray')
+    axes[0].set_title(f"Original\nRank {min(img.shape)}")
+    axes[0].axis('off')
+    
+    for i, r in enumerate(ranks):
+        img_approx = U[:, :r] @ np.diag(S[:r]) @ Vt[:r, :]
+        axes[i+1].imshow(img_approx, cmap='gray')
+        axes[i+1].set_title(f"Rank {r}")
+        axes[i+1].axis('off')
+        
     plt.tight_layout()
-    plt.savefig("../images/power_method_convergence.png", dpi=300, bbox_inches="tight")
-    plt.close(fig)
+    plt.savefig("compression_levels.png")
+    print("Saved compression_levels.png")
 
+    # 3. Error Analysis
+    print("Analyzing Error...")
+    errors = []
+    k_values = range(1, 151, 5)
+    norm_A = np.linalg.norm(img, 'fro')
+    
+    for k in k_values:
+        # Reconstruct
+        img_k = U[:, :k] @ np.diag(S[:k]) @ Vt[:k, :]
+        error = np.linalg.norm(img - img_k, 'fro') / norm_A
+        errors.append(error)
+        
+    plt.figure(figsize=(8, 5))
+    plt.plot(k_values, errors, 'r-')
+    plt.title("Relative Reconstruction Error vs. Rank")
+    plt.xlabel("Rank k")
+    plt.ylabel("Relative Frobenius Error")
+    plt.grid(True)
+    plt.savefig("reconstruction_error.png")
+    print("Saved reconstruction_error.png")
 
-ess = np.finfo(float).eps
+    # 4. Compression Ratio
+    print("Calculating Compression Ratios...")
+    m, n = img.shape
+    original_size = m * n
+    ratios = []
+    
+    for k in k_values:
+        # Size of U_k (m*k) + Sigma_k (k) + V_k^T (k*n)
+        compressed_size = k * (m + n + 1)
+        ratios.append(original_size / compressed_size)
+        
+    plt.figure(figsize=(8, 5))
+    plt.plot(k_values, ratios, 'g-')
+    plt.axhline(y=1, color='k', linestyle='--')
+    plt.title("Compression Ratio (Original / Compressed)")
+    plt.xlabel("Rank k")
+    plt.ylabel("Ratio")
+    plt.grid(True)
+    plt.savefig("compression_ratio.png")
+    print("Saved compression_ratio.png")
 
-
-def qr_algorithm_convergence():
-    """Illustrative QR convergence by tracking off-diagonal Frobenius norm during implicit iterations."""
-    # Create a symmetric matrix with distinct eigenvalues
-    n = 20
-    A = np.random.randn(n, n)
-    A = (A + A.T) / 2.0
-
-    def offdiag_norm(M):
-        return np.linalg.norm(M - np.diag(np.diag(M)), ord="fro")
-
-    max_iter = 50
-    norms = []
-    H = A.copy()
-    for _ in range(max_iter):
-        # Basic unshifted QR (illustrative)
-        Q, R = np.linalg.qr(H)
-        H = R @ Q
-        norms.append(offdiag_norm(H) + ess)
-
-    fig, ax = plt.subplots(figsize=(10, 6))
-    ax.semilogy(norms, linewidth=2, color="#9467bd")
-    ax.set_xlabel("Iteration", fontsize=12)
-    ax.set_ylabel("Off-diagonal Frobenius norm", fontsize=12)
-    ax.set_title("QR Algorithm: Off-diagonal Decay (Illustrative)", fontsize=14, fontweight="bold")
-    ax.grid(True, alpha=0.3)
-
-    plt.tight_layout()
-    plt.savefig("../images/qr_algorithm_convergence.png", dpi=300, bbox_inches="tight")
-    plt.close(fig)
-
-
-def eigenvalue_perturbation():
-    """Visualize Bauer–Fike style sensitivity by perturbing a diagonalizable matrix."""
-    n = 6
-    # Create a diagonalizable matrix A = X Λ X^{-1}
-    eigvals = np.linspace(1, 6, n)
-    X, _ = np.linalg.qr(np.random.randn(n, n))
-    A = X @ np.diag(eigvals) @ np.linalg.inv(X)
-
-    # Perturbations
-    deltas = np.logspace(-6, -1, 10)
-    max_shifts = []
-
-    for d in deltas:
-        E = d * np.random.randn(n, n)
-        lam_A = np.linalg.eigvals(A)
-        lam_AE = np.linalg.eigvals(A + E)
-        # Maximum distance from each perturbed eigenvalue to the closest original
-        shifts = []
-        for lam in lam_AE:
-            shifts.append(np.min(np.abs(lam - lam_A)))
-        max_shifts.append(np.max(shifts))
-
-    fig, ax = plt.subplots(figsize=(10, 6))
-    ax.loglog(deltas, max_shifts, 'o-', color="#8c564b", linewidth=2, markersize=6, label="Observed")
-
-    # Rough Bauer–Fike bound line: κ(X) * ||E||
-    kappa_X = np.linalg.cond(X)
-    bound = kappa_X * deltas
-    ax.loglog(deltas, bound, '--', color="#17becf", linewidth=2, label=r"κ(X) \|E\|")
-
-    ax.set_xlabel(r"\|E\| (log scale)", fontsize=12)
-    ax.set_ylabel("Eigenvalue shift (max)", fontsize=12)
-    ax.set_title("Eigenvalue Perturbation (Bauer–Fike intuition)", fontsize=14, fontweight="bold")
-    ax.grid(True, which='both', alpha=0.3)
-    ax.legend(fontsize=11)
-
-    plt.tight_layout()
-    plt.savefig("../images/eigenvalue_perturbation.png", dpi=300, bbox_inches="tight")
-    plt.close(fig)
-
-
-def lanczos_ritz_convergence():
-    """Demonstrate Ritz value convergence using a simple Lanczos-like projection (without SciPy)."""
-    n = 80
-    A = np.random.randn(n, n)
-    A = (A + A.T) / 2.0  # symmetric
-
-    m = 20  # subspace size
-    q = np.random.randn(n)
-    q = q / np.linalg.norm(q)
-
-    Q = np.zeros((n, m))
-    alpha = np.zeros(m)
-    beta = np.zeros(m-1)
-
-    q_prev = np.zeros_like(q)
-    for j in range(m):
-        Q[:, j] = q
-        z = A @ q
-        alpha[j] = np.dot(q, z)
-        if j > 0:
-            z = z - beta[j-1] * q_prev
-        z = z - alpha[j] * q
-        # Re-orthogonalize a bit (one step)
-        if j > 0:
-            z = z - np.dot(Q[:, :j], np.dot(Q[:, :j].T, z))
-        beta_j = np.linalg.norm(z)
-        if j < m-1:
-            beta[j] = beta_j
-        if beta_j < 1e-14:
-            break
-        q_prev = q
-        q = z / beta_j
-
-    # Tridiagonal T
-    T = np.diag(alpha)
-    for j in range(m-1):
-        T[j, j+1] = beta[j]
-        T[j+1, j] = beta[j]
-
-    # Ritz eigenvalues
-    ritz = np.linalg.eigvalsh(T)
-    true_vals = np.linalg.eigvalsh(A)
-
-    # Track convergence of extremal Ritz values against true extremals
-    ritz_min = np.min(ritz)
-    ritz_max = np.max(ritz)
-    true_min = np.min(true_vals)
-    true_max = np.max(true_vals)
-
-    fig, ax = plt.subplots(figsize=(10, 6))
-    ax.axhline(true_min, color="#2ca02c", linestyle=":", label="True min eig")
-    ax.axhline(true_max, color="#d62728", linestyle=":", label="True max eig")
-    ax.plot([m], [ritz_min], 'o', color="#2ca02c", label="Ritz min (m)")
-    ax.plot([m], [ritz_max], 'o', color="#d62728", label="Ritz max (m)")
-
-    ax.set_xlabel("Subspace size m", fontsize=12)
-    ax.set_ylabel("Eigenvalue", fontsize=12)
-    ax.set_title("Lanczos Ritz Values vs True Extremal Eigenvalues", fontsize=14, fontweight="bold")
-    ax.grid(True, alpha=0.3)
-    ax.legend(fontsize=10)
-
-    plt.tight_layout()
-    plt.savefig("../images/lanczos_ritz_convergence.png", dpi=300, bbox_inches="tight")
-    plt.close(fig)
-
+def benchmark_performance(img):
+    """Benchmarks SVD computation time vs resolution."""
+    print("Benchmarking Performance...")
+    resolutions = [100, 200, 400, 600, 800, 1000, 1200]
+    times = []
+    
+    from skimage.transform import resize
+    
+    for N in resolutions:
+        # Resize image
+        img_resized = resize(img, (N, N), anti_aliasing=True)
+        
+        start_time = time.time()
+        np.linalg.svd(img_resized, full_matrices=False)
+        end_time = time.time()
+        
+        times.append(end_time - start_time)
+        print(f"Size {N}x{N}: {times[-1]:.4f}s")
+        
+    plt.figure(figsize=(8, 5))
+    plt.loglog(resolutions, times, 'bo-')
+    
+    # Fit line to estimate complexity slope
+    coeffs = np.polyfit(np.log(resolutions), np.log(times), 1)
+    slope = coeffs[0]
+    
+    plt.title(f"SVD Computation Time vs. Size (Slope $\\approx$ {slope:.2f})")
+    plt.xlabel("Image Size N (NxN)")
+    plt.ylabel("Time (seconds)")
+    plt.grid(True, which="both", ls="-")
+    plt.savefig("performance_benchmark.png")
+    print("Saved performance_benchmark.png")
 
 if __name__ == "__main__":
-    power_method_convergence()
-    qr_algorithm_convergence()
-    eigenvalue_perturbation()
-    lanczos_ritz_convergence()
-    print("Figures generated in ../images/")
+    # Path to image
+    img_path = "../images/clown.png"
+    
+    # Load
+    img = load_image(img_path)
+    
+    # Analyze
+    analyze_svd(img)
+    
+    # Benchmark
+    # Note: Requires scikit-image for resizing. If not present, this might fail.
+    try:
+        import skimage
+        benchmark_performance(img)
+    except ImportError:
+        print("scikit-image not installed. Skipping benchmark resizing.")
