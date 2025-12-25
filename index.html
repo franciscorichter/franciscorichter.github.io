@@ -3,6 +3,22 @@ layout: default
 ---
 
 <style>
+    :root {
+        --home-bg: #ffffff;
+        --home-text: #333;
+        --home-border: #333;
+        --home-hover-bg: #333;
+        --home-hover-text: #fff;
+    }
+
+    html[data-theme="dark"] {
+        --home-bg: #0f172a;
+        --home-text: #f1f5f9;
+        --home-border: #cbd5e1;
+        --home-hover-bg: #f1f5f9;
+        --home-hover-text: #0f172a;
+    }
+
     /* Estilos generales */
     .main-container {
         display: flex;
@@ -24,7 +40,7 @@ layout: default
         font-size: 4rem;
         font-weight: 700;
         text-transform: uppercase;
-        color: #333;
+        color: var(--home-text);
         line-height: 1.1;
         margin: 0;
     }
@@ -33,7 +49,7 @@ layout: default
         font-size: 4rem;
         font-weight: 700;
         text-transform: uppercase;
-        color: #333;
+        color: var(--home-text);
         line-height: 1.1;
         margin: 0;
     }
@@ -41,7 +57,7 @@ layout: default
     /* Estilos para el subtítulo */
     .tagline {
         font-size: 1.5rem;
-        color: #333;
+        color: var(--home-text);
         margin-top: 20px;
         margin-bottom: 60px;
     }
@@ -57,17 +73,17 @@ layout: default
         display: inline-flex;
         align-items: center;
         padding: 12px 24px;
-        border: 1px solid #333;
+        border: 1px solid var(--home-border);
         border-radius: 4px;
         text-decoration: none;
-        color: #333;
+        color: var(--home-text);
         font-weight: 500;
         transition: all 0.3s ease;
     }
 
     .nav-button:hover {
-        background-color: #333;
-        color: #fff;
+        background-color: var(--home-hover-bg);
+        color: var(--home-hover-text);
     }
 
     .nav-button i {

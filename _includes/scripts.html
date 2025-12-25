@@ -1,4 +1,44 @@
 <script src="{{ base_path }}/assets/js/main.min.js"></script>
 
+<script>
+  (function() {
+    function safeGet(key) {
+      try {
+        return localStorage.getItem(key);
+      } catch (e) {
+        return null;
+      }
+    }
+
+    function safeSet(key, value) {
+      try {
+        localStorage.setItem(key, value);
+      } catch (e) {
+      }
+    }
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      var icon = document.querySelector('.theme-icon');
+      if (icon) {
+        icon.textContent = theme === 'light' ? '🌙' : '☀️';
+      }
+    }
+
+    var initial = safeGet('theme') || document.documentElement.getAttribute('data-theme') || 'dark';
+    applyTheme(initial);
+
+    var btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+
+    btn.addEventListener('click', function() {
+      var current = document.documentElement.getAttribute('data-theme') || 'dark';
+      var next = current === 'light' ? 'dark' : 'light';
+      safeSet('theme', next);
+      applyTheme(next);
+    });
+  })();
+</script>
+
 {% include analytics.html %}
 {% include /comments-providers/scripts.html %}
