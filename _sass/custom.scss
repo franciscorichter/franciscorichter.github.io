@@ -322,12 +322,25 @@
 
 .pub__title a {
   font-weight: normal;
+  color: var(--text-color);
 }
 
 /* Adjust existing styles if necessary */
 .pub__list {
   list-style: none;
   padding-left: 0;
+}
+
+.pub__list .pub__title a,
+.archive .pub__list a,
+.archive .pub__title a {
+  color: var(--text-color);
+}
+
+.pub__list .pub__title a:hover,
+.archive .pub__list a:hover,
+.archive .pub__title a:hover {
+  color: var(--heading-color);
 }
 
 :root {
