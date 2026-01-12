@@ -2,7 +2,7 @@
 title: "LiLu2 Tech Day: Data Science Workshops for High School Students"
 date: 2024-05-15
 category: teaching
-layout: teaching
+layout: archive
 permalink: /teaching/outreach/techweek/
 type: Outreach
 ---

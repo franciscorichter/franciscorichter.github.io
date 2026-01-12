@@ -2,7 +2,7 @@
 title: "LaM: Support for High School Thesis Projects (Lavori di Maturità)"
 date: 2024-05-15
 category: teaching
-layout: teaching
+layout: archive
 permalink: /teaching/outreach/lam/
 type: Outreach
 ---
