@@ -2,6 +2,7 @@
 layout: archive
 permalink: /publications/
 author_profile: true
+hide_avatar: true
 ---
 
 {% if author.googlescholar %}
