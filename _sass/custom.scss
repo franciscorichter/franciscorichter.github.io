@@ -176,7 +176,7 @@
 }
 
 .teaching-wrapper {
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 .teaching-tab-input {
@@ -186,43 +186,57 @@
 }
 
 .teaching-tabs {
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  padding: 0.5rem;
-  border-radius: 1rem;
-  background: #f1f5f9;
-  /* Lighter background */
-  margin-bottom: 2.5rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.12);
+  margin-bottom: 2.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .teaching-tab {
+  position: relative;
   border: none;
   cursor: pointer;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.75rem;
-  font-size: 1rem;
+  padding: 0.25rem 0;
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   font-weight: 600;
-  color: #64748b;
+  color: #94a3b8;
   background: transparent;
-  box-shadow: none;
-  transition: all 0.2s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+  transition: color 0.2s ease;
 }
 
 .teaching-tab:hover {
   color: #0f172a;
-  background: rgba(255, 255, 255, 0.5);
 }
 
 #tab-courses:checked~.teaching-tabs label[for="tab-courses"],
 #tab-supervision:checked~.teaching-tabs label[for="tab-supervision"],
 #tab-outreach:checked~.teaching-tabs label[for="tab-outreach"] {
-  background: #ffffff;
-  color: #0d6efd;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+  color: #0f172a;
+}
+
+.teaching-tab::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.8rem;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  opacity: 0;
+  transform: scaleX(0.4);
+  transform-origin: left;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+#tab-courses:checked~.teaching-tabs label[for="tab-courses"]::after,
+#tab-supervision:checked~.teaching-tabs label[for="tab-supervision"]::after,
+#tab-outreach:checked~.teaching-tabs label[for="tab-outreach"]::after {
+  opacity: 1;
+  transform: scaleX(1);
 }
 
 .teaching-panels {
