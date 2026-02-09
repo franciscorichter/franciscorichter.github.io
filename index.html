@@ -160,66 +160,6 @@ layout: default
         margin-right: 10px;
     }
 
-    .application-links {
-        margin-top: 3rem;
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 1.25rem;
-    }
-
-    .application-card {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        padding: 1.25rem 1.5rem;
-        border-radius: 20px;
-        border: 1px solid rgba(31, 41, 55, 0.08);
-        background: rgba(255, 255, 255, 0.92);
-        box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
-        text-decoration: none;
-        color: inherit;
-        transition: transform 0.25s ease, border-color 0.25s ease;
-    }
-
-    html[data-theme="dark"] .application-card {
-        background: rgba(3, 7, 18, 0.85);
-        border-color: rgba(148, 163, 184, 0.18);
-        box-shadow: 0 20px 55px rgba(2, 6, 23, 0.8);
-    }
-
-    .application-card:hover {
-        transform: translateY(-4px);
-        border-color: rgba(56, 189, 248, 0.5);
-    }
-
-    .application-icon {
-        width: 52px;
-        height: 52px;
-        border-radius: 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(56, 189, 248, 0.1);
-    }
-
-    .application-card:nth-child(2) .application-icon {
-        background: rgba(129, 140, 248, 0.12);
-    }
-
-    .application-info h3 {
-        margin: 0;
-        font-size: 1.1rem;
-        font-weight: 600;
-    }
-
-    .application-info p {
-        margin: 0.25rem 0 0;
-        color: var(--home-text);
-        font-size: 0.95rem;
-        opacity: 0.75;
-    }
-
     /* Estilos responsivos */
     @media (max-width: 768px) {
 
@@ -234,10 +174,6 @@ layout: default
         .nav-buttons {
             flex-direction: column;
             align-items: center;
-        }
-
-        .application-links {
-            grid-template-columns: 1fr;
         }
     }
 
@@ -306,34 +242,6 @@ layout: default
             </a>
             <a href="/applications/" class="nav-button">
                 <i>🧩</i> Applications
-            </a>
-        </div>
-
-        <div class="application-links">
-            <a class="application-card" href="https://www.whitebox.cl" target="_blank" rel="noreferrer">
-                <div class="application-icon" aria-hidden="true">
-                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="4" y="4" width="20" height="20" rx="4" stroke="currentColor" stroke-width="2" />
-                        <rect x="10" y="10" width="8" height="8" rx="2" fill="currentColor" />
-                    </svg>
-                </div>
-                <div class="application-info">
-                    <h3>Whitebox</h3>
-                    <p>Analytics studio crafting transparent, verifiable data products.</p>
-                </div>
-            </a>
-
-            <a class="application-card" href="https://www.meta-for.xyz" target="_blank" rel="noreferrer">
-                <div class="application-icon" aria-hidden="true">
-                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M14 4L9 12H13L8 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M20 12L15 20H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </div>
-                <div class="application-info">
-                    <h3>Meta-for</h3>
-                    <p>Minimalist decision systems rooted in ecological intelligence.</p>
-                </div>
             </a>
         </div>
     </div>
