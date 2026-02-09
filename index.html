@@ -109,8 +109,8 @@ layout: default
         margin-bottom: 20px;
     }
 
-    .first-name {
-        font-size: 4rem;
+    .hero-name {
+        font-size: clamp(3rem, 8vw, 4.5rem);
         font-weight: 700;
         text-transform: uppercase;
         color: var(--home-text);
@@ -118,13 +118,10 @@ layout: default
         margin: 0;
     }
 
-    .last-name {
-        font-size: 4rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        color: var(--home-text);
-        line-height: 1.1;
-        margin: 0;
+    .hero-name span:last-child {
+        display: inline-block;
+        margin-left: 0.5rem;
+        color: var(--home-accent-b);
     }
 
     /* Estilos para el subtítulo */
@@ -166,9 +163,8 @@ layout: default
     /* Estilos responsivos */
     @media (max-width: 768px) {
 
-        .first-name,
-        .last-name {
-            font-size: 3rem;
+        .hero-name {
+            font-size: 2.5rem;
         }
 
         .tagline {
@@ -232,8 +228,7 @@ layout: default
     <div class="background-grid" aria-hidden="true"></div>
     <div class="main-container">
         <div class="name-container">
-            <h1 class="first-name">Francisco</h1>
-            <h1 class="last-name">Richter-Mendoza</h1>
+            <h1 class="hero-name"><span>Francisco</span><span>Richter-Mendoza</span></h1>
         </div>
 
         <p class="tagline">Mathematics, Data Science, and (A) Intelligence</p>
