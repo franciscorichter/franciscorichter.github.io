@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Probability Paradoxes — Interactive Experiments</title>
+<style>
+:root{--blue:#2563eb;--darkblue:#1e3a5f;--lightblue:#60a5fa;--green:#16a34a;--red:#dc2626;--amber:#f59e0b;--grey:#6b7280;--bg:#f8fafc;--card:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:#1e293b;line-height:1.6}
+
+/* ---- Join screen ---- */
+#join-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--darkblue),#2d4a7a)}
+.join-card{background:#fff;border-radius:16px;padding:2.5rem;width:90%;max-width:420px;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,.2)}
+.join-card h1{color:var(--darkblue);font-size:1.6rem;margin-bottom:.3rem}
+.join-card .sub{color:var(--grey);font-size:.9rem;margin-bottom:1.5rem}
+.join-card input{width:100%;padding:.7rem 1rem;border:2px solid #e2e8f0;border-radius:8px;font-size:1rem;margin-bottom:.8rem;transition:border .2s}
+.join-card input:focus{outline:none;border-color:var(--blue)}
+.join-card button{width:100%;padding:.8rem;font-size:1.05rem;border:none;border-radius:8px;background:var(--blue);color:#fff;font-weight:600;cursor:pointer;transition:background .2s}
+.join-card button:hover{background:#1d4ed8}
+.join-card .error{color:var(--red);font-size:.85rem;margin-top:.5rem;min-height:1.2em}
+
+/* ---- Sticky nav ---- */
+.topnav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #e2e8f0;display:flex;align-items:center;gap:.3rem;padding:.5rem 1rem;overflow-x:auto;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.topnav .brand{font-weight:700;color:var(--darkblue);font-size:.85rem;margin-right:.5rem;white-space:nowrap}
+.topnav a{padding:.35rem .7rem;border-radius:6px;font-size:.8rem;font-weight:500;color:var(--grey);text-decoration:none;white-space:nowrap;transition:background .15s}
+.topnav a:hover,.topnav a.active{background:var(--blue);color:#fff}
+.topnav .spacer{flex:1}
+.topnav .user-badge{font-size:.8rem;color:var(--darkblue);font-weight:600;white-space:nowrap}
+
+/* ---- Layout ---- */
+.container{max-width:900px;margin:0 auto;padding:1.5rem 1rem}
+.hidden{display:none!important}
+
+/* ---- Section cards ---- */
+.section-card{background:var(--card);border-radius:12px;padding:2rem;margin-bottom:2rem;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.section-card h2{color:var(--darkblue);font-size:1.35rem;margin-bottom:.2rem;display:flex;align-items:center;gap:.5rem}
+.section-card h2 .num{background:var(--blue);color:#fff;width:30px;height:30px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
+.section-card .desc{color:var(--grey);font-size:.92rem;margin-bottom:1rem}
+.italian{color:#94a3b8;font-style:italic;font-size:.83rem}
+
+.experiment{background:#f1f5f9;border-radius:8px;padding:1.2rem;margin-top:1rem}
+.challenge{background:linear-gradient(135deg,#fef3c7,#fde68a);border-radius:8px;padding:1rem 1.2rem;margin-top:1rem;border-left:4px solid var(--amber)}
+.challenge h4{color:#92400e;margin-bottom:.2rem}
+
+/* ---- Buttons ---- */
+button{background:var(--blue);color:#fff;border:none;padding:.55rem 1.2rem;border-radius:6px;cursor:pointer;font-size:.92rem;font-weight:500;transition:background .2s,transform .1s}
+button:hover{background:#1d4ed8}
+button:active{transform:scale(.97)}
+button.green{background:var(--green)}button.green:hover{background:#15803d}
+button.red{background:var(--red)}button.red:hover{background:#b91c1c}
+button.outline{background:transparent;border:2px solid var(--blue);color:var(--blue)}
+button.outline:hover{background:var(--blue);color:#fff}
+button.lg{padding:.8rem 2rem;font-size:1.1rem;border-radius:10px}
+button:disabled{opacity:.5;cursor:not-allowed}
+.btn-row{display:flex;gap:.5rem;flex-wrap:wrap;margin:.6rem 0}
+
+/* ---- Choice grid ---- */
+.choice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.6rem;margin:.8rem 0}
+.choice-btn{padding:1rem;border:2px solid #d1d5db;border-radius:10px;background:#fff;color:var(--darkblue);font-size:1.2rem;font-weight:700;cursor:pointer;transition:all .2s;text-align:center}
+.choice-btn:hover{border-color:var(--blue);background:#eff6ff}
+.choice-btn.selected{border-color:var(--blue);background:var(--blue);color:#fff}
+.choice-btn.correct{border-color:var(--green);background:#dcfce7;color:var(--green)}
+.choice-btn.wrong{border-color:var(--red);background:#fee2e2;color:var(--red)}
+.choice-btn:disabled{cursor:default;opacity:.7}
+
+/* ---- Stats ---- */
+.stat-row{display:flex;gap:1.5rem;flex-wrap:wrap;margin:.5rem 0}
+.stat-item{text-align:center}
+.stat{font-size:1.7rem;font-weight:700;color:var(--darkblue)}
+.stat-label{font-size:.8rem;color:var(--grey)}
+.result-box{background:#fff;border-radius:6px;padding:1rem;margin-top:.8rem;border-left:4px solid var(--blue)}
+.result-box.success{border-left-color:var(--green)}.result-box.warn{border-left-color:var(--red)}
+.progress-bar{height:22px;background:#e2e8f0;border-radius:11px;overflow:hidden;margin:.4rem 0;position:relative}
+.progress-fill{height:100%;border-radius:11px;transition:width .4s;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.75rem;font-weight:600;min-width:1.5rem}
+
+/* ---- Game card (boy/girl rounds) ---- */
+.game-card{background:#fff;border-radius:10px;padding:1.5rem;text-align:center;border:2px solid #e2e8f0;margin:.8rem 0}
+.game-card .family-icon{font-size:3rem;margin-bottom:.5rem}
+.game-card .question{font-size:1.1rem;font-weight:600;color:var(--darkblue);margin-bottom:.8rem}
+.game-card .reveal{font-size:1.1rem;margin-top:.8rem;padding:.6rem;border-radius:8px;font-weight:600}
+.game-card .reveal.correct{background:#dcfce7;color:var(--green)}
+.game-card .reveal.wrong{background:#fee2e2;color:var(--red)}
+
+/* ---- Doors (Monty Hall) ---- */
+.doors{display:flex;gap:1rem;justify-content:center;margin:1rem 0}
+.door{width:110px;height:150px;background:linear-gradient(180deg,#8B4513,#654321);border-radius:8px 8px 0 0;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;color:#d4a574;transition:transform .2s,box-shadow .2s;border:3px solid #5c3a1e;position:relative}
+.door:hover:not(.opened):not(.locked){transform:translateY(-4px);box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.door.picked{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.3)}
+.door.opened{background:linear-gradient(180deg,#d1d5db,#9ca3af);border-color:#9ca3af;cursor:default}
+.door.locked{cursor:default}
+.door .icon{font-size:2.5rem}
+.door .lbl{position:absolute;bottom:-24px;color:var(--darkblue);font-size:.82rem;font-weight:600}
+
+/* ---- Birthday board ---- */
+.bd-board{display:flex;flex-wrap:wrap;gap:.4rem;margin:.5rem 0}
+.bd-tag{padding:.2rem .6rem;border-radius:9999px;font-size:.8rem;font-weight:600;background:#dbeafe;color:var(--blue)}
+.bd-tag.match{background:#dcfce7;color:var(--green);animation:pulse .5s}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+
+/* ---- Network canvas ---- */
+.net-canvas{width:100%;height:320px;background:#fff;border-radius:6px;border:1px solid #e2e8f0}
+
+/* ---- Dashboard ---- */
+.dash-header{background:linear-gradient(135deg,var(--darkblue),#2d4a7a);color:#fff;padding:1.5rem;border-radius:12px;margin-bottom:1.5rem;text-align:center}
+.dash-header h1{font-size:1.5rem}
+.dash-header .session-code{font-size:2rem;font-weight:700;color:var(--lightblue);letter-spacing:2px}
+.dash-card{background:#fff;border-radius:12px;padding:1.5rem;margin-bottom:1.2rem;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.dash-card h3{color:var(--darkblue);font-size:1.15rem;margin-bottom:.8rem;display:flex;align-items:center;gap:.4rem}
+.dash-bar{display:flex;align-items:center;gap:.5rem;margin:.3rem 0}
+.dash-bar .label{min-width:80px;font-size:.85rem;font-weight:600;text-align:right}
+.dash-bar .bar{flex:1;height:28px;background:#e2e8f0;border-radius:14px;overflow:hidden}
+.dash-bar .fill{height:100%;border-radius:14px;display:flex;align-items:center;padding:0 .6rem;color:#fff;font-weight:600;font-size:.8rem;transition:width .5s}
+.dash-students{display:flex;flex-wrap:wrap;gap:.3rem}
+.dash-students .tag{padding:.2rem .6rem;border-radius:6px;background:#eff6ff;color:var(--blue);font-size:.8rem;font-weight:500}
+
+/* ---- Responsive ---- */
+@media(max-width:600px){.doors{gap:.5rem}.door{width:85px;height:115px;font-size:.9rem}.door .icon{font-size:2rem}.choice-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ---- Misc ---- */
+input[type=number],input[type=date]{padding:.45rem .6rem;border:1px solid #d1d5db;border-radius:6px;font-size:.92rem}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:600px){.grid-2{grid-template-columns:1fr}}
+.text-center{text-align:center}
+.mt-1{margin-top:.5rem}.mt-2{margin-top:1rem}
+.mb-1{margin-bottom:.5rem}
+</style>
+</head>
+<body>
+
+<!-- ===================== JOIN SCREEN ===================== -->
+<div id="join-screen">
+  <div class="join-card">
+    <h1>Probability Paradoxes</h1>
+    <p class="sub">Interactive Experiments &mdash; Liceo Lugano I</p>
+    <input type="text" id="inp-name" placeholder="Your name" autocomplete="off">
+    <input type="text" id="inp-session" placeholder="Session code (from your teacher)" autocomplete="off">
+    <button onclick="joinSession()">Join</button>
+    <div class="error" id="join-error"></div>
+    <p style="margin-top:1.2rem;font-size:.8rem;color:var(--grey);">
+      Teacher? <a href="#" onclick="openDashboard();return false" style="color:var(--blue)">Open dashboard</a>
+    </p>
+  </div>
+</div>
+
+<!-- ===================== STUDENT VIEW ===================== -->
+<div id="student-view" class="hidden">
+
+<nav class="topnav">
+  <span class="brand">Paradoxes</span>
+  <a href="#p1" class="active" data-nav="p1">I Boy/Girl</a>
+  <a href="#p2" data-nav="p2">II Birthday</a>
+  <a href="#p3" data-nav="p3">III Simpson</a>
+  <a href="#p4" data-nav="p4">IV Monty Hall</a>
+  <a href="#p5" data-nav="p5">V Six Degrees</a>
+  <span class="spacer"></span>
+  <span class="user-badge" id="user-badge"></span>
+</nav>
+
+<div class="container">
+
+<!-- ======== PARADOX I: BOY OR GIRL ======== -->
+<section class="section-card" id="p1">
+  <h2><span class="num">I</span> Boy or Girl?</h2>
+  <p class="desc">A parent says: "I have two children. At least one is a boy." What is the probability both are boys?<br>
+  <span class="italian">Un genitore dice: "Ho due figli. Almeno uno è maschio." Qual è la probabilità che entrambi siano maschi?</span></p>
+
+  <!-- Phase 1: Guess -->
+  <div id="bg-phase1" class="experiment">
+    <p><strong>What do you think?</strong> Pick your answer:</p>
+    <div class="choice-grid">
+      <button class="choice-btn" onclick="bgGuess('1/4')">1/4</button>
+      <button class="choice-btn" onclick="bgGuess('1/3')">1/3</button>
+      <button class="choice-btn" onclick="bgGuess('1/2')">1/2</button>
+      <button class="choice-btn" onclick="bgGuess('2/3')">2/3</button>
+    </div>
+  </div>
+
+  <!-- Phase 2: Play rounds -->
+  <div id="bg-phase2" class="experiment hidden">
+    <p class="mb-1"><strong>Let's test it!</strong> You'll see 20 random families (each has at least one boy). Guess whether <em>both</em> are boys.</p>
+    <div class="stat-row">
+      <div class="stat-item"><div class="stat" id="bg-round">1</div><div class="stat-label">Round</div></div>
+      <div class="stat-item"><div class="stat" id="bg-score">0</div><div class="stat-label">Correct</div></div>
+      <div class="stat-item"><div class="stat" id="bg-bothcount">0</div><div class="stat-label">"Both boys" seen</div></div>
+    </div>
+    <div class="game-card" id="bg-gamecard">
+      <div class="family-icon" id="bg-family-icon">&#128104;&#8205;&#128105;&#8205;&#128102;&#8205;&#10067;</div>
+      <div class="question">This family has 2 children. At least one is a boy.<br>Are <strong>both</strong> boys?</div>
+      <div class="btn-row" style="justify-content:center" id="bg-guess-btns">
+        <button class="lg" onclick="bgRoundGuess(true)">Yes, both boys</button>
+        <button class="lg outline" onclick="bgRoundGuess(false)">No, not both</button>
+      </div>
+      <div class="reveal hidden" id="bg-reveal"></div>
+    </div>
+    <button class="hidden" id="bg-next-btn" onclick="bgNextRound()">Next family &rarr;</button>
+  </div>
+
+  <!-- Phase 3: Results -->
+  <div id="bg-phase3" class="experiment hidden">
+    <div class="text-center">
+      <p style="font-size:1.1rem;font-weight:600" id="bg-results-text"></p>
+      <div class="stat-row" style="justify-content:center;margin-top:.8rem">
+        <div class="stat-item"><div class="stat" id="bg-final-rate">—</div><div class="stat-label">Actual "both boys" rate</div></div>
+        <div class="stat-item"><div class="stat" style="color:var(--green)">33.3%</div><div class="stat-label">Theory (1/3)</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== PARADOX II: BIRTHDAY ======== -->
+<section class="section-card" id="p2">
+  <h2><span class="num">II</span> The Birthday Problem</h2>
+  <p class="desc">How many people needed in a room for a >50% chance of a shared birthday?<br>
+  <span class="italian">Quante persone servono per avere più del 50% di probabilità di un compleanno condiviso?</span></p>
+
+  <!-- Phase 1: Guess -->
+  <div id="bd-phase1" class="experiment">
+    <p><strong>Your guess:</strong> How many people are needed?</p>
+    <div style="display:flex;gap:.5rem;align-items:center;margin-top:.5rem">
+      <input type="number" id="bd-guess-input" min="2" max="365" placeholder="Your guess">
+      <button onclick="bdSubmitGuess()">Submit guess</button>
+    </div>
+  </div>
+
+  <!-- Phase 2: Enter birthday -->
+  <div id="bd-phase2" class="experiment hidden">
+    <p><strong>Now enter your birthday</strong> (only month and day — no year needed):</p>
+    <div style="display:flex;gap:.5rem;align-items:center;margin-top:.5rem">
+      <input type="date" id="bd-date-input">
+      <button onclick="bdSubmitBirthday()">Submit</button>
+    </div>
+  </div>
+
+  <!-- Phase 3: Live board -->
+  <div id="bd-phase3" class="experiment hidden">
+    <p><strong>Class birthdays</strong> (<span id="bd-count">0</span> submitted):</p>
+    <div class="bd-board" id="bd-board"></div>
+    <div id="bd-match-msg" class="hidden"></div>
+    <div class="result-box mt-1">
+      <strong>Theory:</strong> With <span id="bd-theory-n">0</span> people, P(match) ≈ <span id="bd-theory-p">0</span>%.
+      <span class="italian">Solo 23 persone bastano per superare il 50%!</span>
+    </div>
+  </div>
+</section>
+
+<!-- ======== PARADOX III: SIMPSON'S ======== -->
+<section class="section-card" id="p3">
+  <h2><span class="num">III</span> Simpson's Paradox</h2>
+  <p class="desc">A trend in every subgroup can reverse when data is combined.<br>
+  <span class="italian">Una tendenza in ogni sottogruppo può invertirsi quando i dati vengono aggregati.</span></p>
+
+  <!-- Phase 1: Overall data + vote -->
+  <div id="sp-phase1" class="experiment">
+    <p><strong>Berkeley 1973:</strong> Look at the overall admissions data.</p>
+    <table style="margin:.8rem 0">
+      <thead><tr><th></th><th>Men</th><th>Women</th></tr></thead>
+      <tbody>
+        <tr><td style="text-align:left">Applied</td><td>8,442</td><td>4,321</td></tr>
+        <tr><td style="text-align:left">Admitted</td><td><strong>44%</strong></td><td><strong>35%</strong></td></tr>
+      </tbody>
+    </table>
+    <p><strong>Based on this data, do you think there was gender discrimination?</strong></p>
+    <div class="btn-row" style="justify-content:center">
+      <button class="lg red" onclick="spVote('before','yes')">Yes, discrimination</button>
+      <button class="lg green" onclick="spVote('before','no')">No discrimination</button>
+    </div>
+  </div>
+
+  <!-- Phase 2: Department breakdown + second vote -->
+  <div id="sp-phase2" class="experiment hidden">
+    <p><strong>Now look at the data department by department:</strong></p>
+    <table style="margin:.8rem 0;font-size:.85rem">
+      <thead><tr><th>Dept</th><th>Men applied</th><th>Men admit</th><th>Women applied</th><th>Women admit</th></tr></thead>
+      <tbody>
+        <tr><td>A</td><td>825</td><td>62%</td><td>108</td><td style="color:var(--green);font-weight:700">82%</td></tr>
+        <tr><td>B</td><td>560</td><td>63%</td><td>25</td><td style="color:var(--green);font-weight:700">68%</td></tr>
+        <tr><td>C</td><td>325</td><td>37%</td><td>593</td><td>34%</td></tr>
+        <tr><td>D</td><td>417</td><td>33%</td><td>375</td><td style="color:var(--green);font-weight:700">35%</td></tr>
+        <tr><td>E</td><td>191</td><td>28%</td><td>393</td><td>24%</td></tr>
+        <tr><td>F</td><td>272</td><td>6%</td><td>341</td><td style="color:var(--green);font-weight:700">7%</td></tr>
+      </tbody>
+    </table>
+    <div class="result-box success">
+      In <strong>4 out of 6</strong> departments, women have <em>higher</em> admission rates! Women applied more to competitive departments with low rates for everyone.
+    </div>
+    <p class="mt-1"><strong>Now do you still think there was discrimination?</strong></p>
+    <div class="btn-row" style="justify-content:center">
+      <button class="lg red" onclick="spVote('after','yes')">Still yes</button>
+      <button class="lg green" onclick="spVote('after','no')">No, I changed my mind</button>
+    </div>
+  </div>
+
+  <!-- Phase 3: Done -->
+  <div id="sp-phase3" class="experiment hidden">
+    <div class="result-box success text-center">
+      <p style="font-size:1.1rem;font-weight:600">Your votes have been recorded!</p>
+      <p>The teacher's dashboard shows how the class voted before and after seeing the breakdown.</p>
+      <p class="italian mt-1">Il paradosso di Simpson: i dati aggregati possono ingannare. Cercate sempre le variabili confondenti!</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======== PARADOX IV: MONTY HALL ======== -->
+<section class="section-card" id="p4">
+  <h2><span class="num">IV</span> The Monty Hall Problem</h2>
+  <p class="desc">Three doors, one car, two goats. The host opens a goat door. Should you switch?<br>
+  <span class="italian">Tre porte, una macchina, due capre. Il conduttore apre una porta. Conviene cambiare?</span></p>
+
+  <div class="experiment">
+    <p id="mh-instruction" style="text-align:center;font-size:1.05rem;font-weight:600;color:var(--darkblue);margin-bottom:.5rem">Pick a door!</p>
+
+    <div class="doors" id="mh-doors">
+      <div class="door" id="mh-d0" onclick="mhPick(0)"><span class="icon">?</span><span class="lbl">Door 1</span></div>
+      <div class="door" id="mh-d1" onclick="mhPick(1)"><span class="icon">?</span><span class="lbl">Door 2</span></div>
+      <div class="door" id="mh-d2" onclick="mhPick(2)"><span class="icon">?</span><span class="lbl">Door 3</span></div>
+    </div>
+
+    <div id="mh-action-btns" class="btn-row hidden" style="justify-content:center">
+      <button class="lg" onclick="mhDecide('stay')">Stay with my door</button>
+      <button class="lg green" onclick="mhDecide('switch')">Switch!</button>
+    </div>
+
+    <div id="mh-result" class="hidden text-center mt-1" style="font-size:1.2rem;font-weight:700"></div>
+
+    <div class="btn-row" style="justify-content:center;margin-top:.5rem">
+      <button onclick="mhNew()" id="mh-new-btn">New Game</button>
+    </div>
+
+    <hr style="margin:1.2rem 0;border:none;border-top:1px solid #d1d5db">
+
+    <p><strong>Your results:</strong> (play at least 10 rounds!)</p>
+    <div class="grid-2 mt-1">
+      <div class="result-box">
+        <strong>When you STAY</strong>
+        <div><span class="stat" id="mh-stay-w">0</span> / <span id="mh-stay-t">0</span> wins</div>
+        <div class="progress-bar"><div class="progress-fill" id="mh-stay-bar" style="width:0%;background:var(--red)"></div></div>
+        <div style="font-size:.82rem;color:var(--grey)">Win rate: <span id="mh-stay-p">—</span> &nbsp;(theory: 33%)</div>
+      </div>
+      <div class="result-box">
+        <strong>When you SWITCH</strong>
+        <div><span class="stat" id="mh-sw-w">0</span> / <span id="mh-sw-t">0</span> wins</div>
+        <div class="progress-bar"><div class="progress-fill" id="mh-sw-bar" style="width:0%;background:var(--green)"></div></div>
+        <div style="font-size:.82rem;color:var(--grey)">Win rate: <span id="mh-sw-p">—</span> &nbsp;(theory: 67%)</div>
+      </div>
+    </div>
+    <div class="text-center mt-1" style="font-size:.85rem;color:var(--grey)">Games played: <strong id="mh-total-games">0</strong></div>
+  </div>
+</section>
+
+<!-- ======== PARADOX V: SIX DEGREES ======== -->
+<section class="section-card" id="p5">
+  <h2><span class="num">V</span> Six Degrees of Separation</h2>
+  <p class="desc">Any two people on Earth are connected through at most ~6 intermediate acquaintances.<br>
+  <span class="italian">Qualsiasi persona al mondo può essere raggiunta attraverso circa 6 conoscenti intermedi.</span></p>
+
+  <!-- Phase 1: Guess -->
+  <div id="sd-phase1" class="experiment">
+    <p><strong>How many steps</strong> do you think it takes to connect any two people on Earth through acquaintances?</p>
+    <div style="display:flex;gap:.5rem;align-items:center;margin-top:.5rem">
+      <input type="number" id="sd-guess-input" min="1" max="100000" placeholder="Your guess">
+      <button onclick="sdSubmitGuess()">Submit</button>
+    </div>
+  </div>
+
+  <!-- Phase 2: Explore -->
+  <div id="sd-phase2" class="experiment hidden">
+    <p><strong>The power of exponential growth:</strong> If each person knows <input type="number" id="sd-k" value="150" min="2" max="1000" style="width:70px"> people:</p>
+    <button onclick="sdCalc()" class="mb-1">Calculate reach</button>
+    <table id="sd-table">
+      <thead><tr><th>Steps</th><th>People reachable</th><th>vs World (8B)</th></tr></thead>
+      <tbody id="sd-tbody"></tbody>
+    </table>
+
+    <hr style="margin:1.2rem 0;border:none;border-top:1px solid #d1d5db">
+
+    <p><strong>Network simulation:</strong> Find the shortest path between two random people.</p>
+    <div style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;margin:.5rem 0">
+      <label>Nodes: <input type="number" id="sd-n" value="50" min="10" max="200" style="width:55px"></label>
+      <label>Contacts: <input type="number" id="sd-e" value="4" min="2" max="20" style="width:55px"></label>
+      <button onclick="sdNetwork()">Build &amp; find path</button>
+    </div>
+    <canvas class="net-canvas" id="sd-canvas"></canvas>
+    <div id="sd-net-result" class="mt-1"></div>
+  </div>
+</section>
+
+</div><!-- /container -->
+</div><!-- /student-view -->
+
+<!-- ===================== DASHBOARD ===================== -->
+<div id="dashboard-view" class="hidden">
+<div class="container">
+  <div class="dash-header">
+    <h1>Teacher Dashboard</h1>
+    <div>Session: <span class="session-code" id="dash-session">—</span></div>
+    <div style="font-size:.85rem;color:#94a3b8;margin-top:.3rem">
+      URL for students: <strong id="dash-url"></strong>
+    </div>
+    <div style="font-size:.85rem;color:#94a3b8;margin-top:.2rem">
+      Auto-refreshes every 5 seconds &bull; <span id="dash-count">0</span> students connected
+    </div>
+  </div>
+
+  <!-- Students list -->
+  <div class="dash-card">
+    <h3>Students</h3>
+    <div class="dash-students" id="dash-students"><em style="color:var(--grey)">Waiting for students to join...</em></div>
+  </div>
+
+  <!-- Paradox I -->
+  <div class="dash-card">
+    <h3><span style="background:var(--blue);color:#fff;width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.75rem">I</span> Boy or Girl — Initial Guesses</h3>
+    <div id="dash-bg-guesses"><em style="color:var(--grey)">No data yet</em></div>
+    <div id="dash-bg-games" class="mt-1"></div>
+  </div>
+
+  <!-- Paradox II -->
+  <div class="dash-card">
+    <h3><span style="background:var(--blue);color:#fff;width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.75rem">II</span> Birthday Problem</h3>
+    <div id="dash-bd-guesses"><em style="color:var(--grey)">No data yet</em></div>
+    <div id="dash-bd-board" class="mt-1"></div>
+  </div>
+
+  <!-- Paradox III -->
+  <div class="dash-card">
+    <h3><span style="background:var(--blue);color:#fff;width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.75rem">III</span> Simpson's Paradox — Votes</h3>
+    <div id="dash-sp"></div>
+  </div>
+
+  <!-- Paradox IV -->
+  <div class="dash-card">
+    <h3><span style="background:var(--blue);color:#fff;width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.75rem">IV</span> Monty Hall — Class Results</h3>
+    <div id="dash-mh"><em style="color:var(--grey)">No data yet</em></div>
+  </div>
+
+  <!-- Paradox V -->
+  <div class="dash-card">
+    <h3><span style="background:var(--blue);color:#fff;width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.75rem">V</span> Six Degrees — Guesses</h3>
+    <div id="dash-sd"><em style="color:var(--grey)">No data yet</em></div>
+  </div>
+
+</div>
+</div>
+
+<!-- ===================== DASHBOARD JOIN ===================== -->
+<div id="dash-join" class="hidden" style="min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--darkblue),#2d4a7a)">
+  <div class="join-card">
+    <h1>Teacher Dashboard</h1>
+    <p class="sub">Enter your session code</p>
+    <input type="text" id="dash-session-input" placeholder="Session code" autocomplete="off">
+    <button onclick="startDashboard()">Open Dashboard</button>
+  </div>
+</div>
+
+<script>
+// ================================================================
+// CONFIG — paste your Google Apps Script URL here
+// ================================================================
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzjKnNtWGyqyyrAjYtO6tn6zJRPYP4ctWZiHqAJYFHABKWVuYARoxyZcXUyVUhwO5m5/exec';
+
+// ================================================================
+// STATE
+// ================================================================
+let USER = { name: '', session: '' };
+let localData = []; // offline fallback
+
+// ================================================================
+// BACKEND
+// ================================================================
+function send(paradox, action, value) {
+    const entry = { session: USER.session, name: USER.name, paradox, action, value: String(value) };
+    localData.push(entry);
+    if (!SCRIPT_URL) return;
+    fetch(SCRIPT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify(entry)
+    }).catch(() => {});
+}
+
+async function fetchData(session) {
+    if (!SCRIPT_URL) return localData.filter(d => d.session === session);
+    try {
+        const r = await fetch(SCRIPT_URL + '?session=' + encodeURIComponent(session));
+        return await r.json();
+    } catch { return localData.filter(d => d.session === session); }
+}
+
+// ================================================================
+// JOIN
+// ================================================================
+function joinSession() {
+    const name = document.getElementById('inp-name').value.trim();
+    const session = document.getElementById('inp-session').value.trim().toUpperCase();
+    if (!name || !session) { document.getElementById('join-error').textContent = 'Please fill in both fields.'; return; }
+    USER.name = name;
+    USER.session = session;
+    document.getElementById('join-screen').classList.add('hidden');
+    document.getElementById('student-view').classList.remove('hidden');
+    document.getElementById('user-badge').textContent = name;
+    send('system', 'join', name);
+    mhNew();
+}
+
+function openDashboard() {
+    document.getElementById('join-screen').classList.add('hidden');
+    document.getElementById('dash-join').classList.remove('hidden');
+}
+
+function startDashboard() {
+    const session = document.getElementById('dash-session-input').value.trim().toUpperCase();
+    if (!session) return;
+    USER.session = session;
+    document.getElementById('dash-join').classList.add('hidden');
+    document.getElementById('dashboard-view').classList.remove('hidden');
+    document.getElementById('dash-session').textContent = session;
+    document.getElementById('dash-url').textContent = location.origin + location.pathname;
+    refreshDashboard();
+    setInterval(refreshDashboard, 5000);
+}
+
+// check URL params
+(function() {
+    const p = new URLSearchParams(location.search);
+    if (p.has('dashboard')) {
+        document.getElementById('join-screen').classList.add('hidden');
+        if (p.get('session')) {
+            document.getElementById('dash-session-input').value = p.get('session');
+            document.getElementById('dash-join').classList.remove('hidden');
+            startDashboard();
+        } else {
+            document.getElementById('dash-join').classList.remove('hidden');
+        }
+    }
+})();
+
+// ================================================================
+// NAV
+// ================================================================
+document.querySelectorAll('.topnav a').forEach(a => {
+    a.addEventListener('click', function(e) {
+        document.querySelectorAll('.topnav a').forEach(x => x.classList.remove('active'));
+        this.classList.add('active');
+    });
+});
+
+// ================================================================
+// PARADOX I: BOY OR GIRL
+// ================================================================
+let bgRounds = [], bgRound = 0, bgCorrect = 0, bgBothCount = 0;
+const BG_TOTAL = 20;
+
+function bgGuess(val) {
+    document.querySelectorAll('#bg-phase1 .choice-btn').forEach(b => {
+        b.disabled = true;
+        if (b.textContent === val) b.classList.add('selected');
+        if (b.textContent === '1/3') b.classList.add('correct');
+        if (b.textContent === val && val !== '1/3') b.classList.add('wrong');
+    });
+    send('boy_girl', 'guess', val);
+    setTimeout(() => {
+        document.getElementById('bg-phase2').classList.remove('hidden');
+        bgGenerateRounds();
+        bgShowRound();
+    }, 1200);
+}
+
+function bgGenerateRounds() {
+    bgRounds = [];
+    while (bgRounds.length < BG_TOTAL) {
+        const c1 = Math.random() < 0.5 ? 'M' : 'F';
+        const c2 = Math.random() < 0.5 ? 'M' : 'F';
+        if (c1 === 'M' || c2 === 'M') bgRounds.push([c1, c2]);
+    }
+}
+
+function bgShowRound() {
+    document.getElementById('bg-round').textContent = bgRound + 1;
+    document.getElementById('bg-guess-btns').classList.remove('hidden');
+    document.getElementById('bg-reveal').classList.add('hidden');
+    document.getElementById('bg-next-btn').classList.add('hidden');
+    document.getElementById('bg-family-icon').innerHTML = '&#128104;&#8205;&#128105;&#8205;&#128102;&#8205;&#10067;';
+}
+
+function bgRoundGuess(guessedBoth) {
+    const [c1, c2] = bgRounds[bgRound];
+    const actuallyBoth = c1 === 'M' && c2 === 'M';
+    const correct = guessedBoth === actuallyBoth;
+    if (correct) bgCorrect++;
+    if (actuallyBoth) bgBothCount++;
+
+    document.getElementById('bg-guess-btns').classList.add('hidden');
+    const reveal = document.getElementById('bg-reveal');
+    reveal.classList.remove('hidden', 'correct', 'wrong');
+
+    const childStr = (c) => c === 'M' ? '&#128102; Boy' : '&#128103; Girl';
+    const icon = c1 === 'M' && c2 === 'M' ? '&#128102;&#128102;' : c1 === 'F' && c2 === 'F' ? '&#128103;&#128103;' : '&#128102;&#128103;';
+    document.getElementById('bg-family-icon').innerHTML = icon;
+
+    reveal.classList.add(correct ? 'correct' : 'wrong');
+    reveal.innerHTML = `${childStr(c1)} + ${childStr(c2)} &mdash; ${actuallyBoth ? 'BOTH BOYS!' : 'Not both boys.'} &mdash; You were <strong>${correct ? 'RIGHT' : 'WRONG'}</strong>`;
+
+    document.getElementById('bg-score').textContent = bgCorrect;
+    document.getElementById('bg-bothcount').textContent = bgBothCount;
+
+    bgRound++;
+    if (bgRound < BG_TOTAL) {
+        document.getElementById('bg-next-btn').classList.remove('hidden');
+    } else {
+        send('boy_girl', 'game_result', JSON.stringify({ correct: bgCorrect, bothSeen: bgBothCount, total: BG_TOTAL }));
+        setTimeout(bgShowResults, 1000);
+    }
+}
+
+function bgNextRound() { bgShowRound(); }
+
+function bgShowResults() {
+    document.getElementById('bg-phase2').classList.add('hidden');
+    document.getElementById('bg-phase3').classList.remove('hidden');
+    const rate = (bgBothCount / BG_TOTAL * 100).toFixed(1);
+    document.getElementById('bg-final-rate').textContent = rate + '%';
+    document.getElementById('bg-results-text').textContent =
+        `You guessed correctly ${bgCorrect}/${BG_TOTAL} times. "Both boys" appeared ${bgBothCount}/${BG_TOTAL} times (${rate}%).`;
+}
+
+// ================================================================
+// PARADOX II: BIRTHDAY
+// ================================================================
+let bdGuessed = false, bdSubmitted = false;
+
+function bdSubmitGuess() {
+    const v = document.getElementById('bd-guess-input').value;
+    if (!v) return;
+    send('birthday', 'guess', v);
+    bdGuessed = true;
+    document.getElementById('bd-phase1').innerHTML = `<div class="result-box success text-center"><strong>Your guess: ${v} people.</strong> The answer is just <strong>23</strong>! Let's check with the class...</div>`;
+    document.getElementById('bd-phase2').classList.remove('hidden');
+}
+
+function bdSubmitBirthday() {
+    const inp = document.getElementById('bd-date-input');
+    if (!inp.value) return;
+    const d = new Date(inp.value);
+    const mmdd = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
+    send('birthday', 'birthday', mmdd);
+    bdSubmitted = true;
+    document.getElementById('bd-phase2').innerHTML = `<div class="result-box success text-center"><strong>Birthday submitted!</strong> (${mmdd}) Watch the board below as classmates add theirs.</div>`;
+    document.getElementById('bd-phase3').classList.remove('hidden');
+    bdPollBoard();
+}
+
+function bdPollBoard() {
+    setInterval(async () => {
+        const data = await fetchData(USER.session);
+        const bdays = data.filter(d => d.paradox === 'birthday' && d.action === 'birthday');
+        renderBdBoard(bdays);
+    }, 4000);
+}
+
+function renderBdBoard(entries) {
+    const board = document.getElementById('bd-board');
+    const counts = {};
+    entries.forEach(e => {
+        const v = e.value;
+        counts[v] = counts[v] || [];
+        counts[v].push(e.name);
+    });
+    const dupes = Object.keys(counts).filter(k => counts[k].length > 1);
+    board.innerHTML = entries.map(e => {
+        const isMatch = dupes.includes(e.value);
+        return `<span class="bd-tag ${isMatch ? 'match' : ''}">${e.name}: ${e.value}</span>`;
+    }).join('');
+    document.getElementById('bd-count').textContent = entries.length;
+
+    const n = entries.length;
+    let p = 1;
+    for (let i = 0; i < Math.min(n, 365); i++) p *= (365 - i) / 365;
+    document.getElementById('bd-theory-n').textContent = n;
+    document.getElementById('bd-theory-p').textContent = ((1 - p) * 100).toFixed(1);
+
+    const matchMsg = document.getElementById('bd-match-msg');
+    if (dupes.length > 0) {
+        matchMsg.classList.remove('hidden');
+        matchMsg.className = 'result-box success';
+        matchMsg.innerHTML = '<strong>Match found!</strong> ' + dupes.map(d => `<strong>${d}</strong>: ${counts[d].join(', ')}`).join(' &bull; ');
+    } else if (n > 0) {
+        matchMsg.classList.remove('hidden');
+        matchMsg.className = 'result-box';
+        matchMsg.innerHTML = `<strong>No match yet</strong> among ${n} people.`;
+    }
+}
+
+// ================================================================
+// PARADOX III: SIMPSON'S
+// ================================================================
+function spVote(phase, val) {
+    send('simpson', 'vote_' + phase, val);
+    if (phase === 'before') {
+        document.getElementById('sp-phase1').innerHTML = `<div class="result-box text-center"><strong>You voted: ${val === 'yes' ? 'Yes, discrimination' : 'No discrimination'}.</strong> Now look at the department-level data below...</div>`;
+        document.getElementById('sp-phase2').classList.remove('hidden');
+    } else {
+        document.getElementById('sp-phase2').classList.add('hidden');
+        document.getElementById('sp-phase3').classList.remove('hidden');
+    }
+}
+
+// ================================================================
+// PARADOX IV: MONTY HALL
+// ================================================================
+let mh = { car: -1, pick: -1, opened: -1, phase: 'pick', stayW: 0, stayT: 0, swW: 0, swT: 0, total: 0 };
+
+function mhNew() {
+    mh.car = Math.floor(Math.random() * 3);
+    mh.pick = -1; mh.opened = -1; mh.phase = 'pick';
+    for (let i = 0; i < 3; i++) {
+        const d = document.getElementById('mh-d' + i);
+        d.className = 'door';
+        d.querySelector('.icon').textContent = '?';
+    }
+    document.getElementById('mh-instruction').textContent = 'Pick a door!';
+    document.getElementById('mh-instruction').style.color = 'var(--darkblue)';
+    document.getElementById('mh-action-btns').classList.add('hidden');
+    document.getElementById('mh-result').classList.add('hidden');
+}
+
+function mhPick(i) {
+    if (mh.phase !== 'pick') return;
+    mh.pick = i; mh.phase = 'decide';
+    document.getElementById('mh-d' + i).classList.add('picked');
+
+    const opts = [0, 1, 2].filter(d => d !== i && d !== mh.car);
+    mh.opened = opts[Math.floor(Math.random() * opts.length)];
+    const od = document.getElementById('mh-d' + mh.opened);
+    od.classList.add('opened');
+    od.querySelector('.icon').textContent = '🐐';
+
+    document.getElementById('mh-instruction').textContent = `You picked Door ${i + 1}. The host opened Door ${mh.opened + 1} (goat!). Stay or switch?`;
+    document.getElementById('mh-action-btns').classList.remove('hidden');
+}
+
+function mhDecide(choice) {
+    if (mh.phase !== 'decide') return;
+    mh.phase = 'done';
+    document.getElementById('mh-action-btns').classList.add('hidden');
+
+    let final;
+    if (choice === 'stay') { final = mh.pick; mh.stayT++; }
+    else { final = [0, 1, 2].find(d => d !== mh.pick && d !== mh.opened); mh.swT++; }
+
+    const won = final === mh.car;
+    if (choice === 'stay' && won) mh.stayW++;
+    if (choice === 'switch' && won) mh.swW++;
+    mh.total++;
+
+    for (let i = 0; i < 3; i++) {
+        const d = document.getElementById('mh-d' + i);
+        d.classList.add('locked');
+        d.querySelector('.icon').textContent = i === mh.car ? '🚗' : '🐐';
+        if (!d.classList.contains('opened') && i !== mh.pick) d.classList.add('opened');
+        if (i === mh.car && i === final) d.style.borderColor = 'var(--green)';
+    }
+
+    const res = document.getElementById('mh-result');
+    res.classList.remove('hidden');
+    res.style.color = won ? 'var(--green)' : 'var(--red)';
+    res.textContent = won ? `You WON! (${choice})` : `You lost. (${choice}) Car was behind Door ${mh.car + 1}.`;
+
+    send('monty_hall', choice, won ? 'win' : 'lose');
+    mhUpdateStats();
+}
+
+function mhUpdateStats() {
+    document.getElementById('mh-stay-w').textContent = mh.stayW;
+    document.getElementById('mh-stay-t').textContent = mh.stayT;
+    document.getElementById('mh-sw-w').textContent = mh.swW;
+    document.getElementById('mh-sw-t').textContent = mh.swT;
+    document.getElementById('mh-total-games').textContent = mh.total;
+    if (mh.stayT > 0) {
+        const p = (mh.stayW / mh.stayT * 100).toFixed(1);
+        document.getElementById('mh-stay-p').textContent = p + '%';
+        document.getElementById('mh-stay-bar').style.width = p + '%';
+    }
+    if (mh.swT > 0) {
+        const p = (mh.swW / mh.swT * 100).toFixed(1);
+        document.getElementById('mh-sw-p').textContent = p + '%';
+        document.getElementById('mh-sw-bar').style.width = p + '%';
+    }
+}
+
+// ================================================================
+// PARADOX V: SIX DEGREES
+// ================================================================
+function sdSubmitGuess() {
+    const v = document.getElementById('sd-guess-input').value;
+    if (!v) return;
+    send('six_degrees', 'guess', v);
+    document.getElementById('sd-phase1').innerHTML = `<div class="result-box success text-center"><strong>Your guess: ${v} steps.</strong> The real answer is about <strong>6</strong> (or even less with social media: ~3.5)! Explore below...</div>`;
+    document.getElementById('sd-phase2').classList.remove('hidden');
+    sdCalc();
+}
+
+function sdCalc() {
+    const k = parseInt(document.getElementById('sd-k').value) || 150;
+    const tbody = document.getElementById('sd-tbody');
+    let html = '', reach = 1;
+    for (let s = 0; s <= 7; s++) {
+        if (s > 0) reach *= k;
+        const fmt = reach >= 1e9 ? (reach / 1e9).toFixed(1) + 'B' : reach >= 1e6 ? (reach / 1e6).toFixed(1) + 'M' : reach.toLocaleString();
+        const pct = Math.min(reach / 8e9 * 100, 100);
+        const over = reach >= 8e9;
+        html += `<tr style="${over ? 'background:#dcfce7;font-weight:600' : ''}"><td>${s}</td><td>${fmt}</td><td><div class="progress-bar" style="height:16px"><div class="progress-fill" style="width:${Math.max(pct, 0.5)}%;background:${over ? 'var(--green)' : 'var(--blue)};font-size:.7rem">${pct < 1 ? pct.toFixed(2) : pct.toFixed(0)}%</div></div></td></tr>`;
+    }
+    tbody.innerHTML = html;
+}
+
+function sdNetwork() {
+    const N = parseInt(document.getElementById('sd-n').value) || 50;
+    const K = parseInt(document.getElementById('sd-e').value) || 4;
+    const canvas = document.getElementById('sd-canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight;
+    const W = canvas.width, H = canvas.height;
+
+    const adj = Array.from({ length: N }, () => new Set());
+    for (let i = 0; i < N; i++)
+        for (let j = 1; j <= Math.floor(K / 2); j++) { const ni = (i + j) % N; adj[i].add(ni); adj[ni].add(i); }
+    for (let i = 0; i < N; i++)
+        for (let j = 1; j <= Math.floor(K / 2); j++) {
+            if (Math.random() < 0.3) {
+                const ni = (i + j) % N; adj[i].delete(ni); adj[ni].delete(i);
+                let t; do { t = Math.floor(Math.random() * N); } while (t === i || adj[i].has(t));
+                adj[i].add(t); adj[t].add(i);
+            }
+        }
+
+    const src = Math.floor(Math.random() * N);
+    let dst; do { dst = Math.floor(Math.random() * N); } while (dst === src);
+    const prev = Array(N).fill(-1), vis = Array(N).fill(false), q = [src]; vis[src] = true;
+    while (q.length) { const u = q.shift(); if (u === dst) break; for (const v of adj[u]) if (!vis[v]) { vis[v] = true; prev[v] = u; q.push(v); } }
+    const path = []; if (vis[dst]) { let c = dst; while (c !== -1) { path.unshift(c); c = prev[c]; } }
+    const pathSet = new Set(path), pathEdges = new Set();
+    for (let i = 0; i < path.length - 1; i++) { pathEdges.add(path[i] + '-' + path[i + 1]); pathEdges.add(path[i + 1] + '-' + path[i]); }
+
+    const pos = Array.from({ length: N }, (_, i) => ({ x: W / 2 + (W / 3) * Math.cos(2 * Math.PI * i / N), y: H / 2 + (H / 3) * Math.sin(2 * Math.PI * i / N) }));
+    ctx.clearRect(0, 0, W, H);
+    for (let i = 0; i < N; i++) for (const j of adj[i]) if (j > i) {
+        const isP = pathEdges.has(i + '-' + j);
+        ctx.beginPath(); ctx.moveTo(pos[i].x, pos[i].y); ctx.lineTo(pos[j].x, pos[j].y);
+        ctx.strokeStyle = isP ? '#dc2626' : '#e2e8f0'; ctx.lineWidth = isP ? 3 : .5; ctx.stroke();
+    }
+    const r = Math.max(3, Math.min(8, 200 / N));
+    for (let i = 0; i < N; i++) {
+        ctx.beginPath(); ctx.arc(pos[i].x, pos[i].y, r, 0, 2 * Math.PI);
+        ctx.fillStyle = i === src ? '#2563eb' : i === dst ? '#16a34a' : pathSet.has(i) ? '#f59e0b' : '#94a3b8';
+        ctx.fill();
+        if (i === src || i === dst) { ctx.lineWidth = 2; ctx.strokeStyle = i === src ? '#1e40af' : '#15803d'; ctx.stroke(); }
+    }
+    ctx.font = 'bold 11px sans-serif'; ctx.fillStyle = '#1e3a5f';
+    ctx.fillText('START', pos[src].x + r + 3, pos[src].y - 4);
+    ctx.fillText('END', pos[dst].x + r + 3, pos[dst].y - 4);
+
+    const rd = document.getElementById('sd-net-result');
+    rd.innerHTML = path.length ? `<div class="result-box success"><strong>Shortest path: ${path.length - 1} steps</strong> in a network of ${N} people.</div>` : `<div class="result-box warn"><strong>No path found</strong> — try increasing contacts.</div>`;
+}
+
+// ================================================================
+// DASHBOARD
+// ================================================================
+async function refreshDashboard() {
+    const data = await fetchData(USER.session);
+    if (!data || data.error) return;
+
+    // Students
+    const names = [...new Set(data.filter(d => d.action === 'join').map(d => d.value))];
+    document.getElementById('dash-count').textContent = names.length;
+    document.getElementById('dash-students').innerHTML = names.length ?
+        names.map(n => `<span class="tag">${n}</span>`).join('') :
+        '<em style="color:var(--grey)">Waiting for students...</em>';
+
+    // --- Paradox I: Boy/Girl guesses ---
+    const bgG = data.filter(d => d.paradox === 'boy_girl' && d.action === 'guess');
+    if (bgG.length) {
+        const counts = {}; bgG.forEach(d => counts[d.value] = (counts[d.value] || 0) + 1);
+        const total = bgG.length;
+        let html = '';
+        ['1/4', '1/3', '1/2', '2/3'].forEach(k => {
+            const c = counts[k] || 0;
+            const pct = (c / total * 100).toFixed(0);
+            const color = k === '1/3' ? 'var(--green)' : 'var(--blue)';
+            html += `<div class="dash-bar"><span class="label">${k} ${k === '1/3' ? '✓' : ''}</span><div class="bar"><div class="fill" style="width:${pct}%;background:${color}">${c} (${pct}%)</div></div></div>`;
+        });
+        document.getElementById('dash-bg-guesses').innerHTML = `<p style="font-size:.85rem;color:var(--grey);margin-bottom:.3rem">${total} responses</p>` + html;
+    }
+
+    // Game results
+    const bgGames = data.filter(d => d.paradox === 'boy_girl' && d.action === 'game_result');
+    if (bgGames.length) {
+        let totalBoth = 0, totalRounds = 0;
+        bgGames.forEach(d => {
+            try { const v = JSON.parse(d.value); totalBoth += v.bothSeen; totalRounds += v.total; } catch {}
+        });
+        const avgRate = totalRounds > 0 ? (totalBoth / totalRounds * 100).toFixed(1) : '—';
+        document.getElementById('dash-bg-games').innerHTML = `<div class="result-box"><strong>Class game results:</strong> "Both boys" appeared ${totalBoth}/${totalRounds} times = <strong>${avgRate}%</strong> (theory: 33.3%)</div>`;
+    }
+
+    // --- Paradox II: Birthday ---
+    const bdGuesses = data.filter(d => d.paradox === 'birthday' && d.action === 'guess');
+    if (bdGuesses.length) {
+        const vals = bdGuesses.map(d => parseInt(d.value)).filter(v => !isNaN(v));
+        const avg = vals.length ? (vals.reduce((a, b) => a + b, 0) / vals.length).toFixed(0) : '—';
+        const min = vals.length ? Math.min(...vals) : '—';
+        const max = vals.length ? Math.max(...vals) : '—';
+        document.getElementById('dash-bd-guesses').innerHTML = `<p><strong>${vals.length} guesses</strong> — Average: <strong>${avg}</strong>, Range: ${min}–${max} (Correct: <strong style="color:var(--green)">23</strong>)</p>`;
+    }
+    const bdBdays = data.filter(d => d.paradox === 'birthday' && d.action === 'birthday');
+    if (bdBdays.length) {
+        const counts = {};
+        bdBdays.forEach(e => { counts[e.value] = counts[e.value] || []; counts[e.value].push(e.name); });
+        const dupes = Object.keys(counts).filter(k => counts[k].length > 1);
+        let html = '<p><strong>' + bdBdays.length + ' birthdays submitted</strong></p><div class="bd-board">';
+        bdBdays.forEach(e => {
+            const m = dupes.includes(e.value);
+            html += `<span class="bd-tag ${m ? 'match' : ''}">${e.name}: ${e.value}</span>`;
+        });
+        html += '</div>';
+        if (dupes.length) {
+            html += '<div class="result-box success mt-1"><strong>Matches found!</strong> ';
+            html += dupes.map(d => `<strong>${d}</strong>: ${counts[d].join(', ')}`).join(' &bull; ');
+            html += '</div>';
+        }
+        document.getElementById('dash-bd-board').innerHTML = html;
+    }
+
+    // --- Paradox III: Simpson's ---
+    const spBefore = data.filter(d => d.paradox === 'simpson' && d.action === 'vote_before');
+    const spAfter = data.filter(d => d.paradox === 'simpson' && d.action === 'vote_after');
+    if (spBefore.length || spAfter.length) {
+        const bYes = spBefore.filter(d => d.value === 'yes').length;
+        const bNo = spBefore.filter(d => d.value === 'no').length;
+        const aYes = spAfter.filter(d => d.value === 'yes').length;
+        const aNo = spAfter.filter(d => d.value === 'no').length;
+        const bTot = bYes + bNo || 1; const aTot = aYes + aNo || 1;
+
+        let html = '<p style="font-weight:600;margin-bottom:.5rem">Before seeing departments:</p>';
+        html += `<div class="dash-bar"><span class="label">Yes</span><div class="bar"><div class="fill" style="width:${bYes/bTot*100}%;background:var(--red)">${bYes} (${(bYes/bTot*100).toFixed(0)}%)</div></div></div>`;
+        html += `<div class="dash-bar"><span class="label">No</span><div class="bar"><div class="fill" style="width:${bNo/bTot*100}%;background:var(--green)">${bNo} (${(bNo/bTot*100).toFixed(0)}%)</div></div></div>`;
+
+        if (spAfter.length) {
+            html += '<p style="font-weight:600;margin:.8rem 0 .5rem">After seeing departments:</p>';
+            html += `<div class="dash-bar"><span class="label">Still yes</span><div class="bar"><div class="fill" style="width:${aYes/aTot*100}%;background:var(--red)">${aYes} (${(aYes/aTot*100).toFixed(0)}%)</div></div></div>`;
+            html += `<div class="dash-bar"><span class="label">Changed to no</span><div class="bar"><div class="fill" style="width:${aNo/aTot*100}%;background:var(--green)">${aNo} (${(aNo/aTot*100).toFixed(0)}%)</div></div></div>`;
+
+            // Count mind-changers
+            const beforeMap = {};
+            spBefore.forEach(d => beforeMap[d.name] = d.value);
+            let changed = 0;
+            spAfter.forEach(d => { if (beforeMap[d.name] === 'yes' && d.value === 'no') changed++; });
+            if (changed > 0) html += `<div class="result-box success mt-1"><strong>${changed} student${changed > 1 ? 's' : ''} changed their mind</strong> after seeing the department breakdown!</div>`;
+        }
+        document.getElementById('dash-sp').innerHTML = html;
+    }
+
+    // --- Paradox IV: Monty Hall ---
+    const mhData = data.filter(d => d.paradox === 'monty_hall');
+    if (mhData.length) {
+        const stay = mhData.filter(d => d.action === 'stay');
+        const sw = mhData.filter(d => d.action === 'switch');
+        const stayW = stay.filter(d => d.value === 'win').length;
+        const swW = sw.filter(d => d.value === 'win').length;
+        const stayPct = stay.length ? (stayW / stay.length * 100).toFixed(1) : 0;
+        const swPct = sw.length ? (swW / sw.length * 100).toFixed(1) : 0;
+
+        let html = `<p style="font-size:.85rem;color:var(--grey);margin-bottom:.5rem">${mhData.length} total games played by the class</p>`;
+        html += `<div class="dash-bar"><span class="label">STAY</span><div class="bar"><div class="fill" style="width:${stayPct}%;background:var(--red)">${stayW}/${stay.length} wins (${stayPct}%)</div></div></div>`;
+        html += `<div class="dash-bar"><span class="label">SWITCH</span><div class="bar"><div class="fill" style="width:${swPct}%;background:var(--green)">${swW}/${sw.length} wins (${swPct}%)</div></div></div>`;
+        html += `<p style="font-size:.85rem;color:var(--grey);margin-top:.3rem">Theory: Stay wins 33%, Switch wins 67%</p>`;
+        document.getElementById('dash-mh').innerHTML = html;
+    }
+
+    // --- Paradox V: Six Degrees ---
+    const sdG = data.filter(d => d.paradox === 'six_degrees' && d.action === 'guess');
+    if (sdG.length) {
+        const vals = sdG.map(d => parseInt(d.value)).filter(v => !isNaN(v));
+        const avg = vals.length ? (vals.reduce((a, b) => a + b, 0) / vals.length).toFixed(1) : '—';
+        const median = vals.length ? vals.sort((a, b) => a - b)[Math.floor(vals.length / 2)] : '—';
+        let html = `<p><strong>${vals.length} guesses</strong> — Average: <strong>${avg}</strong>, Median: <strong>${median}</strong> (Answer: <strong style="color:var(--green)">~6</strong>)</p>`;
+        // Simple histogram
+        const buckets = { '1-5': 0, '6-10': 0, '11-50': 0, '51-100': 0, '101-1000': 0, '1000+': 0 };
+        vals.forEach(v => {
+            if (v <= 5) buckets['1-5']++;
+            else if (v <= 10) buckets['6-10']++;
+            else if (v <= 50) buckets['11-50']++;
+            else if (v <= 100) buckets['51-100']++;
+            else if (v <= 1000) buckets['101-1000']++;
+            else buckets['1000+']++;
+        });
+        const maxB = Math.max(...Object.values(buckets), 1);
+        Object.entries(buckets).forEach(([k, v]) => {
+            if (v > 0) html += `<div class="dash-bar"><span class="label">${k}</span><div class="bar"><div class="fill" style="width:${v/maxB*100}%;background:var(--blue)">${v}</div></div></div>`;
+        });
+        document.getElementById('dash-sd').innerHTML = html;
+    }
+}
+</script>
+</body>
+</html>
