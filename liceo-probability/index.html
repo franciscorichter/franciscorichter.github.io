@@ -151,18 +151,66 @@ input[type=number],input[type=date]{padding:.45rem .6rem;border:1px solid #d1d5d
 
 <nav class="topnav">
   <span class="brand">Paradoxes</span>
-  <a href="#p1" class="active" data-nav="p1">I Boy/Girl</a>
-  <a href="#p2" data-nav="p2">II Birthday</a>
-  <a href="#p3" data-nav="p3">III Simpson</a>
-  <a href="#p4" data-nav="p4">IV Monty Hall</a>
-  <a href="#p5" data-nav="p5">V Six Degrees</a>
+  <a href="#" class="active" data-tab="monty-hall" onclick="switchMainTab('monty-hall');return false">Monty Hall</a>
+  <a href="#" data-tab="other" onclick="switchMainTab('other');return false">Other Paradoxes</a>
   <span class="spacer"></span>
   <span class="user-badge" id="user-badge"></span>
 </nav>
 
 <div class="container">
 
-<!-- ======== PARADOX I: BOY OR GIRL ======== -->
+<!-- ======== MONTY HALL (main tab) ======== -->
+<div id="tab-monty-hall">
+<section class="section-card" id="p4">
+  <h2>The Monty Hall Problem</h2>
+  <p class="desc">Three doors, one car, two goats. The host opens a goat door. Should you switch?<br>
+  <span class="italian">Tre porte, una macchina, due capre. Il conduttore apre una porta. Conviene cambiare?</span></p>
+
+  <div class="experiment">
+    <p id="mh-instruction" style="text-align:center;font-size:1.05rem;font-weight:600;color:var(--darkblue);margin-bottom:.5rem">Pick a door!</p>
+
+    <div class="doors" id="mh-doors">
+      <div class="door" id="mh-d0" onclick="mhPick(0)"><span class="icon">?</span><span class="lbl">Door 1</span></div>
+      <div class="door" id="mh-d1" onclick="mhPick(1)"><span class="icon">?</span><span class="lbl">Door 2</span></div>
+      <div class="door" id="mh-d2" onclick="mhPick(2)"><span class="icon">?</span><span class="lbl">Door 3</span></div>
+    </div>
+
+    <div id="mh-action-btns" class="btn-row hidden" style="justify-content:center">
+      <button class="lg" onclick="mhDecide('stay')">Stay with my door</button>
+      <button class="lg green" onclick="mhDecide('switch')">Switch!</button>
+    </div>
+
+    <div id="mh-result" class="hidden text-center mt-1" style="font-size:1.2rem;font-weight:700"></div>
+
+    <div class="btn-row" style="justify-content:center;margin-top:.5rem">
+      <button onclick="mhNew()" id="mh-new-btn">New Game</button>
+    </div>
+
+    <hr style="margin:1.2rem 0;border:none;border-top:1px solid #d1d5db">
+
+    <p><strong>Your results:</strong> (play at least 10 rounds!)</p>
+    <div class="grid-2 mt-1">
+      <div class="result-box">
+        <strong>When you STAY</strong>
+        <div><span class="stat" id="mh-stay-w">0</span> / <span id="mh-stay-t">0</span> wins</div>
+        <div class="progress-bar"><div class="progress-fill" id="mh-stay-bar" style="width:0%;background:var(--red)"></div></div>
+        <div style="font-size:.82rem;color:var(--grey)">Win rate: <span id="mh-stay-p">—</span> &nbsp;(theory: 33%)</div>
+      </div>
+      <div class="result-box">
+        <strong>When you SWITCH</strong>
+        <div><span class="stat" id="mh-sw-w">0</span> / <span id="mh-sw-t">0</span> wins</div>
+        <div class="progress-bar"><div class="progress-fill" id="mh-sw-bar" style="width:0%;background:var(--green)"></div></div>
+        <div style="font-size:.82rem;color:var(--grey)">Win rate: <span id="mh-sw-p">—</span> &nbsp;(theory: 67%)</div>
+      </div>
+    </div>
+    <div class="text-center mt-1" style="font-size:.85rem;color:var(--grey)">Games played: <strong id="mh-total-games">0</strong></div>
+  </div>
+</section>
+</div>
+
+<!-- ======== OTHER PARADOXES (secondary tab) ======== -->
+<div id="tab-other" class="hidden">
+
 <section class="section-card" id="p1">
   <h2><span class="num">I</span> Boy or Girl?</h2>
   <p class="desc">A parent says: "I have two children. At least one is a boy." What is the probability both are boys?<br>
@@ -304,53 +352,6 @@ input[type=number],input[type=date]{padding:.45rem .6rem;border:1px solid #d1d5d
   </div>
 </section>
 
-<!-- ======== PARADOX IV: MONTY HALL ======== -->
-<section class="section-card" id="p4">
-  <h2><span class="num">IV</span> The Monty Hall Problem</h2>
-  <p class="desc">Three doors, one car, two goats. The host opens a goat door. Should you switch?<br>
-  <span class="italian">Tre porte, una macchina, due capre. Il conduttore apre una porta. Conviene cambiare?</span></p>
-
-  <div class="experiment">
-    <p id="mh-instruction" style="text-align:center;font-size:1.05rem;font-weight:600;color:var(--darkblue);margin-bottom:.5rem">Pick a door!</p>
-
-    <div class="doors" id="mh-doors">
-      <div class="door" id="mh-d0" onclick="mhPick(0)"><span class="icon">?</span><span class="lbl">Door 1</span></div>
-      <div class="door" id="mh-d1" onclick="mhPick(1)"><span class="icon">?</span><span class="lbl">Door 2</span></div>
-      <div class="door" id="mh-d2" onclick="mhPick(2)"><span class="icon">?</span><span class="lbl">Door 3</span></div>
-    </div>
-
-    <div id="mh-action-btns" class="btn-row hidden" style="justify-content:center">
-      <button class="lg" onclick="mhDecide('stay')">Stay with my door</button>
-      <button class="lg green" onclick="mhDecide('switch')">Switch!</button>
-    </div>
-
-    <div id="mh-result" class="hidden text-center mt-1" style="font-size:1.2rem;font-weight:700"></div>
-
-    <div class="btn-row" style="justify-content:center;margin-top:.5rem">
-      <button onclick="mhNew()" id="mh-new-btn">New Game</button>
-    </div>
-
-    <hr style="margin:1.2rem 0;border:none;border-top:1px solid #d1d5db">
-
-    <p><strong>Your results:</strong> (play at least 10 rounds!)</p>
-    <div class="grid-2 mt-1">
-      <div class="result-box">
-        <strong>When you STAY</strong>
-        <div><span class="stat" id="mh-stay-w">0</span> / <span id="mh-stay-t">0</span> wins</div>
-        <div class="progress-bar"><div class="progress-fill" id="mh-stay-bar" style="width:0%;background:var(--red)"></div></div>
-        <div style="font-size:.82rem;color:var(--grey)">Win rate: <span id="mh-stay-p">—</span> &nbsp;(theory: 33%)</div>
-      </div>
-      <div class="result-box">
-        <strong>When you SWITCH</strong>
-        <div><span class="stat" id="mh-sw-w">0</span> / <span id="mh-sw-t">0</span> wins</div>
-        <div class="progress-bar"><div class="progress-fill" id="mh-sw-bar" style="width:0%;background:var(--green)"></div></div>
-        <div style="font-size:.82rem;color:var(--grey)">Win rate: <span id="mh-sw-p">—</span> &nbsp;(theory: 67%)</div>
-      </div>
-    </div>
-    <div class="text-center mt-1" style="font-size:.85rem;color:var(--grey)">Games played: <strong id="mh-total-games">0</strong></div>
-  </div>
-</section>
-
 <!-- ======== PARADOX V: SIX DEGREES ======== -->
 <section class="section-card" id="p5">
   <h2><span class="num">V</span> Six Degrees of Separation</h2>
@@ -388,6 +389,7 @@ input[type=number],input[type=date]{padding:.45rem .6rem;border:1px solid #d1d5d
   </div>
 </section>
 
+</div><!-- /tab-other -->
 </div><!-- /container -->
 </div><!-- /student-view -->
 
@@ -457,5 +459,15 @@ input[type=number],input[type=date]{padding:.45rem .6rem;border:1px solid #d1d5d
 </div>
 
 <script src="app.js"></script>
+<script>
+function switchMainTab(tab) {
+  document.getElementById('tab-monty-hall').classList.toggle('hidden', tab !== 'monty-hall');
+  document.getElementById('tab-other').classList.toggle('hidden', tab !== 'other');
+  document.querySelectorAll('.topnav a[data-tab]').forEach(a => {
+    a.classList.toggle('active', a.dataset.tab === tab);
+  });
+  window.scrollTo(0, 0);
+}
+</script>
 </body>
 </html>

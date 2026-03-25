@@ -80,16 +80,6 @@ function startDashboard() {
 })();
 
 // ================================================================
-// NAV
-// ================================================================
-document.querySelectorAll('.topnav a').forEach(a => {
-    a.addEventListener('click', function(e) {
-        document.querySelectorAll('.topnav a').forEach(x => x.classList.remove('active'));
-        this.classList.add('active');
-    });
-});
-
-// ================================================================
 // PARADOX I: BOY OR GIRL
 // ================================================================
 let bgRounds = [], bgRound = 0, bgCorrect = 0, bgBothCount = 0;
