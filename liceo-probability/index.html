@@ -153,6 +153,7 @@ input[type=number],input[type=date]{padding:.45rem .6rem;border:1px solid #d1d5d
   <span class="brand">Paradoxes</span>
   <a href="#" class="active" data-tab="monty-hall" onclick="switchMainTab('monty-hall');return false">Monty Hall</a>
   <a href="#" data-tab="other" onclick="switchMainTab('other');return false">Other Paradoxes</a>
+  <a href="#" data-tab="tutorial" onclick="switchMainTab('tutorial');return false">Tutorial</a>
   <span class="spacer"></span>
   <span class="user-badge" id="user-badge"></span>
 </nav>
@@ -390,6 +391,30 @@ input[type=number],input[type=date]{padding:.45rem .6rem;border:1px solid #d1d5d
 </section>
 
 </div><!-- /tab-other -->
+
+<!-- ======== TUTORIAL (third tab) ======== -->
+<div id="tab-tutorial" class="hidden">
+<section class="section-card">
+  <h2>Programming Tutorial</h2>
+  <p class="desc">Learn Python by simulating all five probability paradoxes. No programming experience needed!<br>
+  <span class="italian">Impara Python simulando tutti e cinque i paradossi. Nessuna esperienza di programmazione richiesta!</span></p>
+  <div class="experiment" style="text-align:center;padding:2rem">
+    <p style="font-size:1.1rem;margin-bottom:1rem">24-page step-by-step guide with code, plots, and challenges.</p>
+    <a href="tutorial.pdf" target="_blank" style="display:inline-block;padding:.8rem 2rem;font-size:1.1rem;border-radius:10px;background:#2563eb;color:#fff;font-weight:600;text-decoration:none;transition:background .2s">Open Tutorial (PDF)</a>
+    <p style="margin-top:1rem;font-size:.85rem;color:#6b7280">Opens in a new tab. You can also download it.</p>
+  </div>
+  <div style="margin-top:1.5rem">
+    <h3 style="color:#1e3a5f;margin-bottom:.5rem">What you'll learn:</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem">
+      <div class="result-box"><strong>Python basics</strong><br><span style="color:#6b7280;font-size:.9rem">Variables, loops, conditions, functions</span></div>
+      <div class="result-box"><strong>Random simulations</strong><br><span style="color:#6b7280;font-size:.9rem">Monte Carlo methods</span></div>
+      <div class="result-box"><strong>Data visualization</strong><br><span style="color:#6b7280;font-size:.9rem">Plots with matplotlib</span></div>
+      <div class="result-box"><strong>Algorithms</strong><br><span style="color:#6b7280;font-size:.9rem">BFS for shortest paths</span></div>
+    </div>
+  </div>
+</section>
+</div><!-- /tab-tutorial -->
+
 </div><!-- /container -->
 </div><!-- /student-view -->
 
@@ -463,6 +488,7 @@ input[type=number],input[type=date]{padding:.45rem .6rem;border:1px solid #d1d5d
 function switchMainTab(tab) {
   document.getElementById('tab-monty-hall').classList.toggle('hidden', tab !== 'monty-hall');
   document.getElementById('tab-other').classList.toggle('hidden', tab !== 'other');
+  document.getElementById('tab-tutorial').classList.toggle('hidden', tab !== 'tutorial');
   document.querySelectorAll('.topnav a[data-tab]').forEach(a => {
     a.classList.toggle('active', a.dataset.tab === tab);
   });
