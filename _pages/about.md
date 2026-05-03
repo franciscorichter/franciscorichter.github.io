@@ -33,7 +33,7 @@ redirect_from:
   <p>
     I’m <strong>Francisco Richter-Mendoza</strong>, a 
     <a href="https://raw.githubusercontent.com/franciscorichter/franciscorichter.github.io/master/files/CV.pdf" target="_blank">
-      postdoctoral researcher and mathematical engineer
+      Scientific Collaborator and Lecturer
     </a> 
     at the 
     <a href="https://www.ci.inf.usi.ch/research/statslab/people/" target="_blank">
