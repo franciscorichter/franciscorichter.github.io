@@ -222,6 +222,57 @@ layout: default
             animation: none !important;
         }
     }
+
+    /* --- Content section below the hero --- */
+    .home-content {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 80px 24px 120px;
+        font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+        color: var(--home-text);
+        line-height: 1.65;
+    }
+
+    .home-content h2 {
+        font-family: 'Lora', Georgia, serif;
+        font-weight: 700;
+        font-size: 1.6rem;
+        margin: 56px 0 16px;
+        color: var(--home-text);
+    }
+
+    .home-content h2:first-child { margin-top: 0; }
+
+    .home-content p,
+    .home-content li {
+        font-size: 1.02rem;
+        color: var(--home-text);
+    }
+
+    .home-content ul {
+        padding-left: 1.4em;
+        margin: 12px 0 24px;
+    }
+
+    .home-content li { margin-bottom: 10px; }
+
+    .home-content a {
+        color: var(--home-accent-b);
+        text-decoration: none;
+        border-bottom: 1px solid currentColor;
+        transition: color 0.2s ease;
+    }
+    .home-content a:hover { color: var(--home-accent-a); }
+
+    .home-content strong { font-weight: 600; }
+
+    .home-content .meta {
+        margin-top: 56px;
+        padding-top: 24px;
+        border-top: 1px solid var(--home-border);
+        font-size: 0.95rem;
+        opacity: 0.8;
+    }
 </style>
 
 <div class="hero-bg">
@@ -231,7 +282,7 @@ layout: default
             <h1 class="hero-name"><span>Francisco</span><span>Richter</span></h1>
         </div>
 
-        <p class="tagline">Mathematics, Data Science, and (A) Intelligence</p>
+        <p class="tagline">Networks · Complex systems · Statistical inference</p>
 
         <div class="nav-buttons">
             <a href="/teaching/" class="nav-button">
@@ -246,3 +297,34 @@ layout: default
         </div>
     </div>
 </div>
+
+<section class="home-content">
+    <h2>Research</h2>
+    <p>
+        I work on statistical methods for complex systems — models of how things grow, spread, and interact.
+        My research connects three threads:
+    </p>
+    <ul>
+        <li><strong>Network science &amp; causal inference</strong> — disentangling structure and cause in relational data, from ecological to social systems.</li>
+        <li><strong>Stochastic modeling &amp; diversification dynamics</strong> — evolutionary processes on phylogenetic trees, missing-species inference, birth–death models.</li>
+        <li><strong>Statistical learning for science</strong> — methods that respect domain structure, scale, and uncertainty.</li>
+    </ul>
+    <p>
+        I'm a Scientific Collaborator and Lecturer at the
+        <a href="https://www.ci.inf.usi.ch/research/statslab/people/" target="_blank" rel="noreferrer">Statistical Computing Laboratory</a>
+        at Università della Svizzera italiana. PhD in applied mathematics from the University of Groningen (2021); mathematical engineer from Universidad Técnica Federico Santa María (2013).
+    </p>
+
+    <h2>Currently working on</h2>
+    <ul>
+        <li>A curated atlas of empirical phylogenies covering 600,000+ species, used to study diversification at scale.</li>
+        <li>Generalizing diversity-dependent diversification models with missing-species inference.</li>
+        <li>Neural causal regularization — methods for invariance and out-of-distribution generalization (joint with K. Rigana &amp; E. C. Wit).</li>
+    </ul>
+
+    <h2>Get in touch</h2>
+    <p>
+        For research collaborations, postdoc opportunities, or any question — reach me at
+        <a href="mailto:richtf@usi.ch">richtf@usi.ch</a>.
+    </p>
+</section>
