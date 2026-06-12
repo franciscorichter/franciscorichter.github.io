@@ -1,330 +1,326 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Francisco Richter</title>
+<meta name="description" content="Francisco Richter — researcher in statistics and applied mathematics: causal inference and invariance, statistical network science, and biostatistics.">
+<link rel="canonical" href="https://franciscorichter.github.io/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Francisco Richter">
+<meta property="og:description" content="Researcher in statistics and applied mathematics — causal inference and invariance, statistical network science, biostatistics.">
+<meta property="og:url" content="https://franciscorichter.github.io/">
+<meta property="og:image" content="https://franciscorichter.github.io/images/profile.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 
 <style>
-    :root {
-        --home-bg: #f8fafc;
-        --home-text: #1f2933;
-        --home-border: rgba(31, 41, 51, 0.65);
-        --home-hover-bg: #1f2933;
-        --home-hover-text: #fff;
-        --home-accent-a: #38bdf8;
-        --home-accent-b: #a855f7;
-    }
+:root{
+  --ink:#1A1A1A;
+  --midgray:#595959;
+  --lightgray:#8A8A8A;
+  --rule:#C9C9C9;
+  --bg:#FDFDFB;
+  --maxw:760px;
+  --datew:6.2rem;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"EB Garamond",Georgia,"Times New Roman",serif;
+  font-size:20px;
+  line-height:1.5;
+  font-feature-settings:"onum" 1,"liga" 1;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--midgray);text-decoration:none;border-bottom:1px solid var(--rule);transition:color .15s,border-color .15s}
+a:hover{color:var(--ink);border-color:var(--ink)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:clamp(2.5rem,6vw,4.5rem) clamp(1.25rem,5vw,2rem) 4rem}
 
-    html[data-theme="dark"] {
-        --home-bg: #030712;
-        --home-text: #f1f5f9;
-        --home-border: rgba(241, 245, 249, 0.6);
-        --home-hover-bg: #f1f5f9;
-        --home-hover-text: #030712;
-        --home-accent-a: #2dd4bf;
-        --home-accent-b: #818cf8;
-    }
+/* ---------- Header ---------- */
+header{text-align:center;margin-bottom:1.6rem}
+.name{
+  font-size:clamp(2rem,6vw,2.9rem);
+  font-weight:500;
+  letter-spacing:.14em;
+  line-height:1.1;
+  margin:0;
+}
+.tagline{
+  color:var(--midgray);
+  font-style:italic;
+  font-size:1.18rem;
+  margin:.55rem 0 .9rem;
+}
+.dot{color:var(--lightgray);padding:0 .35em}
+.links{color:var(--midgray);font-size:1rem;letter-spacing:.01em}
+.links a{border-bottom:none}
+.links a:hover{border-bottom:1px solid var(--ink)}
 
-    body {
-        background: var(--home-bg);
-        margin: 0;
-    }
+/* ---------- Section rule ---------- */
+.section{margin-top:2.4rem}
+.section > h2{
+  font-size:1.15rem;
+  font-weight:600;
+  font-variant:small-caps;
+  letter-spacing:.18em;
+  margin:0 0 .15rem;
+  color:var(--ink);
+}
+.section > h2 + .hr{border:none;border-top:.5px solid var(--rule);margin:0 0 1rem}
 
-    .hero-bg {
-        position: relative;
-        min-height: 100vh;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: clamp(3rem, 8vw, 6rem) 1.5rem;
-        isolation: isolate;
-    }
+/* ---------- Prose ---------- */
+p{margin:0 0 1rem}
+.lead{margin-bottom:.4rem}
 
-    .hero-bg::before,
-    .hero-bg::after {
-        content: "";
-        position: absolute;
-        width: 380px;
-        height: 380px;
-        border-radius: 50%;
-        filter: blur(80px);
-        opacity: 0.5;
-        z-index: 0;
-    }
+/* ---------- Date-gutter entries ---------- */
+.entry{display:flex;gap:1.1rem;margin-bottom:1.05rem;align-items:baseline}
+.entry .date{
+  flex:0 0 var(--datew);
+  text-align:right;
+  color:var(--lightgray);
+  font-size:.92rem;
+  white-space:nowrap;
+  padding-top:.12rem;
+}
+.entry .body{flex:1 1 auto;min-width:0}
+.entry .title{color:var(--ink)}
+.entry .org{color:var(--midgray)}
+.entry .detail{display:block;color:var(--midgray);font-size:.95rem;margin-top:.12rem}
+.entry .detail em{color:var(--midgray)}
+b,strong{font-weight:600}
 
-    .hero-bg::before {
-        background: radial-gradient(circle, var(--home-accent-a), transparent 55%);
-        top: 10%;
-        left: 5%;
-        animation: float-left 18s ease-in-out infinite;
-    }
+/* ---------- Publications ---------- */
+.pub .body .ptitle{color:var(--ink)}
+.pub .body .authors{display:block;color:var(--midgray);font-size:.95rem;margin-top:.1rem}
+.pub .body .venue{display:block;color:var(--lightgray);font-style:italic;font-size:.92rem;margin-top:.05rem}
 
-    .hero-bg::after {
-        background: radial-gradient(circle, var(--home-accent-b), transparent 60%);
-        bottom: 5%;
-        right: 0;
-        animation: float-right 22s ease-in-out infinite;
-    }
+/* ---------- Footer ---------- */
+footer{margin-top:3rem;text-align:center;color:var(--lightgray);font-size:.9rem}
+footer a{color:var(--lightgray);border-bottom:none}
+footer a:hover{color:var(--ink)}
 
-    .background-grid {
-        position: absolute;
-        inset: 0;
-        background-image: linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-        background-size: 80px 80px;
-        opacity: 0.35;
-        z-index: 0;
-        animation: grid-pan 30s linear infinite;
-    }
-
-    html[data-theme="dark"] .background-grid {
-        opacity: 0.15;
-    }
-
-    /* Estilos generales */
-    .main-container {
-        position: relative;
-        z-index: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 80px 20px;
-        max-width: 1200px;
-        margin: 0 auto;
-        text-align: center;
-        background: rgba(255, 255, 255, 0.88);
-        border-radius: 32px;
-        box-shadow: 0 20px 80px rgba(15, 23, 42, 0.15);
-        border: 1px solid rgba(255, 255, 255, 0.4);
-    }
-
-    html[data-theme="dark"] .main-container {
-        background: rgba(3, 7, 18, 0.78);
-        border: 1px solid rgba(148, 163, 184, 0.25);
-        box-shadow: 0 25px 70px rgba(2, 6, 23, 0.9);
-    }
-
-    /* Estilos para el nombre */
-    .name-container {
-        margin-bottom: 20px;
-    }
-
-    .hero-name {
-        font-size: clamp(3rem, 8vw, 4.5rem);
-        font-weight: 700;
-        text-transform: uppercase;
-        color: var(--home-text);
-        line-height: 1.1;
-        margin: 0;
-    }
-
-    .hero-name span:last-child {
-        display: inline-block;
-        margin-left: 0.5rem;
-        color: var(--home-accent-b);
-    }
-
-    /* Estilos para el subtítulo */
-    .tagline {
-        font-size: 1.5rem;
-        color: var(--home-text);
-        margin-top: 20px;
-        margin-bottom: 60px;
-    }
-
-    /* Estilos para los botones de navegación */
-    .nav-buttons {
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-    }
-
-    .nav-button {
-        display: inline-flex;
-        align-items: center;
-        padding: 12px 24px;
-        border: 1px solid var(--home-border);
-        border-radius: 4px;
-        text-decoration: none;
-        color: var(--home-text);
-        font-weight: 500;
-        transition: all 0.3s ease;
-    }
-
-    .nav-button:hover {
-        background-color: var(--home-hover-bg);
-        color: var(--home-hover-text);
-    }
-
-    .nav-button i {
-        margin-right: 10px;
-    }
-
-    /* Estilos responsivos */
-    @media (max-width: 768px) {
-
-        .hero-name {
-            font-size: 2.5rem;
-        }
-
-        .tagline {
-            font-size: 1.2rem;
-        }
-
-        .nav-buttons {
-            flex-direction: column;
-            align-items: center;
-        }
-    }
-
-    @keyframes float-left {
-        0% {
-            transform: translate(0, 0) scale(1);
-        }
-
-        50% {
-            transform: translate(40px, -30px) scale(1.1);
-        }
-
-        100% {
-            transform: translate(-10px, 20px) scale(1);
-        }
-    }
-
-    @keyframes float-right {
-        0% {
-            transform: translate(0, 0) scale(1);
-        }
-
-        50% {
-            transform: translate(-35px, 45px) scale(0.95);
-        }
-
-        100% {
-            transform: translate(20px, -25px) scale(1);
-        }
-    }
-
-    @keyframes grid-pan {
-        0% {
-            background-position: 0 0, 0 0;
-        }
-
-        100% {
-            background-position: 80px 80px, 80px 80px;
-        }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        .hero-bg::before,
-        .hero-bg::after,
-        .background-grid {
-            animation: none !important;
-        }
-    }
-
-    /* --- Content section below the hero --- */
-    .home-content {
-        max-width: 760px;
-        margin: 0 auto;
-        padding: 80px 24px 120px;
-        font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-        color: var(--home-text);
-        line-height: 1.65;
-    }
-
-    .home-content h2 {
-        font-family: 'Lora', Georgia, serif;
-        font-weight: 700;
-        font-size: 1.6rem;
-        margin: 56px 0 16px;
-        color: var(--home-text);
-    }
-
-    .home-content h2:first-child { margin-top: 0; }
-
-    .home-content p,
-    .home-content li {
-        font-size: 1.02rem;
-        color: var(--home-text);
-    }
-
-    .home-content ul {
-        padding-left: 1.4em;
-        margin: 12px 0 24px;
-    }
-
-    .home-content li { margin-bottom: 10px; }
-
-    .home-content a {
-        color: var(--home-accent-b);
-        text-decoration: none;
-        border-bottom: 1px solid currentColor;
-        transition: color 0.2s ease;
-    }
-    .home-content a:hover { color: var(--home-accent-a); }
-
-    .home-content strong { font-weight: 600; }
-
-    .home-content .meta {
-        margin-top: 56px;
-        padding-top: 24px;
-        border-top: 1px solid var(--home-border);
-        font-size: 0.95rem;
-        opacity: 0.8;
-    }
+@media (max-width:560px){
+  body{font-size:18px}
+  :root{--datew:4.6rem}
+  .entry{gap:.8rem}
+  .entry .date{font-size:.82rem}
+}
 </style>
+</head>
+<body>
+<main class="wrap">
 
-<div class="hero-bg">
-    <div class="background-grid" aria-hidden="true"></div>
-    <div class="main-container">
-        <div class="name-container">
-            <h1 class="hero-name"><span>Francisco</span><span>Richter</span></h1>
-        </div>
-
-        <p class="tagline">Networks · Complex systems · Statistical inference</p>
-
-        <div class="nav-buttons">
-            <a href="/teaching/" class="nav-button">
-                <i>🎓</i> Teaching
-            </a>
-            <a href="/publications/" class="nav-button">
-                <i>📚</i> Research
-            </a>
-            <a href="/applications/" class="nav-button">
-                <i>🧩</i> Applications
-            </a>
-        </div>
+  <!-- ================= HEADER ================= -->
+  <header>
+    <h1 class="name">Francisco Richter</h1>
+    <div class="tagline">Researcher &nbsp;&middot;&nbsp; Mathematical Engineer</div>
+    <div class="links">
+      <a href="mailto:richtf@usi.ch">richtf@usi.ch</a><span class="dot">&middot;</span>
+      <a href="https://scholar.google.cl/citations?user=dvAiLzsAAAAJ&amp;hl=en">Scholar</a><span class="dot">&middot;</span>
+      <a href="https://orcid.org/0000-0002-0924-4613">ORCID</a><span class="dot">&middot;</span>
+      <a href="https://github.com/franciscorichter">GitHub</a><span class="dot">&middot;</span>
+      <a href="https://www.linkedin.com/in/franciscorichter/">LinkedIn</a><span class="dot">&middot;</span>
+      <a href="files/Resume/resume.pdf">CV</a>
     </div>
-</div>
+  </header>
 
-<section class="home-content">
-    <h2>Research</h2>
-    <p>
-        I work on statistical methods for complex systems — models of how things grow, spread, and interact.
-        My research connects three threads:
-    </p>
-    <ul>
-        <li><strong>Network science &amp; causal inference</strong> — disentangling structure and cause in relational data, from ecological to social systems.</li>
-        <li><strong>Stochastic modeling &amp; diversification dynamics</strong> — evolutionary processes on phylogenetic trees, missing-species inference, birth–death models.</li>
-        <li><strong>Statistical learning for science</strong> — methods that respect domain structure, scale, and uncertainty.</li>
-    </ul>
-    <p>
-        I'm a Scientific Collaborator and Lecturer at the
-        <a href="https://www.ci.inf.usi.ch/research/statslab/people/" target="_blank" rel="noreferrer">Statistical Computing Laboratory</a>
-        at Università della Svizzera italiana. PhD in applied mathematics from the University of Groningen (2021); mathematical engineer from Universidad Técnica Federico Santa María (2013).
-    </p>
+  <!-- ================= PROFILE ================= -->
+  <section class="section">
+    <h2>Profile</h2><hr class="hr">
+    <p class="lead">Researcher in statistics and applied mathematics, working on causal inference
+    and invariance, statistical network science, and biostatistics. I develop probabilistic
+    and causal models &mdash; and the computational methods to fit them &mdash; for complex
+    systems in the natural and data sciences.</p>
+    <p>I am Scientific Staff and a Lecturer at the
+    <a href="https://www.usi.ch/">Università della Svizzera italiana</a> in Lugano. I hold a
+    PhD in applied mathematics from the University of Groningen (2021) and a degree in
+    mathematical engineering from the Universidad Técnica Federico Santa María, Chile (2013).</p>
+  </section>
 
-    <h2>Currently working on</h2>
-    <ul>
-        <li>A curated atlas of empirical phylogenies covering 600,000+ species, used to study diversification at scale.</li>
-        <li>Generalizing diversity-dependent diversification models with missing-species inference.</li>
-        <li>Neural causal regularization — methods for invariance and out-of-distribution generalization (joint with K. Rigana &amp; E. C. Wit).</li>
-    </ul>
+  <!-- ================= RESEARCH ================= -->
+  <section class="section">
+    <h2>Research</h2><hr class="hr">
+    <p>My work connects three threads in the statistics of complex systems:</p>
+    <div class="entry">
+      <div class="date">Causality</div>
+      <div class="body"><span class="title">Causal inference &amp; invariance</span>
+        <span class="detail">Disentangling structure from cause in relational data, and
+        extending causal-invariance principles to deep models for out-of-distribution
+        generalization.</span></div>
+    </div>
+    <div class="entry">
+      <div class="date">Networks</div>
+      <div class="body"><span class="title">Statistical network science</span>
+        <span class="detail">Graphical models of interacting systems &mdash; from microbiome
+        interactions across related environments to evolutionary trees.</span></div>
+    </div>
+    <div class="entry">
+      <div class="date">Dynamics</div>
+      <div class="body"><span class="title">Diversification &amp; stochastic modelling</span>
+        <span class="detail">Birth&ndash;death processes on phylogenies, missing-species
+        inference, and a general framework for diversity-dependent diversification.</span></div>
+    </div>
+  </section>
 
-    <h2>Get in touch</h2>
-    <p>
-        For research collaborations, postdoc opportunities, or any question — reach me at
-        <a href="mailto:richtf@usi.ch">richtf@usi.ch</a>.
-    </p>
-</section>
+  <!-- ================= CURRENTLY ================= -->
+  <section class="section">
+    <h2>Currently</h2><hr class="hr">
+    <div class="entry">
+      <div class="date">Atlas</div>
+      <div class="body"><span class="title">A curated atlas of empirical phylogenies</span>
+        <span class="detail">Covering 600,000+ species, built to study diversification at
+        scale.</span></div>
+    </div>
+    <div class="entry">
+      <div class="date">Models</div>
+      <div class="body"><span class="title">Phylodiversity-dependent diversification</span>
+        <span class="detail">Generalizing diversity-dependent models with missing-species
+        inference.</span></div>
+    </div>
+    <div class="entry">
+      <div class="date">Causal</div>
+      <div class="body"><span class="title">Neural causal regularization</span>
+        <span class="detail">Methods for invariance and out-of-distribution generalization
+        (joint with K. Rigana &amp; E. C. Wit).</span></div>
+    </div>
+  </section>
+
+  <!-- ================= PUBLICATIONS ================= -->
+  <section class="section">
+    <h2>Selected Publications</h2><hr class="hr">
+
+    <div class="entry pub">
+      <div class="date">2025</div>
+      <div class="body">
+        <span class="ptitle">Neural causal regularization: extending causal invariance to deep models</span>
+        <span class="authors">F. Richter, K. Rigana, E. C. Wit</span>
+        <span class="venue">Statistics for Innovation I, 97&ndash;102. Springer Nature, 2025</span>
+      </div>
+    </div>
+
+    <div class="entry pub">
+      <div class="date">2024</div>
+      <div class="body">
+        <span class="ptitle">Random graphical model of microbiome interactions in related environments</span>
+        <span class="authors">V. Vinciotti, E. C. Wit, F. Richter</span>
+        <span class="venue">Journal of Agricultural, Biological and Environmental Statistics, 2024</span>
+      </div>
+    </div>
+
+    <div class="entry pub">
+      <div class="date">2021</div>
+      <div class="body">
+        <span class="ptitle">Detecting phylodiversity-dependent diversification with a general phylogenetic inference framework</span>
+        <span class="authors">F. Richter, T. Janzen, H. Hildenbrandt, E. C. Wit, R. S. Etienne</span>
+        <span class="venue">bioRxiv, 2021</span>
+      </div>
+    </div>
+
+    <div class="entry pub">
+      <div class="date">2020</div>
+      <div class="body">
+        <span class="ptitle">Introducing a general class of species diversification models for phylogenetic trees</span>
+        <span class="authors">F. Richter, B. Haegeman, R. S. Etienne, E. C. Wit</span>
+        <span class="venue">Statistica Neerlandica 74, 261&ndash;274. Wiley, 2020</span>
+      </div>
+    </div>
+
+    <div class="entry pub">
+      <div class="date">2021</div>
+      <div class="body">
+        <span class="ptitle"><a href="https://doi.org/10.1002/ecy.3237">Microbiome and environment explain the absence of correlations between consumers and their diet in Bornean microsnails</a></span>
+        <span class="authors">K. P. Hendriks, &hellip;, F. J. Richter Mendoza, M. Schilthuizen, R. S. Etienne</span>
+        <span class="venue">Ecology 102.2, e03237, 2021</span>
+      </div>
+    </div>
+
+    <div class="entry pub">
+      <div class="date">2024</div>
+      <div class="body">
+        <span class="ptitle"><a href="https://doi.org/10.33774/miir-2024-51r3q">Stereo 3D cloud motion from tandem satellites</a></span>
+        <span class="authors">Y. Zhou, S. Abrahams, F. Mendoza, M. Donà, R. Verbiest</span>
+        <span class="venue">Mathematics in Industry Reports, 2024</span>
+      </div>
+    </div>
+
+    <p style="margin-top:.6rem"><a href="https://scholar.google.cl/citations?user=dvAiLzsAAAAJ&amp;hl=en">Full publication list on Google Scholar &rarr;</a></p>
+  </section>
+
+  <!-- ================= TEACHING ================= -->
+  <section class="section">
+    <h2>Teaching</h2><hr class="hr">
+    <p class="lead" style="color:var(--midgray);font-size:.97rem">Università della Svizzera italiana, Faculty of Informatics &mdash; Bachelor INF &amp; Master IA / CS.</p>
+    <div class="entry">
+      <div class="date">Bachelor</div>
+      <div class="body"><span class="title">Probability &amp; Statistics &nbsp;&middot;&nbsp; Numerical Computing</span></div>
+    </div>
+    <div class="entry">
+      <div class="date">Master</div>
+      <div class="body"><span class="title">Stochastic Methods &nbsp;&middot;&nbsp; Ordinary Differential Equations &nbsp;&middot;&nbsp; Introduction to Data Science &nbsp;&middot;&nbsp; Analysis of Social Networks</span></div>
+    </div>
+  </section>
+
+  <!-- ================= TALKS ================= -->
+  <section class="section">
+    <h2>Selected Talks</h2><hr class="hr">
+    <div class="entry">
+      <div class="date">2025</div>
+      <div class="body"><span class="title">Italian Statistical Society (SIS)</span><span class="org">, Genova, Italy</span>
+        <span class="detail"><em>Invited talk:</em> Neural Causal Regularization &mdash; Extending Causal Invariance to Deep Models.</span></div>
+    </div>
+    <div class="entry">
+      <div class="date">2023</div>
+      <div class="body"><span class="title">Complex Networks (CompleNet)</span><span class="org">, Aveiro, Portugal</span>
+        <span class="detail">Detecting complex diversity-dependent diversification with a novel phylogenetic inference framework.</span></div>
+    </div>
+    <div class="entry">
+      <div class="date">2018</div>
+      <div class="body"><span class="title">Mathematics for Planet Earth</span><span class="org">, Utrecht, The Netherlands</span>
+        <span class="detail"><em>Invited talk:</em> a statistical approach to species diversification dynamics.</span></div>
+    </div>
+  </section>
+
+  <!-- ================= OUTREACH ================= -->
+  <section class="section">
+    <h2>Outreach</h2><hr class="hr">
+    <div class="entry">
+      <div class="date">2025 &ndash;</div>
+      <div class="body"><span class="title">TecDays</span><span class="org">, secondary schools, Ticino</span>
+        <span class="detail">Hands-on data-science workshops for high-school students across several schools.</span></div>
+    </div>
+    <div class="entry">
+      <div class="date">2025 &ndash;</div>
+      <div class="body"><span class="title">Lavori di Maturità</span><span class="org">, USI, Lugano</span>
+        <span class="detail">Mentoring high-school students through year-long thesis projects with the Faculty of Informatics.</span></div>
+    </div>
+    <div class="entry">
+      <div class="date">2025 &ndash;</div>
+      <div class="body"><span class="title">Giornate Autogestite</span><span class="org">, Ticino</span>
+        <span class="detail">Workshops on data science and academic life at several high schools.</span></div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="section">
+    <h2>Contact</h2><hr class="hr">
+    <p>For research collaborations, postdoc opportunities, or any question, reach me at
+    <a href="mailto:richtf@usi.ch">richtf@usi.ch</a>. Curriculum vitae:
+    <a href="files/Resume/resume.pdf">English</a> &middot;
+    <a href="files/Resume/resume_es.pdf">Español</a>.</p>
+  </section>
+
+  <footer>
+    Lugano, Switzerland &middot; <a href="https://orcid.org/0000-0002-0924-4613">ORCID 0000-0002-0924-4613</a>
+  </footer>
+
+</main>
+</body>
+</html>
