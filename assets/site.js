@@ -234,3 +234,20 @@
   window.addEventListener('hashchange', function () { show(location.hash, true); });
   show(location.hash, true);
 })();
+
+// Contact: the page cannot send mail itself, so the form opens the visitor's
+// email app with the address, subject and message filled in.
+(function () {
+  'use strict';
+  var form = document.getElementById('write');
+  if (!form) return;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var to = form.getAttribute('action').replace('mailto:', '');
+    var subject = form.elements.subject.value.trim();
+    var body = form.elements.body.value;
+    window.location.href = 'mailto:' + to +
+      '?subject=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(body);
+  });
+})();
