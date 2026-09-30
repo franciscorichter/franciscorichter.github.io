@@ -177,6 +177,13 @@
     simulate();
   });
 
+  var open = $('tree-open'), panel = $('tree-panel');
+  open.addEventListener('click', function () {
+    var show = panel.hidden;
+    panel.hidden = !show;
+    open.setAttribute('aria-expanded', show ? 'true' : 'false');
+  });
+
   simulate();
 
   // the first reveal: grow through time once, then settle
