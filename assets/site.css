@@ -1,33 +1,36 @@
 /* Francisco Richter Mendoza — personal site
+   A field notebook: graph paper, fountain-pen ink, pencil for what went extinct.
    One bold element: the simulated birth–death tree. Everything else stays quiet. */
 
 :root {
   --unsampled: color-mix(in srgb, var(--living) 38%, var(--paper));
-  --paper:   #F8FAF9;
-  --ink:     #1C2B2A;
-  --muted:   #5E6B69;
-  --living:  #1F6F5C;
-  --extinct: #B7B2A8;
-  --rule:    #DCE3E0;
+  --paper:   #EEF0E6;
+  --ink:     #1B2740;
+  --muted:   #5C6478;
+  --living:  #1E3A8A;
+  --extinct: #8F928A;
+  --rule:    #CDD2C2;
+  --margin:  #C24B3A;
   --measure: 38rem;
   --wide:    66rem;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --paper:   #0F1716;
-    --ink:     #E4EBE8;
-    --muted:   #9AA8A4;
-    --living:  #6DC4A7;
-    --extinct: #7C8884;
-    --rule:    #26322F;
+    --paper:   #15171C;
+    --ink:     #DCE0EA;
+    --muted:   #9097A8;
+    --living:  #8DA6F0;
+    --extinct: #5D6069;
+    --rule:    #262A33;
+    --margin:  #B5533F;
   }
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
-  font-family: "EB Garamond", Garamond, "Times New Roman", serif;
+  font-family: "Newsreader", Georgia, serif;
   font-size: 112.5%;              /* 18px */
   line-height: 1.6;
   color: var(--ink);
@@ -387,3 +390,24 @@ p { margin: 0 0 1rem; hyphens: auto; }
   .courses { grid-template-columns: 1fr; gap: 0; }
   .courses dd { margin-bottom: 0.6rem; }
 }
+
+/* ---------- Notebook ---------- */
+
+body {
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--rule) 60%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--rule) 60%, transparent) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.intro, main > section { border-left: 2px solid var(--margin); padding-left: 1.4rem; }
+h2 { font-weight: 600; }
+.timeline .year, nav a, .tree figcaption, .tree button, .courses dt {
+  font-family: "Courier Prime", ui-monospace, monospace;
+  font-style: normal;
+}
+.tree .alive { stroke-width: 2.1; }
+.tree .dead  { stroke-width: 1.3; stroke-dasharray: 2 3; }
+.timeline li { border-top: 1px dashed var(--rule); }
+.timeline .year { color: var(--margin); font-size: 0.85rem; }
+.tree .views button, #tree-new { background: var(--paper); }
+.tree .views button[aria-pressed="true"] { background: var(--living); }
