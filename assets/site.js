@@ -194,3 +194,43 @@
     fig.classList.add('faded');
   }
 })();
+
+// Tabs: Research, Teaching and Contact show one at a time. Without JavaScript
+// every section stays visible and the links scroll, as on any page.
+(function () {
+  'use strict';
+  var links = document.querySelectorAll('nav.tabs a[href^="#"]');
+  var panels = document.querySelectorAll('.panel');
+  if (!links.length || !panels.length) return;
+  var ids = Array.prototype.map.call(panels, function (p) { return p.id; });
+
+  function panelFor(hash) {
+    var id = (hash || '').replace('#', '');
+    if (ids.indexOf(id) >= 0) return id;
+    var el = id && document.getElementById(id);          // e.g. #publications, #talks
+    var host = el && el.closest && el.closest('.panel');
+    return host ? host.id : ids[0];
+  }
+
+  function show(hash, scrollTo) {
+    var id = panelFor(hash);
+    panels.forEach(function (p) { p.hidden = p.id !== id; });
+    links.forEach(function (a) {
+      if (a.getAttribute('href') === '#' + id) a.setAttribute('aria-current', 'page');
+      else a.removeAttribute('aria-current');
+    });
+    var target = scrollTo && document.getElementById((hash || '').replace('#', ''));
+    if (target && target.id !== id) target.scrollIntoView();
+  }
+
+  links.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var h = a.getAttribute('href');
+      history.replaceState(null, '', h);
+      show(h, false);
+    });
+  });
+  window.addEventListener('hashchange', function () { show(location.hash, true); });
+  show(location.hash, true);
+})();

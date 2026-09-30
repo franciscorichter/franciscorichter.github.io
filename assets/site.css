@@ -254,6 +254,17 @@ nav {
 }
 nav a { color: var(--ink); text-decoration: none; }
 nav a:hover { color: var(--living); text-decoration: underline; }
+nav.tabs a { padding-bottom: 0.15rem; border-bottom: 2px solid transparent; }
+nav.tabs a[aria-current="page"] { color: var(--living); border-bottom-color: var(--living); }
+nav.tabs a[aria-current="page"]:hover { text-decoration: none; }
+.bio { margin-top: 1.2rem; }
+.bio p { margin: 0 0 0.5rem; }
+.bio .lede { font-size: 1.05rem; }
+.panel[hidden] { display: none; }
+.js .panel { margin-top: 2.6rem; }
+/* the active tab already names the panel; keep the heading for screen readers */
+.js .panel > h2 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.js .panel > h2 + h3 { margin-top: 0; }
 
 /* ---------- Content ---------- */
 
@@ -329,7 +340,7 @@ p { margin: 0 0 1rem; hyphens: auto; }
 .courses dt { color: var(--muted); }
 .courses dd { margin: 0; }
 
-footer .links {
+#contact .links {
   list-style: none;
   padding: 0;
   margin: 1rem 0 0;
