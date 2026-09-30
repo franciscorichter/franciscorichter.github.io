@@ -227,12 +227,16 @@
   <h2>Contact</h2>
   <p>Write to me at <a href="mailto:richtf@usi.ch">richtf@usi.ch</a> or <a href="mailto:franciscorichter@gmail.com">franciscorichter@gmail.com</a>. I work at the Faculty of Informatics, Università della Svizzera italiana, in Lugano. My code is on <a href="https://github.com/franciscorichter">GitHub</a>, and I am also on <a href="https://www.linkedin.com/in/franciscorichter/">LinkedIn</a>.</p>
 
-  <form class="write" id="write" action="mailto:franciscorichter@gmail.com" method="post" enctype="text/plain">
+  <form class="write" id="write" action="mailto:franciscorichter@gmail.com" method="post" enctype="text/plain" data-key="">
+    <label for="w-email">Your email</label>
+    <input id="w-email" name="email" type="email" autocomplete="email" required>
     <label for="w-subject">Subject</label>
     <input id="w-subject" name="subject" type="text" autocomplete="off">
     <label for="w-body">Message</label>
-    <textarea id="w-body" name="body" rows="7" required></textarea>
-    <button type="submit">Open in your email app</button>
+    <textarea id="w-body" name="message" rows="7" required></textarea>
+    <input class="trap" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button type="submit">Send</button>
+    <p class="write-status" id="write-status" role="status"></p>
   </form>
 </section>
 

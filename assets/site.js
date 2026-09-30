@@ -235,19 +235,42 @@
   show(location.hash, true);
 })();
 
-// Contact: the page cannot send mail itself, so the form opens the visitor's
-// email app with the address, subject and message filled in.
+// Contact: with a Web3Forms access key in data-key, Send delivers the message to
+// the Gmail inbox. Without one, the form falls back to the visitor's email app.
 (function () {
   'use strict';
   var form = document.getElementById('write');
   if (!form) return;
+  var key = form.getAttribute('data-key');
+  var to = form.getAttribute('action').replace('mailto:', '');
+  var button = form.querySelector('button');
+  var status = document.getElementById('write-status');
+  if (!key) button.textContent = 'Open in your email app';
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    var to = form.getAttribute('action').replace('mailto:', '');
-    var subject = form.elements.subject.value.trim();
-    var body = form.elements.body.value;
-    window.location.href = 'mailto:' + to +
-      '?subject=' + encodeURIComponent(subject) +
-      '&body=' + encodeURIComponent(body);
+    var f = form.elements;
+    var subject = f.subject.value.trim() || 'Message from franciscorichter.github.io';
+    if (!key) {
+      window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(f.message.value);
+      return;
+    }
+    if (f.botcheck.checked) return;
+    button.disabled = true;
+    status.textContent = 'Sending…';
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ access_key: key, subject: subject, email: f.email.value,
+                             replyto: f.email.value, message: f.message.value,
+                             from_name: 'franciscorichter.github.io' })
+    }).then(function (r) { return r.json(); }).then(function (d) {
+      if (!d.success) throw new Error(d.message);
+      form.reset();
+      status.textContent = 'Message sent. I will reply to your email.';
+    }).catch(function () {
+      status.textContent = 'The message could not be sent. Write to ' + to + ' instead.';
+    }).then(function () { button.disabled = false; });
   });
 })();

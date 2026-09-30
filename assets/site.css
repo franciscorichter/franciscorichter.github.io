@@ -449,3 +449,6 @@ h2 { font-weight: 600; }
 
 /* an address must be copyable as written */
 a[href^="mailto:"] { hyphens: manual; white-space: nowrap; }
+.write .trap { position: absolute; left: -9999px; }
+.write button:disabled { opacity: 0.6; cursor: default; }
+.write-status { margin: 0.4rem 0 0; min-height: 1.4em; font-size: 0.95rem; color: var(--muted); }
