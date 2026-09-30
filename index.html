@@ -1,326 +1,196 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Francisco Richter</title>
-<meta name="description" content="Francisco Richter — researcher in statistics and applied mathematics: causal inference and invariance, statistical network science, and biostatistics.">
-<link rel="canonical" href="https://franciscorichter.github.io/">
-
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Francisco Richter">
-<meta property="og:description" content="Researcher in statistics and applied mathematics — causal inference and invariance, statistical network science, biostatistics.">
-<meta property="og:url" content="https://franciscorichter.github.io/">
-<meta property="og:image" content="https://franciscorichter.github.io/images/profile.png">
-
+<title>Francisco Richter Mendoza</title>
+<meta name="description" content="Francisco Richter Mendoza works on statistical inference for systems we only see in part: species diversification from trees of living species, causal regularization, and applications in astronomy, ecology, public health and education. Università della Svizzera italiana, Lugano.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-
-<style>
-:root{
-  --ink:#1A1A1A;
-  --midgray:#595959;
-  --lightgray:#8A8A8A;
-  --rule:#C9C9C9;
-  --bg:#FDFDFB;
-  --maxw:760px;
-  --datew:6.2rem;
-}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--ink);
-  font-family:"EB Garamond",Georgia,"Times New Roman",serif;
-  font-size:20px;
-  line-height:1.5;
-  font-feature-settings:"onum" 1,"liga" 1;
-  -webkit-font-smoothing:antialiased;
-}
-a{color:var(--midgray);text-decoration:none;border-bottom:1px solid var(--rule);transition:color .15s,border-color .15s}
-a:hover{color:var(--ink);border-color:var(--ink)}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:clamp(2.5rem,6vw,4.5rem) clamp(1.25rem,5vw,2rem) 4rem}
-
-/* ---------- Header ---------- */
-header{text-align:center;margin-bottom:1.6rem}
-.name{
-  font-size:clamp(2rem,6vw,2.9rem);
-  font-weight:500;
-  letter-spacing:.14em;
-  line-height:1.1;
-  margin:0;
-}
-.tagline{
-  color:var(--midgray);
-  font-style:italic;
-  font-size:1.18rem;
-  margin:.55rem 0 .9rem;
-}
-.dot{color:var(--lightgray);padding:0 .35em}
-.links{color:var(--midgray);font-size:1rem;letter-spacing:.01em}
-.links a{border-bottom:none}
-.links a:hover{border-bottom:1px solid var(--ink)}
-
-/* ---------- Section rule ---------- */
-.section{margin-top:2.4rem}
-.section > h2{
-  font-size:1.15rem;
-  font-weight:600;
-  font-variant:small-caps;
-  letter-spacing:.18em;
-  margin:0 0 .15rem;
-  color:var(--ink);
-}
-.section > h2 + .hr{border:none;border-top:.5px solid var(--rule);margin:0 0 1rem}
-
-/* ---------- Prose ---------- */
-p{margin:0 0 1rem}
-.lead{margin-bottom:.4rem}
-
-/* ---------- Date-gutter entries ---------- */
-.entry{display:flex;gap:1.1rem;margin-bottom:1.05rem;align-items:baseline}
-.entry .date{
-  flex:0 0 var(--datew);
-  text-align:right;
-  color:var(--lightgray);
-  font-size:.92rem;
-  white-space:nowrap;
-  padding-top:.12rem;
-}
-.entry .body{flex:1 1 auto;min-width:0}
-.entry .title{color:var(--ink)}
-.entry .org{color:var(--midgray)}
-.entry .detail{display:block;color:var(--midgray);font-size:.95rem;margin-top:.12rem}
-.entry .detail em{color:var(--midgray)}
-b,strong{font-weight:600}
-
-/* ---------- Publications ---------- */
-.pub .body .ptitle{color:var(--ink)}
-.pub .body .authors{display:block;color:var(--midgray);font-size:.95rem;margin-top:.1rem}
-.pub .body .venue{display:block;color:var(--lightgray);font-style:italic;font-size:.92rem;margin-top:.05rem}
-
-/* ---------- Footer ---------- */
-footer{margin-top:3rem;text-align:center;color:var(--lightgray);font-size:.9rem}
-footer a{color:var(--lightgray);border-bottom:none}
-footer a:hover{color:var(--ink)}
-
-@media (max-width:560px){
-  body{font-size:18px}
-  :root{--datew:4.6rem}
-  .entry{gap:.8rem}
-  .entry .date{font-size:.82rem}
-}
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-<main class="wrap">
 
-  <!-- ================= HEADER ================= -->
-  <header>
-    <h1 class="name">Francisco Richter</h1>
-    <div class="tagline">Researcher &nbsp;&middot;&nbsp; Mathematical Engineer</div>
-    <div class="links">
-      <a href="mailto:richtf@usi.ch">richtf@usi.ch</a><span class="dot">&middot;</span>
-      <a href="https://scholar.google.cl/citations?user=dvAiLzsAAAAJ&amp;hl=en">Scholar</a><span class="dot">&middot;</span>
-      <a href="https://orcid.org/0000-0002-0924-4613">ORCID</a><span class="dot">&middot;</span>
-      <a href="https://github.com/franciscorichter">GitHub</a><span class="dot">&middot;</span>
-      <a href="https://www.linkedin.com/in/franciscorichter/">LinkedIn</a><span class="dot">&middot;</span>
-      <a href="files/Resume/resume.pdf">CV</a>
+<header class="masthead">
+  <figure class="tree" id="tree">
+    <div class="plot">
+      <!-- tree:start --><svg viewBox="0 0 1000 300" preserveAspectRatio="none" role="img" aria-labelledby="tree-title"><title id="tree-title">A simulated birth-death tree: lineages that survive to the present, and faded lineages that went extinct</title><line class="present" x1="930.0" y1="0" x2="930.0" y2="300"/><path class="dead" d="M772.4 12.7V10.0 M772.4 10.0H888.4 M758.2 16.9V21.0 M758.2 21.0H759.8 M679.3 21.7V26.5 M679.3 26.5H731.0 M837.5 70.6V75.9 M837.5 75.9H854.5 M771.0 88.2V84.1 M771.0 84.1H827.3 M827.3 84.1V81.4 M827.3 81.4H860.8 M827.3 84.1V86.9 M827.3 86.9H842.2 M600.0 90.6V108.8 M600.0 108.8H649.0 M570.7 117.1V119.8 M570.7 119.8H766.8 M551.8 122.5V128.0 M551.8 128.0H720.6 M720.6 128.0V125.3 M720.6 125.3H725.4 M720.6 128.0V130.8 M720.6 130.8H892.4 M685.6 143.1V147.3 M685.6 147.3H886.7 M542.3 147.9V152.7 M542.3 152.7H783.5 M535.1 153.1V158.2 M535.1 158.2H600.9 M487.7 158.4V163.7 M487.7 163.7H542.9 M807.4 176.1V172.0 M807.4 172.0H857.3 M857.3 172.0V169.2 M857.3 169.2H884.4 M857.3 172.0V174.7 M857.3 174.7H886.7 M668.0 186.0V191.2 M668.0 191.2H672.3 M620.3 191.3V196.7 M620.3 196.7H863.5 M611.1 196.8V202.2 M611.1 202.2H805.9 M585.1 210.4V207.6 M585.1 207.6H756.6 M534.1 219.3V224.1 M534.1 224.1H546.4 M517.6 224.5V229.6 M517.6 229.6H537.1 M484.2 229.8V235.1 M484.2 235.1H580.9 M569.3 257.4V262.5 M569.3 262.5H749.8 M535.4 264.1V270.8 M535.4 270.8H701.8 M701.8 270.8V268.0 M701.8 268.0H796.3 M701.8 270.8V273.5 M701.8 273.5H816.4 M174.3 233.7V281.8 M174.3 281.8H223.9 M223.9 281.8V279.0 M223.9 279.0H267.8 M223.9 281.8V284.5 M223.9 284.5H418.6 M172.6 261.8V290.0 M172.6 290.0H265.1"/><path class="alive" d="M0 261.8H6 M6.0 261.8H172.6 M172.6 261.8V233.7 M172.6 233.7H174.3 M174.3 233.7V185.6 M174.3 185.6H280.4 M280.4 185.6V132.5 M280.4 132.5H437.7 M437.7 132.5V106.6 M437.7 106.6H470.6 M470.6 106.6V90.6 M470.6 90.6H600.0 M600.0 90.6V72.4 M600.0 72.4H653.2 M653.2 72.4V50.4 M653.2 50.4H655.5 M655.5 50.4V30.2 M655.5 30.2H672.3 M672.3 30.2V21.7 M672.3 21.7H679.3 M679.3 21.7V16.9 M679.3 16.9H758.2 M758.2 16.9V12.7 M758.2 12.7H772.4 M772.4 12.7V15.5 M772.4 15.5H930.0 M672.3 30.2V38.8 M672.3 38.8H774.6 M774.6 38.8V34.7 M774.6 34.7H813.5 M813.5 34.7V32.0 M813.5 32.0H930.0 M813.5 34.7V37.5 M813.5 37.5H930.0 M774.6 38.8V42.9 M774.6 42.9H930.0 M655.5 50.4V70.6 M655.5 70.6H837.5 M837.5 70.6V65.2 M837.5 65.2H880.8 M880.8 65.2V60.1 M880.8 60.1H893.8 M893.8 60.1V55.3 M893.8 55.3H903.6 M903.6 55.3V51.2 M903.6 51.2H924.4 M924.4 51.2V48.4 M924.4 48.4H930.0 M924.4 51.2V53.9 M924.4 53.9H930.0 M903.6 55.3V59.4 M903.6 59.4H930.0 M893.8 60.1V64.9 M893.8 64.9H930.0 M880.8 65.2V70.4 M880.8 70.4H930.0 M653.2 72.4V94.4 M653.2 94.4H760.9 M760.9 94.4V88.2 M760.9 88.2H771.0 M771.0 88.2V92.4 M771.0 92.4H930.0 M760.9 94.4V100.6 M760.9 100.6H877.5 M877.5 100.6V97.8 M877.5 97.8H930.0 M877.5 100.6V103.3 M877.5 103.3H930.0 M470.6 106.6V122.5 M470.6 122.5H551.8 M551.8 122.5V117.1 M551.8 117.1H570.7 M570.7 117.1V114.3 M570.7 114.3H930.0 M437.7 132.5V158.4 M437.7 158.4H487.7 M487.7 158.4V153.1 M487.7 153.1H535.1 M535.1 153.1V147.9 M535.1 147.9H542.3 M542.3 147.9V143.1 M542.3 143.1H685.6 M685.6 143.1V139.0 M685.6 139.0H923.6 M923.6 139.0V136.3 M923.6 136.3H930.0 M923.6 139.0V141.8 M923.6 141.8H930.0 M280.4 185.6V238.7 M280.4 238.7H411.3 M411.3 238.7V213.3 M411.3 213.3H467.6 M467.6 213.3V196.8 M467.6 196.8H611.1 M611.1 196.8V191.3 M611.1 191.3H620.3 M620.3 191.3V186.0 M620.3 186.0H668.0 M668.0 186.0V180.9 M668.0 180.9H760.8 M760.8 180.9V176.1 M760.8 176.1H807.4 M807.4 176.1V180.2 M807.4 180.2H930.0 M760.8 180.9V185.7 M760.8 185.7H930.0 M467.6 213.3V229.8 M467.6 229.8H484.2 M484.2 229.8V224.5 M484.2 224.5H517.6 M517.6 224.5V219.3 M517.6 219.3H534.1 M534.1 219.3V214.5 M534.1 214.5H571.0 M571.0 214.5V210.4 M571.0 210.4H585.1 M585.1 210.4V213.1 M585.1 213.1H930.0 M571.0 214.5V218.6 M571.0 218.6H930.0 M411.3 238.7V264.1 M411.3 264.1H535.4 M535.4 264.1V257.4 M535.4 257.4H569.3 M569.3 257.4V252.3 M569.3 252.3H630.3 M630.3 252.3V247.5 M630.3 247.5H646.0 M646.0 247.5V243.3 M646.0 243.3H916.7 M916.7 243.3V240.6 M916.7 240.6H930.0 M916.7 243.3V246.1 M916.7 246.1H930.0 M646.0 247.5V251.6 M646.0 251.6H930.0 M630.3 252.3V257.1 M630.3 257.1H930.0"/><path class="tips" d="M930.0 15.5h0.001 M930.0 32.0h0.001 M930.0 37.5h0.001 M930.0 42.9h0.001 M930.0 48.4h0.001 M930.0 53.9h0.001 M930.0 59.4h0.001 M930.0 64.9h0.001 M930.0 70.4h0.001 M930.0 92.4h0.001 M930.0 97.8h0.001 M930.0 103.3h0.001 M930.0 114.3h0.001 M930.0 136.3h0.001 M930.0 141.8h0.001 M930.0 180.2h0.001 M930.0 185.7h0.001 M930.0 213.1h0.001 M930.0 218.6h0.001 M930.0 240.6h0.001 M930.0 246.1h0.001 M930.0 251.6h0.001 M930.0 257.1h0.001"/></svg><!-- tree:end -->
+      <span class="present-label" aria-hidden="true">present</span>
     </div>
-  </header>
+    <figcaption>
+      <p>A simulated birth–death process. The faded lineages died out before the present; a tree built from living species records only the solid ones.</p>
+      <button type="button" id="tree-toggle" aria-pressed="false">Show only what survives</button>
+    </figcaption>
+  </figure>
 
-  <!-- ================= PROFILE ================= -->
-  <section class="section">
-    <h2>Profile</h2><hr class="hr">
-    <p class="lead">Researcher in statistics and applied mathematics, working on causal inference
-    and invariance, statistical network science, and biostatistics. I develop probabilistic
-    and causal models &mdash; and the computational methods to fit them &mdash; for complex
-    systems in the natural and data sciences.</p>
-    <p>I am Scientific Staff and a Lecturer at the
-    <a href="https://www.usi.ch/">Università della Svizzera italiana</a> in Lugano. I hold a
-    PhD in applied mathematics from the University of Groningen (2021) and a degree in
-    mathematical engineering from the Universidad Técnica Federico Santa María, Chile (2013).</p>
-  </section>
+  <div class="intro">
+    <h1>Francisco Richter Mendoza</h1>
+    <p class="question">What can a partial record tell us about the process that produced it?</p>
+    <nav aria-label="Sections">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#talks">Talks</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- ================= RESEARCH ================= -->
-  <section class="section">
-    <h2>Research</h2><hr class="hr">
-    <p>My work connects three threads in the statistics of complex systems:</p>
-    <div class="entry">
-      <div class="date">Causality</div>
-      <div class="body"><span class="title">Causal inference &amp; invariance</span>
-        <span class="detail">Disentangling structure from cause in relational data, and
-        extending causal-invariance principles to deep models for out-of-distribution
-        generalization.</span></div>
-    </div>
-    <div class="entry">
-      <div class="date">Networks</div>
-      <div class="body"><span class="title">Statistical network science</span>
-        <span class="detail">Graphical models of interacting systems &mdash; from microbiome
-        interactions across related environments to evolutionary trees.</span></div>
-    </div>
-    <div class="entry">
-      <div class="date">Dynamics</div>
-      <div class="body"><span class="title">Diversification &amp; stochastic modelling</span>
-        <span class="detail">Birth&ndash;death processes on phylogenies, missing-species
-        inference, and a general framework for diversity-dependent diversification.</span></div>
-    </div>
-  </section>
+<main>
 
-  <!-- ================= CURRENTLY ================= -->
-  <section class="section">
-    <h2>Currently</h2><hr class="hr">
-    <div class="entry">
-      <div class="date">Atlas</div>
-      <div class="body"><span class="title">A curated atlas of empirical phylogenies</span>
-        <span class="detail">Covering 600,000+ species, built to study diversification at
-        scale.</span></div>
-    </div>
-    <div class="entry">
-      <div class="date">Models</div>
-      <div class="body"><span class="title">Phylodiversity-dependent diversification</span>
-        <span class="detail">Generalizing diversity-dependent models with missing-species
-        inference.</span></div>
-    </div>
-    <div class="entry">
-      <div class="date">Causal</div>
-      <div class="body"><span class="title">Neural causal regularization</span>
-        <span class="detail">Methods for invariance and out-of-distribution generalization
-        (joint with K. Rigana &amp; E. C. Wit).</span></div>
-    </div>
-  </section>
+<section id="about" aria-label="About">
+  <p class="lede">I am a scientific collaborator and lecturer at the Faculty of Informatics of the <a href="https://www.usi.ch/en">Università della Svizzera italiana</a> in Lugano. I work on statistical inference for systems we only see in part: how species form and disappear, judged from trees of the species alive today; which relationships in data still hold when conditions change; and the same questions in astronomy, microbial ecology, public health and education.</p>
+  <p>I did my PhD at the University of Groningen (2021), supervised jointly by Ernst Wit and Rampal Etienne, after training as a mathematical engineer at the Universidad Técnica Federico Santa María in Valparaíso. Before that I worked on observation scheduling for ALMA, on photometric correction for ESO's Very Large Telescope, and on risk models in industry.</p>
+</section>
 
-  <!-- ================= PUBLICATIONS ================= -->
-  <section class="section">
-    <h2>Selected Publications</h2><hr class="hr">
+<section id="research">
+  <h2>Research</h2>
 
-    <div class="entry pub">
-      <div class="date">2025</div>
-      <div class="body">
-        <span class="ptitle">Neural causal regularization: extending causal invariance to deep models</span>
+  <h3>Evolutionary biology</h3>
+  <p>Trees of living species are incomplete twice over: the species that went extinct left no tip, and many living species were never sampled. I work on this along two lines that feed each other.</p>
+  <p>The first is statistical. Fitting a diversification model to a tree of living species means reconstructing what is not there. The method I developed does this by simulation: it fills in the missing lineages and fits the model on the completed trees. I am also working out how much of what the field reports about speciation and extinction survives once you admit that you do not know how many species a tree is missing.</p>
+  <p>The second is biological: what actually drives diversification. Each thing these models can read is a hypothesis biologists already argue about — whether diversity limits itself, whether a lineage's age changes its chances, whether evolutionarily distinct lineages are relicts on their way out, whether a fast-diversifying lineage passes that rate to its descendants. A question from my thesis runs through it: whether what limits diversification is the number of species or the amount of evolutionary history already present.</p>
+
+  <h3>Robust and causal regularization</h3>
+  <p>With Ernst Wit I work on which relationships in data still hold when conditions change — causes rather than correlations — in data where nobody recorded which conditions changed. I apply it where that question matters: to how academic and socioemotional learning are linked in Peru's national assessment, which I present at the Conference on Complex Systems in October 2026, and to problems in social and network science.</p>
+
+  <h3>The same problem elsewhere</h3>
+  <p>A system seen only in part, and not at random, keeps appearing in other fields. Stellar chemical abundances are now being arranged into trees, and I am asking what such a tree can and cannot tell us about the history of the Galaxy. I am also working on microbiome interaction networks and on the geography of injury mortality in Chile.</p>
+</section>
+
+<section id="publications">
+  <h2>Publications</h2>
+  <ol class="timeline">
+    <li>
+      <span class="year">2026</span>
+      <div>
+        <a class="title" href="https://doi.org/10.64898/2026.05.31.729127">Where the tree of life is empirically resolved, and where it is not: an open atlas of species-level phylogenies and their archival uncertainty</a>
+        <span class="authors">F. Richter</span>
+        <span class="venue">bioRxiv</span>
+      </div>
+    </li>
+    <li>
+      <span class="year">2025</span>
+      <div>
+        <span class="title">Neural causal regularization: extending causal invariance to deep models</span>
         <span class="authors">F. Richter, K. Rigana, E. C. Wit</span>
-        <span class="venue">Statistics for Innovation I, 97&ndash;102. Springer Nature, 2025</span>
+        <span class="venue">Statistics for Innovation I, 97–102. Springer Nature</span>
       </div>
-    </div>
-
-    <div class="entry pub">
-      <div class="date">2024</div>
-      <div class="body">
-        <span class="ptitle">Random graphical model of microbiome interactions in related environments</span>
+    </li>
+    <li>
+      <span class="year">2024</span>
+      <div>
+        <a class="title" href="https://doi.org/10.1007/s13253-024-00638-6">Random graphical model of microbiome interactions in related environments</a>
         <span class="authors">V. Vinciotti, E. C. Wit, F. Richter</span>
-        <span class="venue">Journal of Agricultural, Biological and Environmental Statistics, 2024</span>
+        <span class="venue">Journal of Agricultural, Biological and Environmental Statistics</span>
       </div>
-    </div>
-
-    <div class="entry pub">
-      <div class="date">2021</div>
-      <div class="body">
-        <span class="ptitle">Detecting phylodiversity-dependent diversification with a general phylogenetic inference framework</span>
+    </li>
+    <li>
+      <span class="year">2021</span>
+      <div>
+        <a class="title" href="https://doi.org/10.1101/2021.07.01.450729">Detecting phylodiversity-dependent diversification with a general phylogenetic inference framework</a>
         <span class="authors">F. Richter, T. Janzen, H. Hildenbrandt, E. C. Wit, R. S. Etienne</span>
-        <span class="venue">bioRxiv, 2021</span>
+        <span class="venue">bioRxiv</span>
       </div>
-    </div>
-
-    <div class="entry pub">
-      <div class="date">2020</div>
-      <div class="body">
-        <span class="ptitle">Introducing a general class of species diversification models for phylogenetic trees</span>
+    </li>
+    <li>
+      <span class="year">2021</span>
+      <div>
+        <a class="title" href="https://doi.org/10.1002/ecy.3237">Microbiome and environment explain the absence of correlations between consumers and their diet in Bornean microsnails</a>
+        <span class="authors">K. P. Hendriks, …, F. J. Richter Mendoza, M. Schilthuizen, R. S. Etienne</span>
+        <span class="venue">Ecology 102(2), e03237</span>
+      </div>
+    </li>
+    <li>
+      <span class="year">2021</span>
+      <div>
+        <a class="title" href="https://academic.oup.com/mollus/article/87/4/eyab041/6484603">Plant diets of land snail community members are similar in composition but differ in richness</a>
+        <span class="authors">K. P. Hendriks, …, F. J. Richter Mendoza, M. Schilthuizen, R. S. Etienne</span>
+        <span class="venue">Journal of Molluscan Studies 87(4), eyab041</span>
+      </div>
+    </li>
+    <li>
+      <span class="year">2020</span>
+      <div>
+        <a class="title" href="https://doi.org/10.1111/stan.12205">Introducing a general class of species diversification models for phylogenetic trees</a>
         <span class="authors">F. Richter, B. Haegeman, R. S. Etienne, E. C. Wit</span>
-        <span class="venue">Statistica Neerlandica 74, 261&ndash;274. Wiley, 2020</span>
+        <span class="venue">Statistica Neerlandica 74, 261–274</span>
       </div>
-    </div>
-
-    <div class="entry pub">
-      <div class="date">2021</div>
-      <div class="body">
-        <span class="ptitle"><a href="https://doi.org/10.1002/ecy.3237">Microbiome and environment explain the absence of correlations between consumers and their diet in Bornean microsnails</a></span>
-        <span class="authors">K. P. Hendriks, &hellip;, F. J. Richter Mendoza, M. Schilthuizen, R. S. Etienne</span>
-        <span class="venue">Ecology 102.2, e03237, 2021</span>
+    </li>
+    <li>
+      <span class="year">2019</span>
+      <div>
+        <span class="title">Fieldwork to sample microsnails for diet and microbiome studies along the Kinabatangan River, Sabah, Malaysian Borneo</span>
+        <span class="authors">K. P. Hendriks, …, F. J. Richter Mendoza, M. Schilthuizen, R. S. Etienne</span>
+        <span class="venue">Malacologist 72, 33–38</span>
       </div>
-    </div>
+    </li>
+  </ol>
 
-    <div class="entry pub">
-      <div class="date">2024</div>
-      <div class="body">
-        <span class="ptitle"><a href="https://doi.org/10.33774/miir-2024-51r3q">Stereo 3D cloud motion from tandem satellites</a></span>
+  <h3>Industry reports</h3>
+  <ol class="timeline">
+    <li>
+      <span class="year">2024</span>
+      <div>
+        <a class="title" href="https://www.swi-wiskunde.nl/swi2024/wp-content/uploads/sites/29/2024/06/SWI-2024-scientific-proceedings_IKEA-1.pdf">IKEA: innovative know-how for e-commerce allocation</a>
+        <span class="authors">Y. Chen, M. Pellemans, F. Richter, Y. Roshandel, V. Schmeits, P. Waldert, L. Wehbi, T. C. van der Zanden</span>
+        <span class="venue">Study Group Mathematics with Industry (SWI) 2024, scientific proceedings</span>
+      </div>
+    </li>
+    <li>
+      <span class="year">2024</span>
+      <div>
+        <a class="title" href="https://www.cambridge.org/engage/miir/article-details/666c7ef65101a2ffa89a6c21">Stereo 3D cloud motion from tandem satellites</a>
         <span class="authors">Y. Zhou, S. Abrahams, F. Mendoza, M. Donà, R. Verbiest</span>
-        <span class="venue">Mathematics in Industry Reports, 2024</span>
+        <span class="venue">Mathematics in Industry Reports</span>
       </div>
-    </div>
+    </li>
+  </ol>
+  <p class="more"><a href="https://scholar.google.cl/citations?user=dvAiLzsAAAAJ&amp;hl=en">All publications on Google Scholar</a></p>
+</section>
 
-    <p style="margin-top:.6rem"><a href="https://scholar.google.cl/citations?user=dvAiLzsAAAAJ&amp;hl=en">Full publication list on Google Scholar &rarr;</a></p>
-  </section>
+<section id="talks">
+  <h2>Talks</h2>
+  <ol class="timeline">
+    <li><span class="year">2026</span><div><span class="title">How academic achievement and socioemotional learning are structurally linked</span><span class="venue">Conference on Complex Systems, Binghamton (online), with E. Aburto Camacllanqui</span></div></li>
+    <li><span class="year">2026</span><div><span class="title">The phylogenetic dark matter</span><span class="venue">European Meeting of Statisticians, Lugano</span></div></li>
+    <li><span class="year">2026</span><div><span class="title">Robust and fair prediction under distribution shift</span><span class="venue">Latin American Congress on Industrial and Applied Mathematics, Valparaíso; session organiser</span></div></li>
+    <li><span class="year">2025</span><div><span class="title">Neural causal regularization: extending causal invariance to deep models</span><span class="venue">Italian Statistical Society, Genova; invited</span></div></li>
+    <li><span class="year">2023</span><div><span class="title">Detecting complex diversity-dependent diversification with a novel phylogenetic inference framework</span><span class="venue">Complex Networks (CompleNet), Aveiro</span></div></li>
+    <li><span class="year">2023</span><div><span class="title">Phylodiversity-dependent diversification: a general framework</span><span class="venue">World Conference on Natural Resource Modeling, Amsterdam</span></div></li>
+    <li><span class="year">2022</span><div><span class="title">Inferring the drivers of species diversification processes</span><span class="venue">Conference on Complex Systems, Palma de Mallorca</span></div></li>
+    <li><span class="year">2018</span><div><span class="title">Generalizing species diversification models</span><span class="venue">Conference on Complex Systems, Thessaloniki</span></div></li>
+    <li><span class="year">2018</span><div><span class="title">A statistical approach to species diversification dynamics</span><span class="venue">Mathematics for Planet Earth, Utrecht; invited</span></div></li>
+  </ol>
+</section>
 
-  <!-- ================= TEACHING ================= -->
-  <section class="section">
-    <h2>Teaching</h2><hr class="hr">
-    <p class="lead" style="color:var(--midgray);font-size:.97rem">Università della Svizzera italiana, Faculty of Informatics &mdash; Bachelor INF &amp; Master IA / CS.</p>
-    <div class="entry">
-      <div class="date">Bachelor</div>
-      <div class="body"><span class="title">Probability &amp; Statistics &nbsp;&middot;&nbsp; Numerical Computing</span></div>
-    </div>
-    <div class="entry">
-      <div class="date">Master</div>
-      <div class="body"><span class="title">Stochastic Methods &nbsp;&middot;&nbsp; Ordinary Differential Equations &nbsp;&middot;&nbsp; Introduction to Data Science &nbsp;&middot;&nbsp; Analysis of Social Networks</span></div>
-    </div>
-  </section>
+<section id="teaching">
+  <h2>Teaching</h2>
+  <p>At the Faculty of Informatics, Università della Svizzera italiana:</p>
+  <dl class="courses">
+    <dt>Bachelor</dt><dd>Probability and Statistics; Numerical Computing</dd>
+    <dt>Master</dt><dd>Stochastic Methods; Ordinary Differential Equations; Introduction to Data Science; Analysis of Social Networks</dd>
+  </dl>
+  <p>For secondary schools I run workshops on data science, and I built <a href="liceo-probability/">an interactive page on probability paradoxes</a> for students at the Liceo di Lugano.</p>
+</section>
 
-  <!-- ================= TALKS ================= -->
-  <section class="section">
-    <h2>Selected Talks</h2><hr class="hr">
-    <div class="entry">
-      <div class="date">2025</div>
-      <div class="body"><span class="title">Italian Statistical Society (SIS)</span><span class="org">, Genova, Italy</span>
-        <span class="detail"><em>Invited talk:</em> Neural Causal Regularization &mdash; Extending Causal Invariance to Deep Models.</span></div>
-    </div>
-    <div class="entry">
-      <div class="date">2023</div>
-      <div class="body"><span class="title">Complex Networks (CompleNet)</span><span class="org">, Aveiro, Portugal</span>
-        <span class="detail">Detecting complex diversity-dependent diversification with a novel phylogenetic inference framework.</span></div>
-    </div>
-    <div class="entry">
-      <div class="date">2018</div>
-      <div class="body"><span class="title">Mathematics for Planet Earth</span><span class="org">, Utrecht, The Netherlands</span>
-        <span class="detail"><em>Invited talk:</em> a statistical approach to species diversification dynamics.</span></div>
-    </div>
-  </section>
-
-  <!-- ================= OUTREACH ================= -->
-  <section class="section">
-    <h2>Outreach</h2><hr class="hr">
-    <div class="entry">
-      <div class="date">2025 &ndash;</div>
-      <div class="body"><span class="title">TecDays</span><span class="org">, secondary schools, Ticino</span>
-        <span class="detail">Hands-on data-science workshops for high-school students across several schools.</span></div>
-    </div>
-    <div class="entry">
-      <div class="date">2025 &ndash;</div>
-      <div class="body"><span class="title">Lavori di Maturità</span><span class="org">, USI, Lugano</span>
-        <span class="detail">Mentoring high-school students through year-long thesis projects with the Faculty of Informatics.</span></div>
-    </div>
-    <div class="entry">
-      <div class="date">2025 &ndash;</div>
-      <div class="body"><span class="title">Giornate Autogestite</span><span class="org">, Ticino</span>
-        <span class="detail">Workshops on data science and academic life at several high schools.</span></div>
-    </div>
-  </section>
-
-  <!-- ================= CONTACT ================= -->
-  <section class="section">
-    <h2>Contact</h2><hr class="hr">
-    <p>For research collaborations, postdoc opportunities, or any question, reach me at
-    <a href="mailto:richtf@usi.ch">richtf@usi.ch</a>. Curriculum vitae:
-    <a href="files/Resume/resume.pdf">English</a> &middot;
-    <a href="files/Resume/resume_es.pdf">Español</a>.</p>
-  </section>
-
-  <footer>
-    Lugano, Switzerland &middot; <a href="https://orcid.org/0000-0002-0924-4613">ORCID 0000-0002-0924-4613</a>
-  </footer>
+<footer id="contact">
+  <h2>Contact</h2>
+  <p><a href="mailto:richtf@usi.ch">richtf@usi.ch</a><br>
+  Faculty of Informatics, Università della Svizzera italiana, Lugano</p>
+  <ul class="links">
+    <li><a href="files/Resume/resume.pdf">CV</a> (<a href="files/Resume/resume_es.pdf" hreflang="es">en español</a>)</li>
+    <li><a href="https://scholar.google.cl/citations?user=dvAiLzsAAAAJ&amp;hl=en">Google Scholar</a></li>
+    <li><a href="https://orcid.org/0000-0002-0924-4613">ORCID</a></li>
+    <li><a href="https://github.com/franciscorichter">GitHub</a></li>
+    <li><a href="https://www.linkedin.com/in/franciscorichter/">LinkedIn</a></li>
+  </ul>
+</footer>
 
 </main>
+
+<script src="assets/site.js" defer></script>
 </body>
 </html>

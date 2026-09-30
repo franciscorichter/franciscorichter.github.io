@@ -1,0 +1,270 @@
+/* Francisco Richter Mendoza — personal site
+   One bold element: the simulated birth–death tree. Everything else stays quiet. */
+
+:root {
+  --paper:   #F8FAF9;
+  --ink:     #1C2B2A;
+  --muted:   #5E6B69;
+  --living:  #1F6F5C;
+  --extinct: #B7B2A8;
+  --rule:    #DCE3E0;
+  --measure: 38rem;
+  --wide:    66rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper:   #0F1716;
+    --ink:     #E4EBE8;
+    --muted:   #9AA8A4;
+    --living:  #6DC4A7;
+    --extinct: #7C8884;
+    --rule:    #26322F;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  font-family: "EB Garamond", Garamond, "Times New Roman", serif;
+  font-size: 112.5%;              /* 18px */
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures;
+  -webkit-text-size-adjust: 100%;
+}
+@media (min-width: 48rem) { html { font-size: 125%; } }  /* 20px */
+
+body { margin: 0; }
+
+a {
+  color: var(--living);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--living);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------- Masthead ---------- */
+
+.masthead { padding: 2.5rem 1.25rem 0; }
+
+.tree {
+  margin: 0 auto;
+  max-width: var(--wide);
+}
+.tree .plot { position: relative; }
+.tree svg {
+  display: block;
+  width: 100%;
+  height: clamp(12rem, 27vw, 19rem);   /* stretches on phones so lineages stay apart */
+  overflow: visible;
+}
+
+.tree .alive {
+  fill: none;
+  stroke: var(--living);
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+.tree .dead {
+  fill: none;
+  stroke: var(--extinct);
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  opacity: 0.7;
+  transition: opacity 1.1s ease;
+}
+.tree .tips {
+  fill: none;
+  stroke: var(--living);
+  stroke-width: 5;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+.tree .present {
+  stroke: var(--rule);
+  stroke-width: 1;
+  stroke-dasharray: 3 4;
+  vector-effect: non-scaling-stroke;
+}
+.tree .present-label {
+  position: absolute;
+  left: calc(93% + 0.5rem);
+  bottom: -0.3rem;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--muted);
+}
+@media (max-width: 40rem) {
+  .tree .present-label { left: auto; right: 0; bottom: -1.3rem; }
+  .tree figcaption { margin-top: 2rem; }
+}
+
+/* The one orchestrated moment: the tree grows through time, then the dead fade. */
+.js .tree .dead { opacity: 1; }
+.js .tree.faded .dead { opacity: 0.7; }
+.js .tree.survivors-only .dead,
+.tree.survivors-only .dead { opacity: 0; }
+
+.js .tree svg {
+  clip-path: inset(0 100% 0 0);
+  animation: grow 2.8s cubic-bezier(0.35, 0.05, 0.25, 1) 0.2s forwards;
+}
+@keyframes grow { to { clip-path: inset(0 0 0 0); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .js .tree svg { animation: none; clip-path: none; }
+  .tree .dead { transition: none; }
+}
+
+.tree figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.6rem 1.5rem;
+  max-width: var(--measure);
+  margin: 1rem auto 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.tree figcaption p { margin: 0; flex: 1 1 20rem; font-style: italic; }
+
+#tree-toggle {
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--living);
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 0.25rem 0.75rem;
+  cursor: pointer;
+}
+#tree-toggle:hover { border-color: var(--living); }
+#tree-toggle[aria-pressed="true"] { background: var(--living); color: var(--paper); border-color: var(--living); }
+
+.intro {
+  max-width: var(--measure);
+  margin: 3rem auto 0;
+}
+h1 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 1.1;
+  letter-spacing: -0.005em;
+}
+@media (min-width: 48rem) { h1 { font-size: 2.9rem; } }
+
+.question {
+  margin: 0.6rem 0 0;
+  font-size: 1.35rem;
+  font-style: italic;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 1.4rem;
+  margin-top: 1.6rem;
+}
+nav a { color: var(--ink); text-decoration: none; }
+nav a:hover { color: var(--living); text-decoration: underline; }
+
+/* ---------- Content ---------- */
+
+main {
+  max-width: calc(var(--measure) + 2.5rem);
+  margin: 0 auto;
+  padding: 0 1.25rem 4rem;
+}
+
+section, footer { margin-top: 3.8rem; }
+#about { margin-top: 2.6rem; }
+
+h2 {
+  margin: 0 0 1rem;
+  font-weight: 500;
+  font-size: 1.7rem;
+  line-height: 1.2;
+}
+h3 {
+  margin: 2rem 0 0.4rem;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+h2 + h3 { margin-top: 0.4rem; }
+
+p { margin: 0 0 1rem; hyphens: auto; }
+.lede { font-size: 1.12rem; }
+
+/* Year gutter: publications and talks are genuinely a timeline. */
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.timeline li {
+  display: grid;
+  grid-template-columns: 3.2rem 1fr;
+  gap: 0 1rem;
+  padding: 0.7rem 0;
+  border-top: 1px solid var(--rule);
+}
+.timeline li:first-child { border-top: 0; padding-top: 0.2rem; }
+.timeline .year {
+  color: var(--muted);
+  font-variant-numeric: lining-nums tabular-nums;
+  font-size: 0.95rem;
+  padding-top: 0.08rem;
+}
+.timeline .title { display: block; line-height: 1.35; }
+.timeline a.title { text-decoration: none; }
+.timeline a.title:hover { text-decoration: underline; }
+.timeline .authors,
+.timeline .venue {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+.timeline .venue { font-style: italic; }
+
+.more { margin-top: 1rem; font-size: 0.95rem; }
+
+.courses {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 0.3rem 1rem;
+  margin: 0 0 1.2rem;
+}
+.courses dt { color: var(--muted); }
+.courses dd { margin: 0; }
+
+footer .links {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.4rem;
+}
+
+@media (max-width: 30rem) {
+  .timeline li { grid-template-columns: 1fr; }
+  .timeline .year { padding: 0 0 0.1rem; }
+  .courses { grid-template-columns: 1fr; gap: 0; }
+  .courses dd { margin-bottom: 0.6rem; }
+}
