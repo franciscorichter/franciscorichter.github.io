@@ -257,6 +257,27 @@ nav a:hover { color: var(--living); text-decoration: underline; }
 nav.tabs a { padding-bottom: 0.15rem; border-bottom: 2px solid transparent; }
 nav.tabs a[aria-current="page"] { color: var(--living); border-bottom-color: var(--living); }
 nav.tabs a[aria-current="page"]:hover { text-decoration: none; }
+.who {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas: "name photo" "bio photo";
+  column-gap: 1.8rem;
+  align-items: start;
+}
+.who h1 { grid-area: name; }
+.who .bio { grid-area: bio; }
+.portrait {
+  grid-area: photo;
+  width: 8.5rem;
+  height: 8.5rem;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-top: 0.3rem;
+}
+@media (max-width: 36rem) {
+  .who { grid-template-columns: 1fr; grid-template-areas: "photo" "name" "bio"; }
+  .portrait { width: 6rem; height: 6rem; margin: 0 0 1.2rem; }
+}
 .bio { margin-top: 1.2rem; }
 .bio p { margin: 0 0 0.5rem; }
 .bio .lede { font-size: 1.05rem; }
