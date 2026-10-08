@@ -94,9 +94,10 @@ T = [
      '<p>Explicaciones animadas de los conceptos de mis cursos, empezando por <a href="https://www.stochasticmethods.com/">'),
     # consulting
     ('<h2>Consulting</h2>', '<h2>Consultoría</h2>'),
-    ('<p class="lede">I am an engineer before I am a doctor.</p>', '<p class="lede">Antes de ser doctor, soy ingeniero.</p>'),
-    ('<h3>Collaborating institutions</h3>', '<h3>Instituciones colaboradoras</h3>'),
-    ('<h3>Projects</h3>', '<h3>Proyectos</h3>'),
+    ('<p class="lede">I am an engineer before I am a doctor, and I work more and more with small businesses, start-ups and projects outside academia. These are some of the organisations and projects I am part of now.</p>',
+     '<p class="lede">Antes de ser doctor, soy ingeniero, y colaboro cada vez más con pequeñas empresas, start-ups y proyectos fuera de la academia. Estas son algunas de las organizaciones y proyectos en los que participo hoy.</p>'),
+    ('<h3>Organisations I work with</h3>', '<h3>Organizaciones con las que trabajo</h3>'),
+    ('<h3>Ongoing projects</h3>', '<h3>Proyectos en curso</h3>'),
     # contact
     ('<h2>Contact</h2>', '<h2>Contacto</h2>'),
     ('<p>Write to me at <a href="mailto:richtf@usi.ch">richtf@usi.ch</a> or <a href="mailto:franciscorichter@gmail.com">franciscorichter@gmail.com</a>. I work at the Faculty of Informatics, Università della Svizzera italiana, in Lugano. My code is on <a href="https://github.com/franciscorichter">GitHub</a>, and I am also on <a href="https://www.linkedin.com/in/franciscorichter/">LinkedIn</a>.</p>',
