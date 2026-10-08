@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Francisco Richter Mendoza</title>
+<meta name="description" content="Francisco Richter Mendoza trabaja en inferencia estadística para sistemas que solo vemos en parte: la diversificación de especies a partir de árboles de especies vivas, la regularización causal y aplicaciones en astronomía, ecología, salud pública y educación. Università della Svizzera italiana, Lugano.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Courier+Prime&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<header class="masthead">
+  <figure class="tree" id="tree">
+    <div class="plot">
+      <!-- tree:start --><svg viewBox="0 0 1000 300" preserveAspectRatio="none" role="img" aria-labelledby="tree-title"><title id="tree-title">Un árbol de nacimiento y muerte simulado: los linajes que sobreviven hasta el presente y, más tenues, los que se extinguieron</title><line class="present" x1="930.0" y1="0" x2="930.0" y2="300"/><path class="dead" d="M772.4 12.7V10.0 M772.4 10.0H888.4 M758.2 16.9V21.0 M758.2 21.0H759.8 M679.3 21.7V26.5 M679.3 26.5H731.0 M837.5 70.6V75.9 M837.5 75.9H854.5 M771.0 88.2V84.1 M771.0 84.1H827.3 M827.3 84.1V81.4 M827.3 81.4H860.8 M827.3 84.1V86.9 M827.3 86.9H842.2 M600.0 90.6V108.8 M600.0 108.8H649.0 M570.7 117.1V119.8 M570.7 119.8H766.8 M551.8 122.5V128.0 M551.8 128.0H720.6 M720.6 128.0V125.3 M720.6 125.3H725.4 M720.6 128.0V130.8 M720.6 130.8H892.4 M685.6 143.1V147.3 M685.6 147.3H886.7 M542.3 147.9V152.7 M542.3 152.7H783.5 M535.1 153.1V158.2 M535.1 158.2H600.9 M487.7 158.4V163.7 M487.7 163.7H542.9 M807.4 176.1V172.0 M807.4 172.0H857.3 M857.3 172.0V169.2 M857.3 169.2H884.4 M857.3 172.0V174.7 M857.3 174.7H886.7 M668.0 186.0V191.2 M668.0 191.2H672.3 M620.3 191.3V196.7 M620.3 196.7H863.5 M611.1 196.8V202.2 M611.1 202.2H805.9 M585.1 210.4V207.6 M585.1 207.6H756.6 M534.1 219.3V224.1 M534.1 224.1H546.4 M517.6 224.5V229.6 M517.6 229.6H537.1 M484.2 229.8V235.1 M484.2 235.1H580.9 M569.3 257.4V262.5 M569.3 262.5H749.8 M535.4 264.1V270.8 M535.4 270.8H701.8 M701.8 270.8V268.0 M701.8 268.0H796.3 M701.8 270.8V273.5 M701.8 273.5H816.4 M174.3 233.7V281.8 M174.3 281.8H223.9 M223.9 281.8V279.0 M223.9 279.0H267.8 M223.9 281.8V284.5 M223.9 284.5H418.6 M172.6 261.8V290.0 M172.6 290.0H265.1"/><path class="alive" d="M0 261.8H6 M6.0 261.8H172.6 M172.6 261.8V233.7 M172.6 233.7H174.3 M174.3 233.7V185.6 M174.3 185.6H280.4 M280.4 185.6V132.5 M280.4 132.5H437.7 M437.7 132.5V106.6 M437.7 106.6H470.6 M470.6 106.6V90.6 M470.6 90.6H600.0 M600.0 90.6V72.4 M600.0 72.4H653.2 M653.2 72.4V50.4 M653.2 50.4H655.5 M655.5 50.4V30.2 M655.5 30.2H672.3 M672.3 30.2V21.7 M672.3 21.7H679.3 M679.3 21.7V16.9 M679.3 16.9H758.2 M758.2 16.9V12.7 M758.2 12.7H772.4 M772.4 12.7V15.5 M772.4 15.5H930.0 M672.3 30.2V38.8 M672.3 38.8H774.6 M774.6 38.8V34.7 M774.6 34.7H813.5 M813.5 34.7V32.0 M813.5 32.0H930.0 M813.5 34.7V37.5 M813.5 37.5H930.0 M774.6 38.8V42.9 M774.6 42.9H930.0 M655.5 50.4V70.6 M655.5 70.6H837.5 M837.5 70.6V65.2 M837.5 65.2H880.8 M880.8 65.2V60.1 M880.8 60.1H893.8 M893.8 60.1V55.3 M893.8 55.3H903.6 M903.6 55.3V51.2 M903.6 51.2H924.4 M924.4 51.2V48.4 M924.4 48.4H930.0 M924.4 51.2V53.9 M924.4 53.9H930.0 M903.6 55.3V59.4 M903.6 59.4H930.0 M893.8 60.1V64.9 M893.8 64.9H930.0 M880.8 65.2V70.4 M880.8 70.4H930.0 M653.2 72.4V94.4 M653.2 94.4H760.9 M760.9 94.4V88.2 M760.9 88.2H771.0 M771.0 88.2V92.4 M771.0 92.4H930.0 M760.9 94.4V100.6 M760.9 100.6H877.5 M877.5 100.6V97.8 M877.5 97.8H930.0 M877.5 100.6V103.3 M877.5 103.3H930.0 M470.6 106.6V122.5 M470.6 122.5H551.8 M551.8 122.5V117.1 M551.8 117.1H570.7 M570.7 117.1V114.3 M570.7 114.3H930.0 M437.7 132.5V158.4 M437.7 158.4H487.7 M487.7 158.4V153.1 M487.7 153.1H535.1 M535.1 153.1V147.9 M535.1 147.9H542.3 M542.3 147.9V143.1 M542.3 143.1H685.6 M685.6 143.1V139.0 M685.6 139.0H923.6 M923.6 139.0V136.3 M923.6 136.3H930.0 M923.6 139.0V141.8 M923.6 141.8H930.0 M280.4 185.6V238.7 M280.4 238.7H411.3 M411.3 238.7V213.3 M411.3 213.3H467.6 M467.6 213.3V196.8 M467.6 196.8H611.1 M611.1 196.8V191.3 M611.1 191.3H620.3 M620.3 191.3V186.0 M620.3 186.0H668.0 M668.0 186.0V180.9 M668.0 180.9H760.8 M760.8 180.9V176.1 M760.8 176.1H807.4 M807.4 176.1V180.2 M807.4 180.2H930.0 M760.8 180.9V185.7 M760.8 185.7H930.0 M467.6 213.3V229.8 M467.6 229.8H484.2 M484.2 229.8V224.5 M484.2 224.5H517.6 M517.6 224.5V219.3 M517.6 219.3H534.1 M534.1 219.3V214.5 M534.1 214.5H571.0 M571.0 214.5V210.4 M571.0 210.4H585.1 M585.1 210.4V213.1 M585.1 213.1H930.0 M571.0 214.5V218.6 M571.0 218.6H930.0 M411.3 238.7V264.1 M411.3 264.1H535.4 M535.4 264.1V257.4 M535.4 257.4H569.3 M569.3 257.4V252.3 M569.3 252.3H630.3 M630.3 252.3V247.5 M630.3 247.5H646.0 M646.0 247.5V243.3 M646.0 243.3H916.7 M916.7 243.3V240.6 M916.7 240.6H930.0 M916.7 243.3V246.1 M916.7 246.1H930.0 M646.0 247.5V251.6 M646.0 251.6H930.0 M630.3 252.3V257.1 M630.3 257.1H930.0"/><path class="tips" d="M930.0 15.5h0.001 M930.0 32.0h0.001 M930.0 37.5h0.001 M930.0 42.9h0.001 M930.0 48.4h0.001 M930.0 53.9h0.001 M930.0 59.4h0.001 M930.0 64.9h0.001 M930.0 70.4h0.001 M930.0 92.4h0.001 M930.0 97.8h0.001 M930.0 103.3h0.001 M930.0 114.3h0.001 M930.0 136.3h0.001 M930.0 141.8h0.001 M930.0 180.2h0.001 M930.0 185.7h0.001 M930.0 213.1h0.001 M930.0 218.6h0.001 M930.0 240.6h0.001 M930.0 246.1h0.001 M930.0 251.6h0.001 M930.0 257.1h0.001"/></svg><!-- tree:end -->
+      <button type="button" id="tree-open" aria-controls="tree-panel" aria-expanded="false" aria-label="Ajustar la simulación"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg></button>
+    </div>
+    <figcaption id="tree-panel" hidden>
+      <div class="explain">
+        <div class="views" role="group" aria-label="Qué muestra el árbol">
+          <button type="button" data-view="complete" aria-pressed="true">Todo lo que vivió</button>
+          <button type="button" data-view="recon" aria-pressed="false">Lo que sobrevive</button>
+          <button type="button" data-view="sampled" aria-pressed="false">Lo que se muestrea</button>
+        </div>
+      </div>
+      <div class="controls">
+        <div class="sliders">
+          <label for="s-lam">Especiación λ</label><input type="range" id="s-lam" min="0.2" max="2" step="0.05"><output id="s-lam-v" for="s-lam"></output>
+          <label for="s-mu">Extinción μ</label><input type="range" id="s-mu" min="0" max="1.5" step="0.05"><output id="s-mu-v" for="s-mu"></output>
+          <label for="s-bn">Dependencia de la diversidad β<sub>N</sub></label><input type="range" id="s-bn" min="-0.08" max="0" step="0.002"><output id="s-bn-v" for="s-bn"></output>
+          <label for="s-T">Edad de la corona</label><input type="range" id="s-T" min="2" max="10" step="0.5"><output id="s-T-v" for="s-T"></output>
+          <label for="s-rho">Muestreo ρ</label><input type="range" id="s-rho" min="0.1" max="1" step="0.05"><output id="s-rho-v" for="s-rho"></output>
+        </div>
+        <p class="tree-foot"><span id="tree-status" aria-live="polite"></span></p>
+        <p class="tree-actions"><button type="button" id="tree-new">Nuevo árbol</button> <a href="https://franciscorichter.github.io/emphasis/simulator.html">Abrir el simulador completo</a></p>
+      </div>
+    </figcaption>
+  </figure>
+
+  <div class="intro">
+    <p class="langs" aria-label="Idioma"><a href="../" lang="en" hreflang="en">EN</a><a href="./" lang="es" hreflang="es" aria-current="true">ES</a></p>
+    <div class="who">
+    <img class="portrait" src="../images/portrait.jpg" alt="Francisco Richter Mendoza" width="520" height="520">
+    <h1>Francisco Richter Mendoza</h1>
+    <div class="bio">
+      <p class="lede">Colaborador científico y profesor en la Facultad de Informática de la <a href="https://www.usi.ch/it">Università della Svizzera italiana</a>, Lugano.</p>
+      <p>Doctor por la Universidad de Groningen (2021), con Ernst Wit y Rampal Etienne. Ingeniero civil matemático, Universidad Técnica Federico Santa María, Valparaíso. Antes trabajé en ALMA, en ESO y en la industria.</p>
+    </div>
+    </div>
+    <nav class="tabs" aria-label="Secciones">
+      <a href="#research">Investigación</a>
+      <a href="#teaching">Docencia</a>
+      <a href="#consulting">Consultoría</a>
+      <a href="#contact">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section id="research" class="panel">
+  <h2>Investigación</h2>
+
+  <h3>Biología evolutiva</h3>
+  <p>En lo estadístico: ajustar modelos de especiación y extinción a árboles de especies vivas simulando los linajes que le faltan al árbol, y precisar qué pueden y qué no pueden decirnos esos árboles.</p>
+  <p>En lo biológico: si la diversidad se limita a sí misma, si la edad o la singularidad de un linaje cambian su destino, y si las tasas de diversificación se heredan.</p>
+
+  <h3>Regularización robusta y causal</h3>
+  <p>Con Ernst Wit: qué relaciones se mantienen cuando cambian las condiciones, en datos donde las condiciones no quedaron registradas. Aplicado a los aprendizajes en la evaluación nacional del Perú (Conference on Complex Systems, 2026) y a problemas de ciencias sociales y de redes.</p>
+
+  <h3>Otros sistemas</h3>
+  <p>Filogenias de abundancias químicas estelares, redes de interacción del microbioma y mortalidad por lesiones en Chile.</p>
+
+  <h3 class="list-head" id="publications">Publicaciones</h3>
+  <ol class="timeline">
+    <li>
+      <span class="year">2026</span>
+      <div>
+        <a class="title" href="https://doi.org/10.64898/2026.05.31.729127">Where the tree of life is empirically resolved, and where it is not: an open atlas of species-level phylogenies and their archival uncertainty</a>
+        <span class="authors">F. Richter</span>
+        <span class="venue">bioRxiv</span>
+      </div>
+    </li>
+    <li>
+      <span class="year">2025</span>
+      <div>
+        <span class="title">Neural causal regularization: extending causal invariance to deep models</span>
+        <span class="authors">F. Richter, K. Rigana, E. C. Wit</span>
+        <span class="venue">Statistics for Innovation I, 97–102. Springer Nature</span>
+      </div>
+    </li>
+    <li>
+      <span class="year">2024</span>
+      <div>
+        <a class="title" href="https://doi.org/10.1007/s13253-024-00638-6">Random graphical model of microbiome interactions in related environments</a>
+        <span class="authors">V. Vinciotti, E. C. Wit, F. Richter</span>
+        <span class="venue">Journal of Agricultural, Biological and Environmental Statistics</span>
+      </div>
+    </li>
+    <li>
+      <span class="year">2021</span>
+      <div>
+        <a class="title" href="https://doi.org/10.1101/2021.07.01.450729">Detecting phylodiversity-dependent diversification with a general phylogenetic inference framework</a>
+        <span class="authors">F. Richter, T. Janzen, H. Hildenbrandt, E. C. Wit, R. S. Etienne</span>
+        <span class="venue">bioRxiv</span>
+      </div>
+    </li>
+    <li>
+      <span class="year">2021</span>
+      <div>
+        <a class="title" href="https://doi.org/10.1002/ecy.3237">Microbiome and environment explain the absence of correlations between consumers and their diet in Bornean microsnails</a>
+        <span class="authors">K. P. Hendriks, …, F. J. Richter Mendoza, M. Schilthuizen, R. S. Etienne</span>
+        <span class="venue">Ecology 102(2), e03237</span>
+      </div>
+    </li>
+    <li>
+      <span class="year">2021</span>
+      <div>
+        <a class="title" href="https://academic.oup.com/mollus/article/87/4/eyab041/6484603">Plant diets of land snail community members are similar in composition but differ in richness</a>
+        <span class="authors">K. P. Hendriks, …, F. J. Richter Mendoza, M. Schilthuizen, R. S. Etienne</span>
+        <span class="venue">Journal of Molluscan Studies 87(4), eyab041</span>
+      </div>
+    </li>
+    <li>
+      <span class="year">2020</span>
+      <div>
+        <a class="title" href="https://doi.org/10.1111/stan.12205">Introducing a general class of species diversification models for phylogenetic trees</a>
+        <span class="authors">F. Richter, B. Haegeman, R. S. Etienne, E. C. Wit</span>
+        <span class="venue">Statistica Neerlandica 74, 261–274</span>
+      </div>
+    </li>
+    <li>
+      <span class="year">2019</span>
+      <div>
+        <span class="title">Fieldwork to sample microsnails for diet and microbiome studies along the Kinabatangan River, Sabah, Malaysian Borneo</span>
+        <span class="authors">K. P. Hendriks, …, F. J. Richter Mendoza, M. Schilthuizen, R. S. Etienne</span>
+        <span class="venue">Malacologist 72, 33–38</span>
+      </div>
+    </li>
+  </ol>
+
+  <h4>Industry reports</h4>
+  <ol class="timeline">
+    <li>
+      <span class="year">2024</span>
+      <div>
+        <a class="title" href="https://www.swi-wiskunde.nl/swi2024/wp-content/uploads/sites/29/2024/06/SWI-2024-scientific-proceedings_IKEA-1.pdf">IKEA: innovative know-how for e-commerce allocation</a>
+        <span class="authors">Y. Chen, M. Pellemans, F. Richter, Y. Roshandel, V. Schmeits, P. Waldert, L. Wehbi, T. C. van der Zanden</span>
+        <span class="venue">Study Group Mathematics with Industry (SWI) 2024, scientific proceedings</span>
+      </div>
+    </li>
+    <li>
+      <span class="year">2024</span>
+      <div>
+        <a class="title" href="https://www.cambridge.org/engage/miir/article-details/666c7ef65101a2ffa89a6c21">Stereo 3D cloud motion from tandem satellites</a>
+        <span class="authors">Y. Zhou, S. Abrahams, F. Mendoza, M. Donà, R. Verbiest</span>
+        <span class="venue">Mathematics in Industry Reports</span>
+      </div>
+    </li>
+  </ol>
+  <p class="more"><a href="https://scholar.google.cl/citations?user=dvAiLzsAAAAJ&amp;hl=en">All publications on Google Scholar</a></p>
+
+  <h3 class="list-head" id="talks">Charlas</h3>
+  <ol class="timeline">
+    <li><span class="year">2026</span><div><span class="title">How academic achievement and socioemotional learning are structurally linked</span><span class="venue">Conference on Complex Systems, Binghamton</span></div></li>
+    <li><span class="year">2026</span><div><span class="title">The phylogenetic dark matter</span><span class="venue">European Meeting of Statisticians, Lugano</span></div></li>
+    <li><span class="year">2026</span><div><span class="title">Robust and fair prediction under distribution shift</span><span class="venue">Latin American Congress on Industrial and Applied Mathematics, Valparaíso; organizador de sesión</span></div></li>
+    <li><span class="year">2025</span><div><span class="title">Neural causal regularization: extending causal invariance to deep models</span><span class="venue">Italian Statistical Society, Genova; invitado</span></div></li>
+    <li><span class="year">2023</span><div><span class="title">Detecting complex diversity-dependent diversification with a novel phylogenetic inference framework</span><span class="venue">Complex Networks (CompleNet), Aveiro</span></div></li>
+    <li><span class="year">2023</span><div><span class="title">Phylodiversity-dependent diversification: a general framework</span><span class="venue">World Conference on Natural Resource Modeling, Amsterdam</span></div></li>
+    <li><span class="year">2022</span><div><span class="title">Inferring the drivers of species diversification processes</span><span class="venue">Conference on Complex Systems, Palma de Mallorca</span></div></li>
+    <li><span class="year">2018</span><div><span class="title">Generalizing species diversification models</span><span class="venue">Conference on Complex Systems, Thessaloniki</span></div></li>
+    <li><span class="year">2018</span><div><span class="title">A statistical approach to species diversification dynamics</span><span class="venue">Mathematics for Planet Earth, Utrecht; invitado</span></div></li>
+  </ol>
+</section>
+
+<section id="teaching" class="panel">
+  <h2>Docencia</h2>
+
+  <p class="lede">Enseño desde la educación básica hasta el doctorado: cursos en la USI, dirección de tesis, talleres en colegios y la educación de mis hijos en casa. Escribo los libros de texto de mis cursos y últimamente estoy convirtiendo sus conceptos en animaciones.</p>
+
+  <h3>Ahora, semestre de otoño 2026</h3>
+  <p><a href="https://search.usi.ch/en/courses/35279057/introduction-to-stochastic-methods">Stochastic Methods</a> y <a href="https://search.usi.ch/en/courses/35275101/numerical-computing">Numerical Computing</a>.</p>
+
+  <h3>Cursos anteriores</h3>
+  <p>Cálculo 1, Probabilidad y Estadística, Ecuaciones Diferenciales Ordinarias, Introducción a la Ciencia de Datos y Análisis de Redes Sociales.</p>
+
+  <h3>Dirección de tesis</h3>
+  <ol class="timeline">
+    <li><span class="year">2026</span><div><span class="title">Adversarial causal regularization: stress-testing distributional robustness via worst-case environment discovery</span><span class="authors">Jana Muñoz Ruscalleda</span><span class="venue">Master in Informatics, USI</span></div></li>
+    <li><span class="year">2025</span><div><span class="title">Causality and deep learning</span><span class="authors">Metehan Dündar</span><span class="venue">Master in Computational Science, USI</span></div></li>
+    <li><span class="year">2025</span><div><span class="title">Prediction in environmental OASI time series</span><span class="authors">Federica Marini</span><span class="venue">Master in Statistical Sciences and Data Science, Università di Bologna</span></div></li>
+    <li><span class="year">2024</span><div><a class="title" href="https://www.politesi.polimi.it/bitstream/10589/222507/5/Classical_Format_Thesis___Scuola_di_Ingegneria_Industriale_e_dell_Informazione___Politecnico_di_Milano%20%282%29.pdf">Machine learning for species diversification dynamics</a><span class="authors">Mattia Colbertaldo</span><span class="venue">Master in High Performance Computing Engineering, Politecnico di Milano</span></div></li>
+    <li><span class="year">2023</span><div><span class="title">Deep learning for parameter estimation and model classification in species diversification models</span><span class="authors">Oscar Arturo Silva Castellanos</span><span class="venue">Master in Artificial Intelligence, USI</span></div></li>
+    <li><span class="year">2023</span><div><a class="title" href="https://thesis.bul.sbu.usi.ch/theses/2193-2223Mazzei/pdf?1697548694">Stochastic learning for species diversification dynamics</a><span class="authors">Lodovico Mazzei</span><span class="venue">Master in Computational Science, USI</span></div></li>
+  </ol>
+
+  <h3>Libros de texto</h3>
+  <p>Escritos para mis cursos: <i>Stochastic Methods</i>; <i>Numerical Computing</i>; <i>Probability and Data Fundamentals</i>; <i>Irreducible Inference</i>, sobre inferencia y modelación estadística.</p>
+
+  <h3>Divulgación</h3>
+  <p>Dirección de <a href="https://www.liceolugano1.ti.ch/studi/lavoro-di-maturita-lam"><i>Lavori di Maturità</i></a> con la Facultad de Informática; talleres en <a href="https://www.satw.ch/en/tecdays">TecDays</a> y en una <i>giornata autogestita</i>; clases en el <a href="https://www.liceolugano1.ti.ch/">Liceo Lugano 1</a>.</p>
+
+  <h3>Escuela e IA</h3>
+  <p>Mis hijos estudian en casa, y construyo su material de aprendizaje con herramientas actuales de IA. De ese trabajo salen juegos de aprendizaje alineados con el currículo chileno de enseñanza básica y media, en <a href="https://juegos.whitebox.cl/">juegos.whitebox.cl</a>.</p>
+
+  <h3>Animación</h3>
+  <p>Explicaciones animadas de los conceptos de mis cursos, empezando por <a href="https://www.stochasticmethods.com/">Stochastic Methods</a>.</p>
+  <figure class="video">
+    <video controls preload="none" playsinline width="1280" height="720" poster="../media/law-of-rare-events.jpg">
+      <source src="../media/law-of-rare-events.mp4" type="video/mp4">
+    </video>
+  </figure>
+</section>
+
+<section id="consulting" class="panel">
+  <h2>Consultoría</h2>
+
+  <p class="lede">Antes de ser doctor, soy ingeniero.</p>
+
+  <h3>Instituciones colaboradoras</h3>
+  <ul class="logos">
+    <li><a href="https://fundacionmovimientointegrador.com/"><picture><source srcset="../images/logos/fundacion-dark.png" media="(prefers-color-scheme: dark)"><img src="../images/logos/fundacion.png" alt="" loading="lazy"></picture><span>Fundación Movimiento Integrador</span></a></li>
+    <li><a href="https://www.elysia-solutions.com/"><picture><source srcset="../images/logos/elysia-dark.png" media="(prefers-color-scheme: dark)"><img src="../images/logos/elysia.png" alt="" loading="lazy"></picture><span>Elysia</span></a></li>
+    <li><a href="https://www.laboratoriotextil.com/"><picture><source srcset="../images/logos/laboratoriotextil-dark.svg" media="(prefers-color-scheme: dark)"><img src="../images/logos/laboratoriotextil.svg" alt="" loading="lazy"></picture><span>Laboratorio Textil</span></a></li>
+    <li><a href="https://luche.cl/"><picture><source srcset="../images/logos/luche-dark.svg" media="(prefers-color-scheme: dark)"><img src="../images/logos/luche.svg" alt="" loading="lazy"></picture><span>luche.cl</span></a></li>
+    <li><a href="https://cajablanca.cl/"><picture><source srcset="../images/logos/cajablanca-dark.svg" media="(prefers-color-scheme: dark)"><img src="../images/logos/cajablanca.svg" alt="" loading="lazy"></picture><span>cajablanca.cl</span></a></li>
+    <li><a href="https://puatextil.com/"><picture><source srcset="../images/logos/pua-dark.png" media="(prefers-color-scheme: dark)"><img src="../images/logos/pua.png" alt="" loading="lazy"></picture><span>PUA</span></a></li>
+    <li><a href="https://www.whitebox.cl/"><picture><source srcset="../images/logos/whitebox-dark.svg" media="(prefers-color-scheme: dark)"><img src="../images/logos/whitebox.svg" alt="" loading="lazy"></picture><span>WhiteBox</span></a></li>
+  </ul>
+
+  <h3>Proyectos</h3>
+  <ul class="logos">
+    <li><a href="https://datoyrelato.cl/"><picture><source srcset="../images/logos/datoyrelato-dark.svg" media="(prefers-color-scheme: dark)"><img src="../images/logos/datoyrelato.svg" alt="" loading="lazy"></picture><span>Dato y Relato</span></a></li>
+    <li><div><picture><source srcset="../images/logos/ochodelocho-dark.svg" media="(prefers-color-scheme: dark)"><img src="../images/logos/ochodelocho.svg" alt="" loading="lazy"></picture><span>ochodelocho</span></div></li>
+  </ul>
+</section>
+
+<section id="contact" class="panel">
+  <h2>Contacto</h2>
+  <p>Escríbeme a <a href="mailto:richtf@usi.ch">richtf@usi.ch</a> o a <a href="mailto:franciscorichter@gmail.com">franciscorichter@gmail.com</a>. Trabajo en la Facultad de Informática de la Università della Svizzera italiana, en Lugano. Mi código está en <a href="https://github.com/franciscorichter">GitHub</a>, y también estoy en <a href="https://www.linkedin.com/in/franciscorichter/">LinkedIn</a>.</p>
+
+  <form class="write" id="write" action="mailto:franciscorichter@gmail.com" method="post" enctype="text/plain" data-key="">
+    <label for="w-email">Tu correo</label>
+    <input id="w-email" name="email" type="email" autocomplete="email" required>
+    <label for="w-subject">Asunto</label>
+    <input id="w-subject" name="subject" type="text" autocomplete="off">
+    <label for="w-body">Mensaje</label>
+    <textarea id="w-body" name="message" rows="7" required></textarea>
+    <input class="trap" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button type="submit">Enviar</button>
+    <p class="write-status" id="write-status" role="status"></p>
+  </form>
+</section>
+
+</main>
+
+<script src="../assets/emphasis-sim.js" defer></script>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

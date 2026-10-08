@@ -2,6 +2,9 @@
 // drawn three ways — everything that lived, what survives, what is sampled — with
 // sliders for the rates. Layout follows the documentation simulator: a lineage's
 // daughters branch off it in birth order, alternating above and below.
+// The Spanish page (es/) is the same document with lang="es"; its messages come from here.
+var ES = document.documentElement.lang === 'es';
+
 (function () {
   'use strict';
   var S = window.EmphasisSim;
@@ -128,12 +131,13 @@
 
   function report() {
     var s = st.sim, out = $('tree-status');
-    if (s.status === 'too_large') { out.textContent = 'More than 500 lineages at once: lower speciation, or shorten the crown age.'; return; }
-    if (s.status !== 'done') { out.textContent = 'No clade survived 300 tries: extinction outweighs speciation here.'; return; }
+    if (s.status === 'too_large') { out.textContent = ES ? 'Más de 500 linajes a la vez: baja la especiación o acorta la edad de la corona.' : 'More than 500 lineages at once: lower speciation, or shorten the crown age.'; return; }
+    if (s.status !== 'done') { out.textContent = ES ? 'Ningún clado sobrevivió en 300 intentos: aquí la extinción supera a la especiación.' : 'No clade survived 300 tries: extinction outweighs speciation here.'; return; }
     var alive = 0, dead = 0, seen = 0;
     s.rows.forEach(function (r) { if (r.end < 0) { alive++; if (r.sampled) seen++; } else dead++; });
-    out.textContent = alive + ' living species, ' + dead + ' extinct lineages' +
-      (st.rho < 1 ? ', ' + seen + ' living species sampled.' : '.');
+    out.textContent = ES
+      ? alive + ' especies vivas, ' + dead + ' linajes extintos' + (st.rho < 1 ? ', ' + seen + ' especies vivas muestreadas.' : '.')
+      : alive + ' living species, ' + dead + ' extinct lineages' + (st.rho < 1 ? ', ' + seen + ' living species sampled.' : '.');
   }
 
   // ---- build the figure -------------------------------------------------------
@@ -245,12 +249,12 @@
   var to = form.getAttribute('action').replace('mailto:', '');
   var button = form.querySelector('button');
   var status = document.getElementById('write-status');
-  if (!key) button.textContent = 'Open in your email app';
+  if (!key) button.textContent = ES ? 'Abrir en tu aplicación de correo' : 'Open in your email app';
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var f = form.elements;
-    var subject = f.subject.value.trim() || 'Message from franciscorichter.github.io';
+    var subject = f.subject.value.trim() || (ES ? 'Mensaje desde franciscorichter.github.io' : 'Message from franciscorichter.github.io');
     if (!key) {
       window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) +
         '&body=' + encodeURIComponent(f.message.value);
@@ -258,7 +262,7 @@
     }
     if (f.botcheck.checked) return;
     button.disabled = true;
-    status.textContent = 'Sending…';
+    status.textContent = ES ? 'Enviando…' : 'Sending…';
     fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
@@ -268,9 +272,9 @@
     }).then(function (r) { return r.json(); }).then(function (d) {
       if (!d.success) throw new Error(d.message);
       form.reset();
-      status.textContent = 'Message sent. I will reply to your email.';
+      status.textContent = ES ? 'Mensaje enviado. Te responderé a tu correo.' : 'Message sent. I will reply to your email.';
     }).catch(function () {
-      status.textContent = 'The message could not be sent. Write to ' + to + ' instead.';
+      status.textContent = ES ? 'No se pudo enviar el mensaje. Escríbeme a ' + to + '.' : 'The message could not be sent. Write to ' + to + ' instead.';
     }).then(function () { button.disabled = false; });
   });
 })();

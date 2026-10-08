@@ -466,3 +466,17 @@ a[href^="mailto:"] { hyphens: manual; white-space: nowrap; }
 .logos img { display: block; height: 2.8rem; width: auto; max-width: 100%; object-fit: contain; object-position: left bottom; }
 .logos span { font-size: 0.78rem; line-height: 1.3; }
 .logos a:hover span { color: var(--ink); }
+
+/* Language switch: stacked just left of the intro's margin line */
+.intro { position: relative; }
+.langs {
+  position: absolute; right: calc(100% + 0.9rem); top: 0.6rem; margin: 0;
+  display: flex; flex-direction: column; gap: 0.35rem;
+  font-family: "Courier Prime", ui-monospace, monospace; font-size: 0.72rem; letter-spacing: 0.06em;
+}
+.langs a { color: var(--muted); text-decoration: none; }
+.langs a:hover { color: var(--ink); }
+.langs a[aria-current] { color: var(--margin); }
+@media (max-width: 48rem) {
+  .langs { position: static; flex-direction: row; gap: 0.9rem; margin: 0 0 1rem; }
+}
