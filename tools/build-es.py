@@ -45,8 +45,8 @@ T = [
     # intro
     ('<p class="lede">Scientific collaborator and lecturer at the Faculty of Informatics, <a href="https://www.usi.ch/en">Università della Svizzera italiana</a>, Lugano.</p>',
      '<p class="lede">Colaborador científico y profesor en la Facultad de Informática de la <a href="https://www.usi.ch/it">Università della Svizzera italiana</a>, Lugano.</p>'),
-    ('<p>PhD, University of Groningen (2021), with Ernst Wit and Rampal Etienne. Mathematical engineer, Universidad Técnica Federico Santa María, Valparaíso. Earlier work at ALMA, at ESO and in industry.</p>',
-     '<p>Doctor por la Universidad de Groningen (2021), con Ernst Wit y Rampal Etienne. Ingeniero civil matemático, Universidad Técnica Federico Santa María, Valparaíso. Antes trabajé en ALMA, en ESO y en la industria.</p>'),
+    ('<p>PhD, University of Groningen (2021), with Ernst Wit and Rampal Etienne. Mathematical engineer, Universidad Técnica Federico Santa María, Valparaíso. Earlier work at ESO and in industry.</p>',
+     '<p>Doctor por la Universidad de Groningen (2021), con Ernst Wit y Rampal Etienne. Ingeniero civil matemático, Universidad Técnica Federico Santa María, Valparaíso. Antes trabajé en ESO y en la industria.</p>'),
     ('aria-label="Sections"', 'aria-label="Secciones"'),
     ('<a href="#research">Research</a>', '<a href="#research">Investigación</a>'),
     ('<a href="#teaching">Teaching</a>', '<a href="#teaching">Docencia</a>'),
