@@ -364,17 +364,6 @@ p { margin: 0 0 1rem; hyphens: auto; }
 .courses dt { color: var(--muted); }
 .courses dd { margin: 0; }
 
-.video { margin: 1.2rem 0 0; }
-.video video {
-  display: block;
-  width: 100%;
-  height: auto;
-  border: 1px solid var(--rule);
-  border-radius: 3px;
-  background: var(--paper);
-}
-.video figcaption { margin-top: 0.4rem; font-size: 0.9rem; color: var(--muted); }
-
 @media (max-width: 30rem) {
   .timeline li { grid-template-columns: 1fr; }
   .timeline .year { padding: 0 0 0.1rem; }
