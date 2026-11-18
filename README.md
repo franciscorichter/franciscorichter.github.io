@@ -47,11 +47,11 @@ Spanish text in that file, chosen by `<html lang>`.
 
 ## CV
 
-`files/Resume/resume.pdf` is built from the canonical CV source in `~/System/Resume`
+`files/Resume/resume.pdf` is built from the canonical CV source in `~/System/Academic/Resume`
 with the academic profile:
 
 ```sh
-cd ~/System/Resume && ./make-cv.sh A <this repo>/files/Resume/resume
+cd ~/System/Academic/Resume && ./make-cv.sh A <this repo>/files/Resume/resume
 ```
 
 ## Preview locally
