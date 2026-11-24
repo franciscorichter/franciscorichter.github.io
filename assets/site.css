@@ -459,14 +459,13 @@ a[href^="mailto:"] { hyphens: manual; white-space: nowrap; }
 /* Teaching: photographs from class, no captions */
 .classroom {
   display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;
-  margin: 1.4rem 0 0.4rem;
+  margin: 1rem 0 0.4rem;
 }
 .classroom img {
   display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover;
   border-radius: 2px; background: var(--rule);
 }
-@media (min-width: 48rem) { .classroom { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 30rem) { .classroom { grid-template-columns: 1fr; } }
+@media (min-width: 48rem) { .classroom { grid-template-columns: repeat(4, 1fr); } }
 
 /* Language switch: stacked just left of the intro's margin line */
 .intro { position: relative; }
