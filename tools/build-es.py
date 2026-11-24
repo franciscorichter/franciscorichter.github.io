@@ -71,8 +71,8 @@ T = [
     ('; session organiser</span>', '; organizador de sesión</span>'),
     # teaching
     ('<h2>Teaching</h2>', '<h2>Docencia</h2>'),
-    ("<p class=\"lede\">I teach from primary school to PhD level: courses at USI, thesis supervision, workshops in schools, and my own children's education at home. I write the textbooks for my courses, and lately I am turning their concepts into animations.</p>",
-     '<p class="lede">Enseño desde la educación básica hasta el doctorado: cursos en la USI, dirección de tesis, talleres en colegios y la educación de mis hijos en casa. Escribo los libros de texto de mis cursos y últimamente estoy convirtiendo sus conceptos en animaciones.</p>'),
+    ('<p class="lede">I teach from primary school to PhD level: courses at USI, thesis supervision and workshops in schools. I write the textbooks for my courses.</p>',
+     '<p class="lede">Enseño desde la educación básica hasta el doctorado: cursos en la USI, dirección de tesis y talleres en colegios. Escribo los libros de texto de mis cursos.</p>'),
     ('<h3>Now, autumn 2026</h3>', '<h3>Ahora, semestre de otoño 2026</h3>'),
     ('</a> and <a href="https://search.usi.ch/en/courses/35275101/numerical-computing">', '</a> y <a href="https://search.usi.ch/en/courses/35275101/numerical-computing">'),
     ('<h3>Earlier courses</h3>', '<h3>Cursos anteriores</h3>'),
@@ -86,12 +86,6 @@ T = [
     ('<p>Supervision of <a href="https://www.liceolugano1.ti.ch/studi/lavoro-di-maturita-lam">', '<p>Dirección de <a href="https://www.liceolugano1.ti.ch/studi/lavoro-di-maturita-lam">'),
     ('</a> with the Faculty of Informatics; workshops at <a href="https://www.satw.ch/en/tecdays">', '</a> con la Facultad de Informática; talleres en <a href="https://www.satw.ch/en/tecdays">'),
     ('</a> and at a <i>giornata autogestita</i>; classes at <a href="https://www.liceolugano1.ti.ch/">', '</a> y en una <i>giornata autogestita</i>; clases en el <a href="https://www.liceolugano1.ti.ch/">'),
-    ('<h3>Schools and AI</h3>', '<h3>Escuela e IA</h3>'),
-    ('<p>My children are homeschooled, and I build their learning material with current AI tools. From that work: curriculum-aligned learning games for Chilean primary and secondary school, at <a href="https://juegos.whitebox.cl/">',
-     '<p>Mis hijos estudian en casa, y construyo su material de aprendizaje con herramientas actuales de IA. De ese trabajo salen juegos de aprendizaje alineados con el currículo chileno de enseñanza básica y media, en <a href="https://juegos.whitebox.cl/">'),
-    ('<h3>Animation</h3>', '<h3>Animación</h3>'),
-    ('<p>Animated explainers for the concepts in my courses, starting with <a href="https://www.stochasticmethods.com/">',
-     '<p>Explicaciones animadas de los conceptos de mis cursos, empezando por <a href="https://www.stochasticmethods.com/">'),
     # consulting
     ('<h2>Consulting</h2>', '<h2>Consultoría</h2>'),
     ('<p class="lede">I am an engineer before I am a doctor, and I work more and more with small businesses, start-ups and projects outside academia. These are some of the organisations and projects I am part of now.</p>',
