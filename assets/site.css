@@ -465,7 +465,7 @@ a[href^="mailto:"] { hyphens: manual; white-space: nowrap; }
   display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover;
   border-radius: 2px; background: var(--rule);
 }
-@media (min-width: 48rem) { .classroom { grid-template-columns: repeat(4, 1fr); } }
+
 
 /* Language switch: stacked just left of the intro's margin line */
 .intro { position: relative; }
